@@ -1,0 +1,14 @@
+---
+include: www.bornhack.dk-passwords.yml
+ansible_host: 10.0.0.9
+django_root: /usr/local/www/www.bornhack.dk/
+django_mainapp: bornhack
+django_allowed_hostnames: bornhack.dk
+django_env_path: /usr/local/www/www.bornhack.dk/bornhack/settings/.env
+nginx_django_static_root: /usr/local/www/www.bornhack.dk/bornhack/static/
+github_repo_url: https://github.com/bornhack/bornhack-website
+pip_requirements_path: /usr/local/www/www.bornhack.dk/requirements/production.txt
+postgres_user: bornhackdk
+postgres_host: 10.0.0.3
+postgres_dbname: bornhackdkdb
+
