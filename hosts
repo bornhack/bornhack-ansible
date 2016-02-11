@@ -1,0 +1,31 @@
+#######################################################
+### all hosts
+bong.tyknet.dk
+www.bornhack.dk
+wiki.bornhack.org
+
+
+#######################################################
+### freebsd jailhosts and jails
+[jailhosts]
+bong.tyknet.dk
+
+[bong_jails]
+www.bornhack.dk
+wiki.bornhack.org
+
+
+########################################################
+### application groups
+[django_jails]
+www.bornhack.dk
+
+[wiki_jails]
+wiki.bornhack.org
+
+
+########################################################
+### geographic groups
+[denmark]
+bong.tyknet.dk
+

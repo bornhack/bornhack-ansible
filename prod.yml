@@ -4,3 +4,7 @@
   roles:
     - djangoserver
 
+- configure wiki servers
+  hosts: wiki_jails
+  roles:
+    - wikiserver

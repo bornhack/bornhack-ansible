@@ -1,0 +1,3 @@
+---
+include: wiki.bornhack.org-passwords.yml
+ansible_host: 10.0.0.11

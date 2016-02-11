@@ -1,0 +1,5 @@
+---
+- include: nginx.yml
+- include: postgres.yml
+- include: php.yml
+- include: mediawiki.yml

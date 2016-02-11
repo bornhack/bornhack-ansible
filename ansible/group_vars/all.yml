@@ -1,4 +1,0 @@
----
-ansible_user: ansible
-postgres_port: 5432
-

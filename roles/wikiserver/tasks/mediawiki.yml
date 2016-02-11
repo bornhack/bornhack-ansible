@@ -1,0 +1,5 @@
+---
+- name: Install mediawiki
+  become: yes
+  pkgng: name=mediawiki126  state=present
+
