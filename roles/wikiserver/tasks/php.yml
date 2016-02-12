@@ -3,7 +3,7 @@
   become: yes
   pkgng: name=php56  state=present
 
-- name: Install php
+- name: Install php-pgsql
   become: yes
   pkgng: name=php56-pgsql  state=present
 

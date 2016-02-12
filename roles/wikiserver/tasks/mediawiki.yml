@@ -3,3 +3,7 @@
   become: yes
   pkgng: name=mediawiki126  state=present
 
+- Configure mediawiki
+  become: yes
+  template: src=LocalSettings.php.j2 dest=/usr/local/www/mediawiki/LocalSettings.php
+
