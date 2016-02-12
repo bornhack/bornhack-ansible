@@ -5,3 +5,6 @@ wikiname: bornhack
 wikiurl: https://wiki.bornhack.org
 wikicontact: thomas@gibfest.dk
 wikisenderemail: noreply@wiki.bornhack.org
+postgres_user: bornhackwiki
+postgres_host: 10.0.0.3
+postgres_dbname: bornhackwikidb
