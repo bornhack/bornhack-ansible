@@ -18,8 +18,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "bornhack";
-$wgMetaNamespace = "Bornhack";
+$wgSitename = "{{ wikiname }}";
+$wgMetaNamespace = "{{ wikiname }}";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -29,7 +29,7 @@ $wgMetaNamespace = "Bornhack";
 $wgScriptPath = "";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "http://wiki.bornhack.org";
+$wgServer = "{{ wikiurl }}";
 
 
 ## The URL path to static resources (images, scripts, etc.)
@@ -44,7 +44,7 @@ $wgLogo = "$wgResourceBasePath/resources/assets/wiki.png";
 $wgEnableEmail = true;
 $wgEnableUserEmail = false; # UPO
 
-$wgEmergencyContact = "noreply@wiki.bornhack.org";
+$wgEmergencyContact = "thomas@gibfest.dk";
 $wgPasswordSender = "noreply@wiki.bornhack.org";
 
 $wgEnotifUserTalk = false; # UPO
@@ -53,13 +53,13 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "postgres";
-$wgDBserver = "10.0.0.3";
-$wgDBname = "bornhackwikidb";
-$wgDBuser = "bornhackwiki";
-$wgDBpassword = "ieIjVTgGjpA759kCsnqJUToqlHUFS9UFIZwQxsHEw3mNQkCX067hv4lQ6qGIskAam2mNQ4yXwdlkRi99o7s9g1YIaFvDFjlRgnhm";
+$wgDBserver = "{{ postgres_host }}";
+$wgDBname = "{{ postgres_dbname }}";
+$wgDBuser = "{{ postgres_user }}";
+$wgDBpassword = "{{ postgres_password }}";
 
 # Postgres specific settings
-$wgDBport = "5432";
+$wgDBport = "{{ postgres_port }}";
 $wgDBmwschema = "mediawiki";
 
 ## Shared memory settings
@@ -94,11 +94,11 @@ $wgShellLocale = "en_US.utf8";
 # Site language code, should be one of the list in ./languages/Names.php
 $wgLanguageCode = "en";
 
-$wgSecretKey = "339079e64aa1ea87b04f75c7fa22d5ce1e64212923e561b405200fcbf7c7a736";
+$wgSecretKey = "{{ wiki_secretkey }}";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "665bd898afde5ff8";
+$wgUpgradeKey = "{{ wiki_upgradekey }}";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
