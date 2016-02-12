@@ -11,7 +11,14 @@
   become: yes
   service: name=tor enabled=yes
 
+- name: Configure nginx
+  become: yes
+  template: src=torrc.j2 dest=/usr/local/etc/tor/torrc
+
 - name: Start tor (if not running)
   become: yes
   service: name=tor state=started
 
+- name: Reload tor config
+  become: yes
+  service: name=tor state=reloaded

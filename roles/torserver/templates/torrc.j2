@@ -1,0 +1,7 @@
+Log notice syslog
+RunAsDaemon 1
+DataDirectory /var/db/tor
+{% for hs in hiddenservices %}
+HiddenServiceDir /var/db/tor/{{ hs.folder }}/
+HiddenServicePort {{ hs.hiddenserviceport }}
+{% endfor %}
