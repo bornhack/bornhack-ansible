@@ -1,0 +1,6 @@
+---
+- name: configure django servers
+  hosts: django_jails
+  roles:
+    - djangoserver
+
