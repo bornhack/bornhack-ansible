@@ -28,8 +28,9 @@ $wgMetaNamespace = "{{ wikiname }}";
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
 $wgScriptPath = "";
 
-## The protocol and server name to use in fully-qualified URLs
-$wgServer = "{{ wikiurl }}";
+## The protocol and server name to use in fully-qualified URLs,
+## unset to get hostname from request
+#$wgServer = "{{ wikiurl }}";
 
 
 ## The URL path to static resources (images, scripts, etc.)
