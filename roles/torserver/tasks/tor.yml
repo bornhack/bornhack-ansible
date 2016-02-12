@@ -1,0 +1,17 @@
+---
+- name: Install openssl
+  become: yes
+  pkgng: name=openssl state=present
+
+- name: Install tor
+  become: yes
+  pkgng: name=tor state=present
+
+- name: Enable tor
+  become: yes
+  service: name=tor enabled=yes
+
+- name: Start tor (if not running)
+  become: yes
+  service: name=tor state=started
+

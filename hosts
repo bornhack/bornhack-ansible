@@ -3,6 +3,7 @@
 bong.tyknet.dk
 www.bornhack.dk
 wiki.bornhack.org
+bornhack-torgw.bornhack.org
 
 
 #######################################################
@@ -13,6 +14,7 @@ bong.tyknet.dk
 [bong_jails]
 www.bornhack.dk
 wiki.bornhack.org
+bornhack-torgw.bornhack.org
 
 
 ########################################################
@@ -22,6 +24,9 @@ www.bornhack.dk
 
 [wiki_jails]
 wiki.bornhack.org
+
+[tor_jails]
+bornhack-torgw.bornhack.org
 
 
 ########################################################

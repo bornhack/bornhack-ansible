@@ -1,0 +1,5 @@
+---
+- name: configure tor servers
+  hosts: tor_jails
+  roles:
+    - torserver
