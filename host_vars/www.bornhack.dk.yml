@@ -1,5 +1,4 @@
 ---
-include: www.bornhack.dk-passwords.yml
 ansible_host: 10.0.0.9
 django_root: /usr/local/www/www.bornhack.dk/
 django_mainapp: bornhack
