@@ -29,17 +29,21 @@ http {
         uwsgi_buffers 256 4k;
 
         root /usr/local/www/mediawiki;
+        index index.php;
 
         client_max_body_size 5m;
         client_body_timeout 60;
 
+        location ~ \.htaccess {
+                deny all;
+        }
+
         location / {
                 try_files $uri $uri/ @rewrite;
-                index index.php;
         }
 
         location @rewrite {
-                rewrite ^/(.*)$ /index.php?title=$1&$args;
+                rewrite ^/(.*)$ /index.php;
         }
 
         location ^~ /maintenance/ {
