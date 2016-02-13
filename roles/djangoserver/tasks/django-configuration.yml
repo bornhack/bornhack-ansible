@@ -5,6 +5,10 @@
   become: yes
   template: src=roles/djangoserver/templates/.env.j2 dest="{{ django_env_path }}"
 
+- name: Copy .env file into place.. again
+  become: yes
+  template: src=roles/djangoserver/templates/.env.j2 dest="{{ django_env_path2 }}"
+
 - name: Run collectstatic
   become: yes
   django_manage: command=collectstatic app_path="{{ django_root }}"
