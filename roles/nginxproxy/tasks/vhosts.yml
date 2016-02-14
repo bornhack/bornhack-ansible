@@ -1,0 +1,5 @@
+---
+- name: Copy vhost http config for webproxy-bong.bornhack.org
+  become: yes
+  template: src=webproxy-bong.bornhack.org-http.conf.j2 dest=/usr/local/etc/nginx/vhosts/webproxy-bong.bornhack.org-http.conf
+

@@ -1,0 +1,17 @@
+server {
+    listen                  85.235.250.89:80 default;
+    listen                  [2a01:3a0:1:1900:85:235:250:89]:80 default;
+    server_name             webproxy-bong.bornhack.org;
+    error_log               /usr/local/www/logs/webproxy-bong.bornhack.org-error.log;
+    error_log               syslog:server=unix:/var/run/log,facility=local6 debug;
+    access_log              /usr/local/www/logs/webproxy-bong.bornhack.org-access.log  combined;
+    access_log              syslog:server=unix:/var/run/log,facility=local6 combined;
+    location '/.well-known/acme-challenge' {
+        default_type        "text/plain";
+        root                /tmp/letsencrypt-auto;
+    }
+
+    location / {
+        return              301 https://$server_name$request_uri permanent;
+    }
+}
