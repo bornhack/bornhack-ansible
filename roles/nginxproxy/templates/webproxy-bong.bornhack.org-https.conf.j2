@@ -1,0 +1,22 @@
+server {
+        listen                  85.235.250.89:443 ssl spdy default;
+        listen                  [2a01:3a0:1:1900:85:235:250:89]:443 ssl spdy default;
+        server_name             webproxy-bong.bornhack.org;
+
+        ssl                     on;
+        ssl_certificate         /usr/local/etc/letsencrypt/live/webproxy-bong.bornhack.org/fullchain.pem;
+        ssl_certificate_key     /usr/local/etc/letsencrypt/live/webproxy-bong.bornhack.org/privkey.pem;
+
+        error_log               /usr/local/www/logs/webproxy-bong.bornhack.org-error.log;
+        error_log               syslog:server=unix:/var/run/log,facility=local6 debug;
+
+        access_log              /usr/local/www/logs/webproxy-bong.bornhack.org-access.log  combined;
+        access_log              syslog:server=unix:/var/run/log,facility=local6 combined;
+
+        include                 /usr/local/etc/nginx/tls.conf;
+
+        location / {
+                alias /usr/local/www/web-bong.tyknet.dk/wwwroot/;
+                index index.html;
+        }
+}

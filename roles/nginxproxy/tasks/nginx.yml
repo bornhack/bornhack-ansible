@@ -7,9 +7,13 @@
   become: yes
   service: name=nginx enabled=yes
 
-- name: Configure nginx
+- name: Copy nginx config
   become: yes
   template: src=nginx.conf.j2 dest=/usr/local/etc/nginx/nginx.conf
+
+- name: Copy nginx TLS config
+  become: yes
+  template: src=tls.conf.j2 dest=/usr/local/etc/nginx/tls.conf
 
 - name: Create nginx logfile directory
   become: yes
