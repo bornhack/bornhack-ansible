@@ -1,4 +1,5 @@
 ---
+- include: nginxproxies.yml
 - include: djangoservers.yml
 - include: wikiservers.yml
 - include: torservers.yml

@@ -4,6 +4,7 @@ bong.tyknet.dk
 www.bornhack.dk
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
+webproxy-bong.bornhack.org
 
 
 #######################################################
@@ -15,6 +16,7 @@ bong.tyknet.dk
 www.bornhack.dk
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
+webproxy-bong.bornhack.org
 
 
 ########################################################
@@ -28,6 +30,8 @@ wiki.bornhack.org
 [tor_jails]
 bornhack-torgw.bornhack.org
 
+[nginxproxy_jails]
+webproxy-bong.bornhack.org
 
 ########################################################
 ### geographic groups
