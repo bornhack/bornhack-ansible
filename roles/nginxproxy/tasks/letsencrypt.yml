@@ -5,13 +5,13 @@
 
 - name: Decrypt and copy letsencrypt meta.json
   become: yes
-  copy: owner=root group=wheel mode=600 content="{{ lookup('pipe', 'ansible-vault view meta.json') }}" dest="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}/meta.json"
+  copy: owner=root group=wheel mode=600 content="{{ lookup('pipe', 'ansible-vault view --vault-password-file /root/.ansiblevaultpass /usr/local/etc/ansible/roles/nginxproxy/files/webproxy-bong.bornhack.org/meta.json') }}" dest="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}/meta.json"
   
 - name: Decrypt and copy letsencrypt private_key.json
   become: yes
-  copy: owner=root group=wheel mode=600 content="{{ lookup('pipe', 'ansible-vault view private_key.json') }}" dest="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}/private_key.json"
+  copy: owner=root group=wheel mode=600 content="{{ lookup('pipe', 'ansible-vault view --vault-password-file /root/.ansiblevaultpass /usr/local/etc/ansible/roles/nginxproxy/files/webproxy-bong.bornhack.org/private_key.json') }}" dest="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}/private_key.json"
 
 - name: Decrypt and copy letsencrypt regr.json
   become: yes
-  copy: owner=root group=wheel mode=600 content="{{ lookup('pipe', 'ansible-vault view regr.json') }}" dest="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}/regr.json"
+  copy: owner=root group=wheel mode=600 content="{{ lookup('pipe', 'ansible-vault view --vault-password-file /root/.ansiblevaultpass /usr/local/etc/ansible/roles/nginxproxy/files/webproxy-bong.bornhack.org/regr.json') }}" dest="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}/regr.json"
   
