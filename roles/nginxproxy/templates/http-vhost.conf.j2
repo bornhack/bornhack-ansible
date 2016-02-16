@@ -2,10 +2,6 @@ server {
     listen                  {{ vhost_v4ip }}:80{% if item.value.default_vhost %} default{% endif %};
     listen                  [{{ item.value.vhost_v6ip }}]:80{% if item.value.default_vhost %} default{% endif %};
     server_name             {% for hostname in item.value.hostnames %}{{ hostname }} {% endfor %};
-    error_log               /usr/local/www/logs/{{ item.value.hostnames[0] }}-error.log;
-    error_log               syslog:server=unix:/var/run/log,facility=local6 debug;
-    access_log              /usr/local/www/logs/{{ item.value.hostnames[0] }}-access.log combined;
-    access_log              syslog:server=unix:/var/run/log,facility=local6 combined;
 
     {% if item.value.letsencrypt %}
     location '/.well-known/acme-challenge' {

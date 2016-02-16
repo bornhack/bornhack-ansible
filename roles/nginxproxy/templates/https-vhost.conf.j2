@@ -7,12 +7,6 @@ server {
     ssl_certificate         /usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem;
     ssl_certificate_key     /usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/privkey.pem;
 
-    error_log               /usr/local/www/logs/{{ item.value.hostnames[0] }}-error.log;
-    error_log               syslog:server=unix:/var/run/log,facility=local6 debug;
-
-    access_log              /usr/local/www/logs/{{ item.value.hostnames[0] }}-access.log  combined;
-    access_log              syslog:server=unix:/var/run/log,facility=local6 combined;
-
     include                 /usr/local/etc/nginx/tls.conf;
 
     {{ locationslash }}
