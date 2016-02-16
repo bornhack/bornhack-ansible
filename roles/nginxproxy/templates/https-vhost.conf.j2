@@ -1,7 +1,7 @@
 server {
     listen                  {{ vhost_v4ip }}:443 ssl spdy{% if item.value.default_vhost %} default{% endif %}}};
-    listen                  [{{ item.value.vhost_v6ip }}]:443 ssl spdy{% if default_vhost %} default{% endif %};
-    server_name             {% for hostname in hostnames %}{{ hostname }} {% endfor %};
+    listen                  [{{ item.value.vhost_v6ip }}]:443 ssl spdy{% if item.value.default_vhost %} default{% endif %};
+    server_name             {% for hostname in item.value.hostnames %}{{ hostname }} {% endfor %};
 
     ssl                     on;
     ssl_certificate         /usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem;

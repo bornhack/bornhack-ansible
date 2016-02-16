@@ -18,6 +18,7 @@
   with_dict: "{{ vhosts }}"
 
 - name: check certificate ages
+  become: yes
   stat: path=/usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem
   register: certificates_status
   with_dict: "{{ vhosts }}"
@@ -28,7 +29,7 @@
   when: ansible_date_time.epoch|float - item.1.stat.mtime > 60*60*24*60
   with_together:
     - "{{ vhosts }}"
-    - "{{ certificates_status }}"
+    - "{{ certificates_status.results }}"
 
 - name: Copy vhost https configs
   become: yes
