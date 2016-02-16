@@ -26,7 +26,7 @@ vhosts:
       - www.bornhack.dk
       - bornhack7hctgpio.onion
     letsencrypt: True
-    default_vhost: True
+    default_vhost: False
     locationslash: |
       location / {
           proxy_pass http://10.0.0.9:80;
@@ -38,7 +38,7 @@ vhosts:
       - wiki.bornhack.org
       - bornhacklkhzk7kn.onion
     letsencrypt: True
-    default_vhost: True
+    default_vhost: False
     locationslash: |
       location / {
           proxy_pass http://10.0.0.11:80;
