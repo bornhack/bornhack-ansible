@@ -9,5 +9,5 @@ server {
 
     include                 /usr/local/etc/nginx/tls.conf;
 
-    {{ locationslash }}
+    {{ item.value.locationslash }}
 }
