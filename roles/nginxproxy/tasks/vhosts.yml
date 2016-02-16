@@ -1,4 +1,41 @@
 ---
-- name: Copy vhost http config for webproxy-bong.bornhack.org
+- name: Copy vhost http configs
   become: yes
-  template: src=webproxy-bong.bornhack.org-http.conf.j2 dest=/usr/local/etc/nginx/vhosts/webproxy-bong.bornhack.org-http.conf
+  template:
+    src=http-vhost.conf.j2
+    dest="/usr/local/etc/nginx/vhosts/{{ item.value.hostnames[0] }}-http.conf"
+  with_dict: "{{ vhosts }}"
+
+- name: Reload nginx configs
+  become: yes
+  service: name=nginx state=reloaded
+
+- name: Create letsencrypt certificate for vhosts
+  become: yes
+  command: "/usr/local/bin/letsencrypt certonly --email {{ letsencrypt_email }} -a webroot --webroot-path=/tmp/letsencrypt-auto --text --rsa-key-size 4096 {% for domain in item.value.hostnames %}-d {{ hostname }} {% endfor %}"
+  creates: "/usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem"
+  with_dict: "{{ vhosts }}"
+
+- name: check certificate ages
+  stat: path=/usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem
+  register: certificates_status
+  with_dict: "{{ vhosts }}"
+
+- name: Renew the letsencrypt certificate for {{ item.0.value.hostnames }} (is is older than 60 days)
+  become: yes
+  command: "/usr/local/bin/letsencrypt certonly --renew --email {{ letsencrypt_email }} -a webroot --webroot-path=/tmp/letsencrypt-auto --text --rsa-key-size 4096 {% for domain in item.0.value.hostnames %}-d {{ hostname }} {% endfor %}"
+  when: ansible_date_time.epoch|float - item.1.stat.mtime > 60*60*24*60
+  with_together:
+    - "{{ vhosts }}"
+    - "{{ certificates_status }}"
+
+- name: Copy vhost https configs
+  become: yes
+  template:
+    src=https-vhost.conf.j2
+    dest="/usr/local/etc/nginx/vhosts/{{ item.value.hostnames[0] }}-https.conf"
+  with_dict: "{{ vhosts }}"
+
+- name: Reload nginx config
+  become: yes
+  service: name=nginx state=reloaded

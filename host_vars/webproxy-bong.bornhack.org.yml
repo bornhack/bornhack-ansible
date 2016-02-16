@@ -2,4 +2,44 @@
 ansible_host: webproxy-bong.bornhack.org
 letsencrypt_server: acme-v01.api.letsencrypt.org
 letsencrypt_account_hash: b1fa1b217aa9e6fc1b40d0d4ba95996a
+letsencrypt_email: letsencrypt@bornhack.org
 dns_resolver_ip: 10.0.0.1
+vhost_v4ip: 85.235.250.89
+
+vhosts:
+  webproxy_bong_bornhack_dk:
+    vhost_v6ip: "2a01:3a0:1:1900:85:235:250:89"
+    hostnames:
+      - webproxy-bong.bornhack.org
+    letsencrypt: True
+    default_vhost: True
+    locationslash: |
+      location / {
+          alias /usr/local/www/web-bong.tyknet.dk/wwwroot/;
+          index index.html;
+      }
+
+  bornhack_dk:
+    vhost_v6ip: "2a01:3a0:1:1900:81::1"
+    hostnames:
+      - bornhack.dk
+      - www.bornhack.dk
+      - bornhack7hctgpio.onion
+    letsencrypt: True
+    default_vhost: True
+    locationslash: |
+      location / {
+          proxy_pass http://10.0.0.9:80;
+      }
+
+  wiki_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::2"
+    hostnames:
+      - wiki.bornhack.org
+      - bornhacklkhzk7kn.onion
+    letsencrypt: True
+    default_vhost: True
+    locationslash: |
+      location / {
+          proxy_pass http://10.0.0.11:80;
+      }
