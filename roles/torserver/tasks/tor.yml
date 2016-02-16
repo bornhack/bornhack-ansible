@@ -1,4 +1,6 @@
 ---
+include_vars: /usr/local/etc/ansible/host_vars/bornhack-torgw.bornhack.org-hiddenservices.yml
+
 - name: Install openssl
   become: yes
   pkgng: name=openssl state=present
@@ -11,9 +13,24 @@
   become: yes
   service: name=tor enabled=yes
 
-- name: Configure nginx
+- name: Configure tor
   become: yes
   template: src=torrc.j2 dest=/usr/local/etc/tor/torrc
+
+- name: Create hidden service folders
+  become: yes
+  file: path="/var/db/tor/{{ item.value.folder }}" state=directory
+  with_dict: "{{hiddenservices}}"
+
+- name: Copy hidden service hostnames
+  become: yes
+  copy: content="{{ item.value.onion_hostname }}" dest="/var/db/tor/{{ item.value.folder}}/hostname" user=_tor group=_tor mode=600
+  with_dict: "{{hiddenservices}}"
+
+- name: Copy hidden service keys
+  become: yes
+  copy: content="{{ item.value.private_key }}" dest="/var/db/tor/{{ item.value.folder}}/private_key" user=_tor group=_tor mode=600
+  with_dict: "{{hiddenservices}}"
 
 - name: Start tor (if not running)
   become: yes
