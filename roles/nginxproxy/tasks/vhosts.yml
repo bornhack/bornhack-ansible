@@ -13,7 +13,8 @@
 - name: Create letsencrypt certificate for vhosts
   become: yes
   command: "/usr/local/bin/letsencrypt certonly --email {{ letsencrypt_email }} -a webroot --webroot-path=/tmp/letsencrypt-auto --text --rsa-key-size 4096 {% for domain in item.value.hostnames %}-d {{ hostname }} {% endfor %}"
-  creates: "/usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem"
+  args:
+    creates: "/usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem"
   with_dict: "{{ vhosts }}"
 
 - name: check certificate ages
