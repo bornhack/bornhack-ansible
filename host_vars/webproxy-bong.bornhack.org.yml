@@ -24,7 +24,6 @@ vhosts:
     hostnames:
       - bornhack.dk
       - www.bornhack.dk
-      - bornhack7hctgpio.onion
     letsencrypt: True
     default_vhost: False
     locationslash: |
@@ -36,7 +35,6 @@ vhosts:
     vhost_v6ip: "2a01:3a0:1:1900:81::2"
     hostnames:
       - wiki.bornhack.org
-      - bornhacklkhzk7kn.onion
     letsencrypt: True
     default_vhost: False
     locationslash: |
