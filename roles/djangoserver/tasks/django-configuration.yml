@@ -1,5 +1,7 @@
 ---
 - include_vars: /usr/local/etc/ansible/host_vars/www.bornhack.dk-passwords.yml
+     tags:
+        - always
 
 - name: Copy .env file into place
   become: yes
