@@ -31,7 +31,9 @@
   become: yes
   service: name=uwsgi state=started
 
-- name: Reload uwsgi config
+- name: Reload uwsgi
   become: yes
   service: name=uwsgi state=reloaded
+  tags:
+    - codedeploy
 
