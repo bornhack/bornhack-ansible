@@ -1,3 +1,4 @@
 ---
 nginx_proxy_ip: 85.235.250.81
+ntp_pool_server: dk.pool.ntp.org
 

@@ -1,0 +1,16 @@
+#######################################################
+### all hosts
+wwwstaging.bornhack.org
+
+
+#######################################################
+### freebsd jails
+[bong_jails]
+wwwstaging.bornhack.org
+
+
+########################################################
+### application groups
+[django_jails]
+wwwstaging.bornhack.org
+
