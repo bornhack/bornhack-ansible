@@ -9,5 +9,5 @@
 
 - name: Get code from git
   become: yes
-  git: repo={{ github_repo_url }} dest={{ django_root }} force=yes
+  git: repo={{ github_repo_url }} dest={{ django_root }} force=yes version={{ github_branch }}
 

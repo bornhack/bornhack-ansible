@@ -5,6 +5,7 @@ www.bornhack.dk
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
 webproxy-bong.bornhack.org
+wwwstaging.bornhack.org
 
 
 #######################################################
@@ -17,12 +18,14 @@ www.bornhack.dk
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
 webproxy-bong.bornhack.org
+wwwstaging.bornhack.org
 
 
 ########################################################
 ### application groups
 [django_jails]
 www.bornhack.dk
+wwwstaging.bornhack.org
 
 [wiki_jails]
 wiki.bornhack.org
