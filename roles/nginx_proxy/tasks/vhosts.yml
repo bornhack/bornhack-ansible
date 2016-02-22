@@ -61,7 +61,3 @@
   with_together:
     - "{{ vhosts }}"
     - "{{ dhparam_statuses.results }}"
-
-- name: Reload nginx config
-  become: yes
-  service: name=nginx state=reloaded
