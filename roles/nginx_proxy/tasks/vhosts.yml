@@ -38,12 +38,12 @@
     dest="/usr/local/etc/nginx/vhosts/{{ item.value.hostnames[0] }}-https.conf"
   with_dict: "{{ vhosts }}"
 
-- Move missing dhparam files into place
-  command: /usr/local/bin/installdhparam /usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem
-    creates=/usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem
+- name: Move missing dhparam files into place
+  command: "/usr/local/bin/installdhparam {{ dhparamgen_path }} /usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem"
+  args:
+    creates: "/usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem"
   become: yes
-  with_dict:
-    - "{{ vhosts }}"
+  with_dict: "{{ vhosts }}"
 
 - name: Reload nginx config
   become: yes
