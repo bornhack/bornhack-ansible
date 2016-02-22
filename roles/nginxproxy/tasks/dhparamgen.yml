@@ -1,0 +1,57 @@
+---
+- name: Copy installdhparam script
+  become: yes
+  copy:
+    src=dinstalldhparam.sh
+    dest=/usr/local/bin/installdhparam
+    owner=root
+    group=wheel
+    mode=0700
+
+- name: Copy dhparamgen script
+  become: yes
+  copy:
+    src=dhparamgen.sh
+    dest=/usr/local/bin/dhparamgen
+    owner=root
+    group=wheel
+    mode=0700
+
+- name: Copy rc.d script for dhparamgen
+  become: yes
+  copy:
+    src=dhparamgen.rc.d
+    dest=/usr/local/etc/rc.d/dhparamgen
+    owner=root
+    group=wheel
+    mode=0700
+
+- name: Enable dhparamgen
+  become: yes
+  service:
+    name=dhparamgen
+    enabled=yes
+
+- name: Set dhparamgen_opensslpath
+  become: yes
+  sysrc:
+    name: dhparamgen_opensslpath
+    value: "{{ dhparamgen_opensslpath }}"
+
+- name: Set dhparamgen_pempath
+  become: yes
+  sysrc:
+    name: dhparamgen_pempath
+    value: "{{ dhparamgen_path }}"
+
+- name: Set dhparamgen_logfile
+  become: yes
+  sysrc:
+    name: dhparamgen_logfile
+    value: "{{ dhparamgen_logfile }}"
+
+- name: Start dhparamgen (if not running)
+  become: yes
+  service:
+    name=dhparamgen
+    state=started

@@ -23,7 +23,7 @@
   register: certificates_status
   with_dict: "{{ vhosts }}"
 
-- name: Renew the letsencrypt certificate for {{ item.0.value.hostnames }} (is is older than 60 days)
+- name: Renew the letsencrypt certificate for {{ item.0.value.hostnames }} (when it is older than 60 days)
   become: yes
   command: "/usr/local/bin/letsencrypt certonly --renew --email {{ letsencrypt_email }} -a webroot --webroot-path=/tmp/letsencrypt-auto --text --rsa-key-size 4096 {% for hostname in item.0.value.hostnames %}-d {{ hostname }} {% endfor %}"
   when: ansible_date_time.epoch|float - item.1.stat.mtime > 60*60*24*60
@@ -37,6 +37,13 @@
     src=https-vhost.conf.j2
     dest="/usr/local/etc/nginx/vhosts/{{ item.value.hostnames[0] }}-https.conf"
   with_dict: "{{ vhosts }}"
+
+#- Move missing dhparam files into place
+#  command: /usr/local/bin/installdhparam /usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem
+#    creates=/usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem
+#  become: yes
+#  with_dict:
+#    - "{{ vhosts }}"
 
 - name: Reload nginx config
   become: yes
