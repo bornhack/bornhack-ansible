@@ -14,10 +14,7 @@ vhosts:
     letsencrypt: True
     default_vhost: True
     locationslash: |
-          location / {
-              alias /usr/local/www/web-bong.tyknet.dk/wwwroot/;
-              index index.html;
-          }
+      return 301 https://bornhack.dk/;
 
   bornhack_dk:
     vhost_v6ip: "2a01:3a0:1:1900:81::1"
@@ -27,9 +24,9 @@ vhosts:
     letsencrypt: True
     default_vhost: False
     locationslash: |
-          location / {
-              proxy_pass http://10.0.0.9:80;
-          }
+      location / {
+          proxy_pass http://10.0.0.9:80;
+      }
 
   wiki_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:81::2"
@@ -38,9 +35,9 @@ vhosts:
     letsencrypt: True
     default_vhost: False
     locationslash: |
-          location / {
-              proxy_pass http://10.0.0.11:80;
-          }
+      location / {
+          proxy_pass http://10.0.0.11:80;
+      }
 
   wwwstaging_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:81::3"
@@ -49,6 +46,6 @@ vhosts:
     letsencrypt: True
     default_vhost: False
     locationslash: |
-          location / {
-              proxy_pass http://10.0.0.13:80;
-          }
+      location / {
+          proxy_pass http://10.0.0.13:80;
+      }

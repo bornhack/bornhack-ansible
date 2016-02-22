@@ -13,5 +13,5 @@ server {
     proxy_set_header        X-Forwarded-For $remote_addr;
     proxy_set_header        Host $host;
 
-{{ item.value.locationslash }}
+{{ item.value.locationslash | indent( width=4, indentfirst=True) }}
 }
