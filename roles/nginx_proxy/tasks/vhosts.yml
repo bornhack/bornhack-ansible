@@ -46,7 +46,7 @@
   with_dict: "{{ vhosts }}"
 
 - name: Check dhparam files status
-  stat: "/usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem"
+  stat: path="/usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem"
   register: dhparam_statuses
   become: yes
   with_dict: "{{ vhosts }}"
