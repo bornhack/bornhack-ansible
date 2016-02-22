@@ -3,4 +3,3 @@
   hosts: django_jails
   roles:
     - djangoserver
-
