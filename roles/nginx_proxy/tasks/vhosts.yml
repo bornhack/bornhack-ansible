@@ -23,9 +23,9 @@
   register: certificates_status
   with_dict: "{{ vhosts }}"
 
-- name: Renew the letsencrypt certificate for {{ item.0.value.hostnames }} (when it is older than 60 days)
+- name: Renew the letsencrypt certificate for {{ vhosts[item.0].hostnames }} (when it is older than 60 days)
   become: yes
-  command: "/usr/local/bin/letsencrypt certonly --renew --email {{ letsencrypt_email }} -a webroot --webroot-path=/tmp/letsencrypt-auto --text --rsa-key-size 4096 {% for hostname in item.0.value.hostnames %}-d {{ hostname }} {% endfor %}"
+  command: "/usr/local/bin/letsencrypt certonly --renew --email {{ letsencrypt_email }} -a webroot --webroot-path=/tmp/letsencrypt-auto --text --rsa-key-size 4096 {% for hostname in vhosts[item.0].hostnames %}-d {{ hostname }} {% endfor %}"
   when: ansible_date_time.epoch|float - item.1.stat.mtime > 60*60*24*60
   with_together:
     - "{{ vhosts }}"
@@ -52,11 +52,12 @@
   with_dict: "{{ vhosts }}"
 
 - name: Enable dhparams for the vhosts that have a dhparam file
+  become: yes
   lineinfile:
-    dest="/usr/local/etc/nginx/vhosts/{{ item.0.value.hostnames[0] }}-https.conf"
+    dest="/usr/local/etc/nginx/vhosts/{{ vhosts[item.0].hostnames[0] }}-https.conf"
     regexp="^    ssl_dhparam"
-    line="    ssl_dhparam             /usr/local/etc/nginx/certificates/{{ item.0.value.hostnames[0] }}-dhparam.pem"
-    insertafter="^    ssl_certificate_key     /usr/local/etc/letsencrypt/live/{{ item.0.value.hostnames[0] }}/privkey.pem$"
+    line="    ssl_dhparam             /usr/local/etc/nginx/certificates/{{ vhosts[item.0].hostnames[0] }}-dhparam.pem"
+    insertafter="^    ssl_certificate_key     /usr/local/etc/letsencrypt/live/{{ vhosts[item.0].hostnames[0] }}/privkey.pem$"
   when: item.1.stat.exists == True
   with_together:
     - "{{ vhosts }}"
