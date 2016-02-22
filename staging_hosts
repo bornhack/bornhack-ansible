@@ -11,6 +11,6 @@ wwwstaging.bornhack.org
 
 ########################################################
 ### application groups
-[django_jails]
+[django_servers]
 wwwstaging.bornhack.org
 
