@@ -24,8 +24,7 @@
 - name: Decrypt and copy letsencrypt regr.json
   become: yes
   copy:
-    owner
-    root
+    owner=root
     group=wheel
     mode=600
     content="{{ lookup('pipe', 'ansible-vault view --vault-password-file /root/.ansiblevaultpass /usr/local/etc/ansible/roles/nginx_proxy/files/{{ ansible_nodename }}/regr.json') }}"
