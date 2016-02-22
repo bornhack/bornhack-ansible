@@ -7,4 +7,5 @@ if [ -n $CERTNAME ]; then
     mv $CERTNAME $TARGETPATH
 else
     echo "no dhparam files available :("
+    exit 1
 fi
