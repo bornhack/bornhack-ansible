@@ -45,6 +45,23 @@
   become: yes
   with_dict: "{{ vhosts }}"
 
+- name: Check dhparam files status
+  stat: "/usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem"
+  register: dhparam_statuses
+  become: yes
+  with_dict: "{{ vhosts }}"
+
+- name: Enable dhparams for the vhosts that have a dhparam file
+  lineinfile:
+    dest="/usr/local/etc/nginx/vhosts/{{ item.0.value.hostnames[0] }}-https.conf"
+    regexp="^    ssl_dhparam"
+    line="    ssl_dhparam             /usr/local/etc/nginx/certificates/{{ item.0.value.hostnames[0] }}-dhparam.pem"
+    insertafter="^    ssl_certificate_key     /usr/local/etc/letsencrypt/live/{{ item.0.value.hostnames[0] }}/privkey.pem$"
+  when: item.1.stat.exists == True
+  with_together:
+    - "{{ vhosts }}"
+    - "{{ dhparam_statuses.results }}"
+
 - name: Reload nginx config
   become: yes
   service: name=nginx state=reloaded

@@ -6,7 +6,6 @@ server {
     ssl                     on;
     ssl_certificate         /usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem;
     ssl_certificate_key     /usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/privkey.pem;
-    ssl_dhparam             /usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem;
 
     include                 /usr/local/etc/nginx/tls.conf;
 
