@@ -1,5 +1,5 @@
 ---
 - name: configure wiki servers
-  hosts: wiki_jails
+  hosts: mediawiki_servers
   roles:
-    - wikiserver
+    - mediawiki_server

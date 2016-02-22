@@ -1,5 +1,5 @@
 ---
 - name: configure nginx proxies
-  hosts: nginxproxy_jails
+  hosts: nginx_proxy_servers
   roles:
-    - nginxproxy
+    - nginx_proxy

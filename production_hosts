@@ -17,14 +17,14 @@ webproxy-bong.bornhack.org
 
 ########################################################
 ### application groups
-[prod_django_jails]
+[django_servers]
 www.bornhack.dk
 
-[prod_wiki_jails]
+[mediawiki_servers]
 wiki.bornhack.org
 
-[prod_tor_jails]
+[tor_servers]
 bornhack-torgw.bornhack.org
 
-[prod_nginx_proxy_jails]
+[nginx_proxy_servers]
 webproxy-bong.bornhack.org
