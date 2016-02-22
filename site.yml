@@ -1,5 +1,5 @@
 ---
-- include: nginxproxies.yml
-- include: djangoservers.yml
-- include: wikiservers.yml
-- include: torservers.yml
+- include: nginx_proxies.yml
+- include: django_servers.yml
+- include: mediawiki_servers.yml
+- include: tor_servers.yml
