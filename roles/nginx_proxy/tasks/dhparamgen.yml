@@ -2,7 +2,7 @@
 - name: Copy installdhparam script
   become: yes
   copy:
-    src=roles/nginx_proxy/files/dinstalldhparam.sh
+    src=roles/nginx_proxy/files/installdhparam.sh
     dest=/usr/local/bin/installdhparam
     owner=root
     group=wheel
