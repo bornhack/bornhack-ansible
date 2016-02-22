@@ -56,8 +56,8 @@
   lineinfile:
     dest="/usr/local/etc/nginx/vhosts/{{ vhosts[item.0].hostnames[0] }}-https.conf"
     regexp="^    ssl_dhparam"
-    line="    ssl_dhparam             /usr/local/etc/nginx/certificates/{{ vhosts[item.0].hostnames[0] }}-dhparam.pem"
-    insertafter="^    ssl_certificate_key     /usr/local/etc/letsencrypt/live/{{ vhosts[item.0].hostnames[0] }}/privkey.pem$"
+    line="    ssl_dhparam             /usr/local/etc/nginx/certificates/{{ vhosts[item.0].hostnames[0] }}-dhparam.pem;"
+    insertafter="^    ssl_certificate_key     /usr/local/etc/letsencrypt/live/{{ vhosts[item.0].hostnames[0] }}/privkey.pem;$"
   when: item.1.stat.exists == True
   with_together:
     - "{{ vhosts }}"
