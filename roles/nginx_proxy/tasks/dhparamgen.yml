@@ -50,6 +50,12 @@
     name: dhparamgen_logfile
     value: "{{ dhparamgen_logfile }}"
 
+- name: Create dhparam directory
+  become: yes
+  file:
+    path="{{ dhparamgen_path }}"
+    state=directory
+
 - name: Start dhparamgen (if not running)
   become: yes
   service:
