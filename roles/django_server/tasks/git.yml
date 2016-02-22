@@ -1,17 +1,25 @@
 ---
 - name: Install git
   become: yes
-  pkgng: name=git state=present
+  pkgng:
+    name=git
+    state=present
 
 - name: Remove old code
   become: yes
-  file: path={{ django_root }} state=absent
+  file:
+    path={{ django_root }}
+    state=absent
   tags:
     - codedeploy
   
 - name: Get code from git
   become: yes
-  git: repo={{ github_repo_url }} dest={{ django_root }} force=yes version={{ github_branch }}
+  git:
+    repo={{ github_repo_url }}
+    dest={{ django_root }}
+    force=yes
+    version={{ github_branch }}
   tags:
     - codedeploy
 

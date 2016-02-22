@@ -1,5 +1,7 @@
 ---
 - name: Install postgresql client
   become: yes
-  pkgng: name=postgresql93-client state=present
+  pkgng:
+    name=postgresql93-client
+    state=present
 

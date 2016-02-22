@@ -1,23 +1,29 @@
 ---
 - include_vars: /usr/local/etc/ansible/host_vars/www.bornhack.dk-passwords.yml
-     tags:
-        - always
+  tags:
+    - always
 
 - name: Copy .env file into place
   become: yes
-  template: src=roles/djangoserver/templates/.env.j2 dest="{{ django_env_path }}"
+  template:
+    src=roles/django_server/templates/.env.j2
+    dest="{{ django_env_path }}"
   tags:
     - codedeploy
 
 - name: Copy .env file into place.. again
   become: yes
-  template: src=roles/djangoserver/templates/.env.j2 dest="{{ django_env_path2 }}"
+  template:
+    src=roles/django_server/templates/.env.j2
+    dest="{{ django_env_path2 }}"
   tags:
     - codedeploy
 
 - name: Run collectstatic
   become: yes
-  django_manage: command=collectstatic app_path="{{ django_root }}"
+  django_manage:
+    command=collectstatic
+    app_path="{{ django_root }}"
   tags:
     - codedeploy
 

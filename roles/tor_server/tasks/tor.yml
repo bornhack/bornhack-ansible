@@ -3,19 +3,27 @@
 
 - name: Install openssl
   become: yes
-  pkgng: name=openssl state=present
+  pkgng:
+    name=openssl
+    state=present
 
 - name: Install tor
   become: yes
-  pkgng: name=tor state=present
+  pkgng:
+    name=tor
+    state=present
 
 - name: Enable tor
   become: yes
-  service: name=tor enabled=yes
+  service:
+    name=tor
+    enabled=yes
 
 - name: Configure tor
   become: yes
-  template: src=torrc.j2 dest=/usr/local/etc/tor/torrc
+  template:
+    src=torrc.j2
+    dest=/usr/local/etc/tor/torrc
 
 - name: Create hidden service folders
   become: yes
@@ -49,8 +57,12 @@
 
 - name: Start tor (if not running)
   become: yes
-  service: name=tor state=started
+  service:
+    name=tor
+    state=started
 
 - name: Reload tor config
   become: yes
-  service: name=tor state=reloaded
+  service:
+    name=tor
+    state=reloaded
