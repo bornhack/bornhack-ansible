@@ -2,7 +2,7 @@
 - name: Copy installdhparam script
   become: yes
   copy:
-    src=dinstalldhparam.sh
+    src=roles/nginx_proxy/files/dinstalldhparam.sh
     dest=/usr/local/bin/installdhparam
     owner=root
     group=wheel
@@ -11,7 +11,7 @@
 - name: Copy dhparamgen script
   become: yes
   copy:
-    src=dhparamgen.sh
+    src=roles/nginx_proxy/files/dhparamgen.sh
     dest=/usr/local/bin/dhparamgen
     owner=root
     group=wheel
@@ -20,7 +20,7 @@
 - name: Copy rc.d script for dhparamgen
   become: yes
   copy:
-    src=dhparamgen.rc.d
+    src=roles/nginx_proxy/files/dhparamgen.rc.d
     dest=/usr/local/etc/rc.d/dhparamgen
     owner=root
     group=wheel
