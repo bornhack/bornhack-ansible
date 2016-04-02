@@ -24,6 +24,6 @@ vhosts:
     locationslash: |
       location ~ ^/(.+?)(/.*)?$ {
           alias /usr/webhome/$1/wwwroot$2;
-          index  index.html index.htm;
+          index index.html;
           autoindex on;
       }

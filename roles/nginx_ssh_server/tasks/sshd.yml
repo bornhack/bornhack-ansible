@@ -11,5 +11,5 @@
         PermitTunnel no
         PermitTTY no
         X11Forwarding no
-    notify:
+  notify:
     - restart sshd
