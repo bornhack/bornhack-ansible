@@ -13,7 +13,3 @@
         X11Forwarding no
     notify:
     - restart sshd
-
-handlers:
-  - name: restart sshd
-    service: name=sshd state=restarted

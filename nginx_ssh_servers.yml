@@ -3,3 +3,5 @@
   hosts: nginx_ssh_servers
   roles:
     - nginx_ssh_server
+handlers:
+  - include: handlers/handlers.yml
