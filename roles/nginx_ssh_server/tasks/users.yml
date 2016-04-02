@@ -7,6 +7,7 @@
     mode=0755
 
 - name: Create webusers group
+  become: yes
   group:
     name=webusers
     state=present
