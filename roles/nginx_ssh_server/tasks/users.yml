@@ -6,6 +6,11 @@
     state=directory
     mode=0755
 
+- name: Create webusers group
+  group:
+    name=webusers
+    state=present
+
 - name: Create web users
   become: yes
   user:
