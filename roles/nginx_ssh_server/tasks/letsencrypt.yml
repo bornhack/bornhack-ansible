@@ -9,7 +9,7 @@
     name=py27-letsencrypt
     state=present
 
-- name: Create letsencrypt account config directory
+- name: Create letsencrypt account config dir
   become: yes
   file: owner=root group=wheel mode=600 path="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}" state=directory
 
