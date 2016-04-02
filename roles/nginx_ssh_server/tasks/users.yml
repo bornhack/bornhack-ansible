@@ -13,6 +13,7 @@
     comment="{{ item.value.name }}"
     group=webusers
     home="/usr/webhomes/{{ item.key }}"
+    shell="/sbin/nologin"
   with_dict: "{{ webusers }}"
 
 - name: Add SSH keys

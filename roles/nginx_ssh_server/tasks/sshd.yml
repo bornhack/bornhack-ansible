@@ -5,7 +5,6 @@
     block: |
       Match Group webusers
         ChrootDirectory %h
-        PasswordAuthentication no
         ForceCommand internal-sftp
         AllowTcpForwarding no
         AllowAgentForwarding no
