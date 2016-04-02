@@ -4,6 +4,7 @@ www.bornhack.dk
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
 webproxy-bong.bornhack.org
+people.bornhack.org
 
 
 #######################################################
@@ -13,6 +14,7 @@ www.bornhack.dk
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
 webproxy-bong.bornhack.org
+people.bornhack.org
 
 
 ########################################################
@@ -28,3 +30,6 @@ bornhack-torgw.bornhack.org
 
 [nginx_proxy_servers]
 webproxy-bong.bornhack.org
+
+[nginx_ssh_servers]
+people.bornhack.org

@@ -1,0 +1,25 @@
+---
+- name: Create webusers homedir
+  become: yes
+  file:
+    path=/usr/webhomes
+    state=directory
+    mode=0755
+
+- name: Create web users
+  become: yes
+  user:
+    name="{{ item.key }}"
+    comment="{{ item.value.name }}"
+    group=webusers
+    home="/usr/webhomes/{{ item.key }}"
+  with_dict: "{{ webusers }}"
+
+- name: Add SSH keys
+  become: yes
+  authorized_key:
+    user={{ item.key }}
+    key="{{ item.value.pubkey }}"
+    state=present
+    exclusive=yes
+  with_dict: "{{ webusers }}"

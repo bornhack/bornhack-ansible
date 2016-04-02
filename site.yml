@@ -3,3 +3,4 @@
 - include: django_servers.yml
 - include: mediawiki_servers.yml
 - include: tor_servers.yml
+- include: nginx_ssh_servers.yml

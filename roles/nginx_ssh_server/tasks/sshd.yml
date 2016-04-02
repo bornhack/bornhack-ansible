@@ -1,0 +1,20 @@
+---
+- name: Configure sshd
+  blockinfile:
+    dest: /etc/ssh/sshd_config
+    block: |
+      Match Group webusers
+        ChrootDirectory %h
+        PasswordAuthentication no
+        ForceCommand internal-sftp
+        AllowTcpForwarding no
+        AllowAgentForwarding no
+        PermitTunnel no
+        PermitTTY no
+        X11Forwarding no
+    notify:
+    - restart sshd
+
+  handlers:
+    - name: restart sshd
+      service: name=sshd state=restarted
