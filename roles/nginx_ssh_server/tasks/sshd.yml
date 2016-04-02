@@ -1,5 +1,6 @@
 ---
 - name: Configure sshd
+  become: yes
   blockinfile:
     dest: /etc/ssh/sshd_config
     block: |
