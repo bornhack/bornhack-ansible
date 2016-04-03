@@ -23,7 +23,7 @@ vhosts:
     default_vhost: True
     locationslash: |
       location ~ ^/(.+?)(/.*)?$ {
-          alias /usr/webhome/$1/wwwroot$2;
+          alias /usr/webhome/$1chroot/$1/wwwroot$2;
           index index.html;
           autoindex on;
       }

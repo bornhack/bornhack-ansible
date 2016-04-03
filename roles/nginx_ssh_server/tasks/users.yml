@@ -12,14 +12,30 @@
     name=webusers
     state=present
 
+- name: Create chroots
+  file:
+    path=/usr/webhomes/{{ item.key }}chroot
+    state=directory
+    mode=0755
+  with_dict: "{{ webusers }}"
+
 - name: Create web users
   become: yes
   user:
     name="{{ item.key }}"
     comment="{{ item.value.name }}"
     group=webusers
-    home="/usr/webhomes/{{ item.key }}"
-    shell="/sbin/nologin"
+    home="/usr/webhomes/{{ item.key }}chroot/{{ item.key }}"
+    shell="/bin/sh"
+  with_dict: "{{ webusers }}"
+
+- name: Create wwwroots
+  file:
+    path=/usr/webhomes/{{ item.key }}chroot/{{ item.key }}/wwwroot"
+    state=directory
+    mode=0755
+    owner={{ item.key }}
+    group={{ webhomes }}
   with_dict: "{{ webusers }}"
 
 - name: Add SSH keys
