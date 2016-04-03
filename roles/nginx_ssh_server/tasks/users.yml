@@ -14,7 +14,7 @@
 
 - name: Create chroots
   file:
-    path=/usr/webhomes/{{ item.key }}chroot
+    path="/usr/webhomes/{{ item.key }}chroot"
     state=directory
     mode=0755
   with_dict: "{{ webusers }}"
