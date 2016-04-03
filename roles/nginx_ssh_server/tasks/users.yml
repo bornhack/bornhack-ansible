@@ -31,11 +31,11 @@
 
 - name: Create wwwroots
   file:
-    path=/usr/webhomes/{{ item.key }}chroot/{{ item.key }}/wwwroot"
+    path="/usr/webhomes/{{ item.key }}chroot/{{ item.key }}/wwwroot"
     state=directory
     mode=0755
-    owner={{ item.key }}
-    group={{ webhomes }}
+    owner="{{ item.key }}"
+    group=webhomes
   with_dict: "{{ webusers }}"
 
 - name: Add SSH keys
