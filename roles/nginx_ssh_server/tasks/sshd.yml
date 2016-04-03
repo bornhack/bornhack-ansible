@@ -5,7 +5,7 @@
     dest: /etc/ssh/sshd_config
     block: |
       Match Group webusers
-        ChrootDirectory %h
+        ChrootDirectory /usr/webhomes/%uchroot
         PasswordAuthentication no
         ForceCommand internal-sftp
         AllowTcpForwarding no
