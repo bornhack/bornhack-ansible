@@ -13,6 +13,7 @@
     state=present
 
 - name: Create chroots
+  become: yes
   file:
     path="/usr/webhomes/{{ item.key }}chroot"
     state=directory
@@ -30,6 +31,7 @@
   with_dict: "{{ webusers }}"
 
 - name: Create wwwroots
+  become: yes
   file:
     path="/usr/webhomes/{{ item.key }}chroot/{{ item.key }}/wwwroot"
     state=directory
