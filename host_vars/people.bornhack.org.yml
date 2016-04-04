@@ -14,6 +14,9 @@ webusers:
   ahf:
     name: Alex
     pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA0FMJ8IhSY6Dox0QDMS5MMdW9zeanNMEiOams/AUXmX ahf@ra.0x90.dk"
+  valberg
+    name: Vidir
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUmGeHc6QXDcJHkmVxbTUv04Q3vs20avquoGr6eOkkvYbcgjuFnBOOtvs2Nul1odcvvnHa1nN7DfL8XJamiwsB1B/xe2seaNS1axgwk9XowlVN9pgga8gsC+4gZWBtSObG2GR8n4NtPENzPmW5deNn8dRpTvULPMxZ0VRE9yNQOx8v8w85yYh+vxbbkWGVDYJU23yuJI50U9y6bXxNHinsACDFBeR/giXDlw29TaOaSxz0R6zrRPBoX+V68RyWwBL+KWQKtX2ULtJI40S98Ohd6p41bIxYHCBS/zroqNne8PjYOLcHHsjHUGfTvhcS5a3zdz/iHsvsaOOjFjsydAXH valberg"
 vhosts:
   people_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:92"
