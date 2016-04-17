@@ -13,3 +13,9 @@
     src=LocalSettings.php.j2
     dest=/usr/local/www/mediawiki/LocalSettings.php
 
+- name: Install calendar extension
+  become: yes
+  git:
+    repo="https://github.com/improper/mediawiki-extensions-yasec"
+    dest="/usr/local/www/mediawiki/extensions/yasec"
+    version="master"

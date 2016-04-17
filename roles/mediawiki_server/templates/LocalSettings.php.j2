@@ -135,3 +135,14 @@ wfLoadSkin( 'Vector' );
 $wgArticlePath      = "/$1";
 $wgUsePathInfo      = true;
 $wgScriptExtension  = ".php";
+
+# calendar extension
+include("$IP/extensions/yasec/EventCalendar.php");
+$wgExtraNamespaces = array(
+    100 => "Event",
+    101 => "Event_talk",
+);
+$wgNamespacesToBeSearchedDefault = array(
+    NS_MAIN => true,
+    100     => true,
+);
