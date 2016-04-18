@@ -27,4 +27,4 @@
     dest=/usr/local/www/mediawiki/resources/assets/
     owner=root
     group=wheel
-    mode=0700
+    mode=0755
