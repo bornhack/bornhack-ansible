@@ -1,0 +1,44 @@
+---
+ansible_host: lists.bornhack.org
+letsencrypt_server: acme-v01.api.letsencrypt.org
+letsencrypt_account_hash: b1fa1b217aa9e6fc1b40d0d4ba95996a
+letsencrypt_email: letsencrypt@bornhack.org
+dns_resolver_ip: 10.0.0.1
+vhost_v4ip: 85.235.250.93
+nginx_dhparam_path: "/usr/local/etc/nginx/certificates/dhparam.pem"
+poudriere_package_set: 10_2_amd64-default-mailman_server
+vhosts:
+  lists_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:85:235:250:93"
+    hostnames:
+      - lists.bornhack.org
+    letsencrypt: True
+    default_vhost: True
+    locationslash: |
+        location = / {
+                rewrite ^ /mailman/listinfo permanent;
+        }
+        location / {
+                rewrite ^ /mailman$uri?$args;
+        }
+        location = /mailman/ {
+                rewrite ^ /mailman/listinfo permanent;
+        }
+        location /mailman/ {
+                proxy_pass http://85.235.250.93:8080/;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+        }
+        location /cgi-bin {
+                rewrite ^/cgi-bin(.*)$ $1 permanent;
+        }
+        location /images/mailman {
+                alias /usr/local/mailman/icons;
+        }
+        location /icons {
+                alias /usr/local/mailman/icons;
+        }
+        location /pipermail {
+                alias /usr/local/mailman/archives/public;
+                autoindex on;
+        }
