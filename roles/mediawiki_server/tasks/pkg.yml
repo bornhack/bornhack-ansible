@@ -1,7 +1,0 @@
----
-- name: Ensure pkg is latest version
-  become: yes
-  pkgng:
-    name=pkg
-    state=latest
-

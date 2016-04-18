@@ -1,5 +1,4 @@
 ---
-- include: pkg.yml
 - include: nginx.yml
 - include: postgres.yml
 - include: php.yml
