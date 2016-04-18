@@ -19,3 +19,12 @@
     repo="https://github.com/improper/mediawiki-extensions-yasec"
     dest="/usr/local/www/mediawiki/extensions/yasec"
     version="master"
+
+- name: Copy wiki logo
+  become: yes
+  copy:
+    src=roles/mediawiki_server/files/bornhacklogo.png
+    dest=/usr/local/www/mediawiki/resources/assets/
+    owner=root
+    group=wheel
+    mode=0700
