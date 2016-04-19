@@ -17,6 +17,15 @@
     src=poudriere_tyknet_dk.conf.j2
     dest=/usr/local/etc/pkg/repos/poudriere_tyknet_dk.conf
 
+- name: Disable default FreeBSD repo
+  become: yes
+  copy:
+    owner=root
+    group=wheel
+    mode=644
+    src=FreeBSD.conf
+    dest=/usr/local/etc/pkg/repos/FreeBSD.conf
+
 - name: Create repo cert directory
   become: yes
   file:
