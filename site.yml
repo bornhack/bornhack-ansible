@@ -4,3 +4,4 @@
 - include: mediawiki_servers.yml
 - include: tor_servers.yml
 - include: nginx_ssh_servers.yml
+- include: mailman_servers.yml
