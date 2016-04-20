@@ -39,3 +39,6 @@ smtp_tls_security_level = may
 # mailman stuff
 relay_domains  = {{ ansible_nodename }}
 mailman_destination_recipient_limit = 1
+
+# postfix 3 compat
+compatibility_level=2

@@ -5,3 +5,11 @@
     name=mailman
     state=present
 
+- name: Install postfix-to-mailman.py
+  become: yes
+  copy:
+    owner=mailman
+    group=mailman
+    mode=740
+    src=postfix-to-mailman.py
+    dest=/usr/local/mailman/postfix-to-mailman.py

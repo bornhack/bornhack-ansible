@@ -10,3 +10,25 @@
   service:
     name=postfix
     enabled=yes
+
+- name: Configure postfix master.cf
+  become: yes
+  blockinfile:
+    dest: /usr/local/etc/postfix/master.cf
+    block: |
+      # mailman
+      mailman unix - n n - - pipe
+        flags=FR user=mailman:mailman
+        argv=/usr/local/mailman/postfix-to-mailman.py ${nexthop} ${user}
+
+- name: Copy postfix main.cf
+  become: yes
+  template:
+    src=main.cf.j2
+    dest=/usr/local/etc/postfix/main.cf
+
+- name: Copy postfix transport
+  become: yes
+  template:
+    src=transport.j2
+    dest=/usr/local/etc/postfix/transport
