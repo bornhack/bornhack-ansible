@@ -22,9 +22,6 @@ smtpd_recipient_restrictions =
     permit_mynetworks,
     reject_unauth_destination
 
-# sender restrictions
-smtpd_sender_restrictions = reject_sender_login_mismatch
-
 # TLS settings
 smtpd_tls_cert_file = /usr/local/etc/letsencrypt/live/{{ ansible_nodename }}/fullchain.pem
 smtpd_tls_key_file = /usr/local/etc/letsencrypt/live/{{ ansible_nodename }}/privkey.pem
