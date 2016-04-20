@@ -4,3 +4,4 @@
 - include: nginx.yml
 - include: thttpd.yml
 - include: postfix.yml
+- include: mailman.yml

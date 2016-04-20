@@ -1,0 +1,7 @@
+---
+- name: Install mailman
+  become: yes
+  pkgng:
+    name=mailman
+    state=present
+
