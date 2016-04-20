@@ -19,3 +19,25 @@
   service:
     name=mailman
     enabled=yes
+
+- name: Configure mailman DEFAULT_EMAIL_HOST
+  become: yes
+  lineinfile:
+    dest=/usr/local/mailman/Mailman/Defaults.py
+    regexp="^DEFAULT_EMAIL_HOST = "
+    line="DEFAULT_EMAIL_HOST = '{{ ansible_nodename }}'"
+
+- name: Configure mailman DEFAULT_URL_HOST
+  become: yes
+  lineinfile:
+    dest=/usr/local/mailman/Mailman/Defaults.py
+    regexp="^DEFAULT_URL_HOST = "
+    line="DEFAULT_URL_HOST = '{{ ansible_nodename }}'"
+
+- name: Configure mailman DEFAULT_URL_PATTERN
+  become: yes
+  lineinfile:
+    dest=/usr/local/mailman/Mailman/Defaults.py
+    regexp="^DEFAULT_URL_PATTERN = "
+    line="DEFAULT_URL_PATTERN = 'https://%s/mailman/'"
+
