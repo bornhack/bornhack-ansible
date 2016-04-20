@@ -32,3 +32,8 @@
   template:
     src=transport.j2
     dest=/usr/local/etc/postfix/transport
+
+- name: Run postalias
+  become: yes
+  shell: /usr/local/sbin/postalias /etc/aliases
+
