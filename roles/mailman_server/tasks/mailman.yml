@@ -41,3 +41,9 @@
     regexp="^DEFAULT_URL_PATTERN = "
     line="DEFAULT_URL_PATTERN = 'https://%s/mailman/'"
 
+- name: Fix permissions on mailman private archive dir
+  become: yes
+  file:
+    path=/usr/local/mailman/archives/private
+    state=directory
+    mode=02770
