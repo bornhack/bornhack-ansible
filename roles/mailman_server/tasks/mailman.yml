@@ -13,3 +13,9 @@
     mode=740
     src=postfix-to-mailman.py
     dest=/usr/local/mailman/postfix-to-mailman.py
+
+- name: Enable mailman
+  become: yes
+  service:
+    name=mailman
+    enabled=yes
