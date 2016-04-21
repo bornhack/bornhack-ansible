@@ -1,12 +1,12 @@
-myhostname = {{ ansible_nodename }}
-
-#trust noone!
 mynetworks_style = host
+inet_protocols = ipv4 ipv6
+relay_domains  = {{ postfix_relay_domains }}
+transport_maps = hash:/usr/local/etc/postfix/transport
+virtual_alias_maps = texthash:/usr/local/etc/postfix/mailman-virtual, texthash:/usr/local/etc/postfix/virtual
+virtual_alias_domains = {{ postfix_virtual_alias_domain }}
+mailman_destination_recipient_limit = 1
 
-#enabled protocols
-inet_protocols = ipv4, ipv6
-
-# recipient restrictions
+# Spam restrictions
 smtpd_recipient_restrictions =
     reject_invalid_helo_hostname,
     reject_non_fqdn_helo_hostname,
@@ -32,10 +32,6 @@ smtpd_tls_mandatory_protocols=!SSLv2,!SSLv3
 smtp_tls_CAfile = /usr/local/etc/letsencrypt/live/{{ ansible_nodename }}/fullchain.pem
 smtp_tls_session_cache_database = btree:/var/db/postfix/smtp_tls_session_cache
 smtp_tls_security_level = may
-
-# mailman stuff
-relay_domains  = {{ ansible_nodename }}
-mailman_destination_recipient_limit = 1
 
 # postfix 3 compat
 compatibility_level=2

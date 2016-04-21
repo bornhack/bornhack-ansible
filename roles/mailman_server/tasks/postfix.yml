@@ -37,3 +37,17 @@
   become: yes
   shell: /usr/local/sbin/postalias /etc/aliases
 
+- name: Copy postfix virtual file
+  become: yes
+  copy:
+    owner=root
+    group=wheel
+    mode=644
+    src=virtual
+    dest=/usr/local/etc/postfix/virtual
+
+- name: Reload Postfix
+  become: yes
+  service:
+    name=postfix
+    state=reloaded

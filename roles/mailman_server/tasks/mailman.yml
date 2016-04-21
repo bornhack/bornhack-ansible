@@ -5,15 +5,6 @@
     name=mailman
     state=present
 
-- name: Install postfix-to-mailman.py
-  become: yes
-  copy:
-    owner=mailman
-    group=mailman
-    mode=740
-    src=postfix-to-mailman.py
-    dest=/usr/local/mailman/postfix-to-mailman.py
-
 - name: Enable mailman
   become: yes
   service:
@@ -25,7 +16,7 @@
   lineinfile:
     dest=/usr/local/mailman/Mailman/Defaults.py
     regexp="^DEFAULT_EMAIL_HOST = "
-    line="DEFAULT_EMAIL_HOST = '{{ ansible_nodename }}'"
+    line="DEFAULT_EMAIL_HOST = '{{ postfix_virtual_alias_domain }}'"
 
 - name: Configure mailman DEFAULT_URL_HOST
   become: yes
@@ -47,3 +38,42 @@
     path=/usr/local/mailman/archives/private
     state=directory
     mode=02770
+
+- name: generate list passwords
+  shell: "openssl rand -base64 33 | tr -d '='"
+  args:
+    creates: "/usr/local/mailman/lists/{{ item.key }}"
+  register: passwords
+  with_dict: "{{ lists }}"
+
+- name: Create mailing lists
+  become: yes
+  shell: "/usr/local/mailman/bin/newlist {{ item.0.key }} {{ item.0.value }} {{ item.1.stdout }}"
+  args:
+    creates: "/usr/local/mailman/lists/{{ item.0.key }}"
+  with_together:
+    - "{{ lists }}"
+    - "{{ passwords.results }}"
+
+- name: Create aliases for mailinglists
+  blockinfile:
+    dest: /usr/local/etc/postfix/mailman-virtual
+    content: |
+      ## {{ item.key }} mailing list
+      {{ item.key }}@{{ postfix_virtual_alias_domain }}:              "|/usr/local/mailman/mail/mailman post {{ item.key }}"
+      {{ item.key }}-admin@{{ postfix_virtual_alias_domain }}:        "|/usr/local/mailman/mail/mailman admin {{ item.key }}"
+      {{ item.key }}-bounces@{{ postfix_virtual_alias_domain }}:      "|/usr/local/mailman/mail/mailman bounces {{ item.key }}"
+      {{ item.key }}-confirm@{{ postfix_virtual_alias_domain }}:      "|/usr/local/mailman/mail/mailman confirm {{ item.key }}"
+      {{ item.key }}-join@{{ postfix_virtual_alias_domain }}:         "|/usr/local/mailman/mail/mailman join {{ item.key }}"
+      {{ item.key }}-leave@{{ postfix_virtual_alias_domain }}:        "|/usr/local/mailman/mail/mailman leave {{ item.key }}"
+      {{ item.key }}-owner@{{ postfix_virtual_alias_domain }}:        "|/usr/local/mailman/mail/mailman owner {{ item.key }}"
+      {{ item.key }}-request@{{ postfix_virtual_alias_domain }}:      "|/usr/local/mailman/mail/mailman request {{ item.key }}"
+      {{ item.key }}-subscribe@{{ postfix_virtual_alias_domain }}:    "|/usr/local/mailman/mail/mailman subscribe {{ item.key }}"
+      {{ item.key }}-unsubscribe@{{ postfix_virtual_alias_domain }}:  "|/usr/local/mailman/mail/mailman unsubscribe {{ item.key }}"
+  with_dict: "{{ lists }}"
+
+- name: Reload Postfix
+  become: yes
+  service:
+    name=postfix
+    state=reloaded
