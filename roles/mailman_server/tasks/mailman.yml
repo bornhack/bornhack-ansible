@@ -57,6 +57,7 @@
 
 - name: Create aliases for mailinglists
   blockinfile:
+    create: yes
     dest: /usr/local/etc/postfix/mailman-virtual
     content: |
       ## {{ item.key }} mailing list
