@@ -66,6 +66,7 @@
   blockinfile:
     create: yes
     dest: /usr/local/etc/postfix/mailman-virtual
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{item.key}}"
     content: |
       ## {{ item.key }} mailing list
       {{ item.key }}@{{ postfix_virtual_alias_domain }}:              "|/usr/local/mailman/mail/mailman post {{ item.key }}"
