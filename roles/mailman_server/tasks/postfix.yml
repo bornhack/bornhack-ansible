@@ -30,8 +30,8 @@
     src=virtual
     dest=/usr/local/etc/postfix/virtual
 
-- name: Reload Postfix
+- name: Restart Postfix
   become: yes
   service:
     name=postfix
-    state=reloaded
+    state=restarted
