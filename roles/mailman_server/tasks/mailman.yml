@@ -51,24 +51,43 @@
   args:
     creates: "/usr/local/mailman/lists/mailman"
 
-- name: Create aliases for mailinglists
+- name: Create aliases for mailman mailinglist
+  become: yes
+  blockinfile:
+    create: yes
+    dest: /usr/local/etc/postfix/mailman-aliases
+    marker: "# {mark} ANSIBLE MANAGED BLOCK mailman mailinglist"
+    content: |
+      ## mailman mailing list
+      mailman@:              "|/usr/local/mailman/mail/mailman post mailman"
+      mailman-admin@:        "|/usr/local/mailman/mail/mailman admin mailman"
+      mailman-bounces@:      "|/usr/local/mailman/mail/mailman bounces mailman"
+      mailman-confirm@:      "|/usr/local/mailman/mail/mailman confirm mailman"
+      mailman-join@:         "|/usr/local/mailman/mail/mailman join mailman"
+      mailman-leave@:        "|/usr/local/mailman/mail/mailman leave mailman"
+      mailman-owner@:        "|/usr/local/mailman/mail/mailman owner mailman"
+      mailman-request@:      "|/usr/local/mailman/mail/mailman request mailman"
+      mailman-subscribe@:    "|/usr/local/mailman/mail/mailman subscribe mailman"
+      mailman-unsubscribe@:  "|/usr/local/mailman/mail/mailman unsubscribe mailman"
+
+- name: Create virtual for mailman mailinglist
   become: yes
   blockinfile:
     create: yes
     dest: /usr/local/etc/postfix/mailman-virtual
-    marker: "# {mark} ANSIBLE MANAGED BLOCK mailman"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK mailman mailinglist"
     content: |
       ## mailman mailing list
-      mailman@{{ postfix_virtual_alias_domain }}              "|/usr/local/mailman/mail/mailman post mailman"
-      mailman-admin@{{ postfix_virtual_alias_domain }}        "|/usr/local/mailman/mail/mailman admin mailman"
-      mailman-bounces@{{ postfix_virtual_alias_domain }}      "|/usr/local/mailman/mail/mailman bounces mailman"
-      mailman-confirm@{{ postfix_virtual_alias_domain }}      "|/usr/local/mailman/mail/mailman confirm mailman"
-      mailman-join@{{ postfix_virtual_alias_domain }}         "|/usr/local/mailman/mail/mailman join mailman"
-      mailman-leave@{{ postfix_virtual_alias_domain }}        "|/usr/local/mailman/mail/mailman leave mailman"
-      mailman-owner@{{ postfix_virtual_alias_domain }}        "|/usr/local/mailman/mail/mailman owner mailman"
-      mailman-request@{{ postfix_virtual_alias_domain }}      "|/usr/local/mailman/mail/mailman request mailman"
-      mailman-subscribe@{{ postfix_virtual_alias_domain }}    "|/usr/local/mailman/mail/mailman subscribe mailman"
-      mailman-unsubscribe@{{ postfix_virtual_alias_domain }}  "|/usr/local/mailman/mail/mailman unsubscribe mailman"
+      mailman@{{ postfix_virtual_alias_domain }}              mailman
+      mailman-admin@{{ postfix_virtual_alias_domain }}        mailman-admin
+      mailman-bounces@{{ postfix_virtual_alias_domain }}      mailman-bounces
+      mailman-confirm@{{ postfix_virtual_alias_domain }}      mailman-confirm
+      mailman-join@{{ postfix_virtual_alias_domain }}         mailman-join
+      mailman-leave@{{ postfix_virtual_alias_domain }}        mailman-leave
+      mailman-owner@{{ postfix_virtual_alias_domain }}        mailman-owner
+      mailman-request@{{ postfix_virtual_alias_domain }}      mailman-request
+      mailman-subscribe@{{ postfix_virtual_alias_domain }}    mailman-subscribe
+      mailman-unsubscribe@{{ postfix_virtual_alias_domain }}  mailman-unsubscribe
 
 - name: Start mailman
   become: yes
@@ -97,20 +116,39 @@
   blockinfile:
     create: yes
     dest: /usr/local/etc/postfix/mailman-virtual
-    marker: "# {mark} ANSIBLE MANAGED BLOCK {{item.key}}"
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{item.key}} mailinglist"
     content: |
       ## {{ item.key }} mailing list
-      {{ item.key }}@{{ postfix_virtual_alias_domain }}:              "|/usr/local/mailman/mail/mailman post {{ item.key }}"
-      {{ item.key }}-admin@{{ postfix_virtual_alias_domain }}:        "|/usr/local/mailman/mail/mailman admin {{ item.key }}"
-      {{ item.key }}-bounces@{{ postfix_virtual_alias_domain }}:      "|/usr/local/mailman/mail/mailman bounces {{ item.key }}"
-      {{ item.key }}-confirm@{{ postfix_virtual_alias_domain }}:      "|/usr/local/mailman/mail/mailman confirm {{ item.key }}"
-      {{ item.key }}-join@{{ postfix_virtual_alias_domain }}:         "|/usr/local/mailman/mail/mailman join {{ item.key }}"
-      {{ item.key }}-leave@{{ postfix_virtual_alias_domain }}:        "|/usr/local/mailman/mail/mailman leave {{ item.key }}"
-      {{ item.key }}-owner@{{ postfix_virtual_alias_domain }}:        "|/usr/local/mailman/mail/mailman owner {{ item.key }}"
-      {{ item.key }}-request@{{ postfix_virtual_alias_domain }}:      "|/usr/local/mailman/mail/mailman request {{ item.key }}"
-      {{ item.key }}-subscribe@{{ postfix_virtual_alias_domain }}:    "|/usr/local/mailman/mail/mailman subscribe {{ item.key }}"
-      {{ item.key }}-unsubscribe@{{ postfix_virtual_alias_domain }}:  "|/usr/local/mailman/mail/mailman unsubscribe {{ item.key }}"
+      {{ item.key }}:              "|/usr/local/mailman/mail/mailman post {{ item.key }}"
+      {{ item.key }}-admin:        "|/usr/local/mailman/mail/mailman admin {{ item.key }}"
+      {{ item.key }}-bounces:      "|/usr/local/mailman/mail/mailman bounces {{ item.key }}"
+      {{ item.key }}-confirm:      "|/usr/local/mailman/mail/mailman confirm {{ item.key }}"
+      {{ item.key }}-join:         "|/usr/local/mailman/mail/mailman join {{ item.key }}"
+      {{ item.key }}-leave:        "|/usr/local/mailman/mail/mailman leave {{ item.key }}"
+      {{ item.key }}-owner:        "|/usr/local/mailman/mail/mailman owner {{ item.key }}"
+      {{ item.key }}-request:      "|/usr/local/mailman/mail/mailman request {{ item.key }}"
+      {{ item.key }}-subscribe:    "|/usr/local/mailman/mail/mailman subscribe {{ item.key }}"
+      {{ item.key }}-unsubscribe:  "|/usr/local/mailman/mail/mailman unsubscribe {{ item.key }}"
   with_dict: "{{ lists }}"
+
+- name: Create virtual for mailman mailinglist
+  become: yes
+  blockinfile:
+    create: yes
+    dest: /usr/local/etc/postfix/mailman-virtual
+    marker: "# {mark} ANSIBLE MANAGED BLOCK {{ item.key }} mailinglist"
+    content: |
+      ## mailman mailing list
+      {{ item.key }}@{{ postfix_virtual_alias_domain }}              {{ item.key }}
+      {{ item.key }}-admin@{{ postfix_virtual_alias_domain }}        {{ item.key }}-admin
+      {{ item.key }}-bounces@{{ postfix_virtual_alias_domain }}      {{ item.key }}-bounces
+      {{ item.key }}-confirm@{{ postfix_virtual_alias_domain }}      {{ item.key }}-confirm
+      {{ item.key }}-join@{{ postfix_virtual_alias_domain }}         {{ item.key }}-join
+      {{ item.key }}-leave@{{ postfix_virtual_alias_domain }}        {{ item.key }}-leave
+      {{ item.key }}-owner@{{ postfix_virtual_alias_domain }}        {{ item.key }}-owner
+      {{ item.key }}-request@{{ postfix_virtual_alias_domain }}      {{ item.key }}-request
+      {{ item.key }}-subscribe@{{ postfix_virtual_alias_domain }}    {{ item.key }}-subscribe
+      {{ item.key }}-unsubscribe@{{ postfix_virtual_alias_domain }}  {{ item.key }}-unsubscribe
 
 - name: Reload Postfix
   become: yes
