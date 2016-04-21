@@ -4,6 +4,11 @@ tykling@bornhack.org    thomas@gibfest.dk
 
 
 #################################################################################
+### Role aliases
+letsencrypt@bornhack.org    thomas@gibfest.dk
+
+
+#################################################################################
 ### Mailing list aliases
 invoice@bornhack.org     economy@bornhack.org
 
