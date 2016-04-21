@@ -48,7 +48,7 @@
 
 - name: Create mailing lists
   become: yes
-  shell: "/usr/local/mailman/bin/newlist {{ item.0.key }} {{ item.0.value }} {{ item.1.stdout }}"
+  shell: "/usr/local/mailman/bin/newlist -a {{ item.0 }} {{ lists[item.0] }} {{ item.1.stdout }}"
   args:
     creates: "/usr/local/mailman/lists/{{ item.0.key }}"
   with_together:
