@@ -56,6 +56,7 @@
     - "{{ passwords.results }}"
 
 - name: Create aliases for mailinglists
+  become: yes
   blockinfile:
     create: yes
     dest: /usr/local/etc/postfix/mailman-virtual
