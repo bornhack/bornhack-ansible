@@ -1,5 +1,5 @@
 ---
-ansible_host: lists.bornhack.org
+ansible_host: mail.bornhack.org
 letsencrypt_server: acme-v01.api.letsencrypt.org
 letsencrypt_account_hash: b1fa1b217aa9e6fc1b40d0d4ba95996a
 letsencrypt_email: letsencrypt@bornhack.org
@@ -16,7 +16,7 @@ vhosts:
   lists_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:93"
     hostnames:
-      - lists.bornhack.org
+      - mail.bornhack.org
     letsencrypt: True
     default_vhost: True
     locationslash: |
