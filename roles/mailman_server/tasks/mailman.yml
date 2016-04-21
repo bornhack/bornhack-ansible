@@ -47,7 +47,7 @@
 
 - name: Create mailman mailing lists
   become: yes
-  shell: "/usr/local/mailman/bin/newlist -a mailman {{ mailman_list_owner }} {{ password.result.stdout }}"
+  shell: "/usr/local/mailman/bin/newlist -a mailman {{ mailman_list_owner }} {{ password.stdout }}"
   args:
     creates: "/usr/local/mailman/lists/mailman"
 
