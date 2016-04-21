@@ -50,7 +50,7 @@
   become: yes
   shell: "/usr/local/mailman/bin/newlist -a {{ item.0 }} {{ lists[item.0] }} {{ item.1.stdout }}"
   args:
-    creates: "/usr/local/mailman/lists/{{ item.0.key }}"
+    creates: "/usr/local/mailman/lists/{{ item.0 }}"
   with_together:
     - "{{ lists }}"
     - "{{ passwords.results }}"
