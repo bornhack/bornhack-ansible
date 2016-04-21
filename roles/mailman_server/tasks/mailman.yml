@@ -149,6 +149,7 @@
       {{ item.key }}-request@{{ postfix_virtual_alias_domain }}      {{ item.key }}-request
       {{ item.key }}-subscribe@{{ postfix_virtual_alias_domain }}    {{ item.key }}-subscribe
       {{ item.key }}-unsubscribe@{{ postfix_virtual_alias_domain }}  {{ item.key }}-unsubscribe
+  with_dict: "{{ lists }}"
 
 - name: Reload Postfix
   become: yes
