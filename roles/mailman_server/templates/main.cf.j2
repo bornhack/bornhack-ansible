@@ -1,6 +1,6 @@
 mynetworks_style = host
 inet_protocols = ipv4 ipv6
-relay_domains  = {{ postfix_relay_domain }}
+relay_domains  = {{ ansible_nodename }}
 transport_maps = hash:/usr/local/etc/postfix/transport
 virtual_alias_maps = texthash:/usr/local/etc/postfix/mailman-virtual, texthash:/usr/local/etc/postfix/virtual
 virtual_alias_domains = {{ postfix_virtual_alias_domain }}
