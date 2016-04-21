@@ -59,16 +59,16 @@
     marker: "# {mark} ANSIBLE MANAGED BLOCK mailman"
     content: |
       ## mailman mailing list
-      mailman@{{ postfix_virtual_alias_domain }}:              "|/usr/local/mailman/mail/mailman post mailman"
-      mailman-admin@{{ postfix_virtual_alias_domain }}:        "|/usr/local/mailman/mail/mailman admin mailman"
-      mailman-bounces@{{ postfix_virtual_alias_domain }}:      "|/usr/local/mailman/mail/mailman bounces mailman"
-      mailman-confirm@{{ postfix_virtual_alias_domain }}:      "|/usr/local/mailman/mail/mailman confirm mailman"
-      mailman-join@{{ postfix_virtual_alias_domain }}:         "|/usr/local/mailman/mail/mailman join mailman"
-      mailman-leave@{{ postfix_virtual_alias_domain }}:        "|/usr/local/mailman/mail/mailman leave mailman"
-      mailman-owner@{{ postfix_virtual_alias_domain }}:        "|/usr/local/mailman/mail/mailman owner mailman"
-      mailman-request@{{ postfix_virtual_alias_domain }}:      "|/usr/local/mailman/mail/mailman request mailman"
-      mailman-subscribe@{{ postfix_virtual_alias_domain }}:    "|/usr/local/mailman/mail/mailman subscribe mailman"
-      mailman-unsubscribe@{{ postfix_virtual_alias_domain }}:  "|/usr/local/mailman/mail/mailman unsubscribe mailman"
+      mailman@{{ postfix_virtual_alias_domain }}              "|/usr/local/mailman/mail/mailman post mailman"
+      mailman-admin@{{ postfix_virtual_alias_domain }}        "|/usr/local/mailman/mail/mailman admin mailman"
+      mailman-bounces@{{ postfix_virtual_alias_domain }}      "|/usr/local/mailman/mail/mailman bounces mailman"
+      mailman-confirm@{{ postfix_virtual_alias_domain }}      "|/usr/local/mailman/mail/mailman confirm mailman"
+      mailman-join@{{ postfix_virtual_alias_domain }}         "|/usr/local/mailman/mail/mailman join mailman"
+      mailman-leave@{{ postfix_virtual_alias_domain }}        "|/usr/local/mailman/mail/mailman leave mailman"
+      mailman-owner@{{ postfix_virtual_alias_domain }}        "|/usr/local/mailman/mail/mailman owner mailman"
+      mailman-request@{{ postfix_virtual_alias_domain }}      "|/usr/local/mailman/mail/mailman request mailman"
+      mailman-subscribe@{{ postfix_virtual_alias_domain }}    "|/usr/local/mailman/mail/mailman subscribe mailman"
+      mailman-unsubscribe@{{ postfix_virtual_alias_domain }}  "|/usr/local/mailman/mail/mailman unsubscribe mailman"
 
 - name: Start mailman
   become: yes
