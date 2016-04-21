@@ -2,6 +2,6 @@
 - include: pkg.yml
 - include: letsencrypt.yml
 - include: nginx.yml
-- include: thttpd.yml
 - include: postfix.yml
 - include: mailman.yml
+- include: thttpd.yml

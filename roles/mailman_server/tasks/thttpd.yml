@@ -16,3 +16,9 @@
   template:
     src=thttpd.conf.j2
     dest=/usr/local/etc/thttpd.conf
+
+- name: Start thttpd (if not running)
+  become: yes
+  service:
+    name=thttpd
+    state=started
