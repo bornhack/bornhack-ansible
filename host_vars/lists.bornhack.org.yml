@@ -8,8 +8,8 @@ vhost_v4ip: 85.235.250.93
 nginx_dhparam_path: "/usr/local/etc/nginx/certificates/dhparam.pem"
 poudriere_package_set: 10_2_amd64-default-mailman_server
 postfix_virtual_alias_domain: bornhack.org
+mailman_list_owner: thomas@gibfest.dk
 lists:
-  mailman: thomas@gibfest.dk
   tyktest: thomas@gibfest.dk
   mongol: thomas@gibfest.dk
 vhosts:

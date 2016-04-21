@@ -39,20 +39,32 @@
     state=directory
     mode=02770
 
+- name: generate mailman list password
+  shell: "openssl rand -base64 33 | tr -d '='"
+  args:
+    creates: "/usr/local/mailman/lists/mailman"
+  register: password
+
+- name: Create mailman mailing lists
+  become: yes
+  shell: "/usr/local/mailman/bin/newlist -a mailman {{ mailman_list_owner }} {{ password.result.stdout }}"
+  args:
+    creates: "/usr/local/mailman/lists/mailman"
+
 - name: Start mailman
   become: yes
   service:
     name=mailman
     state=started
 
-- name: generate list passwords
+- name: generate mailinglist passwords
   shell: "openssl rand -base64 33 | tr -d '='"
   args:
     creates: "/usr/local/mailman/lists/{{ item.key }}"
   register: passwords
   with_dict: "{{ lists }}"
 
-- name: Create mailing lists
+- name: Create mailinglists
   become: yes
   shell: "/usr/local/mailman/bin/newlist -a {{ item.0 }} {{ lists[item.0] }} {{ item.1.stdout }}"
   args:
