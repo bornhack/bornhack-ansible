@@ -39,6 +39,12 @@
     state=directory
     mode=02770
 
+- name: Start mailman
+  become: yes
+  service:
+    name=mailman
+    state=started
+
 - name: generate list passwords
   shell: "openssl rand -base64 33 | tr -d '='"
   args:
