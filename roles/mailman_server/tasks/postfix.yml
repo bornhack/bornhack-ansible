@@ -30,6 +30,15 @@
     src=virtual
     dest=/usr/local/etc/postfix/virtual
 
+- name: Copy postfix transport file
+  become: yes
+  copy:
+    owner=root
+    group=wheel
+    mode=644
+    src=transport
+    dest=/usr/local/etc/postfix/transport
+
 - name: Restart Postfix
   become: yes
   service:
