@@ -115,7 +115,7 @@
   become: yes
   blockinfile:
     create: yes
-    dest: /usr/local/etc/postfix/mailman-virtual
+    dest: /usr/local/etc/postfix/mailman-aliases
     marker: "# {mark} ANSIBLE MANAGED BLOCK {{item.key}} mailinglist"
     content: |
       ## {{ item.key }} mailing list
