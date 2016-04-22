@@ -11,6 +11,26 @@
     name=mailman
     enabled=yes
 
+- name: Install postfix-to-mailman.py
+  become: yes
+  copy:
+    owner=mailman
+    group=mailman
+    mode=740
+    src=postfix-to-mailman.py
+    dest=/usr/local/mailman/postfix-to-mailman.py
+
+- name: Add postfix-to-mailman.py to master.cf
+  become: yes
+  blockinfile:
+    create: yes
+    dest: /usr/local/etc/postfix/master.cf
+    marker: "# {mark} ANSIBLE MANAGED BLOCK mailman integration"
+    content: |
+      mailman unix - n n - - pipe
+        flags=FR user=mailman:mailman
+        argv=/usr/local/mailman/postfix-to-mailman.py ${nexthop} ${user}
+
 - name: Configure mailman DEFAULT_EMAIL_HOST
   become: yes
   lineinfile:
