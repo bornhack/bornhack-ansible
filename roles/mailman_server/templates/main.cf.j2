@@ -5,6 +5,7 @@ virtual_alias_maps = texthash:/usr/local/etc/postfix/mailman-virtual, texthash:/
 virtual_alias_domains = {{ postfix_virtual_alias_domain }}
 alias_maps = hash:/etc/aliases
 transport_maps = texthash:/usr/local/etc/postfix/transport
+mailman_destination_recipient_limit = 1
 
 # Spam restrictions
 smtpd_recipient_restrictions =
