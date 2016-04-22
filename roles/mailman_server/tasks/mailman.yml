@@ -59,16 +59,16 @@
     marker: "# {mark} ANSIBLE MANAGED BLOCK mailman mailinglist"
     content: |
       ## mailman mailing list
-      mailman@:              "|/usr/local/mailman/mail/mailman post mailman"
-      mailman-admin@:        "|/usr/local/mailman/mail/mailman admin mailman"
-      mailman-bounces@:      "|/usr/local/mailman/mail/mailman bounces mailman"
-      mailman-confirm@:      "|/usr/local/mailman/mail/mailman confirm mailman"
-      mailman-join@:         "|/usr/local/mailman/mail/mailman join mailman"
-      mailman-leave@:        "|/usr/local/mailman/mail/mailman leave mailman"
-      mailman-owner@:        "|/usr/local/mailman/mail/mailman owner mailman"
-      mailman-request@:      "|/usr/local/mailman/mail/mailman request mailman"
-      mailman-subscribe@:    "|/usr/local/mailman/mail/mailman subscribe mailman"
-      mailman-unsubscribe@:  "|/usr/local/mailman/mail/mailman unsubscribe mailman"
+      mailman:              "|/usr/local/mailman/mail/mailman post mailman"
+      mailman-admin:        "|/usr/local/mailman/mail/mailman admin mailman"
+      mailman-bounces:      "|/usr/local/mailman/mail/mailman bounces mailman"
+      mailman-confirm:      "|/usr/local/mailman/mail/mailman confirm mailman"
+      mailman-join:         "|/usr/local/mailman/mail/mailman join mailman"
+      mailman-leave:        "|/usr/local/mailman/mail/mailman leave mailman"
+      mailman-owner:        "|/usr/local/mailman/mail/mailman owner mailman"
+      mailman-request:      "|/usr/local/mailman/mail/mailman request mailman"
+      mailman-subscribe:    "|/usr/local/mailman/mail/mailman subscribe mailman"
+      mailman-unsubscribe:  "|/usr/local/mailman/mail/mailman unsubscribe mailman"
 
 - name: Create virtual for mailman mailinglist
   become: yes

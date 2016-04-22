@@ -3,7 +3,7 @@ inet_protocols = ipv4 ipv6
 relay_domains  = {{ ansible_nodename }}
 virtual_alias_maps = texthash:/usr/local/etc/postfix/mailman-virtual, texthash:/usr/local/etc/postfix/virtual
 virtual_alias_domains = {{ postfix_virtual_alias_domain }}
-alias_maps = hash:/usr/local/etc/postfix/mailman-aliases
+alias_maps = hash:/etc/aliases, hash:/usr/local/etc/postfix/mailman-aliases
 
 # Spam restrictions
 smtpd_recipient_restrictions =
