@@ -75,7 +75,7 @@
 - name: Create mailbox folder
   become: yes
   file:
-    path=/use/mailboxes
+    path=/usr/mailboxes
     state=directory
     mode=0700
     owner={{ dovecot_vmail_username}}
