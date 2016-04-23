@@ -1,0 +1,25 @@
+---
+ansible_host: imap.bornhack.org
+letsencrypt_server: acme-v01.api.letsencrypt.org
+letsencrypt_account_hash: b1fa1b217aa9e6fc1b40d0d4ba95996a
+letsencrypt_email: letsencrypt@bornhack.org
+dns_resolver_ip: 10.0.0.1
+vhost_v4ip: 85.235.250.94
+nginx_dhparam_path: "/usr/local/etc/nginx/certificates/dhparam.pem"
+poudriere_package_set: 10_2_amd64-default-dovecot_server
+postgres_host: 10.0.0.3
+postgres_dbname: 10.0.0.3
+postgres_user: 10.0.0.3
+dovecot_vmail_uid: 10000
+dovecot_vmail_gid: 10000
+vhosts:
+  imap_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:85:235:250:94"
+    hostnames:
+      - imap.bornhack.org
+    letsencrypt: True
+    default_vhost: True
+    locationslash: |
+      location / {
+          rewrite ^ https://webmail.bornhack.org/ permanent;
+      }

@@ -1,0 +1,37 @@
+---
+- name: Install dovecot
+  become: yes
+  pkgng:
+    name=dovecot
+    state=present
+
+- name: Enable dovecot
+  become: yes
+  service:
+    name=dovecot
+    enabled=yes
+
+- name: Copy dovecot config
+  become: yes
+  template:
+    src=dovecot.conf.j2
+    dest=/usr/local/etc/dovecot/dovecot.conf
+
+- name: Copy dovecot sql config
+  become: yes
+  template:
+    src=dovecot-sql.conf.j2
+    dest=/usr/local/etc/dovecot/dovecot-sql.conf
+
+- name: Start dovecot (if not running)
+  become: yes
+  service:
+    name=dovecot
+    state=started
+
+- name: Reload dovecot config
+  become: yes
+  service:
+    name=dovecot
+    state=reloaded
+
