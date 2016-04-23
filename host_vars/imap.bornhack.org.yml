@@ -8,8 +8,8 @@ vhost_v4ip: 85.235.250.94
 nginx_dhparam_path: "/usr/local/etc/nginx/certificates/dhparam.pem"
 poudriere_package_set: 10_2_amd64-default-dovecot_server
 postgres_host: 10.0.0.3
-postgres_dbname: 10.0.0.3
-postgres_user: 10.0.0.3
+postgres_dbname: bornhackmail
+postgres_user: dovecot
 dovecot_vmail_uid: 10000
 dovecot_vmail_gid: 10000
 vhosts:
