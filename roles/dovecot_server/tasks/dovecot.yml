@@ -72,6 +72,15 @@
     regexp="^/var/log/dovecot.log "
     line="/var/log/dovecot.log                    640  365   *    @T00  JC"
 
+- name: Create mailbox folder
+  become: yes
+  file:
+    path=/use/mailboxes
+    state=directory
+    mode=0700
+    owner={{ dovecot_vmail_username}}
+    group={{ dovecot_vmail_groupname}}
+
 - name: Start dovecot (if not running)
   become: yes
   service:
