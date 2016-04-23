@@ -11,6 +11,12 @@
     name=dovecot
     enabled=yes
 
+- name: Create dovecot config directory
+  become: yes
+  file:
+    path=/usr/local/etc/dovecot
+    state=directory
+
 - name: Copy dovecot config
   become: yes
   template:
@@ -22,6 +28,7 @@
   template:
     src=dovecot-sql.conf.j2
     dest=/usr/local/etc/dovecot/dovecot-sql.conf
+    mode=600
 
 - name: Start dovecot (if not running)
   become: yes
