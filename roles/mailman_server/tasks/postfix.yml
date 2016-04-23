@@ -44,3 +44,10 @@
   service:
     name=postfix
     state=restarted
+
+- name: Add keep a years maillogs in newsyslog.conf
+  become: yes
+  lineinfile:
+    dest=/etc/newsyslog.conf
+    regexp="^/var/log/maillog "
+    line="/var/log/maillog                        640  365   *    @T00  JC"
