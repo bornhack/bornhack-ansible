@@ -1,0 +1,32 @@
+---
+- name: Create letsencrypt account config directory
+  become: yes
+  file: owner=root group=wheel mode=600 path="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}" state=directory
+
+- name: Decrypt and copy letsencrypt meta.json
+  become: yes
+  copy:
+    owner=root
+    group=wheel
+    mode=600
+    content="{{ lookup('pipe', 'ansible-vault view --vault-password-file /root/.ansiblevaultpass /usr/local/etc/ansible/roles/nginx_proxy/files/{{ ansible_nodename }}/meta.json') }}"
+    dest="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}/meta.json"
+
+- name: Decrypt and copy letsencrypt private_key.json
+  become: yes
+  copy:
+    owner=root
+    group=wheel
+    mode=600
+    content="{{ lookup('pipe', 'ansible-vault view --vault-password-file /root/.ansiblevaultpass /usr/local/etc/ansible/roles/nginx_proxy/files/{{ ansible_nodename }}/private_key.json') }}"
+    dest="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}/private_key.json"
+
+- name: Decrypt and copy letsencrypt regr.json
+  become: yes
+  copy:
+    owner=root
+    group=wheel
+    mode=600
+    content="{{ lookup('pipe', 'ansible-vault view --vault-password-file /root/.ansiblevaultpass /usr/local/etc/ansible/roles/nginx_proxy/files/{{ ansible_nodename }}/regr.json') }}"
+    dest="/usr/local/etc/letsencrypt/accounts/{{ letsencrypt_server }}/directory/{{ letsencrypt_account_hash }}/regr.json"
+  
