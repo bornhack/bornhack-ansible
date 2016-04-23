@@ -5,6 +5,12 @@
     name=dovecot2
     state=present
 
+- name: Install dovecot-managesieve
+  become: yes
+  pkgng:
+    name=dovecot-pigeonhole
+    state=present
+
 - name: Enable dovecot
   become: yes
   service:
