@@ -52,7 +52,8 @@
     regexp="^local3"
     line="local3.*                                        /var/log/dovecot.log"
 
-- name: Create dovecot.log if it doesn't exits
+- name: Create dovecot.log if it doesn't exist
+  become: yes
   file:
     path=/var/log/dovecot.log
     state=file
