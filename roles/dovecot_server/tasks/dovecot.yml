@@ -2,7 +2,7 @@
 - name: Install dovecot
   become: yes
   pkgng:
-    name=dovecot
+    name=dovecot2
     state=present
 
 - name: Enable dovecot
@@ -10,12 +10,6 @@
   service:
     name=dovecot
     enabled=yes
-
-- name: Create dovecot config directory
-  become: yes
-  file:
-    path=/usr/local/etc/dovecot
-    state=directory
 
 - name: Copy dovecot config
   become: yes
