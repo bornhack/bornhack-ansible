@@ -2,8 +2,8 @@
 #   SSL settings
 disable_plaintext_auth=yes
 ssl=required
-ssl_cert = </usr/local/etc/certificates/wildcard.hq.bornfiber.dk.crt
-ssl_key = </usr/local/etc/certificates/wildcard.hq.bornfiber.dk.key
+ssl_cert = </usr/local/etc/letsencrypt/live/{{ ansible_nodename }}/fullchain.pem
+ssl_key = </usr/local/etc/letsencrypt/live/{{ ansible_nodename }}/privkey.pem
 ssl_protocols = !SSLv2 !SSLv3
 #ssl_cipher_list = ECDH+AESGCM:DH+AESGCM:ECDH+AES256:DH+AES256:DH+AES:!3DES:!RSA:!AES128:!ADH:!AECDH:!MD5:!DSS
 
@@ -11,8 +11,8 @@ ssl_protocols = !SSLv2 !SSLv3
 #   OS Settings
 
 # UID/GIDs
-mail_uid = vmail
-mail_gid = vmail
+mail_uid = {{ dovecot_vmail_username}}
+mail_gid = {{ dovecot_vmail_groupname}}
 mail_privileged_group = mail
 
 # Syslog facility

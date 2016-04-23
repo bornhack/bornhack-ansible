@@ -10,7 +10,9 @@ poudriere_package_set: 10_2_amd64-default-dovecot_server
 postgres_host: 10.0.0.3
 postgres_dbname: bornhackmail
 postgres_user: dovecot
+dovecot_vmail_username: vmail
 dovecot_vmail_uid: 10000
+dovecot_vmail_groupname: vmail
 dovecot_vmail_gid: 10000
 vhosts:
   imap_bornhack_org:

@@ -30,6 +30,19 @@
     dest=/usr/local/etc/dovecot/dovecot-sql.conf
     mode=600
 
+- name: Create virtual mail group
+  group:
+    name="{{ dovecot_vmail_groupname }}"
+    gid="{{ dovecot_vmail_gid}}"
+    state=present
+
+- name: Create virtual mail user
+  user:
+    name={{ dovecot_vmail_username}}
+    comment="virtual mail user"
+    uid="{{ dovecot_vmail_uid}}"
+    group="{{ dovecot_vmail_groupname}}"
+
 - name: Start dovecot (if not running)
   become: yes
   service:
