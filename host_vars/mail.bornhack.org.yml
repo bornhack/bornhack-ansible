@@ -21,7 +21,7 @@ lists:
   tyktest: thomas@gibfest.dk
   mongol: thomas@gibfest.dk
 vhosts:
-  lists_bornhack_org:
+  mail_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:93"
     hostnames:
       - mail.bornhack.org
