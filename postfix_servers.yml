@@ -1,0 +1,5 @@
+---
+- name: configure postfix servers
+  hosts: postfix_servers
+  roles:
+    - postfix_server

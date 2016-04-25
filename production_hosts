@@ -38,7 +38,7 @@ webproxy-bong.bornhack.org
 [nginx_ssh_servers]
 people.bornhack.org
 
-[mailman_servers]
+[postfix_servers]
 mail.bornhack.org
 
 [dovecot_servers]

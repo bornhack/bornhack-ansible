@@ -17,6 +17,27 @@
     src=main.cf.j2
     dest=/usr/local/etc/postfix/main.cf
 
+- name: Copy postfix smtpd_sender_login_maps.sql
+  become: yes
+  template:
+    src=smtpd_sender_login_maps.sql
+    dest=/usr/local/etc/postfix/smtpd_sender_login_maps.sql
+    mode=0600
+
+- name: Copy postfix virtual_alias_maps.sql
+  become: yes
+  template:
+    src=virtual_alias_maps.sql
+    dest=/usr/local/etc/postfix/virtual_alias_maps.sql
+    mode=0600
+
+- name: Copy postfix virtual_mailbox_maps.sql
+  become: yes
+  template:
+    src=smtpd_sender_login_maps.sql
+    dest=/usr/local/etc/postfix/virtual_mailbox_maps.sql
+    mode=0600
+
 - name: Run postalias
   become: yes
   shell: /usr/local/sbin/postalias /etc/aliases

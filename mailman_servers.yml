@@ -1,5 +1,0 @@
----
-- name: configure mailman servers
-  hosts: mailman_servers
-  roles:
-    - mailman_server

@@ -8,7 +8,15 @@ vhost_v4ip: 85.235.250.93
 nginx_dhparam_path: "/usr/local/etc/nginx/certificates/dhparam.pem"
 poudriere_package_set: 10_2_amd64-default-mailman_server
 postfix_virtual_alias_domain: bornhack.org
+fake_mailman_domain: mailman.bornhack.org
 mailman_list_owner: thomas@gibfest.dk
+lmtp_server_ip: 85.235.250.94
+lmtp_server_port: 24
+sasl_server_ip: 85.235.250.94
+sasl_server_port: 12
+postgres_host: 10.0.0.3
+postgres_dbname: bornhackmail
+postgres_user: postfix
 lists:
   tyktest: thomas@gibfest.dk
   mongol: thomas@gibfest.dk
