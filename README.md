@@ -10,7 +10,7 @@ Deploy specific github branch to specific staging server:
 ---
 Deploy master github branch to production bornhack.dk webserver:
 
-    ansible-playbook --vault-password-file /root/.ansiblevaultpass --tags "codedeploy" -i /usr/local/etc/ansible/production_hosts -i "www.bornhack.org" /usr/local/etc/ansible/django_servers.yml
+    ansible-playbook --vault-password-file /root/.ansiblevaultpass --tags "codedeploy" -i /usr/local/etc/ansible/production_hosts -i "www.bornhack.dk" /usr/local/etc/ansible/django_servers.yml
 ---
 Reconfigure everything on all staging tor servers:
 
