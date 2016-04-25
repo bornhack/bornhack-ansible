@@ -1,1 +1,1 @@
-{{ ansible_nodename }} mailman:
+{{ fake_mailman_domain }} mailman:
