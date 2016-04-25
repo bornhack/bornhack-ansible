@@ -44,10 +44,8 @@
 
 - name: Copy postfix transport file
   become: yes
-  copy:
-    owner=root
-    group=wheel
-    mode=644
+  template:
+    mode=0644
     src=transport
     dest=/usr/local/etc/postfix/transport
 
