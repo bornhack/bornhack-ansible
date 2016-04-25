@@ -46,7 +46,7 @@
   become: yes
   template:
     mode=0644
-    src=transport
+    src=transport.j2
     dest=/usr/local/etc/postfix/transport
 
 - name: Restart Postfix
