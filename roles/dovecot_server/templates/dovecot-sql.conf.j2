@@ -2,12 +2,12 @@ driver = pgsql
 connect = host={{ postgres_host }} dbname={{ postgres_dbname }} user={{ postgres_user }} password={{ postgres_password }}
 default_pass_scheme = BLF-CRYPT
 
-password_query = SELECT userid AS user, domain as domain, password, '/usr/mailboxes/'||domain||'/'||userid||'/' as userdb_home, \
+password_query = SELECT localpart AS user, domain as domain, password, '/usr/mailboxes/'||domain||'/'||localpart||'/' as userdb_home, \
   {{ dovecot_vmail_uid }} AS userdb_uid, \
   {{ dovecot_vmail_gid }} AS userdb_gid \
-  FROM users WHERE lower(userid||'@'||domain) = '%Lu'
+  FROM users WHERE lower(localpart||'@'||domain) = '%Lu'
 
-user_query = SELECT '/usr/mailboxes/'||domain||'/'||userid as home, \
+user_query = SELECT '/usr/mailboxes/'||domain||'/'||localpart as home, \
   {{ dovecot_vmail_uid }} AS uid, \
   {{ dovecot_vmail_gid }} AS gid \
-  FROM users WHERE lower(userid||'@'||domain) = '%Lu'
+  FROM users WHERE lower(localpart||'@'||domain) = '%Lu'
