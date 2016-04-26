@@ -34,23 +34,51 @@
 - name: Configure mailman DEFAULT_EMAIL_HOST
   become: yes
   lineinfile:
-    dest=/usr/local/mailman/Mailman/Defaults.py
+    dest=/usr/local/mailman/Mailman/mm_cfg.py
     regexp="^DEFAULT_EMAIL_HOST = "
     line="DEFAULT_EMAIL_HOST = '{{ postfix_virtual_alias_domains[0] }}'"
 
 - name: Configure mailman DEFAULT_URL_HOST
   become: yes
   lineinfile:
-    dest=/usr/local/mailman/Mailman/Defaults.py
+    dest=/usr/local/mailman/Mailman/mm_cfg.py
     regexp="^DEFAULT_URL_HOST = "
     line="DEFAULT_URL_HOST = '{{ ansible_nodename }}'"
 
 - name: Configure mailman DEFAULT_URL_PATTERN
   become: yes
   lineinfile:
-    dest=/usr/local/mailman/Mailman/Defaults.py
+    dest=/usr/local/mailman/Mailman/mm_cfg.py
     regexp="^DEFAULT_URL_PATTERN = "
     line="DEFAULT_URL_PATTERN = 'https://%s/mailman/'"
+
+- name: Configure mailman DEFAULT_FROM_IS_LIST
+  become: yes
+  lineinfile:
+    dest=/usr/local/mailman/Mailman/mm_cfg.py
+    regexp="^DEFAULT_FROM_IS_LIST = "
+    line="DEFAULT_FROM_IS_LIST = 1"
+
+- name: Configure mailman DEFAULT_LIST_ADVERTISED
+  become: yes
+  lineinfile:
+    dest=/usr/local/mailman/Mailman/mm_cfg.py
+    regexp="^DEFAULT_LIST_ADVERTISED = "
+    line="DEFAULT_LIST_ADVERTISED = No"
+
+- name: Configure mailman DEFAULT_SUBSCRIBE_POLICY
+  become: yes
+  lineinfile:
+    dest=/usr/local/mailman/Mailman/mm_cfg.py
+    regexp="^DEFAULT_SUBSCRIBE_POLICY = "
+    line="DEFAULT_SUBSCRIBE_POLICY = 3"
+
+- name: Configure mailman DEFAULT_ARCHIVE_PRIVATE
+  become: yes
+  lineinfile:
+    dest=/usr/local/mailman/Mailman/mm_cfg.py
+    regexp="^DEFAULT_ARCHIVE_PRIVATE = "
+    line="DEFAULT_ARCHIVE_PRIVATE = 1"
 
 - name: Fix permissions on mailman private archive dir
   become: yes
