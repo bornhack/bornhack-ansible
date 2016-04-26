@@ -1,4 +1,3 @@
 ---
-- include: dhparamgen.yml
 - include: letsencrypt.yml
 - include: nginx.yml

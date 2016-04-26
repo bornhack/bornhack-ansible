@@ -41,6 +41,12 @@
     path=/usr/local/etc/nginx/certificates
     state=directory
 
+- name: Create dhparam
+  become: yes
+  shell: "/usr/local/bin/openssl dhparam 4096 > {{ nginx_dhparam_path }}"
+  args:
+    creates: "{{ nginx_dhparam_path }}"
+
 - include: vhosts.yml
 
 - name: Start Nginx (if not running)

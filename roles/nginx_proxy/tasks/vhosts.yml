@@ -10,26 +10,19 @@
   become: yes
   service: name=nginx state=reloaded
 
+- name: Create letsencrypt config files for all vhosts
+  become: yes
+  template:
+    src=cli.ini.j2
+    dest="/usr/local/etc/letsencrypt/{{ item.value.hostnames[0] }}-letsencrypt.ini"
+  with_dict: "{{ vhosts }}"
+
 - name: Create letsencrypt certificate for vhosts
   become: yes
-  command: "/usr/local/bin/letsencrypt certonly --email {{ letsencrypt_email }} -a webroot --webroot-path=/tmp/letsencrypt-auto --text --rsa-key-size 4096 {% for hostname in item.value.hostnames %}-d {{ hostname }} {% endfor %}"
+  command: "/usr/local/bin/letsencrypt certonly --config /usr/local/etc/letsencrypt/{{ item.value.hostnames[0] }}-letsencrypt.ini"
   args:
     creates: "/usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem"
   with_dict: "{{ vhosts }}"
-
-- name: check certificate ages
-  become: yes
-  stat: path=/usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem
-  register: certificates_status
-  with_dict: "{{ vhosts }}"
-
-- name: Renew the letsencrypt certificate for {{ vhosts[item.0].hostnames }} (when it is older than 60 days)
-  become: yes
-  command: "/usr/local/bin/letsencrypt certonly --renew --email {{ letsencrypt_email }} -a webroot --webroot-path=/tmp/letsencrypt-auto --text --rsa-key-size 4096 {% for hostname in vhosts[item.0].hostnames %}-d {{ hostname }} {% endfor %}"
-  when: ansible_date_time.epoch|float - item.1.stat.mtime > 60*60*24*60
-  with_together:
-    - "{{ vhosts }}"
-    - "{{ certificates_status.results }}"
 
 - name: Copy vhost https configs
   become: yes
@@ -38,27 +31,3 @@
     dest="/usr/local/etc/nginx/vhosts/{{ item.value.hostnames[0] }}-https.conf"
   with_dict: "{{ vhosts }}"
 
-- name: Move missing dhparam files into place
-  command: "/usr/local/bin/installdhparam {{ dhparamgen_path }} /usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem"
-  args:
-    creates: "/usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem"
-  become: yes
-  with_dict: "{{ vhosts }}"
-
-- name: Check dhparam files status
-  stat: path="/usr/local/etc/nginx/certificates/{{ item.value.hostnames[0] }}-dhparam.pem"
-  register: dhparam_statuses
-  become: yes
-  with_dict: "{{ vhosts }}"
-
-- name: Enable dhparams for the vhosts that have a dhparam file
-  become: yes
-  lineinfile:
-    dest="/usr/local/etc/nginx/vhosts/{{ vhosts[item.0].hostnames[0] }}-https.conf"
-    regexp="^    ssl_dhparam"
-    line="    ssl_dhparam             /usr/local/etc/nginx/certificates/{{ vhosts[item.0].hostnames[0] }}-dhparam.pem;"
-    insertafter="^    ssl_certificate_key     /usr/local/etc/letsencrypt/live/{{ vhosts[item.0].hostnames[0] }}/privkey.pem;$"
-  when: item.1.stat.exists == True
-  with_together:
-    - "{{ vhosts }}"
-    - "{{ dhparam_statuses.results }}"
