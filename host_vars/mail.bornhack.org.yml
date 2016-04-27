@@ -21,7 +21,21 @@ postgres_host: 10.0.0.3
 postgres_dbname: bornhackmail
 postgres_user: postfix
 lists:
-  all: thomas@gibfest.dk
+  all: tykling@bornhack.org
+  admin-team: ahf@bornhack.org
+  bar-team: sarah@radicalpet.net
+  cert-team: rel@bornhack.org
+  economy-team: tykling@bornhack.org
+  food-team: tykling@bornhack.org
+  gis-team: ahf@bornhack.org
+  logistics-team: tykling@bornhack.org
+  noc-team: hlk@kramse.org
+  power-team: tykling@bornhack.org
+  pr-team: ahf@bornhack.org
+  program-team: ahf@bornhack.org
+  sanitation-team: tykling@bornhack.org
+  tech-team: tykling@bornhack.org
+  villages-team: sarah@radicalpet.net
 vhosts:
   mail_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:93"
