@@ -64,7 +64,7 @@
   lineinfile:
     dest=/usr/local/mailman/Mailman/mm_cfg.py
     regexp="^DEFAULT_LIST_ADVERTISED = "
-    line="DEFAULT_LIST_ADVERTISED = No"
+    line="DEFAULT_LIST_ADVERTISED = Yes"
 
 - name: Configure mailman DEFAULT_SUBSCRIBE_POLICY
   become: yes
