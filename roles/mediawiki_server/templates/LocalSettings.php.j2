@@ -147,3 +147,11 @@ $wgNamespacesToBeSearchedDefault = array(
     100     => true,
 );
 $wgECMaxCacheTime = 0;
+
+$wgSMTP = array(
+ 'host'     => "{{ email_host }}",     // could also be an IP address. Where the SMTP server is located
+ 'port'     => {{ email_port }},                     // Port to use when connecting to the SMTP server
+ 'auth'     => true,                    // Should we use SMTP authentication (true or false)
+ 'username' => "{{ email_user }}",     // Username to use for SMTP authentication (if being used)
+ 'password' => "{{ email_password }}"       // Password to use for SMTP authentication (if being used)
+);

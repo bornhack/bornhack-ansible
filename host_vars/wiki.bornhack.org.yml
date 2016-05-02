@@ -7,4 +7,6 @@ wikisenderemail: noreply@wiki.bornhack.org
 postgres_user: bornhackwiki
 postgres_host: 10.0.0.3
 postgres_dbname: bornhackwikidb
-
+email_user: noreply@bornhack.org
+email_port: 587
+email_host: mail.bornhack.org
