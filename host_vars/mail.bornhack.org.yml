@@ -36,6 +36,10 @@ lists:
   sanitation-team: tykling@bornhack.org
   tech-team: tykling@bornhack.org
   villages-team: sarah@radicalpet.net
+  info: tykling@bornhack.org
+  sponsors: ahf@bornhack.org
+  speakers: ahf@bornhack.org
+
 vhosts:
   mail_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:93"
