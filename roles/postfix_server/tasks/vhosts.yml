@@ -29,7 +29,7 @@
   lineinfile:
     dest=/etc/crontab
     regexp="{{ item.value.hostnames[0] }}-letsencrypt.ini$"
-    line="{{ 59 |random}}    2     10       *       *       root    /usr/local/bin/letsencrypt certonly --config /usr/local/etc/letsencrypt/{{ item.value.hostnames[0] }}-letsencrypt.ini"
+    line="{{ 59 |random}}    2     *       *       1       root    /usr/local/bin/letsencrypt certonly --non-interactive --config /usr/local/etc/letsencrypt/{{ item.value.hostnames[0] }}-letsencrypt.ini"
   with_dict: "{{ vhosts }}"
 
 - name: Copy vhost https configs
