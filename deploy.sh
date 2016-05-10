@@ -21,4 +21,5 @@ REV=$(git rev-parse HEAD)
 rm -rf $TARGETDIR
 mv $TMPDIR/deploy.sh /root/deploy.sh
 mv $TMPDIR $TARGETDIR
-echo "New bornhack ansible was put into production, revision https://github.com/tykling/bornhack-ansible/commit/${REV}" | mail -s "new bornhack ansible put in production" thomas@gibfest.dk
+echo "New bornhack ansible was put into production, revision
+https://github.com/tykling/bornhack-ansible/commit/${REV}" | mail -s "new bornhack ansible put in production" sysadm@bornhack.org
