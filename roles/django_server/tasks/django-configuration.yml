@@ -1,5 +1,5 @@
 ---
-- include_vars: /usr/local/etc/ansible/host_vars/www.bornhack.dk-passwords.yml
+- include_vars: "/usr/local/etc/ansible/host_vars/{{ ansible_nodename }}-passwords.yml"
   tags:
     - always
 
