@@ -11,4 +11,7 @@ pip_requirements_path: /usr/local/www/wwwstaging.bornhack.org/requirements/produ
 postgres_user: bornhackstagingdk
 postgres_host: 10.0.0.3
 postgres_dbname: bornhackstagingdkdb
-
+django_email_user: noreply@bornhack.org
+django_email_port: 587
+django_email_host: mail.bornhack.org
+django_email_from: noreply@bornhack.org
