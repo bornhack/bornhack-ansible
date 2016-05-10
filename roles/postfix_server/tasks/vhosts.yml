@@ -24,6 +24,14 @@
     creates: "/usr/local/etc/letsencrypt/live/{{ item.value.hostnames[0] }}/fullchain.pem"
   with_dict: "{{ vhosts }}"
 
+- name: Make sure letsencrypt renew cronjob is in place for all vhosts
+  become: yes
+  lineinfile:
+    dest=/etc/crontab
+    regexp="{{ item.value.hostnames[0] }}-letsencrypt.ini$"
+    line="17    2     10       *       *       root    /usr/local/bin/letsencrypt certonly --config /usr/local/etc/letsencrypt/{{ item.value.hostnames[0] }}-letsencrypt.ini"
+  with_dict: "{{ vhosts }}"
+
 - name: Copy vhost https configs
   become: yes
   template:
