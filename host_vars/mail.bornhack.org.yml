@@ -39,6 +39,7 @@ lists:
   info: tykling@bornhack.org
   sponsors: ahf@bornhack.org
   speakers: ahf@bornhack.org
+  info-team: kugghjul@gmail.com
 
 vhosts:
   mail_bornhack_org:
