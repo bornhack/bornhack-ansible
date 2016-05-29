@@ -15,3 +15,4 @@ django_email_user: noreply@bornhack.org
 django_email_port: 587
 django_email_host: mail.bornhack.org
 django_email_from: noreply@bornhack.org
+django_archive_email: emailarchive@bornhack.org
