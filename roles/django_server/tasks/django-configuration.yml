@@ -53,12 +53,6 @@
     group=wheel
     mode=555
 
-- name: Enable djangomanage
-  become: yes
-  service:
-    name=djangomanage
-    enabled=yes
-
 - name: Configure djangomanage_pythonpath
   become: yes
   sysrc:
@@ -100,6 +94,12 @@
   sysrc:
     name: djangomanage_invoice_logfile
     value: "/var/log/bornhack-invoice-worker.log"
+
+- name: Enable djangomanage
+  become: yes
+  service:
+    name=djangomanage
+    enabled=yes
 
 - name: Restart djangomanage workers
   become: yes
