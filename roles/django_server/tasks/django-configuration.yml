@@ -53,12 +53,6 @@
     group=wheel
     mode=555
 
-- name: Configure djangomanage_pythonpath
-  become: yes
-  sysrc:
-    name: djangomanage_pythonpath
-    value: "/usr/local/bin/python"
-
 - name: Configure djangomanage_path
   become: yes
   sysrc:

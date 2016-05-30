@@ -7,7 +7,6 @@
 # Add the following lines to /etc/rc.conf to enable djangomanage:
 #
 # djangomanage_enable (bool):             Set it to "YES" to enable djangomanage
-# djangomanage_pythonpath (str):          Set the path of the Python interpreter to use
 # djangomanage_path (str):                Set the path to Django manage.py
 # djangomanage_profiles (str):            Set the list of djangomanage profiles
 # djangomanage_args (str):                Set the command line args
@@ -26,7 +25,6 @@ rcvar=djangomanage_enable
 load_rc_config $name
 
 : ${djangomanage_enable="NO"}
-: ${djangomanage_pythonpath=""}
 : ${djangomanage_path=""}
 : ${djangomanage_profiles=""}
 : ${djangomanage_args=""}
@@ -122,13 +120,6 @@ if [ -n "${djangomanage_profiles}" ]; then
                 done
                 exit 0
         fi
-fi
-
-if [ -z $djangomanage_pythonpath ]; then
-        echo "$0: You must set djangomanage_pythonpath in rc.conf"
-        exit 1
-else
-        command=$djangomanage_path
 fi
 
 if [ -z $djangomanage_path ]; then
