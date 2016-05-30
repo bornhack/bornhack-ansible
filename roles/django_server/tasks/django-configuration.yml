@@ -27,3 +27,20 @@
   tags:
     - codedeploy
 
+- name: Create django media root directory
+  become: yes
+  file:
+    path={{ django_media_root }}
+    state=directory
+    owner=www
+    group=www
+
+- name: Create django media root subdirectories
+  become: yes
+  file:
+    path={{ django_media_root }}/{{ item }}
+    state=directory
+    owner=www
+    group=www
+  with_items: "{{ django_media_root_subdirs }}"
+
