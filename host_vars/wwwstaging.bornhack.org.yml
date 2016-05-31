@@ -14,7 +14,7 @@ postgres_dbname: bornhackstagingdkdb
 django_email_user: noreply@bornhack.org
 django_email_port: 587
 django_email_host: mail.bornhack.org
-django_email_from: noreply@bornhack.org
+django_email_from: info@bornhack.org
 django_archive_email: stagingemailarchive@bornhack.org
 ticket_category_id: 880d7210-a9bb-4aab-8755-8dbdecf560f5
 pdf_letterhead_filename: bornhack_2016_test_letterhead.pdf

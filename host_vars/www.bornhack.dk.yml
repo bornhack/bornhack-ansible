@@ -14,7 +14,7 @@ postgres_dbname: bornhackdkdb
 django_email_user: noreply@bornhack.org
 django_email_port: 587
 django_email_host: mail.bornhack.org
-django_email_from: noreply@bornhack.org
+django_email_from: info@bornhack.org
 django_archive_email: emailarchive@bornhack.org
 pdf_letterhead_filename: bornhack_2016_letterhead.pdf
 django_media_root: /usr/local/www/django_media_root/
