@@ -15,7 +15,7 @@ django_email_user: noreply@bornhack.org
 django_email_port: 587
 django_email_host: mail.bornhack.org
 django_email_from: info@bornhack.dk
-django_archive_email: emailarchive@bornhack.org
+django_archive_email: mailarchive@bornhack.org
 pdf_letterhead_filename: bornhack_2016_letterhead.pdf
 django_media_root: /usr/local/www/django_media_root/
 django_media_root_subdirs:
