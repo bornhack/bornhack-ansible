@@ -40,6 +40,7 @@ lists:
   sponsors: ahf@bornhack.org
   speakers: ahf@bornhack.org
   info-team: kugghjul@gmail.com
+  conduct: tykling@bornhack.org
 
 vhosts:
   mail_bornhack_org:
