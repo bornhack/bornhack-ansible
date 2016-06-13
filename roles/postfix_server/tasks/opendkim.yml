@@ -47,3 +47,36 @@
     group=postfix
     mode=500
 
+- name: Create opendkim keys
+  become: yes
+  copy:
+    owner=postfix
+    group=postfix
+    mode=600
+    content="{{ item.value }}"
+    dest="/usr/local/etc/opendkim/{{ item.key }}-default.private"
+  with_dict: "{{ dkimkeys }}"
+
+- name: Enable milteropendkim in rc.conf
+  become: yes
+  service:
+    name=milteropendkim
+    enabled=yes
+
+- name: Set milteropendkim_cfgfile in rc.conf
+  become: yes
+  sysrc:
+    name: milteropendkim_cfgfile
+    value: "/usr/local/etc/opendkim.conf"
+
+- name: Set milteropendkim_uid in rc.conf
+  become: yes
+  sysrc:
+    name: milteropendkim_uid
+    value: "postfix"
+
+- name: Restart milteropendkim
+  become: yes
+  service:
+    name=milteropendkim
+    state=restarted
