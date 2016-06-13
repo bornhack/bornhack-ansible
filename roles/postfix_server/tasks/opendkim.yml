@@ -61,7 +61,7 @@
   become: yes
   sysrc:
     name: milteropendkim_enable
-    value: yes
+    value: "yes"
 
 - name: Set milteropendkim_cfgfile in rc.conf
   become: yes
@@ -78,5 +78,5 @@
 - name: Restart milteropendkim
   become: yes
   service:
-    name=milteropendkim
+    name=milter-opendkim
     state=restarted
