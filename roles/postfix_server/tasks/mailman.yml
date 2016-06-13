@@ -80,6 +80,20 @@
     regexp="^DEFAULT_ARCHIVE_PRIVATE = "
     line="DEFAULT_ARCHIVE_PRIVATE = 1"
 
+- name: Configure mailman DEFAULT_FIRST_STRIP_REPLY_TO
+  become: yes
+  lineinfile:
+    dest=/usr/local/mailman/Mailman/mm_cfg.py
+    regexp="^DEFAULT_FIRST_STRIP_REPLY_TO = "
+    line="DEFAULT_FIRST_STRIP_REPLY_TO = 1"
+
+- name: Configure mailman DEFAULT_REPLY_GOES_TO_LIST
+  become: yes
+  lineinfile:
+    dest=/usr/local/mailman/Mailman/mm_cfg.py
+    regexp="^DEFAULT_REPLY_GOES_TO_LIST = "
+    line="DEFAULT_REPLY_GOES_TO_LIST = 1"
+
 - name: Fix permissions on mailman private archive dir
   become: yes
   file:
