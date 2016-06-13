@@ -59,9 +59,9 @@
 
 - name: Enable milteropendkim in rc.conf
   become: yes
-  service:
-    name=milteropendkim
-    enabled=yes
+  sysrc:
+    name: milteropendkim_enable
+    value: yes
 
 - name: Set milteropendkim_cfgfile in rc.conf
   become: yes
