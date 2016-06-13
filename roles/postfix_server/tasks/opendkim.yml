@@ -1,0 +1,49 @@
+---
+- name: Install opendkim
+  become: yes
+  pkgng:
+    name=opendkim
+    state=present
+
+- name: Create opendkim socket directory
+  become: yes
+  file:
+    path=/var/spool/postfix/opendkim
+    state=directory
+    owner=postfix
+    group=wheel
+    mode=755
+
+- name: Copy opendkim.conf
+  become: yes
+  template:
+    src=opendkim.conf.j2
+    dest=/usr/local/etc/opendkim.conf
+
+- name: Install opendkim.keytable
+  become: yes
+  template:
+    src=opendkim.keytable.j2
+    dest=/usr/local/etc/opendkim.keytable
+    owner=root
+    group=wheel
+    mode=644
+
+- name: Install opendkim.signingtable
+  become: yes
+  template:
+    src=opendkim.signingtable.j2
+    dest=/usr/local/etc/opendkim.signingtable
+    owner=root
+    group=wheel
+    mode=644
+
+- name: Create opendkim key directory
+  become: yes
+  file:
+    path=/usr/local/etc/opendkim
+    state=directory
+    owner=postfix
+    group=postfix
+    mode=500
+
