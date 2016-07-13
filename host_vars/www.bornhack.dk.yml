@@ -20,6 +20,7 @@ pdf_letterhead_filename: bornhack_2016_letterhead.pdf
 django_media_root: /usr/local/www/django_media_root/
 django_media_root_subdirs:
   - invoices
+  - creditnotes
 iban: DK3553710000244504
 swiftbic: ALBADKKK
 regno: 5371
