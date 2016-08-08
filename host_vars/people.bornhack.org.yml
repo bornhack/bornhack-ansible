@@ -23,6 +23,9 @@ webusers:
   fj:
     name: Batmule
     pubkey: "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPOM8po0VaRYSFvIIhy6E8hhDzkCNPS4IEM3NrCrrROIbYgqxu++VKaFzZj82Cnm0EoFu210+huxuXN1KYada3A= fj@home"
+  kugg:
+    name: kugg
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeR2eV4uKOcAzLEP/p6ADty177Ea5ir6fiJJaUzlfZuhEot2U9Fgz/nhPMABHYbilS/z5egIiwn645YxuLaE6m26IYFvxJI5bAdTR/vth2dhA4m6XBQLQh5tzQnwxZXXey91uTPNXFogcwIQYuIhXkB+yNDAy5wS34JsZjKZYnTZMHh5mWeuzmW0uamWfzfaakJq1Awike/WScO92UqDAIBgo8OwEqeZrMthR5pc3X2KsybtZ/1/p06UJk1biNpqpE5yEGUKsm2yfyjOrkkmMOPX0M15DYR2mMNnOCVeJ2/g6WQipjH5w1ByTCbsTmGuZg+24DwNGE2oM+8/oRgHmj user@vps102"
 vhosts:
   people_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:92"
