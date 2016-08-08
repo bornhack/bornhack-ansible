@@ -26,6 +26,10 @@ webusers:
   kugg:
     name: kugg
     pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeR2eV4uKOcAzLEP/p6ADty177Ea5ir6fiJJaUzlfZuhEot2U9Fgz/nhPMABHYbilS/z5egIiwn645YxuLaE6m26IYFvxJI5bAdTR/vth2dhA4m6XBQLQh5tzQnwxZXXey91uTPNXFogcwIQYuIhXkB+yNDAy5wS34JsZjKZYnTZMHh5mWeuzmW0uamWfzfaakJq1Awike/WScO92UqDAIBgo8OwEqeZrMthR5pc3X2KsybtZ/1/p06UJk1biNpqpE5yEGUKsm2yfyjOrkkmMOPX0M15DYR2mMNnOCVeJ2/g6WQipjH5w1ByTCbsTmGuZg+24DwNGE2oM+8/oRgHmj user@vps102"
+  jagenau:
+    name: Sarah
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCSa1TuOSiCLktjAQDbiZrTSxbURWgc+HgYf3dtEzda5od1Tk8r6XAgH4dnfTQ9quFnt124/cVFU+IF3PBGbB45iQHDhr9LwAtCAaiA8N0Y9TcnuAS/03JagOVyE0iLoyXGw31AK5e3XjT8oyQyEDD+AjaPEdEtxALLJfDX1BIu8eQyzbNf/zgzmowS3n74PhXM4XcXyOARI9eIBOZ9pzRJ6jFpXqv4wuf+JQFASZz0736fV8YdJPhDhXaIZ9TuPzhGWjofVmsY085qIni+90pa6EvYpynuFOphnIHV64cSAA5fx6ye5VzrV7PclJs6RnQnYfR+3VdKarsG7VbSrC6N sarah@bornhack.org"
+    
 vhosts:
   people_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:92"
