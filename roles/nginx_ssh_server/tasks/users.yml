@@ -19,6 +19,8 @@
     state=directory
     mode=0755
   with_dict: "{{ webusers }}"
+  tags:
+    - usermanagement
 
 - name: Create web users
   become: yes
@@ -29,6 +31,8 @@
     home="/usr/webhomes/{{ item.key }}chroot/{{ item.key }}"
     shell="/bin/sh"
   with_dict: "{{ webusers }}"
+  tags:
+    - usermanagement
 
 - name: Create wwwroots
   become: yes
@@ -39,6 +43,8 @@
     owner="{{ item.key }}"
     group=webusers
   with_dict: "{{ webusers }}"
+  tags:
+    - usermanagement
 
 - name: Add SSH keys
   become: yes
@@ -48,3 +54,5 @@
     state=present
     exclusive=yes
   with_dict: "{{ webusers }}"
+  tags:
+    - usermanagement
