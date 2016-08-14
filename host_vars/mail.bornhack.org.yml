@@ -34,6 +34,7 @@ lists:
   gis-team: ahf@bornhack.org
   logistics-team: tykling@bornhack.org
   noc-team: hlk@kramse.org
+  noc: hlk@kramse.org
   power-team: tykling@bornhack.org
   pr-team: ahf@bornhack.org
   program-team: ahf@bornhack.org
