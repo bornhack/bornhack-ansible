@@ -1,0 +1,5 @@
+---
+- name: configure erlang webservers
+  hosts: erlang_web_servers
+  roles:
+    - erlang_web_server

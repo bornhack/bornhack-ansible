@@ -7,7 +7,7 @@ webproxy-bong.bornhack.org
 people.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
-
+nuntio.bornhack.org
 
 #######################################################
 ### freebsd jails per jailhost
@@ -19,7 +19,7 @@ webproxy-bong.bornhack.org
 people.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
-
+nuntio.bornhack.org
 
 ########################################################
 ### application groups
@@ -43,3 +43,6 @@ mail.bornhack.org
 
 [dovecot_servers]
 imap.bornhack.org
+
+[erlang_web_servers]
+nuntio.bornhack.org
