@@ -1,0 +1,4 @@
+---
+- include: nginx.yml
+- include: git.yml
+- include: erlang.yml
