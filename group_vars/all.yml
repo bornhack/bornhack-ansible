@@ -4,6 +4,3 @@ nginx_worker_connections: 1024
 ansible_user: ansible
 postgres_port: 5432
 github_branch: master
-dhparamgen_path: "/usr/local/etc/nginx/certificates/dhparams/"
-dhparamgen_logfile: "/var/log/dhparamgen.log"
-dhparamgen_opensslpath: /usr/local/bin/openssl
