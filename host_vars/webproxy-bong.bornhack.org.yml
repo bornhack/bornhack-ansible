@@ -67,5 +67,5 @@ vhosts:
     default_vhost: False
     locationslash: |
       location / {
-          proxy_pass http://10.0.0.18:80;
+          proxy_pass http://10.0.0.18:8080;
       }
