@@ -1,5 +1,0 @@
----
-- name: configure wiki servers
-  hosts: mediawiki_servers
-  roles:
-    - mediawiki_server

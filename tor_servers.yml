@@ -1,5 +1,0 @@
----
-- name: configure tor servers
-  hosts: tor_servers
-  roles:
-    - tor_server

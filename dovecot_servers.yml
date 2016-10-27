@@ -1,5 +1,0 @@
----
-- name: configure dovecot servers
-  hosts: dovecot_servers
-  roles:
-    - dovecot_server

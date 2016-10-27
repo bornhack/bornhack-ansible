@@ -6,17 +6,17 @@ Before running ansible:
 
 Deploy specific github branch to specific staging server:
 
-    ansible-playbook --vault-password-file /root/.ansiblevaultpass --tags "codedeploy" -i /usr/local/etc/ansible/staging_hosts -l "wwwstaging.bornhack.org" --extra-vars "github_branch=feature/new-design-and-content" /usr/local/etc/ansible/django_servers.yml
+    ansible-playbook --vault-password-file /root/.ansiblevaultpass --tags "codedeploy" -i /usr/local/etc/ansible/staging_hosts -l "wwwstaging.bornhack.org" --extra-vars "github_branch=feature/new-design-and-content" /usr/local/etc/ansible/roles/playbook.yml
 ---
 Deploy master github branch to production bornhack.dk webserver:
 
-    ansible-playbook --vault-password-file /root/.ansiblevaultpass --tags "codedeploy" -i /usr/local/etc/ansible/production_hosts -l "www.bornhack.dk" /usr/local/etc/ansible/django_servers.yml
+    ansible-playbook --vault-password-file /root/.ansiblevaultpass --tags "codedeploy" -i /usr/local/etc/ansible/production_hosts -l "www.bornhack.dk" /usr/local/etc/ansible/roles/playbook.yml
 ---
 Reconfigure everything on all staging tor servers:
 
-    ansible-playbook --vault-password-file /root/.ansiblevaultpass -i /usr/local/etc/ansible/staging_hosts /usr/local/etc/ansible/tor_servers.yml
+    ansible-playbook --vault-password-file /root/.ansiblevaultpass --tags "tor_servers" -i /usr/local/etc/ansible/staging_hosts /usr/local/etc/ansible/roles/playbook.yml
 ---
 Reconfigure everything on all production servers:
 
-    ansible-playbook --vault-password-file /root/.ansiblevaultpass -i /usr/local/etc/ansible/production_hosts /usr/local/etc/ansible/site.yml
+    ansible-playbook --vault-password-file /root/.ansiblevaultpass -i /usr/local/etc/ansible/production_hosts /usr/local/etc/ansible/roles/playbook.yml
 ---

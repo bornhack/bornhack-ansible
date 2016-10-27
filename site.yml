@@ -1,8 +1,0 @@
----
-- include: nginx_proxies.yml
-- include: django_servers.yml
-- include: mediawiki_servers.yml
-- include: tor_servers.yml
-- include: nginx_ssh_servers.yml
-- include: postfix_servers.yml
-- include: dovecot_servers.yml

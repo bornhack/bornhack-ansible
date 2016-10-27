@@ -1,5 +1,0 @@
----
-- name: configure nginx proxies
-  hosts: nginx_proxy_servers
-  roles:
-    - nginx_proxy
