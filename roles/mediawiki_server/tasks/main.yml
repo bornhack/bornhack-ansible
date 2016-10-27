@@ -1,6 +1,0 @@
----
-- include: nginx.yml
-- include: postgres.yml
-- include: php.yml
-- include: git.yml
-- include: mediawiki.yml

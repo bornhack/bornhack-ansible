@@ -1,3 +1,0 @@
-{% for domain in postfix_virtual_alias_domains %}
-default._domainkey.{{ domain }}     {{ domain }}:default:/usr/local/etc/opendkim/{{ domain }}-default.private
-{% endfor %}
