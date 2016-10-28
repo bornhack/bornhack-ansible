@@ -11,7 +11,7 @@ fi
 
 echo "cloning branch $BRANCH into $TMPDIR ..."
 rm -rf $TMPDIR
-git clone github.com:tykling/bornhack-ansible -b $BRANCH $TMPDIR
+git clone --recursive github.com:tykling/bornhack-ansible -b $BRANCH $TMPDIR
 if [ $? -ne 0 ]; then
         echo "error cloning from git"
         exit 1
