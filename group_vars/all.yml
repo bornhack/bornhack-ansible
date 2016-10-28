@@ -4,3 +4,4 @@ nginx_worker_connections: 1024
 ansible_user: ansible
 postgres_port: 5432
 github_branch: master
+ansible_python_interpreter: /usr/local/bin/python
