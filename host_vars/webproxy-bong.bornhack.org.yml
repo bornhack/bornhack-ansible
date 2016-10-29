@@ -11,7 +11,6 @@ vhosts:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:89"
     hostnames:
       - webproxy-bong.bornhack.org
-    letsencrypt: True
     default_vhost: True
     locationslash: |
       return 301 https://bornhack.dk/;
@@ -21,8 +20,6 @@ vhosts:
     hostnames:
       - bornhack.dk
       - www.bornhack.dk
-    letsencrypt: True
-    default_vhost: False
     locationslash: |
       location / {
           proxy_pass http://10.0.0.9:80;
@@ -32,8 +29,6 @@ vhosts:
     vhost_v6ip: "2a01:3a0:1:1900:81::2"
     hostnames:
       - wiki.bornhack.org
-    letsencrypt: True
-    default_vhost: False
     locationslash: |
       location / {
           proxy_pass http://10.0.0.11:80;
@@ -43,8 +38,6 @@ vhosts:
     vhost_v6ip: "2a01:3a0:1:1900:81::3"
     hostnames:
       - wwwstaging.bornhack.org
-    letsencrypt: True
-    default_vhost: False
     locationslash: |
       location / {
           proxy_pass http://10.0.0.13:80;
@@ -53,8 +46,6 @@ vhosts:
     vhost_v6ip: "2a01:3a0:1:1900:81::4"
     hostnames:
       - minutes.bornhack.org
-    letsencrypt: True
-    default_vhost: False
     locationslash: |
       location / {
           proxy_pass http://10.0.0.15:80;
@@ -63,9 +54,8 @@ vhosts:
     vhost_v6ip: "2a01:3a0:1:1900:81::5"
     hostnames:
       - nuntio.bornhack.org
-    letsencrypt: True
-    default_vhost: False
     locationslash: |
       location / {
           proxy_pass http://10.0.0.18:8080;
       }
+
