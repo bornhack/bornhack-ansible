@@ -35,7 +35,7 @@ bornhack-torgw.bornhack.org
 [nginx_https_servers]
 webproxy-bong.bornhack.org
 
-[nginx_ssh_servers]
+[people_servers]
 people.bornhack.org
 
 [postfix_servers]
@@ -46,3 +46,4 @@ imap.bornhack.org
 
 [erlang_web_servers]
 nuntio.bornhack.org
+
