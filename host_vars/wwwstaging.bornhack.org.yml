@@ -1,5 +1,6 @@
 ---
 ansible_host: 10.0.0.13
+
 django_root: /usr/local/www/wwwstaging.bornhack.org/
 django_mainapp: bornhack
 django_allowed_hostnames: wwwstaging.bornhack.org
@@ -7,10 +8,10 @@ django_env_path: /usr/local/www/wwwstaging.bornhack.org/bornhack/.env
 django_env_path2: /usr/local/www/wwwstaging.bornhack.org/bornhack/settings/.env
 nginx_django_static_root: /usr/local/www/wwwstaging.bornhack.org/bornhack/static/
 github_repo_url: https://github.com/bornhack/bornhack-website
-pip_requirements_path: /usr/local/www/wwwstaging.bornhack.org/requirements/production.txt
-postgres_user: bornhackstagingdk
-postgres_host: 10.0.0.3
-postgres_dbname: bornhackstagingdkdb
+django_pip_requirements_path: /usr/local/www/wwwstaging.bornhack.org/requirements/production.txt
+django_postgres_user: bornhackstagingdk
+django_postgres_host: 10.0.0.3
+django_postgres_dbname: bornhackstagingdkdb
 django_email_user: noreply@bornhack.org
 django_email_port: 587
 django_email_host: mail.bornhack.org
@@ -26,3 +27,17 @@ iban: DK3553710000244504
 swiftbic: ALBADKKK
 regno: 5371
 accountno: 244504
+
+vhosts:
+  wwwstaging_bornhack_org:
+    hostnames:
+      - wwwstaging.bornhack.org
+    locationslash: |
+      location /static/ {
+            alias {{ nginx_django_static_root }};
+      }
+      location / {
+            include         uwsgi_params;
+            uwsgi_pass      unix:/tmp/uwsgi.sock;
+      } 
+
