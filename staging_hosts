@@ -11,6 +11,6 @@ wwwstaging.bornhack.org
 
 ########################################################
 ### application groups
-[django_servers]
+[bh_django_servers]
 wwwstaging.bornhack.org
 

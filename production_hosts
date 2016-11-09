@@ -23,7 +23,7 @@ nuntio.bornhack.org
 
 ########################################################
 ### application groups
-[django_servers]
+[bh_django_servers]
 www.bornhack.dk
 
 [mediawiki_servers]
