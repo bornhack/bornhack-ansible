@@ -5,8 +5,8 @@ django_root: /usr/local/www/wwwstaging.bornhack.org/
 django_mainapp: bornhack
 django_allowed_hostnames: wwwstaging.bornhack.org
 django_env_path: /usr/local/www/wwwstaging.bornhack.org/bornhack/settings/.env
-nginx_django_static_root: /usr/local/www/wwwstaging.bornhack.org/bornhack/static/
-github_repo_url: https://github.com/bornhack/bornhack-website
+django_nginx_static_root: /usr/local/www/wwwstaging.bornhack.org/bornhack/static/
+django_github_repo_url: https://github.com/bornhack/bornhack-website
 django_pip_requirements_path: /usr/local/www/wwwstaging.bornhack.org/requirements/production.txt
 django_postgres_user: bornhackstagingdk
 django_postgres_host: 10.0.0.3
@@ -15,12 +15,13 @@ django_email_user: noreply@bornhack.org
 django_email_port: 587
 django_email_host: mail.bornhack.org
 django_email_from: info@bornhack.dk
-django_archive_email: stagingemailarchive@bornhack.org
-pdf_letterhead_filename: bornhack_2016_test_letterhead.pdf
 django_media_root: /usr/local/www/django_media_root/
 django_media_root_subdirs:
   - invoices
   - creditnotes
+
+django_archive_email: stagingemailarchive@bornhack.org
+django_pdf_letterhead_filename: bornhack_2016_test_letterhead.pdf
 iban: DK3553710000244504
 swiftbic: ALBADKKK
 regno: 5371
@@ -29,7 +30,7 @@ ticket_category_id: 880d7210-a9bb-4aab-8755-8dbdecf560f5
 
 nginx_locationslash: |
   location /static/ {
-        alias {{ nginx_django_static_root }};
+        alias {{ django_nginx_static_root }};
   }
   location / {
         include         uwsgi_params;
