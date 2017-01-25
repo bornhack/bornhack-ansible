@@ -32,7 +32,7 @@ wiki.bornhack.org
 [tor_servers]
 bornhack-torgw.bornhack.org
 
-[nginx_https_servers]
+[nginx_servers]
 webproxy-bong.bornhack.org
 
 [people_servers]
