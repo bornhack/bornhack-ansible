@@ -7,7 +7,7 @@ django_allowed_hostnames: wwwstaging.bornhack.org
 django_env_path: /usr/local/www/wwwstaging.bornhack.org/bornhack/settings/.env
 django_nginx_static_root: /usr/local/www/wwwstaging.bornhack.org/bornhack/static/
 django_github_repo_url: https://github.com/bornhack/bornhack-website
-django_pip_requirements_path: /usr/local/www/wwwstaging.bornhack.org/requirements/production.txt
+django_pip_requirements_path: /usr/local/www/wwwstaging.bornhack.org/requirements.txt
 django_postgres_user: bornhackstagingdk
 django_postgres_host: 10.0.0.3
 django_postgres_dbname: bornhackstagingdkdb
