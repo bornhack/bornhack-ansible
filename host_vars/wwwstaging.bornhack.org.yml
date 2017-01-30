@@ -1,13 +1,14 @@
 ---
 ansible_host: 10.0.0.13
 
-django_root: /usr/local/www/wwwstaging.bornhack.org/
+django_checkout_path: /usr/local/www/wwwstaging.bornhack.org
+django_root: "{{ django_checkout_path }}/src"
 django_mainapp: bornhack
 django_allowed_hostnames: wwwstaging.bornhack.org
-django_env_path: /usr/local/www/wwwstaging.bornhack.org/bornhack/.env
-django_nginx_static_root: /usr/local/www/wwwstaging.bornhack.org/static/
+django_env_path: "{{ django_root }}/bornhack/.env"
+django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: https://github.com/bornhack/bornhack-website
-django_pip_requirements_path: /usr/local/www/wwwstaging.bornhack.org/requirements.txt
+django_pip_requirements_path: "{{ django_root }}/requirements.txt"
 django_postgres_user: bornhackstagingdk
 django_postgres_host: 10.0.0.3
 django_postgres_dbname: bornhackstagingdkdb
