@@ -5,6 +5,7 @@ django_checkout_path: /usr/local/www/wwwstaging.bornhack.org
 django_root: "{{ django_checkout_path }}/src"
 django_mainapp: bornhack
 django_allowed_hostnames: "['wwwstaging.bornhack.org']"
+django_debug: 'True'
 django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: https://github.com/bornhack/bornhack-website
 django_pip_requirements_path: "{{ django_root }}/requirements.txt"
