@@ -4,8 +4,7 @@ ansible_host: 10.0.0.13
 django_checkout_path: /usr/local/www/wwwstaging.bornhack.org
 django_root: "{{ django_checkout_path }}/src"
 django_mainapp: bornhack
-django_allowed_hostnames: wwwstaging.bornhack.org
-django_env_path: "{{ django_root }}/bornhack/.env"
+django_allowed_hostnames: "['wwwstaging.bornhack.org']"
 django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: https://github.com/bornhack/bornhack-website
 django_pip_requirements_path: "{{ django_root }}/requirements.txt"
@@ -25,11 +24,17 @@ django_os_dependencies:
   - graphics/jpeg-turbo
 django_archive_email: stagingemailarchive@bornhack.org
 django_pdf_letterhead_filename: bornhack_2016_test_letterhead.pdf
+django_admins: |
+  (
+      ('bornhack sysadm', 'sysadm@bornhack.org'),
+  )
+django_timezone: 'Europe/Copenhagen'
+
+pdf_archive_path: '/usr/local/www/pdf_archive/'
 iban: DK3553710000244504
 swiftbic: ALBADKKK
 regno: 5371
 accountno: 244504
-ticket_category_id: 880d7210-a9bb-4aab-8755-8dbdecf560f5
 
 nginx_locationslash: |
   location /static/ {
