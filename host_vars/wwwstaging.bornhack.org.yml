@@ -42,6 +42,10 @@ nginx_locationslash: |
   location /static/ {
         alias {{ django_nginx_static_root }};
   }
+  location /_media/ {
+        internal;
+        root {{ django_media_root }};
+  }
   location / {
         include         uwsgi_params;
         uwsgi_pass      unix:/tmp/uwsgi.sock;
