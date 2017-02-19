@@ -20,7 +20,7 @@ django_media_root: /usr/local/www/django_media_root/
 django_media_root_subdirs:
   - invoices
   - creditnotes
-  - speakers
+  - public
 django_os_dependencies:
   - databases/postgresql93-client
   - graphics/jpeg-turbo
