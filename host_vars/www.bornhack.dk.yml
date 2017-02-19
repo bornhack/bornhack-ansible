@@ -1,13 +1,14 @@
 ---
 ansible_host: 10.0.0.9
 
-django_root: /usr/local/www/www.bornhack.dk/
+django_checkout_path: "/usr/local/www/www.bornhack.dk"
+django_root: "{{ django_checkout_path }}/src"
 django_mainapp: bornhack
-django_allowed_hostnames: bornhack.dk,www.bornhack.dk,bornhack7hctgpio.onion
-django_env_path: /usr/local/www/www.bornhack.dk/bornhack/settings/.env
-django_nginx_static_root: /usr/local/www/www.bornhack.dk/bornhack/static/
+django_allowed_hostnames: "['bornhack.dk','www.bornhack.dk','bornhack7hctgpio.onion']"
+django_debug: 'False'
+django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: https://github.com/bornhack/bornhack-website
-django_pip_requirements_path: /usr/local/www/www.bornhack.dk/requirements/production.txt
+django_pip_requirements_path: "{{ django_root }}/requirements.txt"
 django_postgres_user: bornhackdk
 django_postgres_host: 10.0.0.3
 django_postgres_dbname: bornhackdkdb
@@ -15,22 +16,35 @@ django_email_user: noreply@bornhack.org
 django_email_port: 587
 django_email_host: mail.bornhack.org
 django_email_from: info@bornhack.dk
-django_media_root: /usr/local/www/django_media_root/
+django_media_root: /usr/local/www/django_media_root
 django_media_root_subdirs:
   - invoices
   - creditnotes
-
+  - public
+django_os_dependencies:
+  - databases/postgresql93-client
+  - graphics/jpeg-turbo
 django_archive_email: mailarchive@bornhack.org
 django_pdf_letterhead_filename: bornhack_2016_letterhead.pdf
+django_admins: |
+  (
+      ('bornhack sysadm', 'sysadm@bornhack.org'),
+  )
+django_timezone: 'Europe/Copenhagen'
+
+pdf_archive_path: '/usr/local/www/pdf_archive/'
 iban: DK3553710000244504
 swiftbic: ALBADKKK
 regno: 5371
 accountno: 244504
-ticket_category_id: eaadfd27-75b3-4f21-b66d-7424271839e0
 
 nginx_locationslash: |
   location /static/ {
         alias {{ django_nginx_static_root }};
+  }
+  location /public/ {
+        internal;
+        root {{ django_media_root }};
   }
   location / {
         include         uwsgi_params;

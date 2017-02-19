@@ -1,7 +1,7 @@
 ---
 ansible_host: 10.0.0.13
 
-django_checkout_path: /usr/local/www/wwwstaging.bornhack.org
+django_checkout_path: "/usr/local/www/wwwstaging.bornhack.org"
 django_root: "{{ django_checkout_path }}/src"
 django_mainapp: bornhack
 django_allowed_hostnames: "['wwwstaging.bornhack.org']"
@@ -49,5 +49,5 @@ nginx_locationslash: |
   location / {
         include         uwsgi_params;
         uwsgi_pass      unix:/tmp/uwsgi.sock;
-  } 
+  }
 
