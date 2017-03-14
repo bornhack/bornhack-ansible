@@ -9,8 +9,20 @@ mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
 
+### all freebsd hosts, jails and vms
+[freebsd]
+www.bornhack.dk
+wiki.bornhack.org
+bornhack-torgw.bornhack.org
+webproxy-bong.bornhack.org
+people.bornhack.org
+mail.bornhack.org
+imap.bornhack.org
+nuntio.bornhack.org
+
+
 #######################################################
-### freebsd jails per jailhost
+### freebsd jails grouped per jailhost
 [bong_jails]
 www.bornhack.dk
 wiki.bornhack.org
@@ -20,6 +32,7 @@ people.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
+
 
 ########################################################
 ### application groups

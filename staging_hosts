@@ -3,6 +3,11 @@
 wwwstaging.bornhack.org
 
 
+### all freebsd hosts, jails and vms
+[freebsd]
+wwwstaging.bornhack.org
+
+
 #######################################################
 ### freebsd jails
 [bong_jails]
