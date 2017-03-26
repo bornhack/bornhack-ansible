@@ -24,6 +24,7 @@ django_media_root_subdirs:
 django_os_dependencies:
   - databases/postgresql93-client
   - graphics/jpeg-turbo
+  - converters/wkhtmltopdf
 django_archive_email: stagingemailarchive@bornhack.org
 django_admins: |
   (
