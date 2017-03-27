@@ -31,8 +31,8 @@ django_admins: |
       ('bornhack sysadm', 'sysadm@bornhack.org'),
   )
 django_timezone: 'Europe/Copenhagen'
-djangomanage_workers:
-  - "invoice-worker"
+django_manage_workers:
+  - "shop.invoiceworker"
 pdf_archive_path: '/usr/local/www/pdf_archive/'
 iban: DK3553710000244504
 swiftbic: ALBADKKK
