@@ -32,7 +32,9 @@ django_admins: |
   )
 django_timezone: 'Europe/Copenhagen'
 django_manage_workers:
-  - "shop.invoiceworker"
+  invoiceworker:
+    commandline: "--sleep 30 shop.invoiceworker"
+
 pdf_archive_path: '/usr/local/www/pdf_archive/'
 iban: DK3553710000244504
 swiftbic: ALBADKKK
