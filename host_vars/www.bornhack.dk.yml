@@ -25,6 +25,7 @@ django_os_dependencies:
   - databases/postgresql93-client
   - graphics/jpeg-turbo
   - converters/wkhtmltopdf
+  - x11-fonts/webfonts
 django_archive_email: mailarchive@bornhack.org
 django_admins: |
   (
