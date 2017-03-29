@@ -24,15 +24,19 @@ django_media_root_subdirs:
 django_os_dependencies:
   - databases/postgresql93-client
   - graphics/jpeg-turbo
+  - converters/wkhtmltopdf
 django_archive_email: mailarchive@bornhack.org
-django_pdf_letterhead_filename: bornhack_2016_letterhead.pdf
 django_admins: |
   (
       ('bornhack sysadm', 'sysadm@bornhack.org'),
   )
 django_timezone: 'Europe/Copenhagen'
+django_manage_workers:
+  invoiceworker:
+    commandline: "--sleep 30 shop.invoiceworker"
 
 pdf_archive_path: '/usr/local/www/pdf_archive/'
+pdf_letterhead_filename: "bornhack-2017_letterhead.pdf"
 iban: DK3553710000244504
 swiftbic: ALBADKKK
 regno: 5371
