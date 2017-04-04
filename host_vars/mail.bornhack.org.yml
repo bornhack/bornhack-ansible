@@ -1,5 +1,6 @@
 ---
 nginx_v4_proxy_ip: 85.235.250.93
+vhost_v4ip: 85.235.250.93
 
 postfix_virtual_alias_domains:
   - bornhack.org
