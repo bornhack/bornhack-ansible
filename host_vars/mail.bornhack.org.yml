@@ -6,7 +6,6 @@ letsencrypt_email: letsencrypt@bornhack.org
 dns_resolver_ip: 10.0.0.1
 vhost_v4ip: 85.235.250.93
 nginx_dhparam_path: "/usr/local/etc/nginx/certificates/dhparam.pem"
-poudriere_package_set: 10_2_amd64-default-mailman_server
 postfix_virtual_alias_domains:
   - bornhack.org
   - bornhack.dk
