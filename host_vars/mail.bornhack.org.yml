@@ -46,6 +46,7 @@ lists:
   speakers: ahf@bornhack.org
   info-team: kugghjul@gmail.com
   conduct: tykling@bornhack.org
+  content: ahf@bornhack.org
 
 vhosts:
   mail_bornhack_org:
