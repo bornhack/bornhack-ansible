@@ -55,10 +55,12 @@ nginx_locationslash: |
         include         uwsgi_params;
         uwsgi_pass      unix:/tmp/uwsgi.sock;
   }
-  location @favicon {
-      root {{ django_nginx_static_root }}img/favicon;
+  location @django {
+        include         uwsgi_params;
+        uwsgi_pass      unix:/tmp/uwsgi.sock;
   }
   location / {
-        try_files @favicon @django;
+        root {{ django_nginx_static_root }}img/favicon;
+        try_files $uri @django;
   }
 
