@@ -51,8 +51,14 @@ nginx_locationslash: |
         internal;
         root {{ django_media_root }};
   }
-  location / {
+  location @django {
         include         uwsgi_params;
         uwsgi_pass      unix:/tmp/uwsgi.sock;
+  }
+  location @favicon {
+      alias {{ django_nginx_static_root }}/img/favicon;
+  }
+  location / {
+        try_files @favicon @django;
   }
 
