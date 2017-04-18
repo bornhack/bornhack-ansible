@@ -26,6 +26,7 @@ django_os_dependencies:
   - graphics/jpeg-turbo
   - converters/wkhtmltopdf
   - x11-fonts/webfonts
+  - databases/redis
 django_archive_email: stagingemailarchive@bornhack.org
 django_admins: |
   (
@@ -34,7 +35,7 @@ django_admins: |
 django_timezone: 'Europe/Copenhagen'
 django_manage_workers:
   invoiceworker:
-    commandline: "--sleep 30 shop.invoiceworker"
+    commandline: "run_managepy_worker --sleep 30 shop.invoiceworker"
 
 pdf_archive_path: '/usr/local/www/pdf_archive/'
 pdf_letterhead_filename: "bornhack-2017_test_letterhead.pdf"
@@ -52,9 +53,9 @@ nginx_locationslash: |
         root {{ django_media_root }};
   }
   location @django {
-      #include         uwsgi_params;
-      #uwsgi_pass      unix:/tmp/uwsgi.sock;
       proxy_pass http://127.0.0.1:8000;
+      proxy_set_header   Host $host;
+      proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
   }
   location / {
         root {{ django_nginx_static_root }}img/favicon;
