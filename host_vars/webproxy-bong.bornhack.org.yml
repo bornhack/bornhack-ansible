@@ -33,7 +33,7 @@ vhosts:
       - wwwstaging.bornhack.org
     locationslash: |
       location / {
-          proxy_pass http://10.0.0.13:80;
+          proxy_pass http://10.0.0.21:80;
       }
   minutes_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:81::4"
