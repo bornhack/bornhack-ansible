@@ -1,21 +1,21 @@
 #######################################################
 ### all hosts
-wwwstaging.bornhack.org
+staging2.servers.bornhack.org
 
 
 ### all freebsd hosts, jails and vms
 [freebsd]
-wwwstaging.bornhack.org
+staging2.servers.bornhack.org
 
 
 #######################################################
 ### freebsd jails
 [bong_jails]
-wwwstaging.bornhack.org
+staging2.servers.bornhack.org
 
 
 ########################################################
 ### application groups
 [bh_django_servers]
-wwwstaging.bornhack.org
+staging2.servers.bornhack.org
 
