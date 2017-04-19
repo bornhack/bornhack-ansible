@@ -34,7 +34,7 @@ django_admins: |
 django_timezone: 'Europe/Copenhagen'
 django_manage_workers:
   invoiceworker:
-    commandline: "--sleep 30 shop.invoiceworker"
+    commandline: "run_managepy_worker --sleep 30 shop.invoiceworker"
 
 pdf_archive_path: '/usr/local/www/pdf_archive/'
 pdf_letterhead_filename: "bornhack-2017_letterhead.pdf"
@@ -51,8 +51,16 @@ nginx_locationslash: |
         internal;
         root {{ django_media_root }};
   }
+  location @django {
+      proxy_pass http://127.0.0.1:8000;
+      proxy_http_version 1.1;
+      proxy_set_header Host $http_host;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection $connection_upgrade;
+  }
   location / {
-        include         uwsgi_params;
-        uwsgi_pass      unix:/tmp/uwsgi.sock;
+        root {{ django_nginx_static_root }}img/favicon;
+        try_files $uri @django;
   }
 
