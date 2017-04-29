@@ -14,7 +14,7 @@ django_email_user: noreply@bornhack.org
 django_email_port: 587
 django_email_host: mail.bornhack.org
 django_email_from: info@bornhack.dk
-django_media_root: /usr/local/www/django_media_root
+django_media_root: /storage/django_media_root
 django_media_root_subdirs:
   - invoices
   - creditnotes
@@ -34,7 +34,7 @@ django_manage_workers:
   invoiceworker:
     commandline: "run_managepy_worker --sleep 30 shop.invoiceworker"
 
-pdf_archive_path: '/usr/local/www/pdf_archive/'
+pdf_archive_path: '/storage/pdf_archive/'
 pdf_letterhead_filename: "bornhack-2017_test_letterhead.pdf"
 iban: DK3553710000244504
 swiftbic: ALBADKKK
