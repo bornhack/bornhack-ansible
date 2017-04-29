@@ -15,7 +15,7 @@ vhosts:
       - www.bornhack.dk
     locationslash: |
       location / {
-          proxy_pass http://10.0.0.9:80;
+          proxy_pass http://wwwprod2.servers.bornhack.org:80;
       }
 
   wiki_bornhack_org:
@@ -33,7 +33,7 @@ vhosts:
       - wwwstaging.bornhack.org
     locationslash: |
       location / {
-          proxy_pass http://10.0.0.21:80;
+          proxy_pass http://staging2.servers.bornhack.org:80;
       }
   minutes_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:81::4"
