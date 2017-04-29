@@ -8,6 +8,7 @@ people.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
+wwwprod2.servers.bornhack.org
 
 ### all freebsd hosts, jails and vms
 [freebsd]
@@ -19,6 +20,7 @@ people.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
+wwwprod2.servers.bornhack.org
 
 
 #######################################################
@@ -32,12 +34,14 @@ people.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
+wwwprod2.servers.bornhack.org
 
 
 ########################################################
 ### application groups
 [bh_django_servers]
 www.bornhack.dk
+wwwprod2.servers.bornhack.org
 
 [mediawiki_servers]
 wiki.bornhack.org
