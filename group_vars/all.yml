@@ -1,7 +1,21 @@
 ---
 nginx_worker_processes: 10
 nginx_worker_connections: 1024
-ansible_user: ansible
+ansible_user: "ansible"
 postgres_port: 5432
-github_branch: master
-ansible_python_interpreter: /usr/local/bin/python
+github_branch: "master"
+ansible_python_interpreter: "/usr/local/bin/python"
+users:
+  tyk:
+    comment: "Thomas Steen Rasmussen"
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZq1LdOdPDYnoQWn+87JafplL6IhDGvgytBfhItydgq user@bornhack"
+    sudo: True
+  telling:
+    comment: "Stephan Telling"
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPVxRVn6Um/cyPMo6YbqUXnowXCElv9CyMUIvqpOwtXD telling@telling-mbp.local"
+    sudo: True
+  valberg:
+    comment: "Víðir Valberg Guðmundsson"
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUmGeHc6QXDcJHkmVxbTUv04Q3vs20avquoGr6eOkkvYbcgjuFnBOOtvs2Nul1odcvvnHa1nN7DfL8XJamiwsB1B/xe2seaNS1axgwk9XowlVN9pgga8gsC+4gZWBtSObG2GR8n4NtPENzPmW5deNn8dRpTvULPMxZ0VRE9yNQOx8v8w85yYh+vxbbkWGVDYJU23yuJI50U9y6bXxNHinsACDFBeR/giXDlw29TaOaSxz0R6zrRPBoX+V68RyWwBL+KWQKtX2ULtJI40S98Ohd6p41bIxYHCBS/zroqNne8PjYOLcHHsjHUGfTvhcS5a3zdz/iHsvsaOOjFjsydAXH valberg"
+    sudo: True
+
