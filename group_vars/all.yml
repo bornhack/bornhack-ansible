@@ -6,7 +6,7 @@ postgres_port: 5432
 github_branch: "master"
 ansible_python_interpreter: "/usr/local/bin/python"
 users:
-  tyk:
+  tykling:
     comment: "Thomas Steen Rasmussen"
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZq1LdOdPDYnoQWn+87JafplL6IhDGvgytBfhItydgq user@bornhack"
     sudo: True
