@@ -6,6 +6,7 @@ django_allowed_hostnames: "['wwwstaging.bornhack.org']"
 django_debug: 'False'
 django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: https://github.com/bornhack/bornhack-website
+django_github_branch: "emailworker"
 django_pip_requirements_path: "{{ django_root }}/requirements.txt"
 django_postgres_user: bornhackstagingdk
 django_postgres_host: 10.0.0.3
@@ -33,6 +34,8 @@ django_timezone: 'Europe/Copenhagen'
 django_manage_workers:
   invoiceworker:
     commandline: "run_managepy_worker --sleep 30 shop.invoiceworker"
+  emailworker:
+    commandline: "run_managepy_worker --sleep 30 utils.outgoingemailworker"
 
 pdf_archive_path: '/storage/pdf_archive/'
 pdf_letterhead_filename: "bornhack-2017_test_letterhead.pdf"
