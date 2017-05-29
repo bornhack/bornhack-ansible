@@ -2,23 +2,23 @@
 ### all hosts
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
-webproxy-bong.bornhack.org
 people.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
 wwwprod2.servers.bornhack.org
+webproxy2.servers.bornhack.org
 
 ### all freebsd hosts, jails and vms
 [freebsd]
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
-webproxy-bong.bornhack.org
 people.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
 wwwprod2.servers.bornhack.org
+webproxy2.servers.bornhack.org
 
 
 #######################################################
@@ -26,12 +26,12 @@ wwwprod2.servers.bornhack.org
 [bong_jails]
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
-webproxy-bong.bornhack.org
 people.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
 wwwprod2.servers.bornhack.org
+webproxy2.servers.bornhack.org
 
 
 ########################################################
@@ -46,7 +46,7 @@ wiki.bornhack.org
 bornhack-torgw.bornhack.org
 
 [nginx_servers]
-webproxy-bong.bornhack.org
+webproxy2.servers.bornhack.org
 
 [people_servers]
 people.bornhack.org
