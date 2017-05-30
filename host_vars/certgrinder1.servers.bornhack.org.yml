@@ -1,0 +1,14 @@
+nginx_locationslash: |$
+  location '/.well-known/acme-challenge' {$
+        default_type        "text/plain";$
+        alias               {{ letsencrypt_webroot }};$
+  }$
+  location / {$
+        return 403;$
+  }$
+
+certgrinder_authorized_keys:
+  webproxy2_servers_bornhack_org:
+    fromip: "2a01:3a0:1:1900:85:235:250:91"
+    authkey: "ssh-ed25519 noget"
+
