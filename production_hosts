@@ -8,9 +8,10 @@ imap.bornhack.org
 nuntio.bornhack.org
 wwwprod2.servers.bornhack.org
 webproxy2.servers.bornhack.org
+certgrinder1.servers.bornhack.org
 
 ### all freebsd hosts, jails and vms
-[freebsd]
+[freebsd_base]
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
 people.bornhack.org
@@ -19,6 +20,7 @@ imap.bornhack.org
 nuntio.bornhack.org
 wwwprod2.servers.bornhack.org
 webproxy2.servers.bornhack.org
+certgrinder1.servers.bornhack.org
 
 
 #######################################################
@@ -32,6 +34,7 @@ imap.bornhack.org
 nuntio.bornhack.org
 wwwprod2.servers.bornhack.org
 webproxy2.servers.bornhack.org
+certgrinder1.servers.bornhack.org
 
 
 ########################################################
@@ -59,4 +62,10 @@ imap.bornhack.org
 
 [erlang_web_servers]
 nuntio.bornhack.org
+
+[certgrinder_servers]
+certgrinder1.servers.bornhack.org
+
+[certgrinder_clients]
+webproxy2.servers.bornhack.org
 

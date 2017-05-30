@@ -1,0 +1,69 @@
+nginx_proxy: True
+nginx_v4_proxy_ip: "85.235.250.91"
+
+vhosts:
+  webproxy2_servers_bornhack_dk:
+    vhost_v6ip: "2a01:3a0:1:1900:85:235:250:91"
+    hostnames:
+      - webproxy2.servers.bornhack.org
+    default_vhost: True
+    locationslash: |
+      return 301 https://bornhack.dk/;
+
+  bornhack_dk:
+    vhost_v6ip: "2a01:3a0:1:1900:81::1"
+    hostnames:
+      - bornhack.dk
+      - www.bornhack.dk
+    locationslash: |
+      location / {
+          proxy_pass http://wwwprod2.servers.bornhack.org:80;
+      }
+
+  wiki_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::2"
+    hostnames:
+      - wiki.bornhack.org
+    locationslash: |
+      location / {
+          proxy_pass http://10.0.0.11:80;
+      }
+
+  wwwstaging_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::3"
+    hostnames:
+      - wwwstaging.bornhack.org
+    locationslash: |
+      location / {
+          proxy_pass http://staging2.servers.bornhack.org:80;
+      }
+  minutes_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::4"
+    hostnames:
+      - minutes.bornhack.org
+    locationslash: |
+      location / {
+          proxy_pass http://10.0.0.15:80;
+      }
+  nuntio_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::5"
+    hostnames:
+      - nuntio.bornhack.org
+    locationslash: |
+      location / {
+          proxy_pass http://10.0.0.18:8080;
+      }
+
+certgrinder_hostname_sets:
+  - "webproxy2.servers.bornhack.org"
+  - "bornhack.dk,www.bornhack.dk"
+  - "wiki.bornhack.org"
+  - "wwwstaging.bornhack.org"
+  - "minutes.bornhack.org"
+  - "nuntio.bornhack.org"
+
+certgrinder_post_renew_hooks:
+  - "/usr/sbin/service nginx reload"
+
+certgrinder_bind_ip: "2a01:3a0:1:1900:85:235:250:91"
+

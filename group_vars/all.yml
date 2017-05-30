@@ -19,3 +19,8 @@ users:
     key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUmGeHc6QXDcJHkmVxbTUv04Q3vs20avquoGr6eOkkvYbcgjuFnBOOtvs2Nul1odcvvnHa1nN7DfL8XJamiwsB1B/xe2seaNS1axgwk9XowlVN9pgga8gsC+4gZWBtSObG2GR8n4NtPENzPmW5deNn8dRpTvULPMxZ0VRE9yNQOx8v8w85yYh+vxbbkWGVDYJU23yuJI50U9y6bXxNHinsACDFBeR/giXDlw29TaOaSxz0R6zrRPBoX+V68RyWwBL+KWQKtX2ULtJI40S98Ohd6p41bIxYHCBS/zroqNne8PjYOLcHHsjHUGfTvhcS5a3zdz/iHsvsaOOjFjsydAXH valberg"
     sudo: True
 
+certgrinder_ssh_server: "certgrinder1.servers.bornhack.org"
+certgrinder_ssh_server_pubkey: ""$
+certgrinder_redirect_url: "https://certgrinder.bornhack.org"$
+certgrinder_admin_email: "sysadm@bornhack.org"
+
