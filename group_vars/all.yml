@@ -20,7 +20,7 @@ users:
     sudo: True
 
 certgrinder_ssh_server: "certgrinder1.servers.bornhack.org"
-certgrinder_ssh_server_pubkey: "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHbWy4ZggXE28302dT/qNFs61ZnSU725CpV2Em7LLHNpUwOrE2N0dwJy/GVT/gdFxwIu+9M9/ogo1kI/fBClWDc="
+certgrinder_ssh_server_pubkey: "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBn2WYu5g8Q/G280wsjiPUEthAraSDmaOO6NKUH+ClTMXsuf31ZVTikvrQ5S9AUvkic+2eTaABz7VVFRTVXFWg8="
 certgrinder_redirect_url: "https://certgrinder.bornhack.org"
 certgrinder_admin_email: "sysadm@bornhack.org"
 
