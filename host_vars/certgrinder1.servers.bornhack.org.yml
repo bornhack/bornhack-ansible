@@ -1,11 +1,12 @@
-nginx_locationslash: |$
-  location '/.well-known/acme-challenge' {$
-        default_type        "text/plain";$
-        alias               {{ letsencrypt_webroot }};$
-  }$
-  location / {$
-        return 403;$
-  }$
+---
+nginx_locationslash: |
+  location '/.well-known/acme-challenge' {
+        default_type        "text/plain";
+        alias               {{ letsencrypt_webroot }};
+  }
+  location / {
+        return 403;
+  }
 
 certgrinder_authorized_keys:
   webproxy2_servers_bornhack_org:
