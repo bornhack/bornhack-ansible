@@ -10,8 +10,9 @@ wwwprod2.servers.bornhack.org
 webproxy2.servers.bornhack.org
 certgrinder1.servers.bornhack.org
 
+
 ### all freebsd hosts, jails and vms
-[freebsd_base]
+[freebsd]
 wiki.bornhack.org
 bornhack-torgw.bornhack.org
 people.bornhack.org
