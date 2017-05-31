@@ -61,7 +61,7 @@ vhosts:
       location / {
           proxy_pass http://certgrinder1.servers.bornhack.org:80;
       }
-    http_only: True
+    https: False
 
 certgrinder_hostname_sets:
   - "webproxy2.servers.bornhack.org"
