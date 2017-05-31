@@ -21,6 +21,6 @@ users:
 
 certgrinder_ssh_server: "certgrinder1.servers.bornhack.org"
 certgrinder_ssh_server_pubkey: "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBn2WYu5g8Q/G280wsjiPUEthAraSDmaOO6NKUH+ClTMXsuf31ZVTikvrQ5S9AUvkic+2eTaABz7VVFRTVXFWg8="
-certgrinder_redirect_url: "https://certgrinder.bornhack.org"
+certgrinder_redirect_url: "http://certgrinder.bornhack.org"
 certgrinder_admin_email: "sysadm@bornhack.org"
 
