@@ -12,4 +12,7 @@ certgrinder_authorized_keys:
   webproxy2_servers_bornhack_org:
     fromip: "2a01:3a0:1:1900:85:235:250:91"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOegnR+qnK2FEoaSrVwHgCIxjFkVEbW4VO31/Hd2mAwk ansible-generated on webproxy2.servers.bornhack.org"
+  imap_bornhack_org:
+    fromip: "2a01:3a0:1:1900:85:235:250:94" 
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAeALnXVqoJCOE5Vst9CZsUVh0gQvg/w07dFqBQMe05U ansible-generated on imap.bornhack.org"
 
