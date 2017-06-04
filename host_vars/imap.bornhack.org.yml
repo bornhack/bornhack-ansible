@@ -1,6 +1,4 @@
 ---
-nginx_v4_proxy_ip: 85.235.250.94
-
 dovecot_postgres_host: 10.0.0.3
 dovecot_postgres_dbname: bornhackmail
 dovecot_postgres_user: dovecot
@@ -9,14 +7,10 @@ dovecot_vmail_uid: 10000
 dovecot_vmail_groupname: vmail
 dovecot_vmail_gid: 10000
 
-vhosts:
-  imap_bornhack_org:
-    vhost_v6ip: "2a01:3a0:1:1900:85:235:250:94"
-    hostnames:
-      - imap.bornhack.org
-    default_vhost: True
-    locationslash: |
-      location / {
-          rewrite ^ https://webmail.bornhack.org/ permanent;
-      }
+certgrinder_hostname_sets:
+ - "imap.bornhack.org"
+
+certgrinder_post_renew_hooks:
+  - "/usr/sbin/service nginx reload"
+  - "/usr/sbin/service dovecot reload"
 
