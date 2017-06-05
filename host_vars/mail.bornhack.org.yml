@@ -53,7 +53,6 @@ vhosts:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:93"
     hostnames:
       - mail.bornhack.org
-    letsencrypt: True
     default_vhost: True
     locationslash: |
         location = / {
@@ -83,3 +82,14 @@ vhosts:
                 alias /usr/local/mailman/archives/public;
                 autoindex on;
         }
+        location /.well-known/acme-challenge/ {
+                return 301 {{ certgrinder_redirect_url }}$request_uri;
+        }
+
+certgrinder_hostname_sets:
+  - "mail.bornhack.org"
+
+certgrinder_post_renew_hooks:
+  - "/usr/sbin/service postfix reload"
+
+
