@@ -1,12 +1,22 @@
 ---
-nginx_locationslash: |
-  location '/.well-known/acme-challenge' {
-        default_type        "text/plain";
-        alias               {{ letsencrypt_webroot }};
-  }
-  location / {
-        return 403;
-  }
+
+nginx_v4_proxy_ip: "85.235.225.224"
+
+vhosts:
+  certgrinder_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:85:235:225:224"
+    default_vhost: True
+    hostnames:
+      - "certgrinder.bornhack.org"
+    locationslash: |
+      location '/.well-known/acme-challenge' {
+            default_type        "text/plain";
+            alias               {{ letsencrypt_webroot }};
+      }
+      location / {
+            return 403;
+      }
+    https: False
 
 certgrinder_authorized_keys:
   webproxy2_servers_bornhack_org:
