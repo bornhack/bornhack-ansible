@@ -38,4 +38,13 @@ vhosts:
           index index.html;
           autoindex on;
       }
+      location /.well-known/acme-challenge/ {
+          return 301 {{ certgrinder_redirect_url }}$request_uri;
+      }
+
+certgrinder_hostname_sets:
+  - "people.bornhack.org"
+
+certgrinder_post_renew_hooks:
+  - "/usr/sbin/service nginx reload"
 
