@@ -18,4 +18,7 @@ certgrinder_authorized_keys:
   mail_bornhack_org:
     fromip: "2a01:3a0:1:1900:85:235:250:93"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbOK7mnIa0ODIjN64pXiNwyPOv75nZq67iHVkwlmLY5 ansible-generated on mail.bornhack.org"
+  people_bornhack_org:
+    fromip: "2a01:3a0:1:1900:85:235:250:92"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHXrwp4popH6CjaMfJJsxtLI/lKEpZCwmm4tU5vBWFD8 ansible-generated on people.bornhack.org"
 
