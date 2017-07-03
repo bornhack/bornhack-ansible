@@ -65,3 +65,9 @@ nginx_locationslash: |
         try_files $uri @django;
   }
 
+django_ircbot_nickname: "BornHackStaging"
+django_ircbot_server: "ircd.tyknet.dk"
+django_ircbot_default_channel: "#tirsdagsfilm"
+django_ircbot_orga_channel: "#tirsdagsfilm"
+django_ircbot_public_channel: "#tirsdagsfilm"
+

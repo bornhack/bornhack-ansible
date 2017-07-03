@@ -64,3 +64,9 @@ nginx_locationslash: |
         try_files $uri @django;
   }
 
+django_ircbot_nickname: "BornHack"
+django_ircbot_server: "ircd.tyknet.dk"
+django_ircbot_default_channel: "#bornhack.org"
+django_ircbot_orga_channel: "#bornhack.org"
+django_ircbot_public_channel: "#bornhack"
+
