@@ -60,6 +60,7 @@ vhosts:
       - coinifycallback.bornhack.org
     locationslash: |
       location ~ /shop/orders/(?<orderid>[0-9]+)/pay/blockchain/callback/ {
+          proxy_set_header        Host bornhack.dk;
           proxy_pass http://wwwprod2.servers.bornhack.org:80;
       }
       location / {
