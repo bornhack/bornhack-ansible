@@ -72,3 +72,5 @@ django_ircbot_default_channel: "#bornhack.org"
 django_ircbot_orga_channel: "#bornhack.org"
 django_ircbot_public_channel: "#bornhack"
 
+coinify_callback_hostname: "coinifycallback.bornhack.org"
+
