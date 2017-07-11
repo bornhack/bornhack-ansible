@@ -54,6 +54,19 @@ vhosts:
       location / {
           proxy_pass http://10.0.0.18:8080;
       }
+  coinifycallback_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::6"
+    hostnames:
+      - coinifycallback.bornhack.org
+    locationslash: |
+      location ~ /shop/orders/(?<orderid>[0-9]+/pay/blockchain/callback/ {
+          proxy_pass http://wwwprod2.servers.bornhack.org:80;
+      }
+      location / {
+        return 301 https://bornhack.dk/;
+      }
+
+
 certgrinder_hostname_sets:
   - "webproxy2.servers.bornhack.org"
   - "bornhack.dk,www.bornhack.dk"
@@ -61,6 +74,7 @@ certgrinder_hostname_sets:
   - "wwwstaging.bornhack.org"
   - "minutes.bornhack.org"
   - "nuntio.bornhack.org"
+  - "coinifycallback.bornhack.org"
 
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service nginx reload"
