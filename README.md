@@ -6,7 +6,7 @@ Before running ansible:
 
 Deploy specific github branch to specific staging server:
 
-    ansible-playbook --tags "codedeploy" -i /usr/local/etc/ansible/staging_hosts -l "wwwstaging.bornhack.org" --extra-vars "github_branch=feature/new-design-and-content" /usr/local/etc/ansible/roles/playbook.yml
+    ansible-playbook --tags "codedeploy" -i /usr/local/etc/ansible/staging_hosts -l "staging2.servers.bornhack.org" --extra-vars "django_github_branch=feature/new-design-and-content" /usr/local/etc/ansible/roles/playbook.yml
 ---
 Deploy master github branch to production bornhack.dk webserver:
 
