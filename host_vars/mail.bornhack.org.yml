@@ -47,6 +47,7 @@ lists:
   info-team: kugghjul@gmail.com
   conduct: tykling@bornhack.org
   content: ahf@bornhack.org
+  metrics: tykling@bornhack.org
 
 vhosts:
   mail_bornhack_org:
