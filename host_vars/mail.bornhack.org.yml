@@ -48,6 +48,7 @@ lists:
   conduct: tykling@bornhack.org
   content: ahf@bornhack.org
   metrics: tykling@bornhack.org
+  badge: tykling@bornhack.org
 
 vhosts:
   mail_bornhack_org:
