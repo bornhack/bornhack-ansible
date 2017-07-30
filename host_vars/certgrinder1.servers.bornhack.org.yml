@@ -11,12 +11,14 @@ vhosts:
     locationslash: |
       location '/.well-known/acme-challenge' {
             default_type        "text/plain";
-            alias               {{ letsencrypt_webroot }};
+            root               {{ letsencrypt_webroot }};
       }
       location / {
             return 403;
       }
     https: False
+    https_redirect: False
+    letsencrypt: False
 
 certgrinder_authorized_keys:
   webproxy2_servers_bornhack_org:
