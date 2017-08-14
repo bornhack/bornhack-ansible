@@ -51,6 +51,8 @@ bornhack-torgw.bornhack.org
 
 [nginx_servers]
 webproxy2.servers.bornhack.org
+imap.bornhack.org
+mail.bornhack.org
 
 [people_servers]
 people.bornhack.org
