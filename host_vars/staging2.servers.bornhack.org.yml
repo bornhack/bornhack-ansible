@@ -20,11 +20,12 @@ django_media_root_subdirs:
   - invoices
   - creditnotes
   - public
-django_os_dependencies:
-  - databases/postgresql96-client
+
+django_extra_os_dependencies:
   - graphics/jpeg-turbo
   - converters/wkhtmltopdf
   - x11-fonts/webfonts
+
 django_archive_email: stagingemailarchive@bornhack.org
 django_admins: |
   (
