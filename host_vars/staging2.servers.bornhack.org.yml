@@ -31,13 +31,22 @@ django_admins: |
       ('bornhack sysadm', 'sysadm@bornhack.org'),
   )
 django_timezone: 'Europe/Copenhagen'
-django_manage_workers:
-  invoiceworker:
-    commandline: "run_managepy_worker --sleep 30 shop.invoiceworker"
-  emailworker:
-    commandline: "run_managepy_worker --sleep 30 utils.outgoingemailworker"
-  ircworker:
-    commandline: "run_managepy_worker --sleep 10 ircbot.ircworker"
+
+supervisord_extra_programs:
+  - comment: "run invoiceworker"
+    command: "{{ django_virtualenv_path }}/bin/python -u {{ django_root }}/manage.py run_managepy_worker --sleep 30 shop.invoiceworker"
+    user: "www"
+    priority: "4"
+
+  - comment: "run outgoingemailworker"
+    command: "{{ django_virtualenv_path }}/bin/python -u {{ django_root }}/manage.py run_managepy_worker --sleep 30 utils.outgoingemailworker"
+    user: "www"
+    priority: "4"
+
+  - comment: "run ircworker"
+    command: "{{ django_virtualenv_path }}/bin/python -u {{ django_root }}/manage.py run_managepy_worker --sleep 10 ircbot.ircworker"
+    user: "www"
+    priority: "4"
 
 
 pdf_archive_path: '/storage/pdf_archive/'
