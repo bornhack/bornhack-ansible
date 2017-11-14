@@ -40,7 +40,7 @@ certgrinder1.servers.bornhack.org
 
 ########################################################
 ### application groups
-[bh_django_servers]
+[django_channels_servers]
 wwwprod2.servers.bornhack.org
 
 [mediawiki_servers]
