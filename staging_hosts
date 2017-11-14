@@ -16,6 +16,6 @@ staging2.servers.bornhack.org
 
 ########################################################
 ### application groups
-[bh_django_servers]
+[django_channels_servers]
 staging2.servers.bornhack.org
 
