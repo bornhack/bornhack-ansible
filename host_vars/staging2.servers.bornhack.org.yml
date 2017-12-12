@@ -59,6 +59,7 @@ iban: DK3553710000244504
 swiftbic: ALBADKKK
 regno: 5371
 accountno: 244504
+bank_name: "Arbejdernes Landsbank"
 
 nginx_locationslash: |
   location /static/ {
