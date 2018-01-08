@@ -24,3 +24,5 @@ certgrinder_ssh_server_pubkey: "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYA
 certgrinder_redirect_url: "http://certgrinder.bornhack.org"
 certgrinder_admin_email: "sysadm@bornhack.org"
 
+etcaliases_root_forward_email: "sysadm@bornhack.org"
+
