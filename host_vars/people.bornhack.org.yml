@@ -2,32 +2,35 @@
 nginx_v4_proxy_ip: 85.235.250.92
 webusers:
   tyk:
-    name: Thomas
+    name: "Thomas"
     pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZq1LdOdPDYnoQWn+87JafplL6IhDGvgytBfhItydgq user@bornhack"
   ahf:
-    name: Alex
+    name: "Alex"
     pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA0FMJ8IhSY6Dox0QDMS5MMdW9zeanNMEiOams/AUXmX ahf@ra.0x90.dk"
   valberg:
-    name: Vidir
+    name: "Vidir"
     pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUmGeHc6QXDcJHkmVxbTUv04Q3vs20avquoGr6eOkkvYbcgjuFnBOOtvs2Nul1odcvvnHa1nN7DfL8XJamiwsB1B/xe2seaNS1axgwk9XowlVN9pgga8gsC+4gZWBtSObG2GR8n4NtPENzPmW5deNn8dRpTvULPMxZ0VRE9yNQOx8v8w85yYh+vxbbkWGVDYJU23yuJI50U9y6bXxNHinsACDFBeR/giXDlw29TaOaSxz0R6zrRPBoX+V68RyWwBL+KWQKtX2ULtJI40S98Ohd6p41bIxYHCBS/zroqNne8PjYOLcHHsjHUGfTvhcS5a3zdz/iHsvsaOOjFjsydAXH valberg"
   hlk:
-    name: Kramse
+    name: "Kramse"
     pubkey: "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAaXrs5hOT9RkJ7Edo5SeQ+rcYZfFGw5bdVlcXM/S9pd0j5v2NGt5C/QsDlYido0K8POIbp3PcjcMj8BS+n6daI= Henrik Kramshoej"
   fj:
-    name: Batmule
+    name: "Batmule"
     pubkey: "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPOM8po0VaRYSFvIIhy6E8hhDzkCNPS4IEM3NrCrrROIbYgqxu++VKaFzZj82Cnm0EoFu210+huxuXN1KYada3A= fj@home"
   kugg:
-    name: kugg
+    name: "kugg"
     pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDeR2eV4uKOcAzLEP/p6ADty177Ea5ir6fiJJaUzlfZuhEot2U9Fgz/nhPMABHYbilS/z5egIiwn645YxuLaE6m26IYFvxJI5bAdTR/vth2dhA4m6XBQLQh5tzQnwxZXXey91uTPNXFogcwIQYuIhXkB+yNDAy5wS34JsZjKZYnTZMHh5mWeuzmW0uamWfzfaakJq1Awike/WScO92UqDAIBgo8OwEqeZrMthR5pc3X2KsybtZ/1/p06UJk1biNpqpE5yEGUKsm2yfyjOrkkmMOPX0M15DYR2mMNnOCVeJ2/g6WQipjH5w1ByTCbsTmGuZg+24DwNGE2oM+8/oRgHmj user@vps102"
   jagenau:
-    name: Sarah
+    name: "Sarah"
     pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCSa1TuOSiCLktjAQDbiZrTSxbURWgc+HgYf3dtEzda5od1Tk8r6XAgH4dnfTQ9quFnt124/cVFU+IF3PBGbB45iQHDhr9LwAtCAaiA8N0Y9TcnuAS/03JagOVyE0iLoyXGw31AK5e3XjT8oyQyEDD+AjaPEdEtxALLJfDX1BIu8eQyzbNf/zgzmowS3n74PhXM4XcXyOARI9eIBOZ9pzRJ6jFpXqv4wuf+JQFASZz0736fV8YdJPhDhXaIZ9TuPzhGWjofVmsY085qIni+90pa6EvYpynuFOphnIHV64cSAA5fx6ye5VzrV7PclJs6RnQnYfR+3VdKarsG7VbSrC6N sarah@bornhack.org"
   telling:
-    name: telling
+    name: "telling"
     pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBN5RM5agixogV0Jc8XTU7UEeiX981E4mLChFguaaihi telling@telling.local"
   fonsmark:
-    name: Tobias
+    name: "Tobias"
     pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLoFfzpwP3wEjEBWhbls3o/kCgxStqXGgFnWmFtTlJLcSiz9XJeGxWnnyZSAiKTZIJ7cQuktBY7qBCaDAsmPwkKMKKrHOAEGs5daczmkPU+Wn98RebM+rxveRhYqcWfNQO3bl90WEN/oFG8FZmusfeL9mjjOd0NuwPM4opJlaLTNKiF1vQDFieosqlWUpUd4w3dRFJEkrRnK+zFBdm8KNNY4QQhAl3L/kjpw5+xRGeNa5onXsVcBkP51yN1DGUKE+kIeODh5DSQuCmOh0JjEUPFvhYE0t33HzCEbHFlCsxkdO9658owTJiNtbBLBDEq59KuBScDplvfM0R6Yov6TQl8eqeJwA1H59MmSFcwSBRFarYW9Szo/UaAGgagx44pefLXcK5cj6r1RdHP4Xn24HV78E7XUfQO6PDw2TCGOqTPRvwSbIVv+AAU4tMsJbNY8QOyjK0l8bsnXIxcN0FlaxyQS5SawTdjzxHIEW1e2yl84L/vZ63W/qbZAuNmRmcKP2P4Kf5TMdKD2LzlGz2zkyFfTT3Zz1oIeKUGuFpZYpVdEsZSYuVNQwmpBVW0TVG63nRX8jcgu008GycwKHS+tInLhyJLYj4P4OASallQUs2E3xLNYwd0020J/wnwaZqulDSBvhhmf2AT6RfBaLSdq5WyaXCuna9fFb2GZZlO/5IBw== tobias@lap10"
+  graffen:
+    name: "graffen"
+    pubkey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCbxFVukt5TIzoB0HX2q8b8lHJmXD1juzsWOu5XkexVDlCsvupa1cZ/OVkrIEAbDKk6RmJQj0TJ2O5+v9hbf0TDi0Pi+V8ADZIgO+OW5a4EeXsU72a4CN0nEocQhUPfQuC4IU+F7icoG2/I9jXg7U6p1LhBr8vlC3cNHnrH3yqrakrUR51/iRVIwo4FKvQg7jutaKTyOjlYa1uTdaczvAzNHWEdytCQgFnkzpR9fHvzkA79qHUD9n32rIpJicRJsHY3NnyDGfBcDv+4sLq15sM9jN83duGnSuMMtZgfSriwMUd/UwVReU2ZKxjMLe3WHB7+ZE/p39OJk/gjVfWJVh/za1/teTAwaLLmxh/HFt+AVYWkCj22fUxscl0dh2zy6Ki1Ua3ApChn6v6Gvng6khobFlxawSJZ49+0KoAl1qqFMR1o9EGWvqgDPuITAqJFN+ik0jxcxfmKrG3mbOYM1ikhJd0ER8wbS8e6NowHUBV7PUyDqxP5VM2gum58IYrDqaP2RYYi9vWWnXJJA8J1t+Wp3bF7fdktyVgkd7HQk02uVkxdMQQ802GCrQQuvJhWTCzrgkgrjPY8p0KcbCNt6jYQOUKV0T2vp6PbTJ5XWKb5u7gVXW1xiP9dYzgAr0DroiTK4xIuF80mv1Rfst0ceHAIQVcQ3GcGbh000QUYzbHT2Q== openpgp:0x265EE03C (Graffen)"
 
 vhosts:
   people_bornhack_org:
