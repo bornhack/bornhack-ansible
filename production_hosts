@@ -11,18 +11,6 @@ certgrinder1.servers.bornhack.org
 ansible2.servers.bornhack.org
 
 
-### all freebsd hosts, jails and vms
-[freebsd]
-bornhack-torgw.bornhack.org
-people.bornhack.org
-mail.bornhack.org
-imap.bornhack.org
-nuntio.bornhack.org
-wwwprod2.servers.bornhack.org
-webproxy2.servers.bornhack.org
-certgrinder1.servers.bornhack.org
-
-
 #######################################################
 ### freebsd jails grouped per jailhost
 [bong_jails]
