@@ -1,0 +1,4 @@
+---
+ansible_repository: "github.com:bornhack/ansible"
+ansible_repository_commitbaseurl: "https://github.com/bornhack/ansible/commit/"
+
