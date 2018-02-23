@@ -45,7 +45,7 @@ people2.servers.bornhack.org
 mail.bornhack.org
 
 [dovecot_servers]
-imap.bornhack.org
+imap2.servers.bornhack.org
 
 [erlang_web_servers]
 nuntio.bornhack.org
