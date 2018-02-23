@@ -4,7 +4,7 @@ ansible2.servers.bornhack.org
 certgrinder1.servers.bornhack.org
 imap2.servers.bornhack.org
 mail.bornhack.org
-nuntio.bornhack.org
+nuntio2.servers.bornhack.org
 people2.servers.bornhack.org
 tor2.servers.bornhack.org
 webproxy2.servers.bornhack.org
@@ -18,7 +18,7 @@ ansible2.servers.bornhack.org
 certgrinder1.servers.bornhack.org
 imap2.servers.bornhack.org
 mail.bornhack.org
-nuntio.bornhack.org
+nuntio2.servers.bornhack.org
 people2.servers.bornhack.org
 tor2.servers.bornhack.org
 wwwprod2.servers.bornhack.org
@@ -48,7 +48,7 @@ mail.bornhack.org
 imap2.servers.bornhack.org
 
 [erlang_web_servers]
-nuntio.bornhack.org
+nuntio2.servers.bornhack.org
 
 [certgrinder_servers]
 certgrinder1.servers.bornhack.org
