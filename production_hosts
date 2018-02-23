@@ -1,7 +1,7 @@
 #######################################################
 ### all hosts
 bornhack-torgw.bornhack.org
-people.bornhack.org
+people2.servers.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
@@ -15,7 +15,7 @@ ansible2.servers.bornhack.org
 ### freebsd jails grouped per jailhost
 [bong_jails]
 bornhack-torgw.bornhack.org
-people.bornhack.org
+people2.servers.bornhack.org
 mail.bornhack.org
 imap.bornhack.org
 nuntio.bornhack.org
@@ -39,7 +39,7 @@ imap.bornhack.org
 mail.bornhack.org
 
 [people_servers]
-people.bornhack.org
+people2.servers.bornhack.org
 
 [postfix_servers]
 mail.bornhack.org
