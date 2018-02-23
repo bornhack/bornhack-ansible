@@ -8,7 +8,7 @@ dovecot_vmail_groupname: vmail
 dovecot_vmail_gid: 10000
 
 certgrinder_hostname_sets:
- - "imap.bornhack.org,imap2.servers.bornhack.org"
+ - "imap2.servers.bornhack.org,imap.bornhack.org"
 
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service nginx reload"
