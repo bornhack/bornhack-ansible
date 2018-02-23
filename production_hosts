@@ -2,7 +2,7 @@
 ### all hosts
 ansible2.servers.bornhack.org
 certgrinder1.servers.bornhack.org
-imap.bornhack.org
+imap2.servers.bornhack.org
 mail.bornhack.org
 nuntio.bornhack.org
 people2.servers.bornhack.org
@@ -16,7 +16,7 @@ wwwprod2.servers.bornhack.org
 [bong_jails]
 ansible2.servers.bornhack.org
 certgrinder1.servers.bornhack.org
-imap.bornhack.org
+imap2.servers.bornhack.org
 mail.bornhack.org
 nuntio.bornhack.org
 people2.servers.bornhack.org
@@ -34,7 +34,7 @@ wwwprod2.servers.bornhack.org
 tor2.servers.bornhack.org
 
 [nginx_servers]
-imap.bornhack.org
+imap2.servers.bornhack.org
 mail.bornhack.org
 webproxy2.servers.bornhack.org
 
