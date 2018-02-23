@@ -31,7 +31,7 @@ webproxy2.servers.bornhack.org
 wwwprod2.servers.bornhack.org
 
 [tor_servers]
-bornhack-torgw.bornhack.org
+tor2.servers.bornhack.org
 
 [nginx_servers]
 imap.bornhack.org
