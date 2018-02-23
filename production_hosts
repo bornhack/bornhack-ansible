@@ -1,28 +1,28 @@
 #######################################################
 ### all hosts
-bornhack-torgw.bornhack.org
-people2.servers.bornhack.org
-mail.bornhack.org
-imap.bornhack.org
-nuntio.bornhack.org
-wwwprod2.servers.bornhack.org
-webproxy2.servers.bornhack.org
-certgrinder1.servers.bornhack.org
 ansible2.servers.bornhack.org
+certgrinder1.servers.bornhack.org
+imap.bornhack.org
+mail.bornhack.org
+nuntio.bornhack.org
+people2.servers.bornhack.org
+tor2.servers.bornhack.org
+webproxy2.servers.bornhack.org
+wwwprod2.servers.bornhack.org
 
 
 #######################################################
 ### freebsd jails grouped per jailhost
 [bong_jails]
-bornhack-torgw.bornhack.org
-people2.servers.bornhack.org
-mail.bornhack.org
+ansible2.servers.bornhack.org
+certgrinder1.servers.bornhack.org
 imap.bornhack.org
+mail.bornhack.org
 nuntio.bornhack.org
+people2.servers.bornhack.org
+tor2.servers.bornhack.org
 wwwprod2.servers.bornhack.org
 webproxy2.servers.bornhack.org
-certgrinder1.servers.bornhack.org
-ansible2.servers.bornhack.org
 
 
 ########################################################
@@ -34,9 +34,9 @@ wwwprod2.servers.bornhack.org
 bornhack-torgw.bornhack.org
 
 [nginx_servers]
-webproxy2.servers.bornhack.org
 imap.bornhack.org
 mail.bornhack.org
+webproxy2.servers.bornhack.org
 
 [people_servers]
 people2.servers.bornhack.org
