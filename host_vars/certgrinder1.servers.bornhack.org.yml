@@ -24,13 +24,13 @@ certgrinder_authorized_keys:
   webproxy2_servers_bornhack_org:
     fromip: "2a01:3a0:1:1900:85:235:250:91"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOegnR+qnK2FEoaSrVwHgCIxjFkVEbW4VO31/Hd2mAwk ansible-generated on webproxy2.servers.bornhack.org"
-  imap_bornhack_org:
+  imap2_servers_bornhack_org:
     fromip: "2a01:3a0:1:1900:85:235:250:94" 
-    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAeALnXVqoJCOE5Vst9CZsUVh0gQvg/w07dFqBQMe05U ansible-generated on imap.bornhack.org"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHCmKIUYg/QkzGNbrn4OfgRKY5Ft2vLQKemPEchGu+oo ansible-generated on imap2.servers.bornhack.org"
   mail_bornhack_org:
     fromip: "2a01:3a0:1:1900:85:235:250:93"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbOK7mnIa0ODIjN64pXiNwyPOv75nZq67iHVkwlmLY5 ansible-generated on mail.bornhack.org"
-  people_bornhack_org:
+  people2_servers_bornhack_org:
     fromip: "2a01:3a0:1:1900:85:235:250:92"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKioh6tTCQUnt8F/QBaV2y2QkT/5a1zozuNBNYd+J5d ansible-generated on people2.servers.bornhack.org"
 
