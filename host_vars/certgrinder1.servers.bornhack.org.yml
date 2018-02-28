@@ -34,3 +34,5 @@ certgrinder_authorized_keys:
     fromip: "2a01:3a0:1:1900:85:235:250:92"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKioh6tTCQUnt8F/QBaV2y2QkT/5a1zozuNBNYd+J5d ansible-generated on people2.servers.bornhack.org"
 
+certgrinder_server_acme_zone: "acme.certgrinder.bornhack.org"
+
