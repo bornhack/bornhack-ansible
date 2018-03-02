@@ -61,20 +61,6 @@ vhosts:
         return 301 https://bornhack.dk/;
       }
 
-  test3:
-    vhost_v6ip: "2a01:3a0:1:1900:81::7"
-    hostnames:
-      - test3.acmetest.bornhack.org
-    locationslash: |
-      return 200 "test3";
-
-  test6:
-    vhost_v6ip: "2a01:3a0:1:1900:81::8"
-    hostnames:
-      - test6.acmetest.bornhack.org
-    locationslash: |
-      return 200 "test6";
-
 certgrinder_hostname_sets:
   - "webproxy2.servers.bornhack.org"
   - "bornhack.dk,www.bornhack.dk"
@@ -82,8 +68,6 @@ certgrinder_hostname_sets:
   - "minutes.bornhack.org"
   - "nuntio.bornhack.org"
   - "coinifycallback.bornhack.org"
-  - "test3.acmetest.bornhack.org"
-  - "test6.acmetest.bornhack.org"
 
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service nginx reload"
