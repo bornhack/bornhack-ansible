@@ -29,6 +29,7 @@ vhosts:
       location / {
           proxy_pass http://staging2.servers.bornhack.org:80;
       }
+
   minutes_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:81::4"
     hostnames:
@@ -37,6 +38,7 @@ vhosts:
       location / {
           proxy_pass http://10.0.0.15:80;
       }
+
   nuntio_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:81::5"
     hostnames:
@@ -45,6 +47,7 @@ vhosts:
       location / {
           proxy_pass http://10.0.0.18:8080;
       }
+
   coinifycallback_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:81::6"
     hostnames:
@@ -58,6 +61,17 @@ vhosts:
         return 301 https://bornhack.dk/;
       }
 
+  test3:
+    hostnames:
+      - test3.acmetest.bornhack.org
+    locationslash: |
+      return 200 "test3";
+
+  test6:
+    hostnames:
+      - test6.acmetest.bornhack.org
+    locationslash: |
+      return 200 "test6";
 
 certgrinder_hostname_sets:
   - "webproxy2.servers.bornhack.org"
@@ -66,6 +80,8 @@ certgrinder_hostname_sets:
   - "minutes.bornhack.org"
   - "nuntio.bornhack.org"
   - "coinifycallback.bornhack.org"
+  - "test3.acmetest.bornhack.org"
+  - "test6.acmetest.bornhack.org"
 
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service nginx reload"
