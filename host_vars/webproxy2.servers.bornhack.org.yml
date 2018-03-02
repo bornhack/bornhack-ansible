@@ -62,12 +62,14 @@ vhosts:
       }
 
   test3:
+    vhost_v6ip: "2a01:3a0:1:1900:81::7"
     hostnames:
       - test3.acmetest.bornhack.org
     locationslash: |
       return 200 "test3";
 
   test6:
+    vhost_v6ip: "2a01:3a0:1:1900:81::8"
     hostnames:
       - test6.acmetest.bornhack.org
     locationslash: |
