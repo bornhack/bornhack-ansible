@@ -52,6 +52,12 @@ supervisord_extra_programs:
     user: "www"
     priority: "4"
 
+  - name: "notificationworker"
+    comment: "run notificationworker"
+    command: "{{ django_virtualenv_path }}/bin/python -u {{ django_root }}/manage.py run_managepy_worker --sleep 60 program.notificationworker"
+    user: "www"
+    priority: "4"
+
 
 pdf_archive_path: '/storage/pdf_archive/'
 pdf_letterhead_filename: "bornhack-2018_test_letterhead.pdf"
