@@ -2,8 +2,7 @@
 nginx_proxy: True
 nginx_v4_proxy_ip: 85.235.250.93
 
-postfix_virtual_alias_domains:
-  - bornhack.org
+postfix_extra_virtual_mailbox_domains:
   - bornhack.dk
   - bornhack.com
 
@@ -12,49 +11,50 @@ dkimdns:
   bornhack.org: "v=DKIM1; k=rsa; s=email; p=MIIBJjANBgkqhkiG9w0BAQEFAAOCARMAMIIBDgKCAQUMvHxEJM0zKnMw9YmVh+KqHQggL49eKfK4xgroBUJDZYyKEW9DGRcG8m/Or2RCcIdRb518TGOpgUHwtvdIlElORInTjNEAT0H3cE8mR0oMPNc9n2NfSnZNb99b0RAfe92Nlx5q+XkLESZz0n+wLzXWVgeX4g2gCffFuWKkrEutCRuaC2FWi+pgvTvtClE00FHYOi+TLA2y10FfrT5JoVboLBCIDxwkRu3OagfP4ht5YBo6E6crFsf+/iPNs1+jOx+VxUtCRIHAX9mViEkIDcX/2cI+v8omzyQBnJ1Gyl3whrMKp3cyEqfodyRr/xoY5pRJo5jFA7z048rKA/F9gYY4iyrn8EkCAwEAAQ=="
   bornhack.com: "v=DKIM1; k=rsa; s=email; p=MIIBJjANBgkqhkiG9w0BAQEFAAOCARMAMIIBDgKCAQUMX5vNyRVGLDmBNeb0KwTpYnwI8lGyliaP3rrKn95oveOl1h6oac3GuGgl0PwA10Vp0+nT1BDVHwSx1PZjIL/b5Wilw0m36IwLH+pZqVIiqYegaXfCASfxzG0EEbJwj3U490OZTxVdKSW4AtitOjL2I++KqsmG40FLRDeM48e4CJbw/jZIwuIPl41jyKnzB9WPPeuo4Xhhc2Ep6Rth0pwjb+SqGrGrIcooZPGjO5NUmZoL01Ee1pWJIWkCFrHJi4/uWCyTKG0INmsYMYPAJNbwAt3P16B+0CDD9M6k9XHzF6u3Mm3NERVQSaOiLh1chLQ5+714uN/iFhtUsYQ5r+L2zveQBB8CAwEAAQ=="
 
-fake_mailman_domain: mailman.bornhack.org
-mailman_list_owner: thomas@gibfest.dk
+fake_mailman_domain: "mailman.bornhack.org"
+mailman_list_owner: "thomas@gibfest.dk"
+mailman_primary_domain: "bornhack.org"
 
-lmtp_server_ip: 85.235.250.94
-lmtp_server_port: 24
-sasl_server_ip: 85.235.250.94
-sasl_server_port: 12
+lmtp_server_ip: "85.235.250.94"
+lmtp_server_port: "24"
+sasl_server_ip: "85.235.250.94"
+sasl_server_port: "12"
 
-postgres_host: 10.0.0.3
-postgres_dbname: bornhackmail
-postgres_user: postfix
+postgres_host: "10.0.0.3"
+postgres_dbname: "bornhackmail"
+postgres_user: "postfix"
 
 lists:
-  all: tykling@bornhack.org
-  admin-team: ahf@bornhack.org
-  bar-team: sarah@radicalpet.net
-  cert-team: rel@bornhack.org
-  economy-team: tykling@bornhack.org
-  food-team: tykling@bornhack.org
-  gis-team: ahf@bornhack.org
-  logistics-team: tykling@bornhack.org
-  noc-team: hlk@kramse.org
-  noc: hlk@kramse.org
-  power-team: tykling@bornhack.org
-  pr-team: ahf@bornhack.org
-  program-team: ahf@bornhack.org
-  sanitation-team: tykling@bornhack.org
-  tech-team: tykling@bornhack.org
-  villages-team: sarah@radicalpet.net
-  info: tykling@bornhack.org
-  sponsors: ahf@bornhack.org
-  speakers: ahf@bornhack.org
-  info-team: kugghjul@gmail.com
-  conduct: tykling@bornhack.org
-  content: ahf@bornhack.org
-  metrics: tykling@bornhack.org
-  badge: tykling@bornhack.org
+  all: "tykling@bornhack.org"
+  admin-team: "ahf@bornhack.org"
+  bar-team: "sarah@radicalpet.net"
+  cert-team: "rel@bornhack.org"
+  economy-team: "tykling@bornhack.org"
+  food-team: "tykling@bornhack.org"
+  gis-team: "ahf@bornhack.org"
+  logistics-team: "tykling@bornhack.org"
+  noc-team: "hlk@kramse.org"
+  noc: "hlk@kramse.org"
+  power-team: "tykling@bornhack.org"
+  pr-team: "ahf@bornhack.org"
+  program-team: "ahf@bornhack.org"
+  sanitation-team: "tykling@bornhack.org"
+  tech-team: "tykling@bornhack.org"
+  villages-team: "sarah@radicalpet.net"
+  info: "tykling@bornhack.org"
+  sponsors: "ahf@bornhack.org"
+  speakers: "ahf@bornhack.org"
+  info-team: "kugghjul@gmail.com"
+  conduct: "tykling@bornhack.org"
+  content: "ahf@bornhack.org"
+  metrics: "tykling@bornhack.org"
+  badge: "tykling@bornhack.org"
 
 vhosts:
   mail_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:93"
     hostnames:
-      - mail.bornhack.org
+      - "mail.bornhack.org"
     default_vhost: True
     locationslash: |
         location = / {
