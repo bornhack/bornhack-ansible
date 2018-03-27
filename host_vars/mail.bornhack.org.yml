@@ -11,7 +11,7 @@ dkimdns:
   bornhack.org: "v=DKIM1; k=rsa; s=email; p=MIIBJjANBgkqhkiG9w0BAQEFAAOCARMAMIIBDgKCAQUMvHxEJM0zKnMw9YmVh+KqHQggL49eKfK4xgroBUJDZYyKEW9DGRcG8m/Or2RCcIdRb518TGOpgUHwtvdIlElORInTjNEAT0H3cE8mR0oMPNc9n2NfSnZNb99b0RAfe92Nlx5q+XkLESZz0n+wLzXWVgeX4g2gCffFuWKkrEutCRuaC2FWi+pgvTvtClE00FHYOi+TLA2y10FfrT5JoVboLBCIDxwkRu3OagfP4ht5YBo6E6crFsf+/iPNs1+jOx+VxUtCRIHAX9mViEkIDcX/2cI+v8omzyQBnJ1Gyl3whrMKp3cyEqfodyRr/xoY5pRJo5jFA7z048rKA/F9gYY4iyrn8EkCAwEAAQ=="
   bornhack.com: "v=DKIM1; k=rsa; s=email; p=MIIBJjANBgkqhkiG9w0BAQEFAAOCARMAMIIBDgKCAQUMX5vNyRVGLDmBNeb0KwTpYnwI8lGyliaP3rrKn95oveOl1h6oac3GuGgl0PwA10Vp0+nT1BDVHwSx1PZjIL/b5Wilw0m36IwLH+pZqVIiqYegaXfCASfxzG0EEbJwj3U490OZTxVdKSW4AtitOjL2I++KqsmG40FLRDeM48e4CJbw/jZIwuIPl41jyKnzB9WPPeuo4Xhhc2Ep6Rth0pwjb+SqGrGrIcooZPGjO5NUmZoL01Ee1pWJIWkCFrHJi4/uWCyTKG0INmsYMYPAJNbwAt3P16B+0CDD9M6k9XHzF6u3Mm3NERVQSaOiLh1chLQ5+714uN/iFhtUsYQ5r+L2zveQBB8CAwEAAQ=="
 
-fake_mailman_domain: "mailman.bornhack.org"
+mailman_fake_domain: "mailman.bornhack.org"
 mailman_list_owner: "thomas@gibfest.dk"
 mailman_primary_domain: "bornhack.org"
 
