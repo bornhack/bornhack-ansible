@@ -84,9 +84,9 @@ nginx_locationslash: |
 
 django_ircbot_nickname: "BornHackStaging"
 django_ircbot_server: "ircd.tyknet.dk"
-django_ircbot_default_channel: "#tirsdagsfilm"
-django_ircbot_orga_channel: "#tirsdagsfilm"
 django_ircbot_public_channel: "#tirsdagsfilm"
+django_ircbot_nickserv_mask: "NickServ@services.baconsvin.org"
+django_ircbot_chanserv_mask: "ChanServ@services.baconsvin.org"
 
 django_sendfile_url: "/public"
 django_sendfile_backend: "sendfile.backends.nginx"
