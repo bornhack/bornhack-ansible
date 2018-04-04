@@ -11,6 +11,7 @@ django_pip_requirements_path: "{{ django_root }}/requirements.txt"
 django_postgres_user: bornhackstagingdk
 django_postgres_host: 10.0.0.3
 django_postgres_dbname: bornhackstagingdkdb
+django_email_realworld: False
 django_email_user: noreply@bornhack.org
 django_email_port: 587
 django_email_host: mail.bornhack.org
