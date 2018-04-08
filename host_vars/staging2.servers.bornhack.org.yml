@@ -34,6 +34,8 @@ django_admins: |
   )
 django_timezone: 'Europe/Copenhagen'
 
+django_asgi_worker_count: 3
+
 supervisord_extra_programs:
   - name: "invoiceworker"
     comment: "run invoiceworker"
