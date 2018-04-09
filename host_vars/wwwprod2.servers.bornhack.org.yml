@@ -84,9 +84,10 @@ nginx_locationslash: |
 
 django_ircbot_nickname: "BornHack"
 django_ircbot_server: "ircd.tyknet.dk"
-django_ircbot_default_channel: "#bornhack.org"
-django_ircbot_orga_channel: "#bornhack.org"
 django_ircbot_public_channel: "#bornhack"
+django_ircbot_nickserv_mask: "NickServ@services.baconsvin.org"
+django_ircbot_chanserv_mask: "ChanServ@services.baconsvin.org"
+django_ircbot_nickserv_email: "ircbot@bornhack.org"
 
 coinify_callback_hostname: "coinifycallback.bornhack.org"
 
