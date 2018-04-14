@@ -83,7 +83,7 @@ nginx_locationslash: |
   }
 
 django_ircbot_nickname: "BornHack"
-django_ircbot_server: "ircd.tyknet.dk"
+django_ircbot_server: "irc.baconsvin.org"
 django_ircbot_public_channel: "#bornhack"
 django_ircbot_volunteer_channel: "#bornhack.org"
 django_ircbot_nickserv_mask: "NickServ@services.baconsvin.org"
