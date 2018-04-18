@@ -9,6 +9,7 @@ people2.servers.bornhack.org
 tor2.servers.bornhack.org
 webproxy2.servers.bornhack.org
 wwwprod2.servers.bornhack.org
+wwwprod3.servers.bornhack.org
 
 
 #######################################################
@@ -22,6 +23,7 @@ nuntio2.servers.bornhack.org
 people2.servers.bornhack.org
 tor2.servers.bornhack.org
 wwwprod2.servers.bornhack.org
+wwwprod3.servers.bornhack.org
 webproxy2.servers.bornhack.org
 
 
@@ -29,6 +31,9 @@ webproxy2.servers.bornhack.org
 ### application groups
 [django_channels_servers]
 wwwprod2.servers.bornhack.org
+
+[django_channels2_servers]
+wwwprod3.servers.bornhack.org
 
 [tor_servers]
 tor2.servers.bornhack.org
