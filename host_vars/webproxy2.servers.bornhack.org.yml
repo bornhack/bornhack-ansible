@@ -18,7 +18,7 @@ vhosts:
       - www.bornhack.dk
     locationslash: |
       location / {
-          proxy_pass http://wwwprod2.servers.bornhack.org:80;
+          proxy_pass http://wwwprod3.servers.bornhack.org:80;
       }
 
   wwwstaging_bornhack_org:
