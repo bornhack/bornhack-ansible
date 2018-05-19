@@ -35,7 +35,7 @@ certgrinder_authorized_keys:
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKioh6tTCQUnt8F/QBaV2y2QkT/5a1zozuNBNYd+J5d ansible-generated on people2.servers.bornhack.org"
 
 bind_dynamic_zonelist:
-  - zone: "acme.certgrinder.bornhack.org"
+  - zone: "acme.bornhack.org"
     nameserver: "authns.certgrinder.bornhack.org"
     email: "hostmaster.bornhack.org"
 
