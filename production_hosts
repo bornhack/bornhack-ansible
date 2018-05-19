@@ -34,8 +34,6 @@ wwwprod3.servers.bornhack.org
 tor2.servers.bornhack.org
 
 [nginx_servers]
-imap2.servers.bornhack.org
-mail.bornhack.org
 webproxy2.servers.bornhack.org
 
 [people_servers]
