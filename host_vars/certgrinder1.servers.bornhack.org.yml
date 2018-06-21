@@ -21,18 +21,36 @@ vhosts:
     letsencrypt: False
 
 certgrinder_authorized_keys:
-  webproxy2_servers_bornhack_org:
+  webproxy2:
     fromip: "2a01:3a0:1:1900:85:235:250:91"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOegnR+qnK2FEoaSrVwHgCIxjFkVEbW4VO31/Hd2mAwk ansible-generated on webproxy2.servers.bornhack.org"
-  imap2_servers_bornhack_org:
+  imap2:
     fromip: "2a01:3a0:1:1900:85:235:250:94" 
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHCmKIUYg/QkzGNbrn4OfgRKY5Ft2vLQKemPEchGu+oo ansible-generated on imap2.servers.bornhack.org"
-  mail_bornhack_org:
+  mail:
     fromip: "2a01:3a0:1:1900:85:235:250:93"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbOK7mnIa0ODIjN64pXiNwyPOv75nZq67iHVkwlmLY5 ansible-generated on mail.bornhack.org"
-  people2_servers_bornhack_org:
+  people2:
     fromip: "2a01:3a0:1:1900:85:235:250:92"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKioh6tTCQUnt8F/QBaV2y2QkT/5a1zozuNBNYd+J5d ansible-generated on people2.servers.bornhack.org"
+  staging3:
+    fromip: "2a01:3a0:1:1900:10::26"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcEYlMLQGzpbKsVP/78hXP6+XEE9ryv1xIfDbS9XcWW ansible-generated on staging3.servers.bornhack.org"
+  wwwprod3:
+    fromip: "2a01:3a0:1:1900:10::27"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINx4iAKwVX0o8swI8EKtWchrzc0cwqZMHhr/2A5ydi4M ansible-generated on wwwprod3.servers.bornhack.org"
+  ansible2:
+    fromip: "2a01:3a0:1:1900:85:235:250:87"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2XTSchpSxW/aoXtewwJce9Zip9P8bMjDsvprXYqIon ansible-generated on ansible2.servers.bornhack.org"
+  tor2:
+    fromip: "2a01:3a0:1:1900:10::12"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHD1PayUqiB4aszFEdxJ9i0szQxq3aVbYOMY9WtGCzYI ansible-generated on tor2.servers.bornhack.org"
+  nuntio2:
+    fromip: "2a01:3a0:1:1900:10::18"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFgc49Nb4tUpgYdjMHfUfNyYNETmvBfG49SJ0oygd/nf ansible-generated on nuntio2.servers.bornhack.org"
+  certgrinder1:
+    fromip: "2a01:3a0:1:1900:85:235:225:224"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBhEhR2Od8OMxItCz/DoO3upRxLW7vYzyvtpcEi3FO2f ansible-generated on certgrinder1.servers.bornhack.org"
 
 bind_dynamic_zonelist:
   - zone: "acme.bornhack.org"
