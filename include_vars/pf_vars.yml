@@ -1,0 +1,9 @@
+---
+common_address_macros: |
+  ### servers
+  bluev4="5.103.25.42"
+  table <blue> { $bluev4 }
+
+  # external tables
+  table <allowssh> { }
+
