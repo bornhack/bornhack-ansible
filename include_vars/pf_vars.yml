@@ -4,6 +4,13 @@ common_address_macros: |
   bluev4="5.103.25.42"
   table <blue> { $bluev4 }
 
+  ansible2v4="85.235.250.87"
+  ansible2v6="2a01:3a0:1:1900:85:235:250:87"
+  table <ansible2> { $ansible2v4 $ansible2v6 }
+
+  # external IPs
+  ansiblev4="85.235.250.87"
+
   # external tables
-  table <allowssh> { }
+  table <allowssh> { $ansible2v4 }
 
