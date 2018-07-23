@@ -21,4 +21,5 @@ tykbackup_enable: False
 ########## pf configs ############
 pf_main_v4_ip: "5.103.25.42"
 pf_jail_nat_ip: "{{ pf_main_v4_ip }}"
+pf_jail_nat_range: "10.0.0.0/24"
 
