@@ -8,6 +8,7 @@ ezjail_flavourname: "bornhack"
 ezjail_flavour_ansible_authorized_keys_file: |
   ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLklW3+HXkG0N6M1SG76WSuA4uNbkiVo3bojCox2ogv ansible-generated on ansible2.servers.bornhack.org
 
+zfs_arc_max: "100G"
 
 ########## snapshots & tykbackup ###############
 zfs_periodic_pools:
