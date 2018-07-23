@@ -16,7 +16,7 @@ zfs_periodic_pools:
 zfs_periodic_datasets_skip:
   - "zroot/reserved"
 
-tykbackup_enable: False
+tykbackup_client: False
 
 ########## pf configs ############
 pf_main_v4_ip: "5.103.25.42"
