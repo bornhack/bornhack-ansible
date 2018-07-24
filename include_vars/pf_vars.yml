@@ -14,6 +14,12 @@ common_address_macros: |
   campftp="192.168.16.27"
   table <campftp> { $campftp }
 
+  syslog1v4="10.0.0.2"
+  table <syslog1> { $syslog1v4 }
+
+  quake3="10.0.0.3"
+  table <quake3> { $quake3v4 }
+
   # tables
   table <dns1clients> { 10/8 192.168/16 }
 

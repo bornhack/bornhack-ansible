@@ -10,6 +10,8 @@ mail.bornhack.org
 nuntio2.servers.bornhack.org
 people2.servers.bornhack.org
 purple.servers.bornhack.org
+quake3.tyknet.dk ansible_host=blue.servers.bornhack.org ansible_port=2225
+syslog1.blue.servers.bornhack.org ansible_host=blue.servers.bornhack.org ansible_port=2224
 tor2.servers.bornhack.org
 webproxy2.servers.bornhack.org
 wwwprod3.servers.bornhack.org
@@ -38,6 +40,7 @@ webproxy2.servers.bornhack.org
 [blue_jails]
 campftp.tyknet.dk
 dns1.blue.servers.bornhack.org
+syslog1.blue.servers.bornhack.org
 
 ########################################################
 ### application groups
@@ -70,4 +73,7 @@ ansible2.servers.bornhack.org
 
 [unbound_servers]
 dns1.blue.servers.bornhack.org
+
+[syslogng_servers]
+syslog1.blue.servers.bornhack.org
 

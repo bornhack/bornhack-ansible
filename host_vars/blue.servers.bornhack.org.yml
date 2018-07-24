@@ -33,6 +33,8 @@ pf_rdr_rules: |
   # tor jail rdr rules
   rdr on $if inet proto tcp from any to $bluev4 port 2222 -> $dns1v4 port 22
   rdr on $if inet proto tcp from any to $bluev4 port 2223 -> $campftp port 22
+  rdr on $if inet proto tcp from any to $bluev4 port 2224 -> $syslog1v4 port 22
+  rdr on $if inet proto tcp from any to $bluev4 port 2225 -> $quake3v4 port 22
 
 pf_jail_rules:
   campftp:
@@ -53,4 +55,12 @@ pf_jail_rules:
         - "udp"
       clients:
         - "<dns1clients>"
+  syslog1:
+    - table: "<syslog1>"
+      ports:
+        - "514"
+      protocols:
+        - "tcp"
+      clients:
+        - "<syslog1clients>"
 
