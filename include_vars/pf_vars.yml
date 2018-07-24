@@ -17,7 +17,7 @@ common_address_macros: |
   syslog1v4="10.0.0.2"
   table <syslog1> { $syslog1v4 }
 
-  quake3v4="10.0.0.3"
+  quake3v4="192.168.16.28"
   table <quake3> { $quake3v4 }
 
   # tables
