@@ -54,6 +54,12 @@ certgrinder_authorized_keys:
   blue:
     fromip: "212.178.176.210"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE7rRiz3V92iPmWoc4GXbBYtIj3n2oz8dmtJGQZtGfkV ansible-generated on blue.servers.bornhack.org"
+  dns1:
+    fromip: "212.178.176.210"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCuBJkJdZKEYM7nCSGMXvX8ghrD4r+CjoeW1u9mjwVr ansible-generated on dns1.blue.servers.bornhack.org"
+  syslog1:
+    fromip: "212.178.176.210"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUOjpuSuIzQFdTM4q6B8RCHVGYu21JYI67qz53GuoYX ansible-generated on syslog1.blue.servers.bornhack.org"
 
 bind_dynamic_zonelist:
   - zone: "acme.bornhack.org"
