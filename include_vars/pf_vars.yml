@@ -8,6 +8,12 @@ common_address_macros: |
   ansible2v6="2a01:3a0:1:1900:85:235:250:87"
   table <ansible2> { $ansible2v4 $ansible2v6 }
 
+  dns1v4="10.0.0.1"
+  table <dns1> { $dns1v4 }
+
+  campftp="192.168.16.27"
+  table <campftp> { $campftp }
+
   # external IPs
   ansiblev4="85.235.250.87"
 
