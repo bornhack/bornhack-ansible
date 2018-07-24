@@ -11,13 +11,13 @@ common_address_macros: |
   dns1v4="10.0.0.1"
   table <dns1> { $dns1v4 }
 
-  campftp="192.168.16.27"
+  campftp="192.168.16.41"
   table <campftp> { $campftp }
 
   syslog1v4="10.0.0.2"
   table <syslog1> { $syslog1v4 }
 
-  quake3v4="192.168.16.28"
+  quake3v4="192.168.16.42"
   table <quake3> { $quake3v4 }
 
   # tables
@@ -28,6 +28,6 @@ common_address_macros: |
   ansiblev4="85.235.250.87"
 
   # external tables
-  table <allowssh> { $ansible2v4 }
+  table <allowssh> { $ansible2v4 192.168/16 }
 
 
