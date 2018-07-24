@@ -3,6 +3,8 @@
 ansible2.servers.bornhack.org
 blue.servers.bornhack.org
 certgrinder1.servers.bornhack.org
+dns1.blue.servers.bornhack.org ansible_host=blue.servers.bornhack.org ansible_port=2222
+campftp.tyknet.dk ansible_host=blue.servers.bornhack.org ansible_port=2223
 imap2.servers.bornhack.org
 mail.bornhack.org
 nuntio2.servers.bornhack.org
@@ -33,6 +35,9 @@ tor2.servers.bornhack.org
 wwwprod3.servers.bornhack.org
 webproxy2.servers.bornhack.org
 
+[blue_jails]
+campftp.tyknet.dk
+dns1.blue.servers.bornhack.org
 
 ########################################################
 ### application groups
@@ -62,4 +67,7 @@ certgrinder1.servers.bornhack.org
 
 [ansible_servers]
 ansible2.servers.bornhack.org
+
+[unbound_servers]
+dns1.blue.servers.bornhack.org
 
