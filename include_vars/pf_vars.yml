@@ -22,10 +22,12 @@ common_address_macros: |
 
   # tables
   table <dns1clients> { 10/8 192.168/16 }
+  table <syslog1clients> { 10/8 $dns1v4 $campftp $quake3v4 }
 
   # external IPs
   ansiblev4="85.235.250.87"
 
   # external tables
   table <allowssh> { $ansible2v4 }
+
 

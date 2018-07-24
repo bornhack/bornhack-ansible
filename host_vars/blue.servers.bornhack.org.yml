@@ -60,7 +60,7 @@ pf_jail_rules:
       ports:
         - "514"
       protocols:
-        - "tcp"
+        - "udp"
       clients:
         - "<syslog1clients>"
 
