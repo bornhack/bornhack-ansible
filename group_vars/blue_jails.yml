@@ -1,0 +1,7 @@
+---
+jail_host: "blue.servers.bornhack.org"
+dns_resolver_ips: ['10.0.0.1', '89.233.43.71', '91.239.100.100']
+syslog_server_ip: "10.0.0.2"
+postgres_host: "10.0.0.3"
+nginx_v4_proxy_ip: "10.0.0.4"
+
