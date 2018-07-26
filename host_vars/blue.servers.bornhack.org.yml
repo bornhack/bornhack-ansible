@@ -42,6 +42,7 @@ pf_jail_rules:
       ports:
         - "20"
         - "21"
+        - "49152:65535"
       protocols:
         - "tcp"
       clients:
