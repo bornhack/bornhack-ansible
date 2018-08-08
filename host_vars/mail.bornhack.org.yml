@@ -49,6 +49,7 @@ lists:
   content: "ahf@bornhack.org"
   metrics: "tykling@bornhack.org"
   badge: "tykling@bornhack.org"
+  shuttle: "tykling@bornhack.org"
 
 vhosts:
   mail_bornhack_org:
