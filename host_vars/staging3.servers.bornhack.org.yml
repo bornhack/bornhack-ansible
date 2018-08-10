@@ -94,3 +94,4 @@ django_ircbot_nickserv_email: "stagingbot@bornhack.org"
 django_sendfile_url: "/public"
 django_sendfile_backend: "sendfile.backends.nginx"
 django_channels_layer_redis: True
+django_channels_backend: "channels_redis.core.RedisChannelLayer"
