@@ -50,6 +50,7 @@ lists:
   metrics: "tykling@bornhack.org"
   badge: "tykling@bornhack.org"
   shuttle: "tykling@bornhack.org"
+  youtube: "vidir@bornhack.org"
 
 vhosts:
   mail_bornhack_org:
