@@ -63,7 +63,7 @@ vhosts:
       }
 
   live_bornhack_dk:
-    vhost_v6ip: "2a01:3a0:1:1900:81::6"
+    vhost_v6ip: "2a01:3a0:1:1900:81::7"
     hostnames:
       - live.bornhack.dk
     locationslash: |
