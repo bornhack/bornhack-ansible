@@ -19,6 +19,7 @@ vhosts:
     locationslash: |
       location / {
           proxy_pass http://wwwprod3.servers.bornhack.org:80;
+          more_set_headers        "X-Secret-Token: zG6dniE1yCWuB0O6QxQwyATN3sB0YfUU";
       }
 
   coinifycallback_bornhack_org:
