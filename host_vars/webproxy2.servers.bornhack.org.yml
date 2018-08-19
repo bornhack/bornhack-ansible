@@ -62,6 +62,16 @@ vhosts:
           proxy_pass http://10.0.0.18:8080;
       }
 
+  live_bornhack_dk:
+    vhost_v6ip: "2a01:3a0:1:1900:81::6"
+    hostnames:
+      - live.bornhack.dk
+    locationslash: |
+      location / {
+          return 302 https://www.youtube.com/c/BornHack/live
+      }
+
+
 certgrinder_hostname_sets:
   - "webproxy2.servers.bornhack.org"
   - "bornhack.dk,www.bornhack.dk"
@@ -69,6 +79,7 @@ certgrinder_hostname_sets:
   - "minutes.bornhack.org"
   - "nuntio.bornhack.org"
   - "coinifycallback.bornhack.org"
+  - "live.bornhack.dk"
 
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service nginx reload"
