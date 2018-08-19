@@ -68,7 +68,7 @@ vhosts:
       - live.bornhack.dk
     locationslash: |
       location / {
-          return 302 https://www.youtube.com/c/BornHack/live
+          return 302 https://www.youtube.com/c/BornHack/live;
       }
 
 
