@@ -101,3 +101,7 @@ coinify_callback_hostname: "coinifycallback.bornhack.org"
 
 django_channels_layer_redis: True
 django_channels_backend: "channels_redis.core.RedisChannelLayer"
+
+django_accountingsystem_email: "866bilag1182644@e-conomic.dk"
+django_economyteam_email: "economy-team@bornhack.org"
+
