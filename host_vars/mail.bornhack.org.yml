@@ -95,5 +95,5 @@ certgrinder_hostname_sets:
 
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service postfix reload"
-
+  - "/usr/sbin/service nginx reload"
 
