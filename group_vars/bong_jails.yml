@@ -1,5 +1,6 @@
 ---
-nginx_v4_proxy_ip: "85.235.250.89"
+nginx_v4_proxy_ip: "85.235.250.91"
+nginx_v6_proxy_ip: "2a01:3a0:1:1900:85:235:250:91"
 ntp_pool_server: "dk.pool.ntp.org"
 jail_host: "bong.tyknet.dk"
 postgres_host: "10.0.0.3"
