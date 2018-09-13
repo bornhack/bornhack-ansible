@@ -1,6 +1,7 @@
 ---
 nginx_proxy: True
 nginx_v4_proxy_ip: "85.235.250.91"
+nginx_v6_proxy_ip: "2a01:3a0:1:1900:85:235:250:91"
 
 vhosts:
   webproxy2_servers_bornhack_dk:
