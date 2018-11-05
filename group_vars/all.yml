@@ -13,7 +13,7 @@ users:
     sudo: True
   telling:
     comment: "Stephan Telling"
-    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPVxRVn6Um/cyPMo6YbqUXnowXCElv9CyMUIvqpOwtXD telling@telling-mbp.local"
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKwmdyuUp1I0ew1/wBetiLcGJur+VJK7/yXYdMeh02my bornhack"
     sudo: True
   valberg:
     comment: "Víðir Valberg Guðmundsson"
