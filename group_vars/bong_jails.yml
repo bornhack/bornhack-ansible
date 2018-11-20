@@ -2,11 +2,11 @@
 nginx_v4_proxy_ip: "85.235.250.91"
 nginx_v6_proxy_ip: "2a01:3a0:1:1900:85:235:250:91"
 ntp_pool_server: "dk.pool.ntp.org"
-jail_host: "bong.tyknet.dk"
+jail_host: "bong2.servers.tyknet.dk"
 postgres_host: "10.0.0.3"
 dns_resolver_ips:
   - "2a01:3a0:1:1900:10::1"
   - "91.239.100.100"
   - "89.233.43.71"
-poudriere_package_set: 'freebsd_11_1_amd64-default'
+poudriere_package_set: 'freebsd_11_2_amd64-default'
 
