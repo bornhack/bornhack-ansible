@@ -4,7 +4,7 @@ ansible_python_interpreter: "/usr/local/bin/python"
 ansible_authorized_keys_file: |
   ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLklW3+HXkG0N6M1SG76WSuA4uNbkiVo3bojCox2ogv ansible-generated on ansible2.servers.bornhack.org
 
-poudriere_package_set: 'freebsd_11_1_amd64-default'
+poudriere_package_set: 'freebsd_11_2_amd64-default'
 
 users:
   tykling:
