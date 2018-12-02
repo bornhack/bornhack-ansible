@@ -9,4 +9,5 @@ dns_resolver_ips:
   - "91.239.100.100"
   - "89.233.43.71"
 poudriere_package_set: 'freebsd_11_2_amd64-default'
+postgresql_version: "96"
 
