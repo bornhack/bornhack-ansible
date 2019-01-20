@@ -8,3 +8,24 @@ prometheus_alertmanager_configs:
       - targets:
         - "alertmanager.bornhack.org:443"
 
+prometheus_scrape_configs:
+  - name: 'bornhack-http-services'
+    scheme: 'http'
+    scrape_interval: '15s'
+    metrics_path: "/probe"
+    params:
+      module:
+        - "http_2xx"
+    static_configs:
+      - targets:
+        - "bornhack.dk"
+    relabel_configs:
+      - source_labels:
+          - '__address__'
+        target_label: '__param_target'
+      - source_labels:
+          - '__param_target'
+        target_label: 'instance'
+      - target_label: '__address__'
+        replacement: 'blackbox1.servers.bornhack.org:9115'
+
