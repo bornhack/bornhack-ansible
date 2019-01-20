@@ -16,9 +16,8 @@ prometheus_scrape_configs:
     params:
       module:
         - "http_2xx"
-    static_configs:
-      - targets:
-        - "bornhack.dk"
+    - targets:
+      - "bornhack.dk"
     relabel_configs:
       - source_labels:
           - '__address__'
