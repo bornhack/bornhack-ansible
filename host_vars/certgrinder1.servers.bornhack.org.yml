@@ -1,6 +1,7 @@
 ---
 
-nginx_v4_proxy_ip: "85.235.225.224"
+nginx_v4_proxy_ip: "89.233.43.75"
+nginx_v6_proxy_ip: "2a01:3a0:1:1900:89:233:43:75"
 
 vhosts:
   certgrinder_bornhack_org:
