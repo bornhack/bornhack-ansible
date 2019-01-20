@@ -1,9 +1,14 @@
 ---
 blackbox_exporter_modules:
-  icmp-3s-100b:
+  icmp4-3s-100b:
     prober: "icmp"
     timeout: 3s
     icmp:
       source_ip_address: "127.0.0.1"
       payload_size: 100
+  http_2xx:
+    prober: "http"
+    timeout: "5s"
+    http:
+      method: "GET"
 
