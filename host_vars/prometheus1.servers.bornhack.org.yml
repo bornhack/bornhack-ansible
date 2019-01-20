@@ -2,3 +2,9 @@
 prometheus_monitor_name: "prometheus1"
 prometheus_external_url: "https://prometheus.bornhack.org"
 
+prometheus_alertmanager_configs:
+  - scheme: "https"
+    static_configs:
+      - targets:
+        - "alertmanager.bornhack.org:443"
+
