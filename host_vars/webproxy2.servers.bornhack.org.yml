@@ -70,6 +70,42 @@ vhosts:
           return 302 https://www.youtube.com/c/BornHack/live;
       }
 
+  prometheus_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::8"
+    hostnames:
+      - prometheus.bornhack.org
+    locationslash: |
+      location / {
+          proxy_pass http://10.0.0.28:80;
+      }
+
+  alertmanager_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::9"
+    hostnames:
+      - alertmanager.bornhack.org
+    locationslash: |
+      location / {
+          proxy_pass http://10.0.0.29:80;
+      }
+
+  blackbox_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::10"
+    hostnames:
+      - blackbox.bornhack.org
+    locationslash: |
+      location / {
+          proxy_pass http://10.0.0.30:80;
+      }
+
+  grafana_bornhack_org:
+    vhost_v6ip: "2a01:3a0:1:1900:81::11"
+    hostnames:
+      - grafana.bornhack.org
+    locationslash: |
+      location / {
+          proxy_pass http://10.0.0.31:80;
+      }
+
 
 certgrinder_hostname_sets:
   - "webproxy2.servers.bornhack.org"
@@ -79,6 +115,10 @@ certgrinder_hostname_sets:
   - "nuntio.bornhack.org"
   - "coinifycallback.bornhack.org"
   - "live.bornhack.dk"
+  - "prometheus.bornhack.org"
+  - "alertmanager.bornhack.org"
+  - "blackbox.bornhack.org"
+  - "grafana.bornhack.org"
 
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service nginx reload"
