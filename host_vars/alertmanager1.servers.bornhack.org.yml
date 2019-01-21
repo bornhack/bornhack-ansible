@@ -1,4 +1,6 @@
 ---
 alertmanager_external_url: "https://alertmanager.bornhack.org"
 
+alertmanager_smtp_server: "mail.bornhack.org"
+alertmanager_smtp_username: "alertmanager1@bornhack.org"
 
