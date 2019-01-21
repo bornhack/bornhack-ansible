@@ -11,7 +11,6 @@ certgrinder_hostname_sets:
  - "imap2.servers.bornhack.org,imap.bornhack.org"
 
 certgrinder_post_renew_hooks:
-  - "/usr/sbin/service nginx reload"
   - "/usr/sbin/service dovecot reload"
 
 nginx_locationslash:
