@@ -18,6 +18,9 @@ prometheus_scrape_configs:
         - "http_2xx"
     targets:
       - "bornhack.dk"
+      - "wwwstaging.bornhack.org"
+      - "mail.bornhack.org"
+      - "people.bornhack.org"
     relabel_configs:
       - source_labels:
           - '__address__'
