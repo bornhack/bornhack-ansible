@@ -60,6 +60,8 @@ supervisord_extra_programs:
     priority: "4"
 
 
+uwsgi_processes: 10
+
 pdf_archive_path: '/storage/pdf_archive/'
 pdf_letterhead_filename: "bornhack-2018_letterhead.pdf"
 iban: DK3553710000244504
