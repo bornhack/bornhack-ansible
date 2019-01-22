@@ -4,3 +4,15 @@ alertmanager_external_url: "https://alertmanager.bornhack.org"
 alertmanager_smtp_server: "mail.bornhack.org"
 alertmanager_smtp_username: "alertmanager1@bornhack.org"
 
+alertmanager_routes:
+  group_by: ['alertname', 'instance']
+  group_wait: "30s"
+  group_interval: "5m"
+  repeat_interval: "3h"
+  receiver: "bornhack-sysadmin-team"
+
+alertmanager_receivers:
+  - name: 'bornhack-sysadmin-team'
+    email_configs:
+      - to: 'sysadm@bornhack.org'
+
