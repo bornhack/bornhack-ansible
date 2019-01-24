@@ -41,7 +41,7 @@ prometheus_scrape_configs:
       - "bornhack.dk"
       - "wwwstaging.bornhack.org"
       - "mail.bornhack.org"
-      - "people.bornhack.org"
+      - "people.bornhack.org/tyk"
     relabel_configs:
       - source_labels:
           - '__address__'
