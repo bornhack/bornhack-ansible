@@ -35,5 +35,5 @@ blackbox_exporter_modules:
       tls: true
     tcp:
       query_response:
-        - expect: "* OK [CAPABILITY IMAP4rev1 SASL-IR LOGIN-REFERRALS ID ENABLE IDLE LITERAL+ AUTH=PLAIN AUTH=LOGIN] Dovecot ready."
+        - expect: "Dovecot ready.$"
 
