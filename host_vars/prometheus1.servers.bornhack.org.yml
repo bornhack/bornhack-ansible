@@ -9,6 +9,18 @@ prometheus_alertmanager_configs:
         - "alertmanager.bornhack.org:443"
 
 prometheus_alertmanager_rules:
+  - name: "bornhack-probe-group"
+    rules:
+      - alert: "probe_not_up"
+        expr: "up == 0"
+        for: "10m"
+        annotations:
+          summary: "One or more probes are not up. Services are probably not affected, check if blackbox_exporter is running!"
+      - alert: "probe_unsuccessful"
+        expr: "probe_success == 0"
+        for: "10m"
+        annotations:
+          summary: "One or more probes failed. Check the affected services!"
   - name: "bornhack-certificate-group"
     rules:
       - alert: "https_certificate_too_old"
