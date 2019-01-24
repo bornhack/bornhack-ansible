@@ -39,4 +39,40 @@ prometheus_scrape_configs:
         target_label: 'instance'
       - target_label: '__address__'
         replacement: 'blackbox1.servers.bornhack.org:9115'
+  - name: 'bornhack-imap-service'
+    scheme: 'http'
+    scrape_interval: '15s'
+    metrics_path: "/probe"
+    params:
+      module:
+        - "dovecot_tls"
+    targets:
+      - "imap.bornhack.org:993"
+    relabel_configs:
+      - source_labels:
+          - '__address__'
+        target_label: '__param_target'
+      - source_labels:
+          - '__param_target'
+        target_label: 'instance'
+      - target_label: '__address__'
+        replacement: 'blackbox1.servers.bornhack.org:9115'
+  - name: 'bornhack-smtp-service'
+    scheme: 'http'
+    scrape_interval: '15s'
+    metrics_path: "/probe"
+    params:
+      module:
+        - "smtp_starttls"
+    targets:
+      - "mail.bornhack.org:587"
+    relabel_configs:
+      - source_labels:
+          - '__address__'
+        target_label: '__param_target'
+      - source_labels:
+          - '__param_target'
+        target_label: 'instance'
+      - target_label: '__address__'
+        replacement: 'blackbox1.servers.bornhack.org:9115'
 
