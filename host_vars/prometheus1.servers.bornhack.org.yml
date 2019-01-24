@@ -24,7 +24,7 @@ prometheus_alertmanager_rules:
   - name: "bornhack-certificate-group"
     rules:
       - alert: "https_certificate_too_old"
-        expr: "((probe_ssl_earliest_cert_expiry{job='bornhack-http-services'} - time()) / 60 / 60 / 24) < 29"
+        expr: "((probe_ssl_earliest_cert_expiry - time()) / 60 / 60 / 24) < 29"
         for: "10m"
         annotations:
           summary: "The target certificate expires in 28 days or less, check certgrinder.log"
