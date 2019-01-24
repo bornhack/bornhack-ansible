@@ -33,7 +33,6 @@ blackbox_exporter_modules:
     timeout: 5s
     tcp:
       tls: true
-    tcp:
       query_response:
         - expect: "Dovecot ready.$"
 
