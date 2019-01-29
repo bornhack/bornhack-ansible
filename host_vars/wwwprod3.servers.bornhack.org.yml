@@ -3,7 +3,6 @@ django_root: "{{ django_checkout_path }}/src"
 django_mainapp: "bornhack"
 django_allowed_hostnames: "['bornhack.dk','www.bornhack.dk','bornhack7hctgpio.onion']"
 django_debug: 'False'
-django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: "https://github.com/bornhack/bornhack-website"
 django_pip_requirements_path: "{{ django_root }}/requirements/production.txt"
 django_postgres_user: "bornhackdk"
