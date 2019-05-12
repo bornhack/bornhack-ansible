@@ -61,12 +61,12 @@ supervisord_extra_programs:
 
 
 pdf_archive_path: '/storage/pdf_archive/'
-pdf_letterhead_filename: "bornhack-2018_test_letterhead.pdf"
-iban: "DK3553710000244504"
-swiftbic: "ALBADKKK"
-regno: "5371"
-accountno: "244504"
-bank_name: "Arbejdernes Landsbank"
+pdf_letterhead_filename: "bornhack-2019_test_letterhead.pdf"
+iban: "DK0398600000747866"
+swiftbic: "FOSPDK21"
+regno: 9860
+accountno: 747866
+bank_name: "Folke Sparekassen"
 
 django_ircbot_nickname: "BornHackStaging"
 django_ircbot_server: "ircd.tyknet.dk"
