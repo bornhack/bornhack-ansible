@@ -51,6 +51,7 @@ lists:
   badge: "tykling@bornhack.org"
   shuttle: "tykling@bornhack.org"
   youtube: "vidir@bornhack.org"
+  ccc2019: "tykling@bornhack.org"
 
 vhosts:
   mail_bornhack_org:
