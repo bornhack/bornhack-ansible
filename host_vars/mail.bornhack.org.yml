@@ -2,10 +2,6 @@
 nginx_proxy: True
 nginx_v4_proxy_ip: 85.235.250.93
 
-postfix_extra_virtual_mailbox_domains:
-  - bornhack.dk
-  - bornhack.com
-
 dkimdns:
   bornhack.dk: "v=DKIM1; k=rsa; s=email; p=MIIBJjANBgkqhkiG9w0BAQEFAAOCARMAMIIBDgKCAQULNgFStxTHhlZxfI+JwpovDl0JQ2pi/YILkxyyPj0t3F8o0LS4IkzrPwukA7RBhjbU8A74JJ0jUrSVt1p0YkwTWHMv3FTh8VTIOAauDX11mTN5/rGyVpkRLBP2N3upgjVwguUjk9tfHDgIt4W5ysn5739Qa6YN700zcin1T1F6GVE1lg2FFZe6iKh0PSS13n/EGDk4d7zdslxWfGOKs8FlFsgnAyYhZN5njEj20eQ4yOU0p3HuakTj7HWG6tLbZJoGdce6QVCnRBVQ0AZrDnv+MPYOORjhtxbgcWZCX1Fss7I+ZSMEQElGchxCgIGIG+HWePngbW3oBmLQprLPXAAEcNSeOBsCAwEAAQ=="
   bornhack.org: "v=DKIM1; k=rsa; s=email; p=MIIBJjANBgkqhkiG9w0BAQEFAAOCARMAMIIBDgKCAQUMvHxEJM0zKnMw9YmVh+KqHQggL49eKfK4xgroBUJDZYyKEW9DGRcG8m/Or2RCcIdRb518TGOpgUHwtvdIlElORInTjNEAT0H3cE8mR0oMPNc9n2NfSnZNb99b0RAfe92Nlx5q+XkLESZz0n+wLzXWVgeX4g2gCffFuWKkrEutCRuaC2FWi+pgvTvtClE00FHYOi+TLA2y10FfrT5JoVboLBCIDxwkRu3OagfP4ht5YBo6E6crFsf+/iPNs1+jOx+VxUtCRIHAX9mViEkIDcX/2cI+v8omzyQBnJ1Gyl3whrMKp3cyEqfodyRr/xoY5pRJo5jFA7z048rKA/F9gYY4iyrn8EkCAwEAAQ=="
