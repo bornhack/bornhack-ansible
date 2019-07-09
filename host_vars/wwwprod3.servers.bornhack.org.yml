@@ -15,6 +15,7 @@ django_email_host: "mail.bornhack.org"
 django_email_from: "info@bornhack.dk"
 django_media_root: "/storage/django_media_root"
 django_media_root_subdirs:
+  - "proforma_invoices"
   - "invoices"
   - "creditnotes"
   - "public"
