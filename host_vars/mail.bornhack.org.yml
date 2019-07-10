@@ -26,7 +26,6 @@ postgres_user: "postfix"
 
 lists:
   all: "tykling@bornhack.org"
-  admin-team: "ahf@bornhack.org"
   bar-team: "sarah@radicalpet.net"
   cert-team: "rel@bornhack.org"
   economy-team: "tykling@bornhack.org"
@@ -39,7 +38,6 @@ lists:
   pr-team: "ahf@bornhack.org"
   program-team: "ahf@bornhack.org"
   sanitation-team: "tykling@bornhack.org"
-  tech-team: "tykling@bornhack.org"
   villages-team: "sarah@radicalpet.net"
   info: "tykling@bornhack.org"
   sponsors: "ahf@bornhack.org"
