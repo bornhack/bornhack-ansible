@@ -1,0 +1,10 @@
+all:
+  children:
+    bong_jails:
+      hosts:
+        staging3.servers.bornhack.org:
+
+    django_channels2_servers:
+      hosts:
+        staging3.servers.bornhack.org:
+
