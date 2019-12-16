@@ -11,10 +11,6 @@ users:
     comment: "Thomas Steen Rasmussen"
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZq1LdOdPDYnoQWn+87JafplL6IhDGvgytBfhItydgq user@bornhack"
     sudo: True
-  telling:
-    comment: "Stephan Telling"
-    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKwmdyuUp1I0ew1/wBetiLcGJur+VJK7/yXYdMeh02my bornhack"
-    sudo: True
   valberg:
     comment: "Víðir Valberg Guðmundsson"
     key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUmGeHc6QXDcJHkmVxbTUv04Q3vs20avquoGr6eOkkvYbcgjuFnBOOtvs2Nul1odcvvnHa1nN7DfL8XJamiwsB1B/xe2seaNS1axgwk9XowlVN9pgga8gsC+4gZWBtSObG2GR8n4NtPENzPmW5deNn8dRpTvULPMxZ0VRE9yNQOx8v8w85yYh+vxbbkWGVDYJU23yuJI50U9y6bXxNHinsACDFBeR/giXDlw29TaOaSxz0R6zrRPBoX+V68RyWwBL+KWQKtX2ULtJI40S98Ohd6p41bIxYHCBS/zroqNne8PjYOLcHHsjHUGfTvhcS5a3zdz/iHsvsaOOjFjsydAXH valberg"
