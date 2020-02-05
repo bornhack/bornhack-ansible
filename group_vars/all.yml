@@ -22,5 +22,5 @@ certgrinder_redirect_url: "http://certgrinder.bornhack.org"
 certgrinder_admin_email: "sysadm@bornhack.org"
 
 etcaliases_root_forward_email: "sysadm@bornhack.org"
-nullmailer_relayhost: "mail.bornhack.org"
+nullmailer_smarthost: "mail.bornhack.org"
 
