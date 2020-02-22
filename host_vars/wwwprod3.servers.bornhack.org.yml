@@ -24,6 +24,8 @@ django_extra_os_dependencies:
   - "graphics/jpeg-turbo"
   - "converters/wkhtmltopdf"
   - "x11-fonts/webfonts"
+  - "graphics/gdal"
+  - "graphics/geos"
 
 django_archive_email: "mailarchive@bornhack.org"
 
