@@ -6,7 +6,7 @@ django_allowed_hostnames: "['wwwstaging.bornhack.org']"
 django_debug: 'False'
 django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: "https://github.com/bornhack/bornhack-website"
-django_github_branch: "facilities"
+django_github_branch: "phonebook"
 django_pip_requirements_path: "{{ django_root }}/requirements/production.txt"
 django_postgres_user: "bornhackstagingdk"
 django_postgres_host: "10.0.0.3"
