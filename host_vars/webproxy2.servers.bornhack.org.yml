@@ -1,5 +1,7 @@
 ---
 nginx_proxy: True
+nginx_cache: True
+nginx_cache_inactive: "24h"
 
 vhosts:
   webproxy2_servers_bornhack_dk:
@@ -39,6 +41,11 @@ vhosts:
     hostnames:
       - wwwstaging.bornhack.org
     locationslash: |
+      # kortforsyningen tile caching
+      location /maps/kfproxy/ {
+        proxy_cache my_cache;
+        proxy_pass http://staging3.servers.bornhack.org:80;
+      }
       location / {
           proxy_pass http://staging3.servers.bornhack.org:80;
       }
