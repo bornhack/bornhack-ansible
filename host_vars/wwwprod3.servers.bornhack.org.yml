@@ -62,7 +62,7 @@ supervisord_extra_programs:
     priority: "4"
 
 
-uwsgi_processes: 10
+uwsgi_processes: 20
 
 pdf_archive_path: '/storage/pdf_archive/'
 pdf_letterhead_filename: "bornhack-2019_letterhead.pdf"
