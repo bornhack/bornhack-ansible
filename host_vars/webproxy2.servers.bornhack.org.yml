@@ -11,7 +11,6 @@ vhosts:
     default_vhost: True
     locationslash: |
       location /goaccess {
-          include tykonly_acl.conf;
           alias /usr/local/www/goaccess;
       }
       location / {
