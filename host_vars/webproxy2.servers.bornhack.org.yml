@@ -10,7 +10,13 @@ vhosts:
       - webproxy2.servers.bornhack.org
     default_vhost: True
     locationslash: |
-      return 301 https://bornhack.dk/;
+      location /goaccess {
+          include tykonly_acl.conf;
+          alias /usr/local/www/goaccess;
+      }
+      location / {
+          return 301 https://bornhack.dk/;
+      }
 
   bornhack_dk:
     vhost_v6ip: "2a01:3a0:1:1900:81::1"
