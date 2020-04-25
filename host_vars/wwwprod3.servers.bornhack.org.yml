@@ -88,4 +88,11 @@ django_channels_backend: "channels_redis.core.RedisChannelLayer"
 django_accountingsystem_email: "866bilag1182644@e-conomic.dk"
 django_economyteam_email: "economy-team@bornhack.org"
 
-backoffice_proxy_urls: '{"Webproxy stats": "https://webproxy2.servers.bornhack.org/goaccess/"}'
+backoffice_proxy_urls: |
+  {
+      "webstats-2016": ("Webproxy stats 2016", "https://webproxy2.servers.bornhack.org/goaccess/2016.html"),
+      "webstats-2017": ("Webproxy stats 2017", "https://webproxy2.servers.bornhack.org/goaccess/2017.html"),
+      "webstats-2018": ("Webproxy stats 2018", "https://webproxy2.servers.bornhack.org/goaccess/2018.html"),
+      "webstats-2019": ("Webproxy stats 2019", "https://webproxy2.servers.bornhack.org/goaccess/2019.html"),
+      "webstats-2020": ("Webproxy stats 2020", "https://webproxy2.servers.bornhack.org/goaccess/2020.html"),
+  }
