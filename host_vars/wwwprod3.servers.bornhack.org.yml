@@ -88,3 +88,4 @@ django_channels_backend: "channels_redis.core.RedisChannelLayer"
 django_accountingsystem_email: "866bilag1182644@e-conomic.dk"
 django_economyteam_email: "economy-team@bornhack.org"
 
+backoffice_proxy_urls: '{"Webproxy stats": "https://webproxy2.servers.bornhack.org/goaccess/"}'
