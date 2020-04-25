@@ -11,7 +11,7 @@ vhosts:
     default_vhost: True
     locationslash: |
       location /goaccess {
-          allow 2a01:3a0:1:1900:85:235:250:91;
+          allow 2a01:3a0:1:1900:10::27;
           deny all;
           alias /usr/local/www/goaccess;
       }
