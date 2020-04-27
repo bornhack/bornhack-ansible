@@ -141,3 +141,5 @@ certgrinder_post_renew_hooks:
 
 certgrinder_bind_ip: "2a01:3a0:1:1900:85:235:250:91"
 
+goaccess_ignore_ips:
+  - "2a01:3a0:1:1900:10::30"
