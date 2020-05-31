@@ -42,7 +42,8 @@ vhosts:
   people_bornhack_org:
     vhost_v6ip: "2a01:3a0:1:1900:85:235:250:92"
     hostnames:
-      - people.bornhack.org
+      - "people.bornhack.org"
+      - "people2.servers.bornhack.org"
     default_vhost: True
     locationslash: |
       location ~ ^/(.+?)(/.*)?$ {
@@ -63,8 +64,7 @@ vhosts:
       }
 
 certgrinder_hostname_sets:
-  - "people2.servers.bornhack.org"
-  - "people.bornhack.org"
+  - "people.bornhack.org,people2.servers.bornhack.org"
 
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service nginx reload"
