@@ -69,5 +69,5 @@ certgrinder_hostname_sets:
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service nginx reload"
 
-nginx_exporter_uri: "https://people2.servers.bornhack.org/stub_status"
+nginx_exporter_uri: "https://people.bornhack.org/stub_status"
 
