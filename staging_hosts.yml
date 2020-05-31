@@ -8,3 +8,7 @@ all:
       hosts:
         staging3.servers.bornhack.org:
 
+    prometheus_monitored_servers:
+      hosts:
+        staging3.servers.bornhack.org:
+
