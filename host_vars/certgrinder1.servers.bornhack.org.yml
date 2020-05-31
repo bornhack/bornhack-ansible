@@ -78,3 +78,5 @@ bind_dynamic_zonelist:
     nameserver: "authns.certgrinder.bornhack.org"
     email: "hostmaster.bornhack.org"
 
+nginx_exporter_uri: "http://certgrinder.bornhack.org/stub_status"
+
