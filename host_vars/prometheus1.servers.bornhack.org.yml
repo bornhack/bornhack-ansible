@@ -15,7 +15,7 @@ prometheus_alertmanager_rules:
         expr: "up == 0"
         for: "10m"
         annotations:
-          summary: "One or more probes are not up. Services are probably not affected, check if blackbox_exporter is running!"
+          summary: "One or more probes are not up. Check the affected services!"
       - alert: "probe_unsuccessful"
         expr: "probe_success == 0"
         for: "10m"
