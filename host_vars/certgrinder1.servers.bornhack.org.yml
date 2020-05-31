@@ -52,15 +52,21 @@ certgrinder_authorized_keys:
   certgrinder1:
     fromip: "2a01:3a0:1:1900:85:235:225:224"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBhEhR2Od8OMxItCz/DoO3upRxLW7vYzyvtpcEi3FO2f ansible-generated on certgrinder1.servers.bornhack.org"
-  blue:
-    fromip: "212.178.176.210"
-    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE7rRiz3V92iPmWoc4GXbBYtIj3n2oz8dmtJGQZtGfkV ansible-generated on blue.servers.bornhack.org"
-  dns1:
-    fromip: "212.178.176.210"
-    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCuBJkJdZKEYM7nCSGMXvX8ghrD4r+CjoeW1u9mjwVr ansible-generated on dns1.blue.servers.bornhack.org"
-  syslog1:
-    fromip: "212.178.176.210"
-    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILUOjpuSuIzQFdTM4q6B8RCHVGYu21JYI67qz53GuoYX ansible-generated on syslog1.blue.servers.bornhack.org"
+  prometheus1:
+    fromip: "2a01:3a0:1:1900:10::28"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIABwmJ8iVxmTECEcerS4JGBUmXBLoV2QrINyJDNtHAZ5 ansible-generated on prometheus1.servers.bornhack.org"
+  alertmanager1:
+    fromip: "2a01:3a0:1:1900:10::29"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJl6sS2BRP2w1HP02ctyxL3fJY8q9ZFh5QSculvGvGBP ansible-generated on alertmanager1.servers.bornhack.org"
+  blackbox1:
+    fromip: "2a01:3a0:1:1900:10::30"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFphUecHp/nD8cSZuRvmE8fN9iCO57RYGcG1BzGjt/3n ansible-generated on blackbox1.servers.bornhack.org"
+  certgrinder1:
+    fromip: "2a01:3a0:1:1900:89:233:43:75"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBhEhR2Od8OMxItCz/DoO3upRxLW7vYzyvtpcEi3FO2f ansible-generated on certgrinder1.servers.bornhack.org"
+  grafana1:
+    fromip: "2a01:3a0:1:1900:10::31"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBkN4g5uTXiybtDDnqGYfo3eAJan13S1xm8tC/SCU7Su ansible-generated on grafana1.servers.bornhack.org"
 
 bind_dynamic_zonelist:
   - zone: "acme.bornhack.org"
