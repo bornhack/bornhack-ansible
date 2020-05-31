@@ -15,6 +15,14 @@ vhosts:
           deny all;
           alias /usr/local/www/goaccess;
       }
+      location = /stub_status {
+          stub_status;
+          allow 127.0.0.1;
+          allow ::1;
+          allow 2a01:3a0:1:1900:85:235:250:91;
+          allow 85.235.250.91;
+          deny all;
+      }
       location / {
           return 301 https://bornhack.dk/;
       }
