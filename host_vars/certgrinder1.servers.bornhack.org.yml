@@ -49,9 +49,6 @@ certgrinder_authorized_keys:
   nuntio2:
     fromip: "2a01:3a0:1:1900:10::18"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFgc49Nb4tUpgYdjMHfUfNyYNETmvBfG49SJ0oygd/nf ansible-generated on nuntio2.servers.bornhack.org"
-  certgrinder1:
-    fromip: "2a01:3a0:1:1900:85:235:225:224"
-    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBhEhR2Od8OMxItCz/DoO3upRxLW7vYzyvtpcEi3FO2f ansible-generated on certgrinder1.servers.bornhack.org"
   prometheus1:
     fromip: "2a01:3a0:1:1900:10::28"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIABwmJ8iVxmTECEcerS4JGBUmXBLoV2QrINyJDNtHAZ5 ansible-generated on prometheus1.servers.bornhack.org"
