@@ -63,3 +63,18 @@ all:
       hosts:
         ansible2.servers.bornhack.org:
 
+    prometheus_monitored_servers:
+      hosts:
+        alertmanager1.servers.bornhack.org:
+        ansible2.servers.bornhack.org:
+        blackbox1.servers.bornhack.org:
+        certgrinder1.servers.bornhack.org:
+        grafana1.servers.bornhack.org:
+        imap2.servers.bornhack.org:
+        mail.bornhack.org:
+        people2.servers.bornhack.org:
+        prometheus1.servers.bornhack.org:
+        tor2.servers.bornhack.org:
+        webproxy2.servers.bornhack.org:
+        wwwprod3.servers.bornhack.org:
+
