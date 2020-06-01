@@ -28,6 +28,13 @@ prometheus_alertmanager_rules:
         for: "10m"
         annotations:
           summary: "The target certificate expires in 28 days or less, check certgrinder.log"
+  - name: "bornhack-pkg-group"
+    rules:
+      - alert: "vulnerable_packages_installed"
+        expr: "pkg_vulnerable_packages_total > 0"
+        for: "10m"
+        annotations:
+          summary: "The host has one or more vulnerable packages installed"
 
 prometheus_scrape_configs:
   - name: 'bornhack-http-services'
