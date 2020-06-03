@@ -89,4 +89,5 @@ django_economyteam_email: "economyteam@example.com"
 
 bornhack_2019_old_token_token: "oldtoken"
 uwsgi_processes: 10
+backoffice_proxy_urls: {}
 
