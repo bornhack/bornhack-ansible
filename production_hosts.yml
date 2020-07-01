@@ -55,7 +55,7 @@ all:
       hosts:
         imap2.servers.bornhack.org:
 
-    certgrinder_servers:
+    certgrinderd_servers:
       hosts:
         certgrinder1.servers.bornhack.org:
 
