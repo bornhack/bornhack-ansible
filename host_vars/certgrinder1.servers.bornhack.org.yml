@@ -29,6 +29,8 @@ vhosts:
     https_redirect: False
     letsencrypt: False
 
+certgrinderd_acme_zone: "acme.bornhack.org"
+certgrinderd_acme_email: "letsencrypt@bornhack.org"
 certgrinderd_authorized_keys:
   webproxy2:
     fromip: "2a01:3a0:1:1900:85:235:250:91"
