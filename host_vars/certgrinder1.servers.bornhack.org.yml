@@ -33,45 +33,81 @@ certgrinder_authorized_keys:
   webproxy2:
     fromip: "2a01:3a0:1:1900:85:235:250:91"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOegnR+qnK2FEoaSrVwHgCIxjFkVEbW4VO31/Hd2mAwk ansible-generated on webproxy2.servers.bornhack.org"
+    domainsets:
+      - - "webproxy2.servers.bornhack.org"
+      - - "bornhack.dk"
+        - "www.bornhack.dk"
+      - - "coinifycallback.bornhack.org"
+      - - "wwwstaging.bornhack.org"
+      - - "minutes.bornhack.org"
+      - - "nuntio.bornhack.org"
+      - - "live.bornhack.dk"
+      - - "prometheus.bornhack.org"
+      - - "alertmanager.bornhack.org"
+      - - "blackbox.bornhack.org"
+      - - "grafana.bornhack.org"
   imap2:
     fromip: "2a01:3a0:1:1900:85:235:250:94" 
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHCmKIUYg/QkzGNbrn4OfgRKY5Ft2vLQKemPEchGu+oo ansible-generated on imap2.servers.bornhack.org"
+    domainsets:
+      - - "imap2.servers.bornhack.org"
+        - "imap.bornhack.org"
   mail:
     fromip: "2a01:3a0:1:1900:85:235:250:93"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbOK7mnIa0ODIjN64pXiNwyPOv75nZq67iHVkwlmLY5 ansible-generated on mail.bornhack.org"
+    domainsets:
+      - - "mail.bornhack.org"
   people2:
     fromip: "2a01:3a0:1:1900:85:235:250:92"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKioh6tTCQUnt8F/QBaV2y2QkT/5a1zozuNBNYd+J5d ansible-generated on people2.servers.bornhack.org"
+    domainsets:
+      - - "people.bornhack.org"
+        - "people2.servers.bornhack.org"
   staging3:
     fromip: "2a01:3a0:1:1900:10::26"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKcEYlMLQGzpbKsVP/78hXP6+XEE9ryv1xIfDbS9XcWW ansible-generated on staging3.servers.bornhack.org"
+    domainsets:
+      - - "staging3.servers.bornhack.org"
   wwwprod3:
     fromip: "2a01:3a0:1:1900:10::27"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINx4iAKwVX0o8swI8EKtWchrzc0cwqZMHhr/2A5ydi4M ansible-generated on wwwprod3.servers.bornhack.org"
+    domainsets:
+      - - "wwwprod3.servers.bornhack.org"
   ansible2:
     fromip: "2a01:3a0:1:1900:85:235:250:87"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2XTSchpSxW/aoXtewwJce9Zip9P8bMjDsvprXYqIon ansible-generated on ansible2.servers.bornhack.org"
+    domainsets:
+      - - "ansible2.servers.bornhack.org"
   tor2:
     fromip: "2a01:3a0:1:1900:10::12"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHD1PayUqiB4aszFEdxJ9i0szQxq3aVbYOMY9WtGCzYI ansible-generated on tor2.servers.bornhack.org"
-  nuntio2:
-    fromip: "2a01:3a0:1:1900:10::18"
-    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFgc49Nb4tUpgYdjMHfUfNyYNETmvBfG49SJ0oygd/nf ansible-generated on nuntio2.servers.bornhack.org"
+    domainsets:
+      - - "tor2.servers.bornhack.org"
   prometheus1:
     fromip: "2a01:3a0:1:1900:10::28"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIABwmJ8iVxmTECEcerS4JGBUmXBLoV2QrINyJDNtHAZ5 ansible-generated on prometheus1.servers.bornhack.org"
+    domainsets:
+      - - "prometheus1.servers.bornhack.org"
   alertmanager1:
     fromip: "2a01:3a0:1:1900:10::29"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJl6sS2BRP2w1HP02ctyxL3fJY8q9ZFh5QSculvGvGBP ansible-generated on alertmanager1.servers.bornhack.org"
+    domainsets:
+      - - "alertmanager1.servers.bornhack.org"
   blackbox1:
     fromip: "2a01:3a0:1:1900:10::30"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFphUecHp/nD8cSZuRvmE8fN9iCO57RYGcG1BzGjt/3n ansible-generated on blackbox1.servers.bornhack.org"
+    domainsets:
+      - - "blackbox1.servers.bornhack.org"
   certgrinder1:
     fromip: "2a01:3a0:1:1900:89:233:43:75"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBhEhR2Od8OMxItCz/DoO3upRxLW7vYzyvtpcEi3FO2f ansible-generated on certgrinder1.servers.bornhack.org"
+    domainsets:
+      - - "certgrinder1.servers.bornhack.org"
   grafana1:
     fromip: "2a01:3a0:1:1900:10::31"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBkN4g5uTXiybtDDnqGYfo3eAJan13S1xm8tC/SCU7Su ansible-generated on grafana1.servers.bornhack.org"
+    domainsets:
+      - - "grafana1.servers.bornhack.org"
 
 bind_dynamic_zonelist:
   - zone: "acme.bornhack.org"
