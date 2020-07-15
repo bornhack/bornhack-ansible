@@ -144,9 +144,6 @@ certgrinder_hostname_sets:
   - "blackbox.bornhack.org"
   - "grafana.bornhack.org"
 
-certgrinder_post_renew_hooks:
-  - "/usr/sbin/service nginx reload"
-
 certgrinder_bind_ip: "2a01:3a0:1:1900:85:235:250:91"
 
 goaccess_exclude_ips:
