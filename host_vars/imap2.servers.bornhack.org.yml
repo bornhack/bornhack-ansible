@@ -11,7 +11,7 @@ certgrinder_hostname_sets:
  - "imap2.servers.bornhack.org,imap.bornhack.org"
 
 certgrinder_post_renew_hooks:
-  - "/usr/sbin/service dovecot reload"
+  - "/usr/local/bin/sudo /usr/sbin/service dovecot reload"
 
 nginx_locationslash:
   location /.well-known/acme-challenge/ {
