@@ -64,7 +64,7 @@ vhosts:
       }
 
 certgrinder_hostname_sets:
-  - "people.bornhack.org,people2.servers.bornhack.org"
+  - "people2.servers.bornhack.org,people.bornhack.org"
 
 certgrinder_post_renew_hooks:
   - "/usr/sbin/service nginx reload"
