@@ -26,6 +26,7 @@ django_extra_os_dependencies:
   - "x11-fonts/webfonts"
   - "graphics/gdal"
   - "graphics/geos"
+  - "textproc/libxslt"
 
 django_archive_email: "mailarchive@bornhack.org"
 
