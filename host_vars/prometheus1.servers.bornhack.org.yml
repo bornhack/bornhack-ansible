@@ -174,3 +174,9 @@ prometheus_scrape_configs:
     targets:
       - "certgrinder1.servers.bornhack.org:9999"
 
+  - name: "bornhack_2020_noc_pushgateway"
+    scheme: "http"
+    scrape_interval: "10s"
+    metrics_path: "/metrics"
+    targets:
+      - "151.216.12.6:9091"
