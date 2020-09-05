@@ -1,33 +1,42 @@
 ---
-common_address_macros: |
-  ### servers
-  bluev4="5.103.25.42"
-  table <blue> { $bluev4 }
+# this file contains address macros shared between all pf instances
 
-  ansible2v4="85.235.250.87"
-  ansible2v6="2a01:3a0:1:1900:85:235:250:87"
-  table <ansible2> { $ansible2v4 $ansible2v6 }
+pf_common_address_macros: |
+    ############################################
+    ### EXTERNAL IPs AND TABLES
+    ############################################
+    # tykling
+    tykv4="79.142.232.94"
+    tykv6="2a02:2190:f001:1::/64"
+    tykworkv4="185.96.91.2"
 
-  dns1v4="10.0.0.1"
-  table <dns1> { $dns1v4 }
+    # f3
+    fenchurchv4="88.198.57.166"
+    fenchurchv6="2a01:4f8:222:589::/64"
+    f3home="5.103.0.0/16"
 
-  campftp="192.168.16.41"
-  table <campftp> { $campftp }
+    ansiblev4="85.235.250.87"
+    ansiblev6="2a01:3a0:1:1900:85:235:250:87"
+    table <ansible> { $ansiblev4 $ansiblev6 }
 
-  syslog1v4="10.0.0.2"
-  table <syslog1> { $syslog1v4 }
+    ###########################################
+    ### CONTAINER1 JAILS
+    ############################################
+    ######## tykling #################
+    dns1v4="10.0.0.1"
+    table <dns1> { $dns1v4 }
 
-  quake3v4="192.168.16.42"
-  table <quake3> { $quake3v4 }
+    syslog1v4="10.0.0.2"
+    table <syslog1> { $syslog1v4 }
 
-  # tables
-  table <dns1clients> { 10/8 192.168/16 }
-  table <syslog1clients> { 10/8 $dns1v4 $campftp $quake3v4 }
+    postgres1v4="10.0.0.3"
+    table <postgres1> { $postgres1v4 }
 
-  # external IPs
-  ansiblev4="85.235.250.87"
+    webproxy1v4="10.0.0.4"
+    table <webproxy1> { $webproxy1v4 }
 
-  # external tables
-  table <allowssh> { $ansible2v4 192.168/16 }
-
-
+    ############################################
+    ### TABLES
+    ############################################
+    table <allowssh> { $tykv4 $tykworkv4 $ansiblev4 $ansiblev6 }
+    table <portknock> persist

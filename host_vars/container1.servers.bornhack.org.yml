@@ -22,7 +22,6 @@ zfs_periodic_datasets_skip:
 tykbackup_client: False
 
 ########## pf configs ############
-pf_main_v4_ip: "10.10.1.20"
-pf_main_v6_ip: "2a02:2190:f001:1::20"
+pf_main_v4_ip: "($ext_if)"
 pf_jail_nat_ip: "{{ pf_main_v4_ip }}"
 pf_jail_nat_range: "10.0.0.0/24"
