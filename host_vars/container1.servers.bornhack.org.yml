@@ -20,8 +20,10 @@ hiddenservices:
     hiddenserviceport: "22 127.0.0.1:22"
     onion_hostname: "ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd.onion"
     authclients:
-      ansible: "T2MJO5F7I6EW4JNSCEZ6PSWWNO2H5BLMPJSON36ZKHTJAETLJYAQ"
-      tykling: "SH655NXX2IDMZLDTRSJKEJPF3HZOI6P45B4NS44H7QFLHI5RQ5GA"
+      - name: "ansible"
+        key: "T2MJO5F7I6EW4JNSCEZ6PSWWNO2H5BLMPJSON36ZKHTJAETLJYAQ"
+      - name: "tykling"
+        key: "SH655NXX2IDMZLDTRSJKEJPF3HZOI6P45B4NS44H7QFLHI5RQ5GA"
 
 
 ########## snapshots & tykbackup ###############
