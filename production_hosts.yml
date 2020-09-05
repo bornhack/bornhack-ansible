@@ -44,6 +44,7 @@ all:
     tor_servers:
       hosts:
         tor2.servers.bornhack.org:
+        container1.servers.bornhack.org:
 
     nginx_servers:
       hosts:
