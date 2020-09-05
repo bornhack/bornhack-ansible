@@ -9,6 +9,8 @@ ezjail_flavourname: "bornhack"
 ezjail_flavour_ansible_authorized_keys_file: |
   ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLklW3+HXkG0N6M1SG76WSuA4uNbkiVo3bojCox2ogv ansible-generated on ansible2.servers.bornhack.org
 
+exporter_exporter_listen_address: "[2a02:2190:f001:1::20]:9999"
+node_exporter_listen_address: "127.0.0.1:9100"
 
 ########## snapshots & tykbackup ###############
 zfs_periodic_pools:
