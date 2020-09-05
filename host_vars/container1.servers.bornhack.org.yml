@@ -1,5 +1,4 @@
 ---
-pf_jail_vm_host: True
 poudriere_package_set: 'freebsd_12_1_amd64-default'
 zfs_arc_max: "128M"
 
@@ -12,6 +11,7 @@ ezjail_flavour_ansible_authorized_keys_file: |
 exporter_exporter_listen_address: "127.0.0.1:9999"
 node_exporter_listen_address: "127.0.0.1:9100"
 
+
 ########## snapshots & tykbackup ###############
 zfs_periodic_pools:
   - "zroot"
@@ -21,7 +21,34 @@ zfs_periodic_datasets_skip:
 
 tykbackup_client: False
 
+
+########## network config ########
+network_interfaces:
+  - name: "ethernet-upstream"
+    description: "ethernet upstream interface, DHCP, v4 only"
+    configure: False
+    interface: "eth0"
+    pf_macro: "eth_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: True
+
+
 ########## pf configs ############
-pf_main_v4_ip: "($ext_if)"
-pf_jail_nat_ip: "{{ pf_main_v4_ip }}"
-pf_jail_nat_range: "10.0.0.0/24"
+pf_filter_rules:
+  - comment: "allow outgoing traffic from the machine itself on all interfaces"
+    direction: "out"
+
+  - comment: "allow ssh to the firewall itself on the ethernet interface"
+    direction: "in"
+    interfaces:
+      - "$eth_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<allowssh>"
+    destinations:
+      - "($eth_if)"
+    ports:
+      - "22"
