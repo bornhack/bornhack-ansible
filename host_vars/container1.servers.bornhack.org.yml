@@ -1,6 +1,4 @@
 ---
-ansible_host: "2a02:2190:f001:1::20" # tyk home lan
-
 pf_jail_vm_host: True
 poudriere_package_set: 'freebsd_12_1_amd64-default'
 zfs_arc_max: "128M"
@@ -25,4 +23,3 @@ tykbackup_client: False
 pf_main_v4_ip: "10.10.1.20"
 pf_main_v6_ip: "2a02:2190:f001:1::20"
 pf_jail_nat_ip: "{{ pf_main_v4_ip }}"
-
