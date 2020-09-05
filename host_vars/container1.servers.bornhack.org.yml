@@ -12,6 +12,18 @@ exporter_exporter_listen_address: "127.0.0.1:9999"
 node_exporter_listen_address: "127.0.0.1:9100"
 
 
+########## tor ##############
+
+hiddenservices:
+  - name: "ssh"
+    hiddenserviceport: "22 127.0.0.1:22"
+    onion_hostname: "ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd.onion"
+    authclients:
+      - name: "ansible"
+        key: "T2MJO5F7I6EW4JNSCEZ6PSWWNO2H5BLMPJSON36ZKHTJAETLJYAQ"
+      - name: "tykling"
+        key: "SH655NXX2IDMZLDTRSJKEJPF3HZOI6P45B4NS44H7QFLHI5RQ5GA"
+
 ########## snapshots & tykbackup ###############
 zfs_periodic_pools:
   - "zroot"
