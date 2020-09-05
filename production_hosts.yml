@@ -3,9 +3,6 @@ all:
     freebsd_hosts:
       hosts:
         container1.servers.bornhack.org:
-    ezjail_hosts:
-      hosts:
-        container1.servers.bornhack.org:
     bong_jails:
       hosts:
         alertmanager1.servers.bornhack.org:
