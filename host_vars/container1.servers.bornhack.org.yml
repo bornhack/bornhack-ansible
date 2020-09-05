@@ -27,7 +27,7 @@ network_interfaces:
   - name: "ethernet-upstream"
     description: "ethernet upstream interface, DHCP, v4 only"
     configure: False
-    interface: "eth0"
+    interface: "igb0"
     pf_macro: "eth_if"
     pf_scrub: True
     pf_sync: False
