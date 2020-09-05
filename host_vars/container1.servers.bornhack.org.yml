@@ -37,9 +37,6 @@ network_interfaces:
 
 ########## pf configs ############
 pf_filter_rules:
-  - comment: "allow outgoing traffic from the machine itself on all interfaces"
-    direction: "out"
-
   - comment: "allow ssh to the firewall itself on the ethernet interface"
     direction: "in"
     interfaces:
