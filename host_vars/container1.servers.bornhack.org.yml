@@ -55,6 +55,7 @@ network_interfaces:
     description: "telmore 4g LTE upstream interface, PPP, v4 only"
     configure: False
     interface: "tun0"
+    dynamic_ip: True
     pf_macro: "telmore_if"
     pf_scrub: True
     pf_sync: False
