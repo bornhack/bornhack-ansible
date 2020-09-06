@@ -51,6 +51,15 @@ network_interfaces:
     pf_sync: False
     pf_carp: False
     pf_upstream: True
+  - name: "telmore-4g-upstream"
+    description: "telmore 4g LTE upstream interface, PPP, v4 only"
+    configure: False
+    interface: "tun0"
+    pf_macro: "telmore_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: True
 
 
 ########## pf configs ############
