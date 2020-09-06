@@ -51,6 +51,7 @@ network_interfaces:
     pf_sync: False
     pf_carp: False
     pf_upstream: True
+    gateway: False
   - name: "telmore-4g-upstream"
     description: "telmore 4g LTE upstream interface, PPP, v4 only"
     configure: False
@@ -61,6 +62,7 @@ network_interfaces:
     pf_sync: False
     pf_carp: False
     pf_upstream: True
+    gateway: False
 
 
 ########## pf configs ############
