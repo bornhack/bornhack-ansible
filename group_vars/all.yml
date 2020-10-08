@@ -9,7 +9,7 @@ poudriere_package_set: 'freebsd_12_1_amd64-default'
 users:
   tykling:
     comment: "Thomas Steen Rasmussen"
-    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZq1LdOdPDYnoQWn+87JafplL6IhDGvgytBfhItydgq user@bornhack"
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPHWipJzu9PuTrVxRAk+0GNH1HqAomhPyrwrB4MQN7U7 user@bornhack-ssh"
     sudo: True
   valberg:
     comment: "Víðir Valberg Guðmundsson"
