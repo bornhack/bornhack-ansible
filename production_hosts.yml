@@ -3,6 +3,7 @@ all:
     freebsd_hosts:
       hosts:
         container1.servers.bornhack.org:
+
     bong_jails:
       hosts:
         alertmanager1.servers.bornhack.org:
@@ -22,26 +23,29 @@ all:
       hosts:
         alertmanager1.servers.bornhack.org:
 
+    ansible_servers:
+      hosts:
+        ansible2.servers.bornhack.org:
+
     blackbox_exporter_servers:
       hosts:
         blackbox1.servers.bornhack.org:
+
+    certgrinderd_servers:
+      hosts:
+        certgrinder1.servers.bornhack.org:
 
     django_channels2_servers:
       hosts:
         wwwprod3.servers.bornhack.org:
 
+    dovecot_servers:
+      hosts:
+        imap2.servers.bornhack.org:
+
     grafana_servers:
       hosts:
         grafana1.servers.bornhack.org:
-
-    prometheus_servers:
-      hosts:
-        prometheus1.servers.bornhack.org:
-
-    tor_servers:
-      hosts:
-        tor2.servers.bornhack.org:
-        container1.servers.bornhack.org:
 
     nginx_servers:
       hosts:
@@ -55,30 +59,11 @@ all:
       hosts:
         mail.bornhack.org:
 
-    dovecot_servers:
+    prometheus_servers:
       hosts:
-        imap2.servers.bornhack.org:
-
-    certgrinderd_servers:
-      hosts:
-        certgrinder1.servers.bornhack.org:
-
-    ansible_servers:
-      hosts:
-        ansible2.servers.bornhack.org:
-
-    prometheus_monitored_servers:
-      hosts:
-        alertmanager1.servers.bornhack.org:
-        ansible2.servers.bornhack.org:
-        blackbox1.servers.bornhack.org:
-        certgrinder1.servers.bornhack.org:
-        grafana1.servers.bornhack.org:
-        imap2.servers.bornhack.org:
-        mail.bornhack.org:
-        people2.servers.bornhack.org:
         prometheus1.servers.bornhack.org:
-        tor2.servers.bornhack.org:
-        webproxy2.servers.bornhack.org:
-        wwwprod3.servers.bornhack.org:
 
+    tor_servers:
+      hosts:
+        tor2.servers.bornhack.org:
+        container1.servers.bornhack.org:
