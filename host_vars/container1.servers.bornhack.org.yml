@@ -63,6 +63,17 @@ network_interfaces:
     pf_carp: False
     pf_upstream: True
     gateway: False
+  - name: "telmore2-4g-upstream"
+    description: "telmore2 4g LTE upstream interface, PPP, v4 only"
+    configure: False
+    interface: "tun1"
+    dynamic_ip: True
+    pf_macro: "telmore2_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: True
+    gateway: False
 
 
 ########## pf configs ############
