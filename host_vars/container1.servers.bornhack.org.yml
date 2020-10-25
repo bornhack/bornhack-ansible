@@ -17,15 +17,16 @@ node_exporter_listen_address: "127.0.0.1:9100"
 ########## tor ##############
 
 
-hiddenservices:
-  - name: "ssh"
-    hiddenserviceport: "22 127.0.0.1:22"
-    onion_hostname: "ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd.onion"
-    authclients:
-      - name: "ansible"
-        key: "T2MJO5F7I6EW4JNSCEZ6PSWWNO2H5BLMPJSON36ZKHTJAETLJYAQ"
-      - name: "tykling"
-        key: "SH655NXX2IDMZLDTRSJKEJPF3HZOI6P45B4NS44H7QFLHI5RQ5GA"
+tor_instances:
+  main:
+    onion_services:
+      - name: "ssh"
+        comment: "This is the primary container1 SSH onion service, it is running in fib0"
+        hidden_service_port: "22 127.0.0.1:22"
+        onion_hostname: "ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd.onion"
+        auth_clients:
+          - name: "ansible2"
+            pubkey: "BMED3ZZG3HDN4GPVSFYQ3LXC2WWTMU4Y6XLMN2JIZALRSYMNMN7A"
 
 
 ########## snapshots & tykbackup ###############
