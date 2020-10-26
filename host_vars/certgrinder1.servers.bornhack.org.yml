@@ -123,3 +123,13 @@ bind_dynamic_zonelist:
 
 nginx_exporter_uri: "http://certgrinder.bornhack.org/stub_status"
 
+tor_instances:
+  main:
+    onion_services:
+      - name: "ssh"
+        comment: "SSH service for certgrinder clients with dynamic IP"
+        hidden_service_port: "22 127.0.0.1:22"
+        onion_hostname: "h6idafowi3v2uxcfo72rplldhulhw4voh2tthfcup37az3k7ju7bfqqd.onion"
+        auth_clients:
+          - name: "container1"
+            pubkey: "BMED3ZZG3HDN4GPVSFYQ3LXC2WWTMU4Y6XLMN2JIZALRSYMNMN7A"
