@@ -76,3 +76,57 @@ pf_filter_rules:
       - "($eth_if)"
     ports:
       - "22"
+
+
+tor_instances:
+  main:
+    onion_services:
+      - name: "ssh"
+        comment: "This is the primary container1 SSH onion service, it is running in fib0"
+        hidden_service_port: "22 127.0.0.1:22"
+        onion_hostname: "ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd.onion"
+        auth_clients:
+          - name: "ansible2"
+            pubkey: "BMED3ZZG3HDN4GPVSFYQ3LXC2WWTMU4Y6XLMN2JIZALRSYMNMN7A"
+          - name: "tyk_t590_laptop"
+            pubkey: "NUUW6MAVWWNQWBHE3JGHTT675N3U53KNVWLHKYTAFKYQMXO3EAVQ"
+    onion_client_auths:
+      - name: "certgrinder1_ssh"
+        onion: "h6idafowi3v2uxcfo72rplldhulhw4voh2tthfcup37az3k7ju7bfqqd"
+        privkey: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          30636132316230613537323739643138636561643436656537306436313830666637373439323065
+          3439326361656265343661363932376536663565316365620a653037613666646466616563333965
+          62396436383361393532323864663131333161393832653765313632313232336564303162306166
+          6364353339373330650a303634643063316330383862616233366138663534343766393132316363
+          38636530666539393565633031336636323265356634383030353035323431616132393532366264
+          36383037313039343265336664353833366461396436386661366331333433353732636565613230
+          633762613937626438366535643261356535
+  telmore:
+    fib: 1
+    disable_socks: True
+    syslog_identity: "telmore"
+    onion_services:
+      - name: "sshtelmore"
+        comment: "This is the backup SSH onion service running on the Telmore LTE modem"
+        hidden_service_port: "22 127.0.0.1:22"
+        onion_hostname: "d5zz2ohagtjfof52l6zmcoj7vc4g3b4zyigt7q7sz6qxwhynhmmipgqd.onion"
+        auth_clients:
+          - name: "ansible2"
+            pubkey: "BMED3ZZG3HDN4GPVSFYQ3LXC2WWTMU4Y6XLMN2JIZALRSYMNMN7A"
+          - name: "tyk_t590_laptop"
+            pubkey: "NUUW6MAVWWNQWBHE3JGHTT675N3U53KNVWLHKYTAFKYQMXO3EAVQ"
+  telmore2:
+    fib: 2
+    disable_socks: True
+    syslog_identity: "telmore2"
+    onion_services:
+      - name: "sshtelmore2"
+        comment: "This is the backup SSH onion service running on the Telmore2 LTE modem"
+        hidden_service_port: "22 127.0.0.1:22"
+        onion_hostname: "qzfrijhdxs7ezqjl6u32hx4stsdq75atm2b36gmuz2v4sijmzwdelhyd.onion"
+        auth_clients:
+          - name: "ansible2"
+            pubkey: "BMED3ZZG3HDN4GPVSFYQ3LXC2WWTMU4Y6XLMN2JIZALRSYMNMN7A"
+          - name: "tyk_t590_laptop"
+            pubkey: "NUUW6MAVWWNQWBHE3JGHTT675N3U53KNVWLHKYTAFKYQMXO3EAVQ"
