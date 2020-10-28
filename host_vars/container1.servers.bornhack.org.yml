@@ -13,6 +13,7 @@ ezjail_flavour_ansible_authorized_keys_file: |
 exporter_exporter_listen_address: "127.0.0.1:9999"
 node_exporter_listen_address: "127.0.0.1:9100"
 
+certgrinder_certgrinderd_command: "ssh certgrinderd@h6idafowi3v2uxcfo72rplldhulhw4voh2tthfcup37az3k7ju7bfqqd.onion -T -- --config-file /home/certgrinderd/certgrinderd.conf"
 
 ########## snapshots & tykbackup ###############
 
