@@ -111,7 +111,7 @@ certgrinderd_authorized_keys:
     domainsets:
       - - "grafana1.servers.bornhack.org"
   container1:
-    fromip: "127.0.0.1"
+    fromip: "89.233.43.75"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFkHACki+vZz229JvOEOQuEo2O6hJIaFQpZXKoRAXmtO ansible-generated on container1.servers.bornhack.org"
     domainsets:
       - - "container1.servers.bornhack.org"
