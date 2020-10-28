@@ -43,6 +43,10 @@ all:
       hosts:
         imap2.servers.bornhack.org:
 
+    ezjail_hosts:
+      hosts:
+        container1.servers.bornhack.org:
+
     grafana_servers:
       hosts:
         grafana1.servers.bornhack.org:
