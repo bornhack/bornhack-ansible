@@ -208,7 +208,7 @@ prometheus_scrape_configs:
 
 
 supervisord_extra_programs:
-  - name: "redis"
+  - name: "socat_for_container1_prometheus"
     comment: "run socat to tunnel to container1 prometheus exporter_exporter"
     command: "/usr/local/bin/socat tcp-listen:19999,fork,reuseaddr socks4a:127.0.0.1:ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd.onion:9999,socksport=9050"
     user: "nobody"
