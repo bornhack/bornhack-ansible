@@ -128,7 +128,8 @@ tor_instances:
     onion_services:
       - name: "ssh"
         comment: "SSH service for certgrinder clients with dynamic IP"
-        hidden_service_port: "22 127.0.0.1:22"
+        hidden_service_ports:
+          - "22 127.0.0.1:22"
         onion_hostname: "h6idafowi3v2uxcfo72rplldhulhw4voh2tthfcup37az3k7ju7bfqqd.onion"
         auth_clients:
           - name: "container1"

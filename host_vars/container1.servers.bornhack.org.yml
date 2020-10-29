@@ -82,9 +82,11 @@ pf_filter_rules:
 tor_instances:
   main:
     onion_services:
-      - name: "ssh"
-        comment: "This is the primary container1 SSH onion service, it is running in fib0"
-        hidden_service_port: "22 127.0.0.1:22"
+      - name: "container1"
+        comment: "This is the primary container1 onion service, it is running in fib0"
+        hidden_service_ports:
+          - "22 127.0.0.1:22"
+          - "9999 127.0.0.1:9999"
         onion_hostname: "ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd.onion"
         auth_clients:
           - name: "ansible2"
@@ -110,7 +112,8 @@ tor_instances:
     onion_services:
       - name: "sshtelmore"
         comment: "This is the backup SSH onion service running on the Telmore LTE modem"
-        hidden_service_port: "22 127.0.0.1:22"
+        hidden_service_ports:
+          - "22 127.0.0.1:22"
         onion_hostname: "d5zz2ohagtjfof52l6zmcoj7vc4g3b4zyigt7q7sz6qxwhynhmmipgqd.onion"
         auth_clients:
           - name: "ansible2"
@@ -124,7 +127,8 @@ tor_instances:
     onion_services:
       - name: "sshtelmore2"
         comment: "This is the backup SSH onion service running on the Telmore2 LTE modem"
-        hidden_service_port: "22 127.0.0.1:22"
+        hidden_service_ports:
+          - "22 127.0.0.1:22"
         onion_hostname: "qzfrijhdxs7ezqjl6u32hx4stsdq75atm2b36gmuz2v4sijmzwdelhyd.onion"
         auth_clients:
           - name: "ansible2"
