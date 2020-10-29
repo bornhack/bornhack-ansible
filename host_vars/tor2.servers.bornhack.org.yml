@@ -1,3 +1,6 @@
-hiddenservices:
-  - hiddenserviceport: "80 10.0.0.27:80"
-    name: "bornhack7hctgpio.onion"
+tor_instances:
+  main:
+    onion_services:
+      - name: "bornhack7hctgpio.onion"
+        hidden_service_ports:
+          - "80 10.0.0.27:80"
