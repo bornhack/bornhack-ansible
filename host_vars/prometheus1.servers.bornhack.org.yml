@@ -103,7 +103,7 @@ prometheus_scrape_configs:
       - "ansible2.servers.bornhack.org:9999"
       - "blackbox1.servers.bornhack.org:9999"
       - "certgrinder1.servers.bornhack.org:9999"
-      - "container1.servers.bornhack.org:9999"
+      - "container1.servers.bornhack.org:19999"
       - "grafana1.servers.bornhack.org:9999"
       - "imap2.servers.bornhack.org:9999"
       - "mail.bornhack.org:9999"
@@ -126,7 +126,7 @@ prometheus_scrape_configs:
       - "ansible2.servers.bornhack.org:9999"
       - "blackbox1.servers.bornhack.org:9999"
       - "certgrinder1.servers.bornhack.org:9999"
-      - "container1.servers.bornhack.org:9999"
+      - "container1.servers.bornhack.org:19999"
       - "grafana1.servers.bornhack.org:9999"
       - "imap2.servers.bornhack.org:9999"
       - "mail.bornhack.org:9999"
@@ -184,7 +184,7 @@ prometheus_scrape_configs:
       module:
         - "gstat_exporter"
     targets:
-      - "container1.servers.bornhack.org:9999"
+      - "container1.servers.bornhack.org:19999"
 
   - name: "sysctl_exporter"
     scheme: "https"
@@ -194,7 +194,7 @@ prometheus_scrape_configs:
       module:
         - "sysctl_exporter"
     targets:
-      - "container1.servers.bornhack.org:9999"
+      - "container1.servers.bornhack.org:19999"
 
   - name: "jail_exporter"
     scheme: "https"
@@ -204,7 +204,7 @@ prometheus_scrape_configs:
       module:
         - "jail_exporter"
     targets:
-      - "container1.servers.bornhack.org:9999"
+      - "container1.servers.bornhack.org:19999"
 
 
 supervisord_extra_programs:
@@ -213,3 +213,7 @@ supervisord_extra_programs:
     command: "/usr/local/bin/socat tcp-listen:19999,fork,reuseaddr socks4a:127.0.0.1:ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd.onion:9999,socksport=9050"
     user: "nobody"
     priority: "1"
+
+etchosts: |
+  # resolve container1 hostname to localhost so prom will use the socat tunnel
+  127.0.0.1 container1.servers.bornhack.org
