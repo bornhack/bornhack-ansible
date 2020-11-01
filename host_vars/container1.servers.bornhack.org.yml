@@ -95,6 +95,8 @@ tor_instances:
             pubkey: "NUUW6MAVWWNQWBHE3JGHTT675N3U53KNVWLHKYTAFKYQMXO3EAVQ"
           - name: "prometheus1"
             pubkey: "ZQQ2HH377XRKJLKU6BKH4ZVDIIJ6IZCEOUPTVQKVNLHVX2LOFZ2A"
+	  - name: "fj_guide3"
+	    pubkey: "MDSAFUANUEIB4PYLJOUJAAHLGDQNBIBMKJL2F4ISILSTDZG2JUCA"
     onion_client_auths:
       - name: "certgrinder1_ssh"
         onion: "h6idafowi3v2uxcfo72rplldhulhw4voh2tthfcup37az3k7ju7bfqqd"
@@ -122,6 +124,8 @@ tor_instances:
             pubkey: "BMED3ZZG3HDN4GPVSFYQ3LXC2WWTMU4Y6XLMN2JIZALRSYMNMN7A"
           - name: "tyk_t590_laptop"
             pubkey: "NUUW6MAVWWNQWBHE3JGHTT675N3U53KNVWLHKYTAFKYQMXO3EAVQ"
+	  - name: "fj_guide3"
+	    pubkey: "MDSAFUANUEIB4PYLJOUJAAHLGDQNBIBMKJL2F4ISILSTDZG2JUCA"
   telmore2:
     fib: 2
     disable_socks: True
@@ -137,3 +141,5 @@ tor_instances:
             pubkey: "BMED3ZZG3HDN4GPVSFYQ3LXC2WWTMU4Y6XLMN2JIZALRSYMNMN7A"
           - name: "tyk_t590_laptop"
             pubkey: "NUUW6MAVWWNQWBHE3JGHTT675N3U53KNVWLHKYTAFKYQMXO3EAVQ"
+	  - name: "fj_guide3"
+	    pubkey: "MDSAFUANUEIB4PYLJOUJAAHLGDQNBIBMKJL2F4ISILSTDZG2JUCA"
