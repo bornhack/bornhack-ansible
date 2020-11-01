@@ -134,3 +134,7 @@ tor_instances:
         auth_clients:
           - name: "container1"
             pubkey: "BMED3ZZG3HDN4GPVSFYQ3LXC2WWTMU4Y6XLMN2JIZALRSYMNMN7A"
+
+lte_modems:
+  - "/dev/cuaU0.3"
+  - "/dev/cuaU1.2"
