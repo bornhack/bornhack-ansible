@@ -143,3 +143,7 @@ tor_instances:
             pubkey: "NUUW6MAVWWNQWBHE3JGHTT675N3U53KNVWLHKYTAFKYQMXO3EAVQ"
           - name: "fj_guide3"
             pubkey: "MDSAFUANUEIB4PYLJOUJAAHLGDQNBIBMKJL2F4ISILSTDZG2JUCA"
+
+lte_modems:
+  - "/dev/cuaU0.3"
+  - "/dev/cuaU1.2"
