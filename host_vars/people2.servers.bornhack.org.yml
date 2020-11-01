@@ -13,7 +13,7 @@ webusers:
   hlk:
     name: "Kramse"
     pubkey: "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAaXrs5hOT9RkJ7Edo5SeQ+rcYZfFGw5bdVlcXM/S9pd0j5v2NGt5C/QsDlYido0K8POIbp3PcjcMj8BS+n6daI= Henrik Kramshoej"
-  fj:
+  batmule:
     name: "Batmule"
     pubkey: "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPOM8po0VaRYSFvIIhy6E8hhDzkCNPS4IEM3NrCrrROIbYgqxu++VKaFzZj82Cnm0EoFu210+huxuXN1KYada3A= fj@home"
   kugg:
