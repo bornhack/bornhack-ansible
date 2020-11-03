@@ -39,8 +39,8 @@ prometheus_alertmanager_rules:
 prometheus_recording_rules:
   - name: "modem-exporter-group"
     rules:
-      record: "mobile_modem_atcsq_dbm"
-      expr: "(mobile_modem_atcsq_rssi * 2) - 113"
+      - record: "mobile_modem_atcsq_dbm"
+        expr: "(mobile_modem_atcsq_rssi * 2) - 113"
 
 prometheus_scrape_configs:
   - name: 'bornhack-http-services'
