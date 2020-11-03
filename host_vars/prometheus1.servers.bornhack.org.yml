@@ -36,6 +36,12 @@ prometheus_alertmanager_rules:
         annotations:
           summary: "The host has one or more vulnerable packages installed"
 
+prometheus_recording_rules:
+  - name: "modem-exporter-group"
+    rules:
+      record: "mobile_modem_atcsq_dbm"
+      expr: "(mobile_modem_atcsq_rssi * 2) - 113"
+
 prometheus_scrape_configs:
   - name: 'bornhack-http-services'
     scheme: 'http'

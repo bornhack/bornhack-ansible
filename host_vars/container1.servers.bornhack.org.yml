@@ -144,6 +144,6 @@ tor_instances:
           - name: "fj_guide3"
             pubkey: "MDSAFUANUEIB4PYLJOUJAAHLGDQNBIBMKJL2F4ISILSTDZG2JUCA"
 
-lte_modems:
+mobile_modem_devices:
   - "/dev/cuaU0.3"
   - "/dev/cuaU1.2"
