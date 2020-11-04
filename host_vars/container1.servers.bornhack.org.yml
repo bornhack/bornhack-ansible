@@ -152,11 +152,11 @@ mobile_modem_devices:
 ppp_profiles:
   - name: "ppp_telmore_quectel"
     comment: "run ppp for telmore isp, quectel modem"
-    command: "/usr/sbin/ppp -quiet -ddial -nat -unit0 telmore_quectel"
+    command: "/usr/sbin/ppp -foreground -ddial -nat -unit0 telmore_quectel"
     user: "0"
     priority: "1"
   - name: "ppp_telmore_huawei"
     comment: "run ppp for telmore isp, huawei modem"
-    command: "/usr/sbin/ppp -quiet -ddial -nat -unit1 telmore_huawei"
+    command: "/usr/sbin/ppp -foreground -ddial -nat -unit1 telmore_huawei"
     user: "0"
     priority: "1"
