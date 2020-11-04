@@ -149,7 +149,7 @@ mobile_modem_devices:
   - "/dev/modem-quectel-control"
 
 
-supervisord_extra_programs:
+ppp_profiles:
   - name: "ppp_telmore_quectel"
     comment: "run ppp for telmore isp, quectel modem"
     command: "/usr/sbin/ppp -quiet -ddial -nat -unit0 telmore_quectel"
