@@ -3,7 +3,9 @@ nginx_v4_proxy_ip: 85.235.250.92
 webusers:
   tyk:
     name: "Thomas"
-    pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZq1LdOdPDYnoQWn+87JafplL6IhDGvgytBfhItydgq user@bornhack"
+    pubkey: |
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOZq1LdOdPDYnoQWn+87JafplL6IhDGvgytBfhItydgq user@bornhack
+      ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPHWipJzu9PuTrVxRAk+0GNH1HqAomhPyrwrB4MQN7U7 user@bornhack-ssh
   ahf:
     name: "Alex"
     pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA0FMJ8IhSY6Dox0QDMS5MMdW9zeanNMEiOams/AUXmX ahf@ra.0x90.dk"
