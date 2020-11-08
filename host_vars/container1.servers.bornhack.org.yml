@@ -160,3 +160,10 @@ ppp_profiles:
     command: "/usr/sbin/ppp -foreground -unit1 telmore_huawei"
     user: "0"
     priority: "1"
+
+supervisord_custom_jobs:
+  - name: "videouploader"
+    comment: "run videouploader.sh to upload videos to people.bornhack.org"
+    command: "/usr/home/videouploader/videouploader.sh"
+    user: "videouploader"
+    priority: "1"
