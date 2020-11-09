@@ -164,6 +164,6 @@ ppp_profiles:
 supervisord_custom_jobs:
   - name: "videouploader"
     comment: "run videouploader.sh to upload videos to people.bornhack.org"
-    command: "/usr/home/videouploader/videouploader.sh"
-    user: "videouploader"
+    command: "/root/videouploader.sh"
+    user: "root"
     priority: "1"
