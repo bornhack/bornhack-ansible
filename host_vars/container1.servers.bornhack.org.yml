@@ -39,23 +39,23 @@ network_interfaces:
     pf_carp: False
     pf_upstream: True
     gateway: False
-  - name: "telmore-4g-upstream"
-    description: "telmore 4g LTE upstream interface, PPP, v4 only"
+  - name: "quectel-modem-upstream"
+    description: "quectel modem interface, Telmore simcard, tun0 PPP, v4 only"
     configure: False
     interface: "tun0"
     dynamic_ip: True
-    pf_macro: "telmore_if"
+    pf_macro: "quectel_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
     pf_upstream: True
     gateway: False
-  - name: "telmore2-4g-upstream"
-    description: "telmore2 4g LTE upstream interface, PPP, v4 only"
+  - name: "huawei-modem-upstream"
+    description: "huawei modem interface, 3 simcard, tun1 PPP, v4 only"
     configure: False
     interface: "tun1"
     dynamic_ip: True
-    pf_macro: "telmore2_if"
+    pf_macro: "huawei_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -64,6 +64,10 @@ network_interfaces:
 
 
 ########## pf configs ############
+pf_nat_rules: |
+  nat on $quectel_if from (lo1:network) to any -> ($quectel_if)
+  nat on $huawei_if from (lo1:network) to any -> ($huawei_if)
+
 pf_filter_rules:
   - comment: "allow ssh to the firewall itself on the ethernet interface"
     direction: "in"
@@ -83,7 +87,7 @@ tor_instances:
   main:
     onion_services:
       - name: "container1"
-        comment: "This is the primary container1 onion service, it is running in fib0"
+        comment: "This is the primary container1 onion service, it is running in fib0 for SSH and prometheus exporter_exporter"
         hidden_service_ports:
           - "22 127.0.0.1:22"
           - "9999 127.0.0.1:9999"
@@ -99,6 +103,7 @@ tor_instances:
             pubkey: "MDSAFUANUEIB4PYLJOUJAAHLGDQNBIBMKJL2F4ISILSTDZG2JUCA"
     onion_client_auths:
       - name: "certgrinder1_ssh"
+        comment: "permit container1 access to certgrinder1 to get certificates and OCSP"
         onion: "h6idafowi3v2uxcfo72rplldhulhw4voh2tthfcup37az3k7ju7bfqqd"
         privkey: !vault |
           $ANSIBLE_VAULT;1.1;AES256
@@ -109,13 +114,13 @@ tor_instances:
           38636530666539393565633031336636323265356634383030353035323431616132393532366264
           36383037313039343265336664353833366461396436386661366331333433353732636565613230
           633762613937626438366535643261356535
-  telmore:
+  quectel:
     fib: 1
     disable_socks: True
-    syslog_identity: "telmore"
+    syslog_identity: "quectel"
     onion_services:
-      - name: "sshtelmore"
-        comment: "This is the backup SSH onion service running on the Telmore LTE modem"
+      - name: "backup_ssh_quectel_telmore"
+        comment: "This is the backup SSH onion service running on the Quectel modem with a Telmore simcard"
         hidden_service_ports:
           - "22 127.0.0.1:22"
         onion_hostname: "d5zz2ohagtjfof52l6zmcoj7vc4g3b4zyigt7q7sz6qxwhynhmmipgqd.onion"
@@ -126,13 +131,13 @@ tor_instances:
             pubkey: "NUUW6MAVWWNQWBHE3JGHTT675N3U53KNVWLHKYTAFKYQMXO3EAVQ"
           - name: "fj_guide3"
             pubkey: "MDSAFUANUEIB4PYLJOUJAAHLGDQNBIBMKJL2F4ISILSTDZG2JUCA"
-  telmore2:
+  huawei:
     fib: 2
     disable_socks: True
-    syslog_identity: "telmore2"
+    syslog_identity: "huawei"
     onion_services:
-      - name: "sshtelmore2"
-        comment: "This is the backup SSH onion service running on the Telmore2 LTE modem"
+      - name: "backup_ssh_huawei_3"
+        comment: "This is the backup SSH onion service running on the Huawei modem with a 3 simcard"
         hidden_service_ports:
           - "22 127.0.0.1:22"
         onion_hostname: "qzfrijhdxs7ezqjl6u32hx4stsdq75atm2b36gmuz2v4sijmzwdelhyd.onion"
@@ -155,9 +160,9 @@ ppp_profiles:
     command: "/usr/sbin/ppp -foreground -unit0 telmore_quectel"
     user: "0"
     priority: "1"
-  - name: "ppp_telmore_huawei"
-    comment: "run ppp for telmore isp, huawei modem"
-    command: "/usr/sbin/ppp -foreground -unit1 telmore_huawei"
+  - name: "ppp_hi3g_huawei"
+    comment: "run ppp for 3 isp, huawei modem"
+    command: "/usr/sbin/ppp -foreground -unit1 hi3g_huawei"
     user: "0"
     priority: "1"
 
