@@ -174,7 +174,7 @@ supervisord_custom_jobs:
     priority: "1"
 
 nut_ups_list:
-  - name: "bornhack-powerwalker-1"
+  - name: "bornhack_powerwalker_1"
     driver: "usbhid-ups"
     port: "/dev/powerwalker-ups"
     description: "PowerWalker Basic VI 600 STL"
