@@ -55,6 +55,10 @@ all:
       hosts:
         webproxy2.servers.bornhack.org:
 
+    nut_servers:
+      hosts:
+        container1.servers.bornhack.org:
+
     people_servers:
       hosts:
         people2.servers.bornhack.org:
