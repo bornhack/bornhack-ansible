@@ -51,6 +51,10 @@ all:
       hosts:
         grafana1.servers.bornhack.org:
 
+    motion_servers:
+      hosts:
+        container1.servers.bornhack.org:
+
     nginx_servers:
       hosts:
         webproxy2.servers.bornhack.org:
