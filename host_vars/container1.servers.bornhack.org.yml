@@ -172,6 +172,16 @@ supervisord_custom_jobs:
     command: "/root/videouploader.sh"
     user: "root"
     priority: "1"
+  - name: "webcamd_camera1"
+    comment: "run webcamd for camera1 (creates /dev/video0 device)"
+    command: "/usr/local/sbin/webcamd -i 0 -d camera1 -U webcamd -G webcamd -v 0"
+    user: "root"
+    priority: "1"
+  - name: "webcamd_camera2"
+    comment: "run webcamd for camera2 (creates /dev/video1 device)"
+    command: "/usr/local/sbin/webcamd -i 0 -d camera2 -U webcamd -G webcamd -v 1"
+    user: "root"
+    priority: "1"
 
 nut_ups_list:
   - name: "bhups1"
