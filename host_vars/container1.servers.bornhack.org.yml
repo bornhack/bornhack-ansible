@@ -182,6 +182,7 @@ supervisord_custom_jobs:
     command: "/usr/local/sbin/webcamd -i 0 -N HD-720P-Webcam-HD-720P-Webcam -S 20130901 -M 0 -U webcamd -G webcamd -v 2"
     user: "root"
     priority: "1"
+    autostart: False
 
 nut_ups_list:
   - name: "bhups1"
