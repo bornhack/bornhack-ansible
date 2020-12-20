@@ -2,6 +2,8 @@
 tor_instances:
   main:
     onion_services:
-      - name: "bornhack7hctgpio.onion"
+      - name: "websiteprodv2"
+        comment: "The v2 onion service for the prod website"
+        onion_hostname: "bornhack7hctgpio.onion"
         hidden_service_ports:
           - "80 10.0.0.27:80"
