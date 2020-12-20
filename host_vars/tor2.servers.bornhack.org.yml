@@ -7,3 +7,4 @@ tor_instances:
         onion_hostname: "bornhack7hctgpio.onion"
         hidden_service_ports:
           - "80 10.0.0.27:80"
+        auth_clients: []
