@@ -48,6 +48,12 @@ prometheus_alertmanager_rules:
           severity: "critical"
         annotations:
           summary: "The host has one or more vulnerable packages installed"
+      - alert: "pkg_multiple_freebsd_versions_installed"
+        expr: "count by (instance) (pkg_packages_freebsd_version_total) > 1"
+        labels:
+          severity: "critical"
+        annotations:
+          summary: "The host has packages from more than one FreeBSD version (__FreeBSD_version) installed. Maybe a missing 'pkg autoremove && pkg upgrade -f' after OS upgrade? Check '/usr/sbin/pkg annotate --all --show FreeBSD_version' for details."
 
 prometheus_recording_rules:
   - name: "modem-exporter-group"
