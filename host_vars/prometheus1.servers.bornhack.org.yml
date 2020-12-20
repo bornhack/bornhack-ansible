@@ -8,17 +8,22 @@ prometheus_alertmanager_configs:
       - targets:
         - "alertmanager.bornhack.org:443"
 
+# we use info,warning,error,critical for the severity label
 prometheus_alertmanager_rules:
   - name: "bornhack-probe-group"
     rules:
       - alert: "probe_not_up"
         expr: "up == 0"
         for: "10m"
+        labels:
+          severity: "critical"
         annotations:
           summary: "One or more probes are not up. Check the affected services!"
       - alert: "probe_unsuccessful"
         expr: "probe_success == 0"
         for: "10m"
+        labels:
+          severity: "critical"
         annotations:
           summary: "One or more probes failed. Check the affected services!"
   - name: "bornhack-certificate-group"
@@ -26,13 +31,24 @@ prometheus_alertmanager_rules:
       - alert: "https_certificate_too_old"
         expr: "((probe_ssl_earliest_cert_expiry - time()) / 60 / 60 / 24) < 29"
         for: "10m"
+        labels:
+          severity: "warning"
         annotations:
-          summary: "The target certificate expires in 28 days or less, check certgrinder.log"
+          summary: "The target certificate expires in 28 days or less, check certgrinder status"
+      - alert: "https_certificate_way_too_old"
+        expr: "((probe_ssl_earliest_cert_expiry - time()) / 60 / 60 / 24) < 10"
+        for: "10m"
+        labels:
+          severity: "critical"
+        annotations:
+          summary: "The target certificate expires in 10 days or less, check certgrinder status"
   - name: "bornhack-pkg-group"
     rules:
       - alert: "vulnerable_packages_installed"
         expr: "pkg_vulnerable_packages_total > 0"
         for: "10m"
+        labels:
+          severity: "critical"
         annotations:
           summary: "The host has one or more vulnerable packages installed"
 
