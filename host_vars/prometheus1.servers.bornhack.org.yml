@@ -30,14 +30,12 @@ prometheus_alertmanager_rules:
     rules:
       - alert: "https_certificate_too_old"
         expr: "((probe_ssl_earliest_cert_expiry - time()) / 60 / 60 / 24) < 29"
-        for: "10m"
         labels:
           severity: "warning"
         annotations:
           summary: "The target certificate expires in 28 days or less, check certgrinder status"
       - alert: "https_certificate_way_too_old"
         expr: "((probe_ssl_earliest_cert_expiry - time()) / 60 / 60 / 24) < 10"
-        for: "10m"
         labels:
           severity: "critical"
         annotations:
@@ -46,7 +44,6 @@ prometheus_alertmanager_rules:
     rules:
       - alert: "vulnerable_packages_installed"
         expr: "pkg_vulnerable_packages_total > 0"
-        for: "10m"
         labels:
           severity: "critical"
         annotations:
