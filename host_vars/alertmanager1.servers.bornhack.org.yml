@@ -15,4 +15,4 @@ alertmanager_receivers:
   - name: 'bornhack-sysadmin-team'
     email_configs:
       - to: 'sysadm@bornhack.org'
-
+        send_resolved: True
