@@ -3,8 +3,14 @@ tor_instances:
   main:
     onion_services:
       - name: "websiteprodv2"
-        comment: "The v2 onion service for the prod website"
+        comment: "The old v2 onion service for the prod website"
         onion_hostname: "bornhack7hctgpio.onion"
+        hidden_service_ports:
+          - "80 10.0.0.27:80"
+        auth_clients: []
+      - name: "websiteprodv3"
+        comment: "The v3 onion service for the prod website"
+        onion_hostname: "nclpuewtqbrtgnugfquprohygp2ni2idinfrbmiptxrp6d6uvtctpyid.onion"
         hidden_service_ports:
           - "80 10.0.0.27:80"
         auth_clients: []
