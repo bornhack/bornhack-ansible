@@ -256,3 +256,12 @@ motion_cameras:
   - name: "CAMERA1"
     filename: "camera1.conf"
     device: "/dev/video0"
+
+
+prometheus_smokeping_targets:
+  - "unicast.censurfridns.dk"
+  - "anycast.censurfridns.dk"
+  - "kraken.anycast.censurfridns.dk"
+  - "deic-ore.anycast.censurfridns.dk"
+  - "deic-lgb.anycast.censurfridns.dk"
+  - "solido.anycast.censurfridns.dk"

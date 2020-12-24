@@ -64,7 +64,7 @@ prometheus_recording_rules:
 prometheus_scrape_configs:
   - name: 'bornhack-http-services'
     scheme: 'http'
-    scrape_interval: '15s'
+    scrape_interval: '10s'
     metrics_path: "/probe"
     params:
       module:
@@ -83,9 +83,10 @@ prometheus_scrape_configs:
         target_label: 'instance'
       - target_label: '__address__'
         replacement: 'blackbox1.servers.bornhack.org:9115'
+
   - name: 'bornhack-imap-service'
     scheme: 'http'
-    scrape_interval: '15s'
+    scrape_interval: '10s'
     metrics_path: "/probe"
     params:
       module:
@@ -101,9 +102,10 @@ prometheus_scrape_configs:
         target_label: 'instance'
       - target_label: '__address__'
         replacement: 'blackbox1.servers.bornhack.org:9115'
+
   - name: 'bornhack-smtp-service'
     scheme: 'http'
-    scrape_interval: '15s'
+    scrape_interval: '10s'
     metrics_path: "/probe"
     params:
       module:
@@ -241,6 +243,15 @@ prometheus_scrape_configs:
     targets:
       - "container1.servers.bornhack.org:19999"
 
+  - name: "smokeping_prober"
+    scheme: "https"
+    scrape_interval: "10s"
+    metrics_path: "/proxy"
+    params:
+      module:
+        - "smokeping_prober"
+    targets:
+      - "container1.servers.bornhack.org:19999"
 
 supervisord_extra_programs:
   - name: "socat_for_container1_prometheus"
