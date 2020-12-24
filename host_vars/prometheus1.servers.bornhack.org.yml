@@ -243,15 +243,42 @@ prometheus_scrape_configs:
     targets:
       - "container1.servers.bornhack.org:19999"
 
-  - name: "smokeping_prober"
+  - name: "smokeping_prober_fib0"
     scheme: "https"
     scrape_interval: "10s"
     metrics_path: "/proxy"
     params:
       module:
-        - "smokeping_prober"
+        - "smokeping_prober_fib0"
     targets:
       - "container1.servers.bornhack.org:19999"
+    labels:
+      fib: "0"
+
+  - name: "smokeping_prober_fib1"
+    scheme: "https"
+    scrape_interval: "10s"
+    metrics_path: "/proxy"
+    params:
+      module:
+        - "smokeping_prober_fib1"
+    targets:
+      - "container1.servers.bornhack.org:19999"
+    labels:
+      fib: "1"
+
+  - name: "smokeping_prober_fib2"
+    scheme: "https"
+    scrape_interval: "10s"
+    metrics_path: "/proxy"
+    params:
+      module:
+        - "smokeping_prober_fib2"
+    targets:
+      - "container1.servers.bornhack.org:19999"
+    labels:
+      fib: "2"
+
 
 supervisord_extra_programs:
   - name: "socat_for_container1_prometheus"
