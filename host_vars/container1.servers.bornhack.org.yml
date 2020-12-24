@@ -261,7 +261,12 @@ motion_cameras:
 prometheus_smokeping_targets:
   - "unicast.censurfridns.dk"
   - "anycast.censurfridns.dk"
-  - "krakon.anycast.censurfridns.dk"
+  - "kracon.anycast.censurfridns.dk"
   - "deic-ore.anycast.censurfridns.dk"
   - "deic-lgb.anycast.censurfridns.dk"
   - "solido.anycast.censurfridns.dk"
+
+prometheus_smokeping_fibs:
+  - 0
+  - 1
+  - 2
