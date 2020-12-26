@@ -270,3 +270,5 @@ prometheus_smokeping_fibs:
   - 0
   - 1
   - 2
+
+prometheus_smokeping_interval: "5s"
