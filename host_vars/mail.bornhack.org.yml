@@ -98,8 +98,3 @@ vhosts:
 
 certgrinder_hostname_sets:
   - "mail.bornhack.org"
-
-certgrinder_post_renew_hooks:
-  - "/usr/local/bin/sudo /usr/sbin/service postfix reload"
-  - "/usr/local/bin/sudo /usr/sbin/service nginx reload"
-

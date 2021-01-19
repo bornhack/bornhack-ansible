@@ -10,9 +10,6 @@ dovecot_vmail_gid: 10000
 certgrinder_hostname_sets:
  - "imap2.servers.bornhack.org,imap.bornhack.org"
 
-certgrinder_post_renew_hooks:
-  - "/usr/local/bin/sudo /usr/sbin/service dovecot reload"
-
 nginx_locationslash:
   location /.well-known/acme-challenge/ {
         return 301 {{ certgrinder_redirect_url }}$request_uri;

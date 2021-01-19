@@ -146,11 +146,7 @@ certgrinder_hostname_sets:
 
 certgrinder_bind_ip: "2a01:3a0:1:1900:85:235:250:91"
 
-certgrinder_post_renew_hooks:
-  - "/usr/local/bin/sudo /usr/sbin/service nginx reload"
-
 goaccess_exclude_ips:
   - "2a01:3a0:1:1900:10::30"
 
 nginx_exporter_uri: "https://webproxy2.servers.bornhack.org/stub_status"
-
