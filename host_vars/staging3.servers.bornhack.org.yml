@@ -65,7 +65,7 @@ supervisord_extra_programs:
 
 
 pdf_archive_path: '/storage/pdf_archive/'
-pdf_letterhead_filename: "bornhack-2020_test_letterhead.pdf"
+pdf_letterhead_filename: "bornhack_test_letterhead.pdf"
 iban: "DK0398600000747866"
 swiftbic: "FOSPDK21"
 regno: 9860
