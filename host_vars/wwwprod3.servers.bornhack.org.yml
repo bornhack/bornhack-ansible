@@ -27,6 +27,7 @@ django_extra_os_dependencies:
   - "graphics/gdal"
   - "graphics/geos"
   - "textproc/libxslt"
+  - "lang/rust"
 
 django_archive_email: "mailarchive@bornhack.org"
 
