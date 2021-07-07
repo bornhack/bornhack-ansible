@@ -133,4 +133,4 @@ tor_instances:
         onion_hostname: "h6idafowi3v2uxcfo72rplldhulhw4voh2tthfcup37az3k7ju7bfqqd.onion"
         auth_clients:
           - name: "container1"
-            pubkey: "BMED3ZZG3HDN4GPVSFYQ3LXC2WWTMU4Y6XLMN2JIZALRSYMNMN7A"
+            pubkey: "AOKY3VOVQ3T3EB67FRN7UTDCSPPZYEZOPACS4MN4CTTDI2SWDRBA"
