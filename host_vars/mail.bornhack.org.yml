@@ -57,6 +57,7 @@ lists:
   shuttle: "tykling@bornhack.org"
   youtube: "vidir@bornhack.org"
   villages-team: "sarah@radicalpet.net"
+  gameteam: "tykling@bornhack.org"
 
 vhosts:
   mail_bornhack_org:
