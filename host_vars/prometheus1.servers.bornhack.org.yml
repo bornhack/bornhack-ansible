@@ -280,7 +280,7 @@ prometheus_scrape_configs:
       fib: "2"
 
   - name: "mqtt2prometheus_bh2021"
-    scheme: "https"
+    scheme: "http"
     scrape_interval: "5s"
     metrics_path: "/metrics"
     targets:
