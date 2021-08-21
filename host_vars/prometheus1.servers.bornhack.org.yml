@@ -286,10 +286,10 @@ prometheus_scrape_configs:
     targets:
       - "mqtt.camp.bornhack.dk:9641"
     metric_relabel_configs:
-      - source_labels: ["sensor"]$
+      - source_labels: ["sensor"]
         regex: "sensor[0-9]+_(.+)"
-        target_label: "location"$
-        replacement: "${1}"$
+        target_label: "location"
+        replacement: "${1}"
 
 
 supervisord_extra_programs:
