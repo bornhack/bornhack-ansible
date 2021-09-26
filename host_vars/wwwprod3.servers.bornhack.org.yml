@@ -19,6 +19,7 @@ django_media_root_subdirs:
   - "invoices"
   - "creditnotes"
   - "public"
+  - "accountingexports"
 
 django_extra_os_dependencies:
   - "graphics/jpeg-turbo"
