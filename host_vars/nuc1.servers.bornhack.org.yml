@@ -35,6 +35,7 @@ network_interfaces:
     description: "bridge interface for the routed networks 85.209.118.160/29 & 2a09:94c4:55d1:7682::/64"
     configure: True
     interface: "bridge0"
+    cloned: True
     v4net: "85.209.118.160/29"
     v6net: "2a09:94c4:55d1:7682::/64"
     pf_macro: "bridge_routed_if"
@@ -52,6 +53,7 @@ network_interfaces:
     description: "bridge interface for the rfc1918 network 10.1.0.0/24 & 2a09:94c4:55d1:76A0::/64"
     configure: True
     interface: "bridge1"
+    cloned: True
     v4net: "10.1.0.0/24"
     v6net: "2a09:94c4:55d1:76A0::/64"
     pf_macro: "bridge_rfc1918_if"
