@@ -111,7 +111,7 @@ jails:
       - epair: 1
         bridge: "bridge1" # rfc1918
         ifconfig_inet: "10.1.0.2/24"
-        ifconfig_inet6: "2a09:94c4:55d1:76A0::2"
+        ifconfig_inet6: "2a09:94c4:55d1:76A0::2/64"
     routes:
       - "-inet default 10.1.0.1"
       - "-inet6 default 2a09:94c4:55d1:76A0::1"
@@ -121,7 +121,7 @@ jails:
       - epair: 2
         bridge: "bridge1" # rfc1918
         ifconfig_inet: "10.1.0.3/24"
-        ifconfig_inet6: "2a09:94c4:55d1:76A0::3"
+        ifconfig_inet6: "2a09:94c4:55d1:76A0::3/64"
     routes:
       - "-inet default 10.1.0.1"
       - "-inet6 default 2a09:94c4:55d1:76A0::1"
@@ -131,7 +131,7 @@ jails:
       - epair: 3
         bridge: "bridge1" # rfc1918
         ifconfig_inet: "10.1.0.4/24"
-        ifconfig_inet6: "2a09:94c4:55d1:76A0::4"
+        ifconfig_inet6: "2a09:94c4:55d1:76A0::4/64"
     routes:
       - "-inet default 10.1.0.1"
       - "-inet6 default 2a09:94c4:55d1:76A0::1"
@@ -141,7 +141,7 @@ jails:
       - epair: 4
         bridge: "bridge0" # routed
         ifconfig_inet: "85.209.118.162/29"
-        ifconfig_inet6: "2a09:94c4:55d1:7682::162"
+        ifconfig_inet6: "2a09:94c4:55d1:7682::162/64"
     routes:
       - "-inet default 85.209.118.161"
       - "-inet6 default 2a09:94c4:55d1:7682::1"
