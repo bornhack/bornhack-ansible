@@ -70,11 +70,11 @@ network_interfaces:
         v6ip: "2a09:94c4:55d1:76A0::1"
 
 static_routes:
-  - name: "dgw-ipv4"
+  - name: "dgw_ipv4"
     route: "-inet default 85.209.118.129"
     description: "Default gateway for ipv4"
-  - name: "dgw-ipv6"
-    route: "-inet6 default 2a09:94c4:55d1:7680::81/64"
+  - name: "dgw_ipv6"
+    route: "-inet6 default 2a09:94c4:55d1:7680::81"
     description: "Default gateway for ipv6"
 
 ########## pf configs ############
