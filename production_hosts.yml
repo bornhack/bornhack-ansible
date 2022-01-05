@@ -3,6 +3,11 @@ all:
     freebsd_hosts:
       hosts:
         container1.servers.bornhack.org:
+        nuc1.servers.bornhack.org:
+
+    jail_hosts:
+      hosts:
+        nuc1.servers.bornhack.org:
 
     bong_jails:
       hosts:

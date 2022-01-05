@@ -1,0 +1,90 @@
+---
+poudriere_package_set: 'freebsd_13_0_amd64-default'
+
+ezjail_dataset: "zroot/usr/jails"
+ezjail_jailstorage_dataset: "zroot/usr/jailstorage"
+ezjail_flavourname: "bornhack"
+ezjail_flavour_ansible_authorized_keys_file: |
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLklW3+HXkG0N6M1SG76WSuA4uNbkiVo3bojCox2ogv ansible-generated on ansible2.servers.bornhack.org
+
+
+########## snapshots & tykbackup ###############
+
+zfs_periodic_pools:
+  - "zroot"
+
+zfs_periodic_datasets_skip:
+  - "zroot/reserved"
+
+tykbackup_client: False
+
+
+########## network config ########
+network_interfaces:
+  - name: "ethernet-upstream"
+    description: "ethernet upstream interface, 85.209.118.128/28 & 2a09:94c4:55d1:7680::/64"
+    configure: True
+    interface: "em0"
+    pf_macro: "eth_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: True
+    ips:
+      nuc1:
+        v4ip: "85.209.118.130/28"
+        v6ip: "2a09:94c4:55d1:7680::82/64"
+  - name: "bridge-routed"
+    description: "bridge interface for the routed networks 85.209.118.160/29 & 2a09:94c4:55d1:7682::/64 & 2a09:94c4:55d1:76A0::/64"
+    configure: True
+    interface: "bridge0"
+    pf_macro: "bridge_routed_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+    ips:
+      nuc1:
+        v4ip: "85.209.118.161/29"
+        v6ip: "2a09:94c4:55d1:7682::1/64"
+  - name: "bridge-rfc1918"
+    description: "bridge interface for the rfc1918 network"
+    configure: True
+    interface: "bridge1"
+    pf_macro: "bridge_rfc1918_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+    ips:
+      nuc1:
+        v4ip: "10.1.0.1/24"
+        v6ip: "2a09:94c4:55d1:76A0::1/64"
+
+static_routes:
+  - name: "dgw-ipv4"
+    route: "-inet default 85.209.118.129"
+  - name: "dgw-ipv6"
+    route: "-inet6 default 2a09:94c4:55d1:7680::81/64"
+
+########## pf configs ############
+pf_gateway: True
+
+pf_nat_rules: |
+  nat on $ext_if from ($bridge_rfc1918_if:network) to any -> ($ext_if)
+
+pf_filter_rules:
+  - comment: "allow ssh to the firewall itself on the upstream interface"
+    direction: "in"
+    interfaces:
+      - "$ext_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<allowssh>"
+    destinations:
+      - "($ext_if)"
+    ports:
+      - "22"
