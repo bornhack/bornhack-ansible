@@ -115,6 +115,11 @@ certgrinderd_authorized_keys:
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFkHACki+vZz229JvOEOQuEo2O6hJIaFQpZXKoRAXmtO ansible-generated on container1.servers.bornhack.org"
     domainsets:
       - - "container1.servers.bornhack.org"
+  nuc1:
+    fromip: "2a09:94c4:55d1:7680::82"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMiNurzISaJI+3Ly9OUzbv1Ny3nD902caA+Tixc+jOJa root@nuc1.servers.bornhack.org"
+    domainsets:
+      - - "nuc1.servers.bornhack.org"
 
 bind_dynamic_zonelist:
   - zone: "acme.bornhack.org"
