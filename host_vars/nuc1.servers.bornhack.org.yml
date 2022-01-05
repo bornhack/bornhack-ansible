@@ -72,8 +72,10 @@ network_interfaces:
 static_routes:
   - name: "dgw-ipv4"
     route: "-inet default 85.209.118.129"
+    description: "Default gateway for ipv4"
   - name: "dgw-ipv6"
     route: "-inet6 default 2a09:94c4:55d1:7680::81/64"
+    description: "Default gateway for ipv6"
 
 ########## pf configs ############
 pf_gateway: True
