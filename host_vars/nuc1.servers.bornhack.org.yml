@@ -25,7 +25,9 @@ network_interfaces:
     description: "ethernet upstream interface, 85.209.118.128/28 & 2a09:94c4:55d1:7680::/64"
     configure: True
     interface: "em0"
-    pf_macro: "eth_if"
+    v4net: "85.209.118.128/28"
+    v6net: "2a09:94c4:55d1:7680::/64"
+    pf_macro: "ext_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -35,9 +37,11 @@ network_interfaces:
         v4ip: "85.209.118.130/28"
         v6ip: "2a09:94c4:55d1:7680::82/64"
   - name: "bridge-routed"
-    description: "bridge interface for the routed networks 85.209.118.160/29 & 2a09:94c4:55d1:7682::/64 & 2a09:94c4:55d1:76A0::/64"
+    description: "bridge interface for the routed networks 85.209.118.160/29 & 2a09:94c4:55d1:7682::/64"
     configure: True
     interface: "bridge0"
+    v4net: "85.209.118.160/29"
+    v6net: "2a09:94c4:55d1:7682::/64"
     pf_macro: "bridge_routed_if"
     pf_scrub: True
     pf_sync: False
@@ -49,9 +53,11 @@ network_interfaces:
         v4ip: "85.209.118.161/29"
         v6ip: "2a09:94c4:55d1:7682::1/64"
   - name: "bridge-rfc1918"
-    description: "bridge interface for the rfc1918 network"
+    description: "bridge interface for the rfc1918 network 10.1.0.0/24 & 2a09:94c4:55d1:76A0::/64"
     configure: True
     interface: "bridge1"
+    v4net: "10.1.0.0/24"
+    v6net: "2a09:94c4:55d1:76A0::/64"
     pf_macro: "bridge_rfc1918_if"
     pf_scrub: True
     pf_sync: False
