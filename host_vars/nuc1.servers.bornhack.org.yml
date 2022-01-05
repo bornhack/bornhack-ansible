@@ -1,12 +1,6 @@
 ---
 poudriere_package_set: 'freebsd_13_0_amd64-default'
 
-ezjail_dataset: "zroot/usr/jails"
-ezjail_jailstorage_dataset: "zroot/usr/jailstorage"
-ezjail_flavourname: "bornhack"
-ezjail_flavour_ansible_authorized_keys_file: |
-  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLklW3+HXkG0N6M1SG76WSuA4uNbkiVo3bojCox2ogv ansible-generated on ansible2.servers.bornhack.org
-
 
 ########## snapshots & tykbackup ###############
 
@@ -36,6 +30,7 @@ network_interfaces:
       nuc1:
         v4ip: "85.209.118.130"
         v6ip: "2a09:94c4:55d1:7680::82"
+
   - name: "bridge-routed"
     description: "bridge interface for the routed networks 85.209.118.160/29 & 2a09:94c4:55d1:7682::/64"
     configure: True
@@ -52,6 +47,7 @@ network_interfaces:
       nuc1:
         v4ip: "85.209.118.161"
         v6ip: "2a09:94c4:55d1:7682::1"
+
   - name: "bridge-rfc1918"
     description: "bridge interface for the rfc1918 network 10.1.0.0/24 & 2a09:94c4:55d1:76A0::/64"
     configure: True
@@ -78,6 +74,7 @@ static_routes:
     description: "Default gateway for ipv6"
 
 ########## pf configs ############
+
 pf_gateway: True
 
 pf_nat_rules: |
@@ -96,3 +93,53 @@ pf_filter_rules:
       - "($ext_if)"
     ports:
       - "22"
+
+########## jails ############
+
+ezjail_dataset: "zroot/usr/jails"
+ezjail_jailstorage_dataset: "zroot/usr/jailstorage"
+ezjail_flavourname: "bornhack"
+ezjail_flavour_ansible_authorized_keys_file: |
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLklW3+HXkG0N6M1SG76WSuA4uNbkiVo3bojCox2ogv ansible-generated on ansible2.servers.bornhack.org
+
+jail_root: "/usr/jails"
+jails:
+  - hostname: "dns1.servers.bornhack.org"
+    interfaces:
+      - epair: 1
+        bridge: "bridge1" # rfc1918
+        ifconfig_inet: "10.1.0.2/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76A0::2"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76A0::1"
+
+  - hostname: "syslog1.servers.bornhack.org"
+    interfaces:
+      - epair: 2
+        bridge: "bridge1" # rfc1918
+        ifconfig_inet: "10.1.0.3/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76A0::3"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76A0::1"
+
+  - hostname: "postgres1.servers.bornhack.org"
+    interfaces:
+      - epair: 3
+        bridge: "bridge1" # rfc1918
+        ifconfig_inet: "10.1.0.4/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76A0::4"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76A0::1"
+
+  - hostname: "webproxy3.servers.bornhack.org"
+    interfaces:
+      - epair: 4
+        bridge: "bridge0" # routed
+        ifconfig_inet: "85.209.118.162/29"
+        ifconfig_inet6: "2a09:94c4:55d1:7682::162"
+    routes:
+      - "-inet default 85.209.118.161"
+      - "-inet6 default 2a09:94c4:55d1:7682::1"
