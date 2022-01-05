@@ -34,8 +34,8 @@ network_interfaces:
     pf_upstream: True
     ips:
       nuc1:
-        v4ip: "85.209.118.130/28"
-        v6ip: "2a09:94c4:55d1:7680::82/64"
+        v4ip: "85.209.118.130"
+        v6ip: "2a09:94c4:55d1:7680::82"
   - name: "bridge-routed"
     description: "bridge interface for the routed networks 85.209.118.160/29 & 2a09:94c4:55d1:7682::/64"
     configure: True
@@ -50,8 +50,8 @@ network_interfaces:
     pf_routing: True
     ips:
       nuc1:
-        v4ip: "85.209.118.161/29"
-        v6ip: "2a09:94c4:55d1:7682::1/64"
+        v4ip: "85.209.118.161"
+        v6ip: "2a09:94c4:55d1:7682::1"
   - name: "bridge-rfc1918"
     description: "bridge interface for the rfc1918 network 10.1.0.0/24 & 2a09:94c4:55d1:76A0::/64"
     configure: True
@@ -66,8 +66,8 @@ network_interfaces:
     pf_routing: True
     ips:
       nuc1:
-        v4ip: "10.1.0.1/24"
-        v6ip: "2a09:94c4:55d1:76A0::1/64"
+        v4ip: "10.1.0.1"
+        v6ip: "2a09:94c4:55d1:76A0::1"
 
 static_routes:
   - name: "dgw-ipv4"
