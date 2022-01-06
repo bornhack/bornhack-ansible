@@ -124,7 +124,7 @@ static_routes:
 pf_gateway: True
 
 pf_nat_rules: |
-  nat on $ext_if from ($bridge_rfc1918_if:network) to any -> ($ext_if)
+  nat on $ext_if inet from ($bridge_rfc1918_if:network) to any -> ($ext_if)
 
 pf_filter_rules:
   - comment: "allow ssh to the firewall itself on the upstream interface"
