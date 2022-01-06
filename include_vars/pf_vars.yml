@@ -45,6 +45,22 @@ pf_common_address_macros: |
     nuc1v63="2a09:94c4:55d1:76A0::/64"
     table <nuc1> { $nuc1v41 $nuc1v61 }
 
+    dns1v4="10.1.0.2"
+    dns1v6="2a09:94c4:55d1:76a0::2"
+    table <dns1> { $dns1v4 $dns1v6 }
+
+    syslog1v4="10.1.0.3"
+    syslog1v6="2a09:94c4:55d1:76a0::3"
+    table <syslog1> { $syslog1v4 $syslog1v6 }
+
+    postgres1v4="10.1.0.4"
+    postgres1v6="2a09:94c4:55d1:76a0::4"
+    table <postgres1> { $postgres1v4 $postgres1v6 }
+
+    webproxy3v4="85.209.118.162"
+    webproxy3v6="2a09:94c4:55d1:7682::162"
+    table <postgres1> { $postgres1v4 $postgres1v6 }
+
     ############################################
     ### TABLES
     ############################################

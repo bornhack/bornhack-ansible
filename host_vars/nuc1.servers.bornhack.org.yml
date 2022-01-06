@@ -128,7 +128,7 @@ pf_nat_rules: |
   nat on $ext_if inet from ($bridge_rfc1918_if:network) to any -> ($ext_if)
 
 pf_filter_rules:
-  - comment: "allow ssh to the firewall itself on the upstream interface"
+  - comment: "nuc1: allow ssh to the firewall itself on the upstream interface"
     direction: "in"
     interfaces:
       - "$ext_if"
@@ -138,6 +138,34 @@ pf_filter_rules:
       - "<allowssh>"
     destinations:
       - "($ext_if)"
+    ports:
+      - "22"
+
+  - comment: "nuc1 jails: allow ssh to rfc1918 jails"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<allowssh>"
+    destinations:
+      - "<dns1>"
+      - "<syslog1>"
+      - "<postgres1>"
+    ports:
+      - "22"
+
+  - comment: "nuc1 jails: allow ssh to routed jails"
+    direction: "out"
+    interfaces:
+      - "$bridge_routed_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<allowssh>"
+    destinations:
+      - "<webproxy3>"
     ports:
       - "22"
 
