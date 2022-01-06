@@ -26,6 +26,7 @@ network_interfaces:
     pf_sync: False
     pf_carp: False
     pf_upstream: True
+    pf_routing: True
     ips:
       nuc1:
         v4ip: "85.209.118.130"
