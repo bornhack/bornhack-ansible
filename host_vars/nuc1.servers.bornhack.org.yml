@@ -67,6 +67,50 @@ network_interfaces:
         v4ip: "10.1.0.1"
         v6ip: "2a09:94c4:55d1:76A0::1"
 
+  - name: "epair1a"
+    description: "vnet interface for dns1.servers.bornhack.org"
+    configure: False
+    interface: "epair1a"
+    pf_macro: "dns1_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair2a"
+    description: "vnet interface for syslog1.servers.bornhack.org"
+    configure: False
+    interface: "epair2a"
+    pf_macro: "syslog1_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair3a"
+    description: "vnet interface for postgres1.servers.bornhack.org"
+    configure: False
+    interface: "epair3a"
+    pf_macro: "postgres1_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair4a"
+    description: "vnet interface for webproxy3.servers.bornhack.org"
+    configure: False
+    interface: "epair4a"
+    pf_macro: "webproxy3_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
 static_routes:
   - name: "dgw_ipv4"
     route: "-inet default 85.209.118.129"
