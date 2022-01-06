@@ -15,6 +15,7 @@ pf_common_address_macros: |
     fenchurchv6="2a01:4f8:222:589::/64"
     f3home="5.103.0.0/16"
 
+    # ansible
     ansiblev4="85.235.250.87"
     ansiblev6="2a01:3a0:1:1900:85:235:250:87"
     table <ansible> { $ansiblev4 $ansiblev6 }
@@ -22,7 +23,6 @@ pf_common_address_macros: |
     ###########################################
     ### CONTAINER1 JAILS
     ############################################
-    ######## tykling #################
     dns1v4="10.0.0.1"
     table <dns1> { $dns1v4 }
 
@@ -34,6 +34,16 @@ pf_common_address_macros: |
 
     webproxy1v4="10.0.0.4"
     table <webproxy1> { $webproxy1v4 }
+
+    ###########################################
+    ### NUC1 & JAILS
+    ############################################
+    nuc1v41="85.209.118.130"
+    nuc1v42="85.209.118.160/29"
+    nuc1v61="2a09:94c4:55d1:7680::82"
+    nuc1v62="2a09:94c4:55d1:7682::/64"
+    nuc1v63="2a09:94c4:55d1:76A0::/64"
+    table <nuc1> { $nuc1v41 $nuc1v61 }
 
     ############################################
     ### TABLES

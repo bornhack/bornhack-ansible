@@ -63,6 +63,7 @@ all:
     nginx_servers:
       hosts:
         webproxy2.servers.bornhack.org:
+        webproxy3.servers.bornhack.org:
 
     nut_servers:
       hosts:
