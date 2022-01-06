@@ -188,6 +188,7 @@ jails:
     routes:
       - "-inet default 10.1.0.1"
       - "-inet6 default 2a09:94c4:55d1:76A0::1"
+    devfs_ruleset: 5
 
   - hostname: "syslog1.servers.bornhack.org"
     interfaces:
@@ -198,6 +199,7 @@ jails:
     routes:
       - "-inet default 10.1.0.1"
       - "-inet6 default 2a09:94c4:55d1:76A0::1"
+    devfs_ruleset: 5
 
   - hostname: "postgres1.servers.bornhack.org"
     interfaces:
@@ -208,6 +210,7 @@ jails:
     routes:
       - "-inet default 10.1.0.1"
       - "-inet6 default 2a09:94c4:55d1:76A0::1"
+    devfs_ruleset: 5
 
   - hostname: "webproxy3.servers.bornhack.org"
     interfaces:
@@ -218,3 +221,4 @@ jails:
     routes:
       - "-inet default 85.209.118.161"
       - "-inet6 default 2a09:94c4:55d1:7682::1"
+    devfs_ruleset: 5
