@@ -24,6 +24,13 @@ all:
         webproxy2.servers.bornhack.org:
         wwwprod3.servers.bornhack.org:
 
+    nuc1_jails:
+      hosts:
+        dns1.servers.bornhack.org:
+        postgres1.servers.bornhack.org:
+        syslog1.servers.bornhack.org:
+        webproxy3.servers.bornhack.org:
+
     alertmanager_servers:
       hosts:
         alertmanager1.servers.bornhack.org:
@@ -77,11 +84,23 @@ all:
       hosts:
         mail.bornhack.org:
 
+    postgresql_servers:
+      hosts:
+        postgres1.servers.bornhack.org:
+
     prometheus_servers:
       hosts:
         prometheus1.servers.bornhack.org:
+
+    syslogng_servers:
+      hosts:
+        syslog1.servers.bornhack.org:
 
     tor_servers:
       hosts:
         tor2.servers.bornhack.org:
         container1.servers.bornhack.org:
+
+    unbound_servers:
+      hosts:
+        dns1.servers.bornhack.org:
