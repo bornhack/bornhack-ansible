@@ -136,7 +136,9 @@ certgrinderd_authorized_keys:
     domainsets:
       - - "postgres1.servers.bornhack.org"
   webproxy3:
-    fromip: "2a09:94c4:55d1:7682::162"
+    fromip:
+      - "2a09:94c4:55d1:7682::162"
+      - "85.209.118.162"
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvrxMuLFrBn4z2Nam3KD1wBoS6zS8MpsoKMSAbMiVV3 root@webproxy3.servers.bornhack.org"
     domainsets:
       - - "webproxy3.servers.bornhack.org"
