@@ -5,6 +5,7 @@ nginx_v6_proxy_ip: "2a09:94c4:55d1:7682::162"
 ntp_pool_server: "dk.pool.ntp.org"
 jail_host: "nuc1.servers.bornhack.org"
 postgres_host: "postgres1.servers.bornhack.org"
+syslog_server_ip: "syslog1.servers.bornhack.org"
 dns_resolver_ips:
   - "2a09:94c4:55d1:76a0::2"
   - "10.1.0.2"
