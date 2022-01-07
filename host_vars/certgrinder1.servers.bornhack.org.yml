@@ -120,6 +120,27 @@ certgrinderd_authorized_keys:
     authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMiNurzISaJI+3Ly9OUzbv1Ny3nD902caA+Tixc+jOJa root@nuc1.servers.bornhack.org"
     domainsets:
       - - "nuc1.servers.bornhack.org"
+  dns1:
+    fromip: "2a09:94c4:55d1:76a0::2"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPM4jObV4jOV/NxsKyQUROeyauTmk7riniy5MWA1ZfR9 root@dns1.servers.bornhack.org"
+    domainsets:
+      - - "dns1.servers.bornhack.org"
+  syslog1:
+    fromip: "2a09:94c4:55d1:76a0::3"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOdQNLqNtoVhlJtqHhG+0LMq52gIzlADxVCmHBoQYawt root@syslog1.servers.bornhack.org"
+    domainsets:
+      - - "syslog1.servers.bornhack.org"
+  postgres1:
+    fromip: "2a09:94c4:55d1:76a0::4"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDuCleE7/XS002hAZMzt0wiZ8WLUHKZF1JrCfKdfIBDt root@postgres1.servers.bornhack.org"
+    domainsets:
+      - - "postgres1.servers.bornhack.org"
+  webproxy3:
+    fromip: "2a09:94c4:55d1:7682::162"
+    authkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAvrxMuLFrBn4z2Nam3KD1wBoS6zS8MpsoKMSAbMiVV3 root@webproxy3.servers.bornhack.org"
+    domainsets:
+      - - "webproxy3.servers.bornhack.org"
+
 
 bind_dynamic_zonelist:
   - zone: "acme.bornhack.org"
