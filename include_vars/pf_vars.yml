@@ -59,7 +59,7 @@ pf_common_address_macros: |
 
     webproxy3v4="85.209.118.162"
     webproxy3v6="2a09:94c4:55d1:7682::162"
-    table <postgres1> { $postgres1v4 $postgres1v6 }
+    table <webproxy3> { $webproxy3v4 $webproxy3v6 }
 
     ############################################
     ### TABLES
