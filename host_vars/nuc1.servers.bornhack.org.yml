@@ -169,6 +169,23 @@ pf_filter_rules:
     ports:
       - "22"
 
+  - comment: "dns1: allow dns from nuc1 and jails"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "udp"
+      - "tcp"
+    sources:
+      - "<nuc1>"
+      - "$nuc1v42"
+      - "$nuc1v62"
+      - "$nuc1v63"
+    destinations:
+      - "<dns1>"
+    ports:
+      - "53"
+
 ########## jails ############
 
 ezjail_dataset: "zroot/usr/jails"
