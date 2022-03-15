@@ -2,9 +2,9 @@
 ansible_user: "ansible"
 ansible_python_interpreter: "/usr/local/bin/python"
 ansible_authorized_keys_file: |
-  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLklW3+HXkG0N6M1SG76WSuA4uNbkiVo3bojCox2ogv ansible-generated on ansible2.servers.bornhack.org
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOTZodzRK0AEd1fq4BX6kjfNyicp/SS4hnwYVOnB7uwv user@bornhack-ansible-tykling
 
-poudriere_package_set: 'freebsd_12_2_amd64-default'
+poudriere_package_set: 'freebsd_13_0_amd64-default'
 
 users:
   tykling:
@@ -22,10 +22,11 @@ users:
     key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINWdikBZUtNb8JMgT6tkuG+B1+ZAGmrq5PySWrNr1bFF fj@home"
     sudo: True
 
-certgrinder_ssh_server: "certgrinder1.servers.bornhack.org"
-certgrinder_ssh_server_pubkey: "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBn2WYu5g8Q/G280wsjiPUEthAraSDmaOO6NKUH+ClTMXsuf31ZVTikvrQ5S9AUvkic+2eTaABz7VVFRTVXFWg8="
-certgrinder_redirect_url: "http://certgrinder.bornhack.org"
+certgrinder_ssh_server: "certgrinder.tyknet.dk"
+certgrinder_ssh_server_pubkey: "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJ3ipm8n5MewEg0hfnFBaVpNf34GD8VuHjzq7WX+uyErayjsoh1d6QK8K5byEZhssXqCvRwqEEXjmIWqDM5ViB4="
+certgrinder_redirect_url: "http://certgrinder.tyknet.dk"
 certgrinder_admin_email: "sysadm@bornhack.org"
+certgrinder_rename_legacy: False
 
 etcaliases_root_forward_email: "sysadm@bornhack.org"
 ansible_admin_email: "sysadm@bornhack.org"

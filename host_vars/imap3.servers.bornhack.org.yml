@@ -1,0 +1,11 @@
+---
+dovecot_postgres_host: "postgres1.servers.bornhack.org"
+dovecot_postgres_dbname: "smtp2_servers_bornhack_org_db"
+dovecot_postgres_user: "smtp2_servers_bornhack_org"
+dovecot_vmail_username: "vmail"
+dovecot_vmail_uid: 10000
+dovecot_vmail_groupname: "vmail"
+dovecot_vmail_gid: 10000
+
+certgrinder_hostname_sets:
+ - "imap3.servers.bornhack.org,imap.bornhack.org"

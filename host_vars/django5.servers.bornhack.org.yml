@@ -1,0 +1,40 @@
+---
+uwsgi_processes: 20
+
+django_allowed_hostnames: "['bornhack.dk','www.bornhack.dk','nclpuewtqbrtgnugfquprohygp2ni2idinfrbmiptxrp6d6uvtctpyid.onion']"
+django_postgres_user: "django5_servers_bornhack_org"
+django_postgres_dbname: "django5_servers_bornhack_org_db"
+django_email_realworld: True
+django_email_user: "noreply@bornhack.org"
+django_email_port: "587"
+django_email_host: "asmtp.bornhack.org"
+django_email_from: "info@bornhack.dk"
+
+django_archive_email: "mailarchive@bornhack.org"
+
+
+pdf_letterhead_filename: "bornhack_letterhead.pdf"
+
+django_ircbot_nickname: "BornHack"
+django_ircbot_server: "irc.baconsvin.org"
+django_ircbot_public_channel: "#bornhack"
+django_ircbot_volunteer_channel: "#bornhack.org"
+django_ircbot_nickserv_mask: "NickServ@services.baconsvin.org"
+django_ircbot_chanserv_mask: "ChanServ@services.baconsvin.org"
+django_ircbot_nickserv_email: "ircbot@bornhack.org"
+
+coinify_callback_hostname: "coinifycallback.bornhack.org"
+
+django_accountingsystem_email: "866bilag1182644@e-conomic.dk"
+django_economyteam_email: "economy-team@bornhack.org"
+
+backoffice_proxy_urls: |
+  {
+      "webstats-2016": ("Webproxy stats 2016", "https://webproxy2.servers.bornhack.org/goaccess/2016.html"),
+      "webstats-2017": ("Webproxy stats 2017", "https://webproxy2.servers.bornhack.org/goaccess/2017.html"),
+      "webstats-2018": ("Webproxy stats 2018", "https://webproxy2.servers.bornhack.org/goaccess/2018.html"),
+      "webstats-2019": ("Webproxy stats 2019", "https://webproxy2.servers.bornhack.org/goaccess/2019.html"),
+      "webstats-2020": ("Webproxy stats 2020", "https://webproxy2.servers.bornhack.org/goaccess/2020.html"),
+      "webstats-2020": ("Webproxy stats 2021", "https://webproxy2.servers.bornhack.org/goaccess/2021.html"),
+      "webstats-2020": ("Webproxy stats 2022", "https://webproxy2.servers.bornhack.org/goaccess/2022.html"),
+  }

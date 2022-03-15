@@ -9,59 +9,53 @@ all:
       hosts:
         nuc1.servers.bornhack.org:
 
-    bong_jails:
-      hosts:
-        alertmanager1.servers.bornhack.org:
-        ansible2.servers.bornhack.org:
-        blackbox1.servers.bornhack.org:
-        certgrinder1.servers.bornhack.org:
-        grafana1.servers.bornhack.org:
-        imap2.servers.bornhack.org:
-        mail.bornhack.org:
-        people2.servers.bornhack.org:
-        prometheus1.servers.bornhack.org:
-        tor2.servers.bornhack.org:
-        webproxy2.servers.bornhack.org:
-        wwwprod3.servers.bornhack.org:
-
     nuc1_jails:
       hosts:
+        alertmanager2.servers.bornhack.org:
+        ansible3.servers.bornhack.org:
+        blackbox2.servers.bornhack.org:
+        django4.servers.bornhack.org: # staging
+        django5.servers.bornhack.org: # prod
         dns1.servers.bornhack.org:
+        grafana2.servers.bornhack.org:
+        imap3.servers.bornhack.org:
+        people3.servers.bornhack.org:
         postgres1.servers.bornhack.org:
+        prometheus2.servers.bornhack.org:
+        smtp2.servers.bornhack.org:
         syslog1.servers.bornhack.org:
+        tor3.servers.bornhack.org:
         webproxy3.servers.bornhack.org:
 
     alertmanager_servers:
       hosts:
-        alertmanager1.servers.bornhack.org:
+        alertmanager2.servers.bornhack.org:
 
     ansible_servers:
       hosts:
-        ansible2.servers.bornhack.org:
+        ansible3.servers.bornhack.org:
 
     blackbox_exporter_servers:
       hosts:
-        blackbox1.servers.bornhack.org:
-
-    certgrinderd_servers:
-      hosts:
-        certgrinder1.servers.bornhack.org:
+        blackbox2.servers.bornhack.org:
 
     django_channels2_servers:
       hosts:
-        wwwprod3.servers.bornhack.org:
+        django4.servers.bornhack.org: # staging
+        django5.servers.bornhack.org: # prod
+
+    django_homepage_servers:
+      hosts:
+        django4.servers.bornhack.org: # staging
+        django5.servers.bornhack.org: # prod
 
     dovecot_servers:
       hosts:
-        imap2.servers.bornhack.org:
-
-    ezjail_hosts:
-      hosts:
-        container1.servers.bornhack.org:
+        imap3.servers.bornhack.org:
 
     grafana_servers:
       hosts:
-        grafana1.servers.bornhack.org:
+        grafana2.servers.bornhack.org:
 
     motion_servers:
       hosts:
@@ -69,7 +63,6 @@ all:
 
     nginx_servers:
       hosts:
-        webproxy2.servers.bornhack.org:
         webproxy3.servers.bornhack.org:
 
     nut_servers:
@@ -78,11 +71,11 @@ all:
 
     people_servers:
       hosts:
-        people2.servers.bornhack.org:
+        people3.servers.bornhack.org:
 
     postfix_servers:
       hosts:
-        mail.bornhack.org:
+        smtp2.servers.bornhack.org:
 
     postgresql_servers:
       hosts:
@@ -90,7 +83,7 @@ all:
 
     prometheus_servers:
       hosts:
-        prometheus1.servers.bornhack.org:
+        prometheus2.servers.bornhack.org:
 
     syslogng_servers:
       hosts:
@@ -98,7 +91,7 @@ all:
 
     tor_servers:
       hosts:
-        tor2.servers.bornhack.org:
+        tor3.servers.bornhack.org:
         container1.servers.bornhack.org:
 
     unbound_servers:

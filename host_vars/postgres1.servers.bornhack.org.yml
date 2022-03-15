@@ -1,2 +1,25 @@
 ---
-
+postgresql_users:
+  - comment: 'smtp2 & imap3'
+    username: 'smtp2_servers_bornhack_org'
+    type: 'host'
+    database: 'smtp2_servers_bornhack_org_db'
+    iplist:
+      - "85.209.118.164/32"
+      - "2a09:94c4:55d1:7682::164/128"
+      - "85.209.118.165/32"
+      - "2a09:94c4:55d1:7682::165/128"
+  - comment: 'django4'
+    username: 'django4_servers_bornhack_org'
+    type: 'host'
+    database: 'django4_servers_bornhack_org_db'
+    iplist:
+      - "10.1.0.5/32"
+      - "2a09:94c4:55d1:76a0::5/128"
+  - comment: 'django5'
+    username: 'django5_servers_bornhack_org'
+    type: 'host'
+    database: 'django5_servers_bornhack_org_db'
+    iplist:
+      - "10.1.0.6/32"
+      - "2a09:94c4:55d1:76a0::6/128"

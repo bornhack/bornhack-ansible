@@ -1,0 +1,28 @@
+---
+uwsgi_processes: 10
+
+django_allowed_hostnames: "['wwwstaging.bornhack.org']"
+django_postgres_user: "django4_servers_bornhack_org"
+django_postgres_dbname: "django4_servers_bornhack_org_db"
+django_email_realworld: False
+django_email_user: "noreply@bornhack.org"
+django_email_port: "587"
+django_email_host: "asmtp.bornhack.org"
+django_email_from: "info@bornhack.dk"
+
+django_archive_email: "stagingemailarchive@bornhack.org"
+
+pdf_letterhead_filename: "bornhack_test_letterhead.pdf"
+
+django_ircbot_nickname: "BornHackStaging"
+django_ircbot_server: "irc.baconsvin.org"
+django_ircbot_public_channel: "#bhstagingpublic"
+django_ircbot_volunteer_channel: "#bhstagingvolunteer"
+django_ircbot_nickserv_mask: "NickServ@services.baconsvin.org"
+django_ircbot_chanserv_mask: "ChanServ@services.baconsvin.org"
+django_ircbot_nickserv_email: "stagingbot@bornhack.org"
+
+django_accountingsystem_email: "economic@example.com"
+django_economyteam_email: "economyteam@example.com"
+
+backoffice_proxy_urls: {}

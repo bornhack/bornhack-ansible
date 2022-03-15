@@ -1,38 +1,29 @@
 ---
-django_checkout_path: "/usr/local/www/wwwstaging.bornhack.org"
 django_root: "{{ django_checkout_path }}/src"
 django_mainapp: "bornhack"
-django_allowed_hostnames: "['wwwstaging.bornhack.org']"
 django_debug: 'False'
 django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: "https://github.com/bornhack/bornhack-website"
 django_github_branch: "master"
 django_pip_requirements_path: "{{ django_root }}/requirements/production.txt"
-django_postgres_user: "bornhackstagingdk"
-django_postgres_host: "10.0.0.3"
-django_postgres_dbname: "bornhackstagingdkdb"
-django_email_realworld: False
-django_email_user: "noreply@bornhack.org"
-django_email_port: "587"
-django_email_host: "mail.bornhack.org"
-django_email_from: "info@bornhack.dk"
 django_media_root: "/storage/django_media_root"
 django_media_root_subdirs:
   - "proforma_invoices"
   - "invoices"
   - "creditnotes"
   - "public"
+  - "accountingexports"
 
 django_extra_os_dependencies:
-  - "graphics/jpeg-turbo"
-  - "converters/wkhtmltopdf"
-  - "x11-fonts/webfonts"
-  - "graphics/gdal"
-  - "graphics/geos"
-  - "textproc/libxslt"
-  - "lang/rust"
+  - "jpeg-turbo"
+  - "wkhtmltopdf"
+  - "webfonts"
+  - "gdal"
+  - "geos"
+  - "libxslt"
+  - "rust"
+  - "coin-or-cbc"
 
-django_archive_email: "stagingemailarchive@bornhack.org"
 django_admins: |
   (
       ('bornhack sysadm', 'sysadm@bornhack.org'),
@@ -64,32 +55,17 @@ supervisord_extra_programs:
     user: "www"
     priority: "4"
 
-
 pdf_archive_path: '/storage/pdf_archive/'
-pdf_letterhead_filename: "bornhack_test_letterhead.pdf"
 iban: "DK0398600000747866"
 swiftbic: "FOSPDK21"
 regno: 9860
 accountno: 747866
 bank_name: "Folke Sparekassen"
 
-django_ircbot_nickname: "BornHackStaging"
-django_ircbot_server: "ircd.tyknet.dk"
-django_ircbot_public_channel: "#bhstagingpublic"
-django_ircbot_volunteer_channel: "#bhstagingvolunteer"
-django_ircbot_nickserv_mask: "NickServ@services.baconsvin.org"
-django_ircbot_chanserv_mask: "ChanServ@services.baconsvin.org"
-django_ircbot_nickserv_email: "stagingbot@bornhack.org"
-
 django_sendfile_url: "/public"
 django_sendfile_backend: "sendfile.backends.nginx"
+
 django_channels_layer_redis: True
 django_channels_backend: "channels_redis.core.RedisChannelLayer"
 
-django_accountingsystem_email: "economic@example.com"
-django_economyteam_email: "economyteam@example.com"
-
-bornhack_2019_old_token_token: "oldtoken"
-uwsgi_processes: 10
-backoffice_proxy_urls: {}
 

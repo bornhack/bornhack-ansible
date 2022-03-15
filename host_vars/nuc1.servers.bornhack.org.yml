@@ -1,7 +1,6 @@
 ---
 poudriere_package_set: 'freebsd_13_0_amd64-default'
 
-
 ########## snapshots & tykbackup ###############
 
 zfs_periodic_pools:
@@ -51,12 +50,12 @@ network_interfaces:
         v6ip: "2a09:94c4:55d1:7682::1"
 
   - name: "bridge-rfc1918"
-    description: "bridge interface for the rfc1918 network 10.1.0.0/24 & 2a09:94c4:55d1:76A0::/64"
+    description: "bridge interface for the rfc1918 network 10.1.0.0/24 & 2a09:94c4:55d1:76a0::/64"
     configure: True
     interface: "bridge1"
     cloned: True
     v4net: "10.1.0.0/24"
-    v6net: "2a09:94c4:55d1:76A0::/64"
+    v6net: "2a09:94c4:55d1:76a0::/64"
     pf_macro: "bridge_rfc1918_if"
     pf_scrub: True
     pf_sync: False
@@ -66,7 +65,7 @@ network_interfaces:
     ips:
       nuc1:
         v4ip: "10.1.0.1"
-        v6ip: "2a09:94c4:55d1:76A0::1"
+        v6ip: "2a09:94c4:55d1:76a0::1"
 
   - name: "epair1a"
     description: "vnet interface for dns1.servers.bornhack.org"
@@ -112,12 +111,133 @@ network_interfaces:
     pf_upstream: False
     pf_routing: True
 
+  - name: "epair5a"
+    description: "vnet interface for ansible3.servers.bornhack.org"
+    configure: False
+    interface: "epair5a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair6a"
+    description: "vnet interface for django4.servers.bornhack.org"
+    configure: False
+    interface: "epair6a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair7a"
+    description: "vnet interface for django5.servers.bornhack.org"
+    configure: False
+    interface: "epair7a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair8a"
+    description: "vnet interface for smtp2.servers.bornhack.org"
+    configure: False
+    interface: "epair8a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair9a"
+    description: "vnet interface for imap3.servers.bornhack.org"
+    configure: False
+    interface: "epair9a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair10a"
+    description: "vnet interface for people3.servers.bornhack.org"
+    configure: False
+    interface: "epair10a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair11a"
+    description: "vnet interface for tor3.servers.bornhack.org"
+    configure: False
+    interface: "epair11a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair12a"
+    description: "vnet interface for alertmanager2.servers.bornhack.org"
+    configure: False
+    interface: "epair12a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair13a"
+    description: "vnet interface for blackbox2.servers.bornhack.org"
+    configure: False
+    interface: "epair13a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair14a"
+    description: "vnet interface for grafana2.servers.bornhack.org"
+    configure: False
+    interface: "epair14a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair15a"
+    description: "vnet interface for prometheus2.servers.bornhack.org"
+    configure: False
+    interface: "epair15a"
+    pf_macro: "_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
 static_routes:
   - name: "dgw_ipv4"
     route: "-inet default 85.209.118.129"
     description: "Default gateway for ipv4"
   - name: "dgw_ipv6"
-    route: "-inet6 default 2a09:94c4:55d1:7680::81"
+    route: "-inet6 default 2a09:94c4:55d1:7680::1"
     description: "Default gateway for ipv6"
 
 ########## pf configs ############
@@ -128,10 +248,11 @@ pf_nat_rules: |
   nat on $ext_if inet from ($bridge_rfc1918_if:network) to any -> ($ext_if)
 
 pf_filter_rules:
-  - comment: "nuc1: allow ssh to the firewall itself on the upstream interface"
+  - comment: "nuc1: allow ssh to the firewall itself on the upstream interface and the routed bridge interface"
     direction: "in"
     interfaces:
       - "$ext_if"
+      - "$bridge_routed_if"
     protocols:
       - "tcp"
     sources:
@@ -153,6 +274,13 @@ pf_filter_rules:
       - "<dns1>"
       - "<syslog1>"
       - "<postgres1>"
+      - "<django4>"
+      - "<django5>"
+      - "<tor3>"
+      - "<alertmanager2>"
+      - "<blackbox2>"
+      - "<grafana2>"
+      - "<prometheus2>"
     ports:
       - "22"
 
@@ -166,6 +294,10 @@ pf_filter_rules:
       - "<allowssh>"
     destinations:
       - "<webproxy3>"
+      - "<ansible3>"
+      - "<smtp2>"
+      - "<imap3>"
+      - "<people3>"
     ports:
       - "22"
 
@@ -178,18 +310,138 @@ pf_filter_rules:
       - "tcp"
     sources:
       - "<nuc1>"
-      - "$nuc1v42"
-      - "$nuc1v62"
-      - "$nuc1v63"
+      - "<nuc1net>"
     destinations:
       - "<dns1>"
     ports:
       - "53"
 
+  - comment: "syslog1: allow syslog from nuc1 and jails"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "udp"
+      - "tcp"
+    sources:
+      - "<nuc1>"
+      - "<nuc1net>"
+    destinations:
+      - "<syslog1>"
+    ports:
+      - "514"
+
+  - comment: "postgres1: allow postgres from nuc1 and jails"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<nuc1>"
+      - "<nuc1net>"
+    destinations:
+      - "<postgres1>"
+    ports:
+      - "5432"
+
+  - comment: "webproxy3: allow http(s) from the world"
+    direction: "out"
+    interfaces:
+      - "$bridge_routed_if"
+    protocols:
+      - "tcp"
+    destinations:
+      - "<webproxy3>"
+      - "$webproxy3v6vhosts"
+    ports:
+      - "80"
+      - "443"
+
+  - comment: "imap3: allow imaps from the world"
+    direction: "out"
+    interfaces:
+      - "$bridge_routed_if"
+    protocols:
+      - "tcp"
+    destinations:
+      - "<imap3>"
+    ports:
+      - "993"
+
+  - comment: "imap3: allow SASL & LMTP from smtp2"
+    direction: "out"
+    interfaces:
+      - "$bridge_routed_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<smtp2>"
+    destinations:
+      - "<imap3>"
+    ports:
+      - "12"
+      - "24"
+
+  - comment: "smtp2: allow (a)smtp from the world"
+    direction: "out"
+    interfaces:
+      - "$bridge_routed_if"
+    protocols:
+      - "tcp"
+    destinations:
+      - "<smtp2>"
+    ports:
+      - "25"
+      - "80"
+      - "443"
+      - "465"
+      - "587"
+
+  - comment: "people3: allow SSH and http(s) from the world"
+    direction: "out"
+    interfaces:
+      - "$bridge_routed_if"
+    protocols:
+      - "tcp"
+    destinations:
+      - "<people3>"
+    ports:
+      - "22"
+      - "80"
+      - "443"
+
+  - comment: "django4: allow HTTP from webproxy"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<webproxy3>"
+    destinations:
+      - "<django4>"
+    ports:
+      - "80"
+
+  - comment: "django5: allow HTTP from webproxy3 and tor3"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<webproxy3>"
+      - "<tor3>"
+    destinations:
+      - "<django5>"
+    ports:
+      - "80"
+
 ########## jails ############
 
 ezjail_dataset: "zroot/usr/jails"
-ezjail_jailstorage_dataset: "zroot/usr/jailstorage"
+ezjail_jailstorage_dataset: "zroot/jailstorage"
 ezjail_flavourname: "bornhack"
 ezjail_flavour_ansible_authorized_keys_file: |
   ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLklW3+HXkG0N6M1SG76WSuA4uNbkiVo3bojCox2ogv ansible-generated on ansible2.servers.bornhack.org
@@ -199,44 +451,192 @@ jails:
   - hostname: "dns1.servers.bornhack.org"
     interfaces:
       - epair: 1
-        bridge: "bridge1" # rfc1918
+        bridge: "bridge1" # rfc1918 v4 & routed v6
         ifconfig_inet: "10.1.0.2/24"
-        ifconfig_inet6: "2a09:94c4:55d1:76A0::2/64"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::2/64"
     routes:
       - "-inet default 10.1.0.1"
-      - "-inet6 default 2a09:94c4:55d1:76A0::1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
     devfs_ruleset: 5
 
   - hostname: "syslog1.servers.bornhack.org"
     interfaces:
       - epair: 2
-        bridge: "bridge1" # rfc1918
+        bridge: "bridge1" # rfc1918 v4 & routed v6
         ifconfig_inet: "10.1.0.3/24"
-        ifconfig_inet6: "2a09:94c4:55d1:76A0::3/64"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::3/64"
     routes:
       - "-inet default 10.1.0.1"
-      - "-inet6 default 2a09:94c4:55d1:76A0::1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
     devfs_ruleset: 5
 
   - hostname: "postgres1.servers.bornhack.org"
     interfaces:
       - epair: 3
-        bridge: "bridge1" # rfc1918
+        bridge: "bridge1" # rfc1918 v4 & routed v6
         ifconfig_inet: "10.1.0.4/24"
-        ifconfig_inet6: "2a09:94c4:55d1:76A0::4/64"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::4/64"
     routes:
       - "-inet default 10.1.0.1"
-      - "-inet6 default 2a09:94c4:55d1:76A0::1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
     devfs_ruleset: 5
-    sysvshm: "new"
+    parameters:
+      sysvshm: "new"
 
   - hostname: "webproxy3.servers.bornhack.org"
     interfaces:
       - epair: 4
         bridge: "bridge0" # routed
         ifconfig_inet: "85.209.118.162/29"
-        ifconfig_inet6: "2a09:94c4:55d1:7682::162/64"
+        ifconfig_inet6:
+          - "2a09:94c4:55d1:7682::162/64"
+          - "2a09:94c4:55d1:7682:162::1/128 alias"
+          - "2a09:94c4:55d1:7682:162::2/128 alias"
+          - "2a09:94c4:55d1:7682:162::3/128 alias"
+          - "2a09:94c4:55d1:7682:162::4/128 alias"
+          - "2a09:94c4:55d1:7682:162::5/128 alias"
+          - "2a09:94c4:55d1:7682:162::6/128 alias"
+          - "2a09:94c4:55d1:7682:162::7/128 alias"
+          - "2a09:94c4:55d1:7682:162::8/128 alias"
+          - "2a09:94c4:55d1:7682:162::9/128 alias"
     routes:
       - "-inet default 85.209.118.161"
       - "-inet6 default 2a09:94c4:55d1:7682::1"
+    devfs_ruleset: 5
+
+  - hostname: "ansible3.servers.bornhack.org"
+    interfaces:
+      - epair: 5
+        bridge: "bridge0" # routed v4 & routed v6
+        ifconfig_inet: "85.209.118.163/29"
+        ifconfig_inet6: "2a09:94c4:55d1:7682::163/64"
+    routes:
+      - "-inet default 85.209.118.161"
+      - "-inet6 default 2a09:94c4:55d1:7682::1"
+    devfs_ruleset: 5
+
+  - hostname: "django4.servers.bornhack.org"
+    interfaces:
+      - epair: 6
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.5/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::5/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
+    devfs_ruleset: 5
+    enforce_statfs: 1
+    allow_mount_zfs: 1
+    zfs_datasets:
+      - "zroot/jailstorage/django4.servers.bornhack.org"
+
+  - hostname: "django5.servers.bornhack.org"
+    interfaces:
+      - epair: 7
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.6/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::6/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
+    devfs_ruleset: 5
+    enforce_statfs: 1
+    allow_mount_zfs: 1
+    zfs_datasets:
+      - "zroot/jailstorage/django5.servers.bornhack.org"
+
+  - hostname: "smtp2.servers.bornhack.org"
+    interfaces:
+      - epair: 8
+        bridge: "bridge0" # routed v4 & routed v6
+        ifconfig_inet: "85.209.118.164/29"
+        ifconfig_inet6: "2a09:94c4:55d1:7682::164/64"
+    routes:
+      - "-inet default 85.209.118.161"
+      - "-inet6 default 2a09:94c4:55d1:7682::1"
+    devfs_ruleset: 5
+
+  - hostname: "imap3.servers.bornhack.org"
+    interfaces:
+      - epair: 9
+        bridge: "bridge0" # routed v4 & routed v6
+        ifconfig_inet: "85.209.118.165/29"
+        ifconfig_inet6: "2a09:94c4:55d1:7682::165/64"
+    routes:
+      - "-inet default 85.209.118.161"
+      - "-inet6 default 2a09:94c4:55d1:7682::1"
+    devfs_ruleset: 5
+    enforce_statfs: 1
+    allow_mount_zfs: 1
+    zfs_datasets:
+      - "zroot/jailstorage/imap3.servers.bornhack.org"
+
+  - hostname: "people3.servers.bornhack.org"
+    interfaces:
+      - epair: 10
+        bridge: "bridge0" # routed v4 & routed v6
+        ifconfig_inet: "85.209.118.166/29"
+        ifconfig_inet6: "2a09:94c4:55d1:7682::166/64"
+    routes:
+      - "-inet default 85.209.118.161"
+      - "-inet6 default 2a09:94c4:55d1:7682::1"
+    devfs_ruleset: 5
+    enforce_statfs: 1
+    allow_mount_zfs: 1
+    zfs_datasets:
+      - "zroot/jailstorage/people3.servers.bornhack.org"
+
+  - hostname: "tor3.servers.bornhack.org"
+    interfaces:
+      - epair: 11
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.7/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::7/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
+    devfs_ruleset: 5
+
+  - hostname: "alertmanager2.servers.bornhack.org"
+    interfaces:
+      - epair: 12
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.8/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::8/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
+    devfs_ruleset: 5
+
+  - hostname: "blackbox2.servers.bornhack.org"
+    interfaces:
+      - epair: 13
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.9/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::9/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
+    devfs_ruleset: 5
+
+  - hostname: "grafana2.servers.bornhack.org"
+    interfaces:
+      - epair: 14
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.10/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::10/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
+    devfs_ruleset: 5
+
+  - hostname: "prometheus2.servers.bornhack.org"
+    interfaces:
+      - epair: 15
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.11/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::11/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
     devfs_ruleset: 5

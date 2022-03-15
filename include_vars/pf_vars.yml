@@ -6,19 +6,12 @@ pf_common_address_macros: |
     ### EXTERNAL IPs AND TABLES
     ############################################
     # tykling
-    tykv4="79.142.232.94"
-    tykv6="2a02:2190:f001:1::/64"
-    tykworkv4="185.96.91.2"
+    tykv4="80.208.31.13"
 
     # f3
     fenchurchv4="88.198.57.166"
     fenchurchv6="2a01:4f8:222:589::/64"
     f3home="5.103.0.0/16"
-
-    # ansible
-    ansiblev4="85.235.250.87"
-    ansiblev6="2a01:3a0:1:1900:85:235:250:87"
-    table <ansible> { $ansiblev4 $ansiblev6 }
 
     ###########################################
     ### CONTAINER1 JAILS
@@ -38,12 +31,13 @@ pf_common_address_macros: |
     ###########################################
     ### NUC1 & JAILS
     ############################################
-    nuc1v41="85.209.118.130"
-    nuc1v42="85.209.118.160/29"
-    nuc1v61="2a09:94c4:55d1:7680::82"
-    nuc1v62="2a09:94c4:55d1:7682::/64"
-    nuc1v63="2a09:94c4:55d1:76A0::/64"
-    table <nuc1> { $nuc1v41 $nuc1v61 }
+    nuc1v4="85.209.118.130"
+    nuc1v6="2a09:94c4:55d1:7680::82"
+    table <nuc1> { $nuc1v4 $nuc1v6 }
+    nuc1v4net1="85.209.118.160/29"
+    nuc1v6net1="2a09:94c4:55d1:7682::/64"
+    nuc1v6net2="2a09:94c4:55d1:76A0::/64"
+    table <nuc1net> { $nuc1v4net1 $nuc1v6net1 $nuc1v6net2 }
 
     dns1v4="10.1.0.2"
     dns1v6="2a09:94c4:55d1:76a0::2"
@@ -60,9 +54,54 @@ pf_common_address_macros: |
     webproxy3v4="85.209.118.162"
     webproxy3v6="2a09:94c4:55d1:7682::162"
     table <webproxy3> { $webproxy3v4 $webproxy3v6 }
+    webproxy3v6vhosts="2a09:94c4:55d1:7682:162::/80"
+
+    ansible3v4="85.209.118.163"
+    ansible3v6="2a09:94c4:55d1:7682::163"
+    table <ansible3> { $ansible3v4 $ansible3v6 }
+
+    django4v4="10.1.0.5"
+    django4v6="2a09:94c4:55d1:76a0::5"
+    table <django4> { $django4v4 $django4v6 }
+
+    django5v4="10.1.0.6"
+    django5v6="2a09:94c4:55d1:76a0::6"
+    table <django5> { $django5v4 $django5v6 }
+
+    smtp2v4="85.209.118.164"
+    smtp2v6="2a09:94c4:55d1:7682::164"
+    table <smtp2> { $smtp2v4 $smtp2v6 }
+
+    imap3v4="85.209.118.165"
+    imap3v6="2a09:94c4:55d1:7682::165"
+    table <imap3> { $imap3v4 $imap3v6 }
+
+    people3v4="85.209.118.166"
+    people3v6="2a09:94c4:55d1:7682::166"
+    table <people3> { $people3v4 $people3v6 }
+
+    tor3v4="10.1.0.7"
+    tor3v6="2a09:94c4:55d1:76a0::7"
+    table <tor3> { $tor3v4 $tor3v6 }
+
+    alertmanager2v4="10.1.0.8"
+    alertmanager2v6="2a09:94c4:55d1:76a0::8"
+    table <alertmanager2> { $alertmanager2v4 $alertmanager2v6 }
+
+    blackbox2v4="10.1.0.9"
+    blackbox2v6="2a09:94c4:55d1:76a0::9"
+    table <blackbox2> { $blackbox2v4 $blackbox2v6 }
+
+    grafana2v4="10.1.0.10"
+    grafana2v6="2a09:94c4:55d1:76a0::10"
+    table <grafana2> { $grafana2v4 $grafana2v6 }
+
+    prometheus2v4="10.1.0.11"
+    prometheus2v6="2a09:94c4:55d1:76a0::11"
+    table <prometheus2> { $prometheus2v4 $prometheus2v6 }
 
     ############################################
     ### TABLES
     ############################################
-    table <allowssh> { $tykv4 $tykworkv4 $ansiblev4 $ansiblev6 }
+    table <allowssh> { $tykv4 $ansible3v4 $ansible3v6 $fenchurchv4 $fenchurchv6 }
     table <portknock> persist
