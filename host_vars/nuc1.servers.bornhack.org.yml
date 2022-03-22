@@ -450,7 +450,8 @@ ezjail_dataset: "zroot/usr/jails"
 ezjail_jailstorage_dataset: "zroot/jailstorage"
 ezjail_flavourname: "bornhack"
 ezjail_flavour_ansible_authorized_keys_file: |
-  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICLklW3+HXkG0N6M1SG76WSuA4uNbkiVo3bojCox2ogv ansible-generated on ansible2.servers.bornhack.org
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOTZodzRK0AEd1fq4BX6kjfNyicp/SS4hnwYVOnB7uwv user@bornhack-ansible-tykling
+  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIwgQSQfXEi2A08zVJzeNQ8AwzrzDXuFIUY58ggBNAlI ansible-generated on ansible3.servers.bornhack.org
 
 jail_root: "/usr/jails"
 jails:
