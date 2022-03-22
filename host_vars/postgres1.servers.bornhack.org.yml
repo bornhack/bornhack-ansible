@@ -23,3 +23,10 @@ postgresql_users:
     iplist:
       - "10.1.0.6/32"
       - "2a09:94c4:55d1:76a0::6/128"
+  - comment: 'grafana2'
+    username: 'grafana2_servers_bornhack_org'
+    type: 'host'
+    database: 'grafana2_servers_bornhack_org_db'
+    iplist:
+      - "10.1.0.10/32"
+      - "2a09:94c4:55d1:76a0::10/128"

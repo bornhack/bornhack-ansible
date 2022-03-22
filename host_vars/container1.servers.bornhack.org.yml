@@ -2,6 +2,7 @@
 ansible_host: "ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd.onion"
 ansible_ssh_common_args: "-o 'ProxyCommand socat STDIO SOCKS4A:127.0.0.1:%h:%p,socksport=9050'"
 poudriere_package_set: 'freebsd_12_2_amd64-default'
+host_type: "hardware"
 zfs_arc_max: "128M"
 
 ezjail_dataset: "zroot/usr/jails"
