@@ -68,6 +68,14 @@ pf_common_address_macros: |
     django5v6="2a09:94c4:55d1:76a0::6"
     table <django5> { $django5v4 $django5v6 }
 
+    django6v4="10.1.0.16"
+    django6v6="2a09:94c4:55d1:76a0::16"
+    table <django6> { $django6v4 $django6v6 }
+
+    django7v4="10.1.0.17"
+    django7v6="2a09:94c4:55d1:76a0::17"
+    table <django7> { $django7v4 $django7v6 }
+
     smtp2v4="85.209.118.164"
     smtp2v6="2a09:94c4:55d1:7682::164"
     table <smtp2> { $smtp2v4 $smtp2v6 }
