@@ -15,3 +15,6 @@ django_admins: |
       ('bornhack sysadm', 'sysadm@bornhack.org'),
   )
 django_timezone: 'Europe/Copenhagen'
+
+django_extra_os_dependencies:
+  - "jpeg-turbo"
