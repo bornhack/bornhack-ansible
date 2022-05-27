@@ -54,6 +54,11 @@ all:
         django4.servers.bornhack.org: # staging
         django5.servers.bornhack.org: # prod
 
+    django_bma_servers:
+      hosts:
+        django6.servers.bornhack.org: # staging
+        django7.servers.bornhack.org: # prod
+
     dovecot_servers:
       hosts:
         imap3.servers.bornhack.org:
