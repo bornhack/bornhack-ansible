@@ -309,6 +309,8 @@ pf_filter_rules:
       - "<blackbox2>"
       - "<grafana2>"
       - "<prometheus2>"
+      - "<django6>"
+      - "<django7>"
     ports:
       - "22"
 
