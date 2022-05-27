@@ -27,7 +27,6 @@ vhosts:
           return 301 https://bornhack.dk/;
       }
 
-
   bornhack_dk:
     vhost_v6ip: "2a09:94c4:55d1:7682:162::1"
     hostnames:
@@ -57,13 +56,6 @@ vhosts:
     hostnames:
       - "wwwstaging.bornhack.org"
     locationslash: |
-      # kortforsyningen tile caching
-      location /maps/kfproxy/ {
-        proxy_cache my_cache;
-        proxy_ignore_headers X-Accel-Expires Expires Cache-Control;
-        proxy_cache_valid any 24h;
-        proxy_pass http://django4.servers.bornhack.org:80;
-      }
       location / {
           proxy_pass http://django4.servers.bornhack.org:80;
       }
@@ -113,6 +105,24 @@ vhosts:
           proxy_pass http://grafana2.servers.bornhack.org:80;
       }
 
+  mediastaging_bornhack_org:
+    vhost_v6ip: "2a09:94c4:55d1:7682:162::9"
+    hostnames:
+      - "mediastaging.bornhack.org"
+    locationslash: |
+      location / {
+          proxy_pass http://django6.servers.bornhack.org:80;
+      }
+
+  media_bornhack_dk:
+    vhost_v6ip: "2a09:94c4:55d1:7682:162::a"
+    hostnames:
+      - "media.bornhack.dk"
+    locationslash: |
+      location / {
+          proxy_pass http://django7.servers.bornhack.org:80;
+      }
+
 
 certgrinder_hostname_sets:
   - "webproxy3.servers.bornhack.org"
@@ -124,6 +134,8 @@ certgrinder_hostname_sets:
   - "alertmanager.bornhack.org"
   - "blackbox.bornhack.org"
   - "grafana.bornhack.org"
+  - "media.bornhack.dk"
+  - "mediastaging.bornhack.org"
 
 goaccess_exclude_ips:
   - "2a09:94c4:55d1:76A0::11"

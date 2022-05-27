@@ -14,8 +14,10 @@ all:
         alertmanager2.servers.bornhack.org:
         ansible3.servers.bornhack.org:
         blackbox2.servers.bornhack.org:
-        django4.servers.bornhack.org: # staging
-        django5.servers.bornhack.org: # prod
+        django4.servers.bornhack.org: # staging website
+        django5.servers.bornhack.org: # prod website
+        django6.servers.bornhack.org: # staging bma
+        django7.servers.bornhack.org: # prod bma
         dns1.servers.bornhack.org:
         grafana2.servers.bornhack.org:
         imap3.servers.bornhack.org:
@@ -41,8 +43,11 @@ all:
 
     django_channels2_servers:
       hosts:
-        django4.servers.bornhack.org: # staging
-        django5.servers.bornhack.org: # prod
+        django4.servers.bornhack.org: # staging website
+        django5.servers.bornhack.org: # prod website
+        django6.servers.bornhack.org: # staging bma
+        django7.servers.bornhack.org: # prod bma
+
 
     django_homepage_servers:
       hosts:

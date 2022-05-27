@@ -121,7 +121,7 @@ network_interfaces:
     description: "vnet interface for ansible3.servers.bornhack.org"
     configure: False
     interface: "epair5a"
-    pf_macro: "_if"
+    pf_macro: "ansible3_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -132,7 +132,7 @@ network_interfaces:
     description: "vnet interface for django4.servers.bornhack.org"
     configure: False
     interface: "epair6a"
-    pf_macro: "_if"
+    pf_macro: "django4_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -143,7 +143,7 @@ network_interfaces:
     description: "vnet interface for django5.servers.bornhack.org"
     configure: False
     interface: "epair7a"
-    pf_macro: "_if"
+    pf_macro: "django5_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -154,7 +154,7 @@ network_interfaces:
     description: "vnet interface for smtp2.servers.bornhack.org"
     configure: False
     interface: "epair8a"
-    pf_macro: "_if"
+    pf_macro: "smtp2_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -165,7 +165,7 @@ network_interfaces:
     description: "vnet interface for imap3.servers.bornhack.org"
     configure: False
     interface: "epair9a"
-    pf_macro: "_if"
+    pf_macro: "imap3_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -176,7 +176,7 @@ network_interfaces:
     description: "vnet interface for people3.servers.bornhack.org"
     configure: False
     interface: "epair10a"
-    pf_macro: "_if"
+    pf_macro: "people3_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -187,7 +187,7 @@ network_interfaces:
     description: "vnet interface for tor3.servers.bornhack.org"
     configure: False
     interface: "epair11a"
-    pf_macro: "_if"
+    pf_macro: "tor3_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -198,7 +198,7 @@ network_interfaces:
     description: "vnet interface for alertmanager2.servers.bornhack.org"
     configure: False
     interface: "epair12a"
-    pf_macro: "_if"
+    pf_macro: "alertmanager2_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -209,7 +209,7 @@ network_interfaces:
     description: "vnet interface for blackbox2.servers.bornhack.org"
     configure: False
     interface: "epair13a"
-    pf_macro: "_if"
+    pf_macro: "blackbox2_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -220,7 +220,7 @@ network_interfaces:
     description: "vnet interface for grafana2.servers.bornhack.org"
     configure: False
     interface: "epair14a"
-    pf_macro: "_if"
+    pf_macro: "grafana2_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -231,7 +231,29 @@ network_interfaces:
     description: "vnet interface for prometheus2.servers.bornhack.org"
     configure: False
     interface: "epair15a"
-    pf_macro: "_if"
+    pf_macro: "prometheus2_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair16a"
+    description: "vnet interface for django6.servers.bornhack.org"
+    configure: False
+    interface: "epair16a"
+    pf_macro: "django6_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
+  - name: "epair17a"
+    description: "vnet interface for django7.servers.bornhack.org"
+    configure: False
+    interface: "epair17a"
+    pf_macro: "django7_if"
     pf_scrub: True
     pf_sync: False
     pf_carp: False
@@ -444,6 +466,33 @@ pf_filter_rules:
     ports:
       - "80"
 
+  - comment: "django6: allow HTTP from webproxy"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<webproxy3>"
+    destinations:
+      - "<django6>"
+    ports:
+      - "80"
+
+  - comment: "django7: allow HTTP from webproxy3 and tor3"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<webproxy3>"
+      - "<tor3>"
+    destinations:
+      - "<django7>"
+    ports:
+      - "80"
+
 ########## jails ############
 
 ezjail_dataset: "zroot/usr/jails"
@@ -506,6 +555,12 @@ jails:
           - "2a09:94c4:55d1:7682:162::7/128 alias"
           - "2a09:94c4:55d1:7682:162::8/128 alias"
           - "2a09:94c4:55d1:7682:162::9/128 alias"
+          - "2a09:94c4:55d1:7682:162::a/128 alias"
+          - "2a09:94c4:55d1:7682:162::b/128 alias"
+          - "2a09:94c4:55d1:7682:162::c/128 alias"
+          - "2a09:94c4:55d1:7682:162::d/128 alias"
+          - "2a09:94c4:55d1:7682:162::e/128 alias"
+          - "2a09:94c4:55d1:7682:162::f/128 alias"
     routes:
       - "-inet default 85.209.118.161"
       - "-inet6 default 2a09:94c4:55d1:7682::1"
@@ -647,3 +702,33 @@ jails:
       - "-inet default 10.1.0.1"
       - "-inet6 default 2a09:94c4:55d1:76a0::1"
     devfs_ruleset: 5
+
+  - hostname: "django6.servers.bornhack.org"
+    interfaces:
+      - epair: 16
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.12/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::12/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
+    devfs_ruleset: 5
+    enforce_statfs: 1
+    allow_mount_zfs: 1
+    zfs_datasets:
+      - "zroot/jailstorage/django6.servers.bornhack.org"
+
+  - hostname: "django7.servers.bornhack.org"
+    interfaces:
+      - epair: 17
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.13/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::13/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
+    devfs_ruleset: 5
+    enforce_statfs: 1
+    allow_mount_zfs: 1
+    zfs_datasets:
+      - "zroot/jailstorage/django7.servers.bornhack.org"
