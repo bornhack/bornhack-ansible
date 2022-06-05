@@ -19,5 +19,6 @@ django_timezone: 'Europe/Copenhagen'
 django_extra_os_dependencies:
   - "jpeg-turbo"
   - "webp"
+  - "sqlite3"
 
 django_nginx_proxy: true
