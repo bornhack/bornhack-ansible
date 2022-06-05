@@ -57,10 +57,10 @@ supervisord_extra_programs:
 
 pdf_archive_path: '/storage/pdf_archive/'
 iban: "DK0398600000747866"
-swiftbic: "FOSPDK21"
-regno: 9860
+swiftbic: "MISPDK21"
+regno: 1684
 accountno: 747866
-bank_name: "Folke Sparekassen"
+bank_name: "Middelfart Sparekasse"
 
 django_sendfile_url: "/public"
 django_sendfile_backend: "sendfile.backends.nginx"
