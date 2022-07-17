@@ -279,7 +279,7 @@ prometheus_scrape_configs:
     labels:
       fib: "2"
 
-  - name: "mqtt2prometheus_bh2021"
+  - name: "mqtt2prometheus_bh2022"
     scheme: "http"
     scrape_interval: "5s"
     metrics_path: "/metrics"
@@ -291,6 +291,13 @@ prometheus_scrape_configs:
         target_label: "location"
         replacement: "${1}"
 
+  - name: "django_exporter"
+    scheme: "https"
+    scrape_interval: "10s"
+    metrics_path: "/metrics"
+    targets:
+      - "wwwstaging.bornhack.org"
+      - "www.bornhack.dk"
 
 supervisord_extra_programs:
   - name: "socat_for_container1_prometheus"
