@@ -12,6 +12,9 @@ pf_common_address_macros: |
     fenchurchv4="88.198.57.166"
     fenchurchv6="2a01:4f8:222:589::/64"
     f3home="5.103.0.0/16"
+    
+    # valberg
+    valberg="83.89.250.6"
 
     ###########################################
     ### CONTAINER1 JAILS
@@ -111,5 +114,5 @@ pf_common_address_macros: |
     ############################################
     ### TABLES
     ############################################
-    table <allowssh> { $tykv4 $ansible3v4 $ansible3v6 $fenchurchv4 $fenchurchv6 }
+    table <allowssh> { $tykv4 $ansible3v4 $ansible3v6 $fenchurchv4 $fenchurchv6 $valberg }
     table <portknock> persist
