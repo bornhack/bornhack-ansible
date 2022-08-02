@@ -428,14 +428,31 @@ pf_filter_rules:
       - "465"
       - "587"
 
-  - comment: "smtp2: allow node_exporter from prometheus2"
+  - comment: "allow exporter_exporter from prometheus2"
     direction: "out"
     interfaces:
       - "$bridge_routed_if"
+      - "$bridge_rfc1918_if"
     protocols:
       - "tcp"
     destinations:
+      - "<dns1>"
+      - "<syslog1>"
+      - "<postgres1>"
+      - "<django4>"
+      - "<django5>"
+      - "<tor3>"
+      - "<alertmanager2>"
+      - "<blackbox2>"
+      - "<grafana2>"
+      - "<prometheus2>"
+      - "<django6>"
+      - "<django7>"
+      - "<webproxy3>"
+      - "<ansible3>"
       - "<smtp2>"
+      - "<imap3>"
+      - "<people3>"
     ports:
       - "9999"
 
