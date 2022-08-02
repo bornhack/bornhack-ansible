@@ -428,6 +428,17 @@ pf_filter_rules:
       - "465"
       - "587"
 
+  - comment: "smtp2: allow node_exporter from prometheus2"
+    direction: "out"
+    interfaces:
+      - "$bridge_routed_if"
+    protocols:
+      - "tcp"
+    destinations:
+      - "<smtp2>"
+    ports:
+      - "9999"
+
   - comment: "people3: allow SSH and http(s) from the world"
     direction: "out"
     interfaces:
@@ -494,6 +505,20 @@ pf_filter_rules:
       - "<django7>"
     ports:
       - "80"
+
+  - comment: "prometheus2: allow http from webproxy3"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<webproxy3>"
+    destinations:
+      - "<prometheus2>"
+    ports:
+      - "80"
+
 
 ########## jails ############
 
