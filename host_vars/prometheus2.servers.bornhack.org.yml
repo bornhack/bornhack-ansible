@@ -82,7 +82,7 @@ prometheus_scrape_configs:
           - '__param_target'
         target_label: 'instance'
       - target_label: '__address__'
-        replacement: 'blackbox1.servers.bornhack.org:9115'
+        replacement: 'blackbox2.servers.bornhack.org:9115'
 
   - name: 'bornhack-imap-service'
     scheme: 'http'
@@ -101,7 +101,7 @@ prometheus_scrape_configs:
           - '__param_target'
         target_label: 'instance'
       - target_label: '__address__'
-        replacement: 'blackbox1.servers.bornhack.org:9115'
+        replacement: 'blackbox2.servers.bornhack.org:9115'
 
   - name: 'bornhack-smtp-service'
     scheme: 'http'
@@ -120,26 +120,30 @@ prometheus_scrape_configs:
           - '__param_target'
         target_label: 'instance'
       - target_label: '__address__'
-        replacement: 'blackbox1.servers.bornhack.org:9115'
+        replacement: 'blackbox2.servers.bornhack.org:9115'
 
   - name: "expexp"
     scheme: "https"
     scrape_interval: "10s"
     targets:
-      - "alertmanager1.servers.bornhack.org:9999"
-      - "ansible2.servers.bornhack.org:9999"
-      - "blackbox1.servers.bornhack.org:9999"
-      - "certgrinder1.servers.bornhack.org:9999"
+      - "alertmanager2.servers.bornhack.org:9999"
+      - "ansible3.servers.bornhack.org:9999"
+      - "blackbox2.servers.bornhack.org:9999"
       - "container1.servers.bornhack.org:19999"
-      - "grafana1.servers.bornhack.org:9999"
-      - "imap2.servers.bornhack.org:9999"
-      - "mail.bornhack.org:9999"
-      - "people2.servers.bornhack.org:9999"
-      - "prometheus1.servers.bornhack.org:9999"
-      - "staging3.servers.bornhack.org:9999"
-      - "tor2.servers.bornhack.org:9999"
-      - "webproxy2.servers.bornhack.org:9999"
-      - "wwwprod3.servers.bornhack.org:9999"
+      - "dns1.servers.bornhack.org:19999"
+      - "grafana2.servers.bornhack.org:9999"
+      - "imap3.servers.bornhack.org:9999"
+      - "people3.servers.bornhack.org:9999"
+      - "prometheus2.servers.bornhack.org:9999"
+      - "postgres1.servers.bornhack.org:9999"
+      - "smtp2.servers.bornhack.org:9999"
+      - "syslog1.servers.bornhack.org:9999"
+      - "tor3.servers.bornhack.org:9999"
+      - "webproxy3.servers.bornhack.org:9999"
+      - "django4.servers.bornhack.org:9999"
+      - "django5.servers.bornhack.org:9999"
+      - "django6.servers.bornhack.org:9999"
+      - "django7.servers.bornhack.org:9999"
 
   - name: "node_exporter"
     scheme: "https"
@@ -149,20 +153,24 @@ prometheus_scrape_configs:
       module:
         - "node_exporter"
     targets:
-      - "alertmanager1.servers.bornhack.org:9999"
-      - "ansible2.servers.bornhack.org:9999"
-      - "blackbox1.servers.bornhack.org:9999"
-      - "certgrinder1.servers.bornhack.org:9999"
+      - "alertmanager2.servers.bornhack.org:9999"
+      - "ansible3.servers.bornhack.org:9999"
+      - "blackbox2.servers.bornhack.org:9999"
       - "container1.servers.bornhack.org:19999"
-      - "grafana1.servers.bornhack.org:9999"
-      - "imap2.servers.bornhack.org:9999"
-      - "mail.bornhack.org:9999"
-      - "people2.servers.bornhack.org:9999"
-      - "prometheus1.servers.bornhack.org:9999"
-      - "staging3.servers.bornhack.org:9999"
-      - "tor2.servers.bornhack.org:9999"
-      - "webproxy2.servers.bornhack.org:9999"
-      - "wwwprod3.servers.bornhack.org:9999"
+      - "dns1.servers.bornhack.org:19999"
+      - "grafana2.servers.bornhack.org:9999"
+      - "imap3.servers.bornhack.org:9999"
+      - "people3.servers.bornhack.org:9999"
+      - "prometheus2.servers.bornhack.org:9999"
+      - "postgres1.servers.bornhack.org:9999"
+      - "smtp2.servers.bornhack.org:9999"
+      - "syslog1.servers.bornhack.org:9999"
+      - "tor3.servers.bornhack.org:9999"
+      - "webproxy3.servers.bornhack.org:9999"
+      - "django4.servers.bornhack.org:9999"
+      - "django5.servers.bornhack.org:9999"
+      - "django6.servers.bornhack.org:9999"
+      - "django7.servers.bornhack.org:9999"
 
   - name: "uwsgi_exporter"
     scheme: "https"
@@ -172,8 +180,11 @@ prometheus_scrape_configs:
       module:
         - "uwsgi_exporter"
     targets:
-      - "staging3.servers.bornhack.org:9999"
-      - "wwwprod3.servers.bornhack.org:9999"
+      - "django4.servers.bornhack.org:9999"
+      - "django5.servers.bornhack.org:9999"
+      - "django6.servers.bornhack.org:9999"
+      - "django7.servers.bornhack.org:9999"
+
 
   - name: "nginx_exporter"
     scheme: "https"
@@ -183,25 +194,17 @@ prometheus_scrape_configs:
       module:
         - "nginx_exporter"
     targets:
-      - "alertmanager1.servers.bornhack.org:9999"
-      - "blackbox1.servers.bornhack.org:9999"
-      - "certgrinder1.servers.bornhack.org:9999"
-      - "grafana1.servers.bornhack.org:9999"
-      - "people2.servers.bornhack.org:9999"
-      - "prometheus1.servers.bornhack.org:9999"
-      - "staging3.servers.bornhack.org:9999"
-      - "webproxy2.servers.bornhack.org:9999"
-      - "wwwprod3.servers.bornhack.org:9999"
-
-  - name: "bind_exporter"
-    scheme: "https"
-    scrape_interval: "10s"
-    metrics_path: "/proxy"
-    params:
-      module:
-        - "bind_exporter"
-    targets:
-      - "certgrinder1.servers.bornhack.org:9999"
+      - "alertmanager2.servers.bornhack.org:9999"
+      - "blackbox2.servers.bornhack.org:9999"
+      - "grafana2.servers.bornhack.org:9999"
+      - "people3.servers.bornhack.org:9999"
+      - "prometheus2.servers.bornhack.org:9999"
+      - "smtp2.servers.bornhack.org:9999"
+      - "webproxy3.servers.bornhack.org:9999"
+      - "django4.servers.bornhack.org:9999"
+      - "django5.servers.bornhack.org:9999"
+      - "django6.servers.bornhack.org:9999"
+      - "django7.servers.bornhack.org:9999"
 
   - name: "gstat_exporter"
     scheme: "https"
@@ -212,6 +215,7 @@ prometheus_scrape_configs:
         - "gstat_exporter"
     targets:
       - "container1.servers.bornhack.org:19999"
+      - "nuc1.servers.bornhack.org:9999"
 
   - name: "sysctl_exporter"
     scheme: "https"
@@ -222,6 +226,7 @@ prometheus_scrape_configs:
         - "sysctl_exporter"
     targets:
       - "container1.servers.bornhack.org:19999"
+      - "nuc1.servers.bornhack.org:9999"
 
   - name: "jail_exporter"
     scheme: "https"
@@ -232,6 +237,7 @@ prometheus_scrape_configs:
         - "jail_exporter"
     targets:
       - "container1.servers.bornhack.org:19999"
+      - "nuc1.servers.bornhack.org:9999"
 
   - name: "nut_exporter"
     scheme: "https"
@@ -252,6 +258,7 @@ prometheus_scrape_configs:
         - "smokeping_prober_fib0"
     targets:
       - "container1.servers.bornhack.org:19999"
+      - "nuc1.servers.bornhack.org:9999"
     labels:
       fib: "0"
 
@@ -296,8 +303,10 @@ prometheus_scrape_configs:
     scrape_interval: "10s"
     metrics_path: "/metrics"
     targets:
-      - "wwwstaging.bornhack.org"
-      - "www.bornhack.dk"
+      - "django4.servers.bornhack.org:9999"
+      - "django5.servers.bornhack.org:9999"
+      - "django6.servers.bornhack.org:9999"
+      - "django7.servers.bornhack.org:9999"
 
 supervisord_extra_programs:
   - name: "socat_for_container1_prometheus"
