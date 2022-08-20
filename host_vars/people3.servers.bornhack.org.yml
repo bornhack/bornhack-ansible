@@ -38,6 +38,9 @@ webusers:
   container1video:
     name: "container1.servers.bornhack.org"
     pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP6Dzdg7A3QqzbgNUt8rboWpX1RHy7edn3VcP9c68zDr videouploader@container1.servers.bornhack.org"
+  blackthorne:
+    name: "BlackThorneDK"
+    pubkey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICiPfK0WmGGplq9OXS3EkuorZf2D5jNYFGxJCQCvT2Mj 66:71:22:93:c4:7e:9d:75:ee:41:f6:47:b8:63:4d:4d BlackThorneDK"
 
 vhosts:
   people_bornhack_org:
