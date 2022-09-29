@@ -2,8 +2,8 @@
 django_root: "{{ django_checkout_path }}/src"
 django_mainapp: "bma"
 django_debug: 'False'
-django_loglevel: "WARNING"
-django_bma_loglevel: "DEBUG"
+django_log_level: "WARNING"
+django_bma_log_level: "DEBUG"
 django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: "https://github.com/bornhack/bma"
 django_github_branch: "develop"
