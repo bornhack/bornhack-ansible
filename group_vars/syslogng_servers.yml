@@ -1,0 +1,2 @@
+---
+syslogng_trusted_client_dn: "CN=*.servers.bornhack.org"
