@@ -1,4 +1,16 @@
 ---
+
+nginx_proxy: True
+nginx_v4_proxy_ip: "10.1.0.9"
+vhosts:
+  blackbox1:
+    vhost_v6ip: "2a09:94c4:55d1:76a0::9"
+    hostnames:
+      - "blackbox1.servers.bornhack.org"
+    default_vhost: True
+    locationslash: "{{ blackbox_nginx_locationslash }}"
+
+
 blackbox_exporter_modules:
   icmp4-3s-100b:
     prober: "icmp"
@@ -35,4 +47,3 @@ blackbox_exporter_modules:
       tls: true
       query_response:
         - expect: "Dovecot ready.$"
-
