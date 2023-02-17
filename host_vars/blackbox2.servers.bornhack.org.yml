@@ -6,7 +6,7 @@ vhosts:
   blackbox1:
     vhost_v6ip: "2a09:94c4:55d1:76a0::9"
     hostnames:
-      - "blackbox1.servers.bornhack.org"
+      - "blackbox2.servers.bornhack.org"
     default_vhost: True
     locationslash: "{{ blackbox_nginx_locationslash }}"
 
