@@ -435,6 +435,8 @@ pf_filter_rules:
       - "$bridge_rfc1918_if"
     protocols:
       - "tcp"
+    sources:
+      - "<prometheus2>"
     destinations:
       - "<alertmanager2>"
       - "<ansible3>"
