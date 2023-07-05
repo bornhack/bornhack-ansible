@@ -114,6 +114,40 @@ vhosts:
           proxy_pass http://django7.servers.bornhack.org:80;
       }
 
+  autoconfig_bornhack_org:
+    vhost_v6ip: "2a09:94c4:55d1:7682:162::b"
+    hostnames:
+      - "autoconfig.bornhack.org"
+    locationslash: |
+      default_type application/xml;
+      location = /mail/config-v1.1.xml {
+        return 200 '<?xml version="1.0"?>
+<clientConfig version="1.1">
+  <emailProvider id="bornhack.org">
+    <domain>bornhack.org</domain>
+    <displayName>BornHack Mail</displayName>
+    <displayShortName>BornHack Mail</displayShortName>
+    <incomingServer type="imap">
+       <hostname>imap.bornhack.org</hostname>
+       <port>993</port>
+       <socketType>SSL</socketType>
+       <username>%EMAILADDRESS%</username>
+       <authentication>password-cleartext</authentication>
+    </incomingServer>
+    <outgoingServer type="smtp">
+       <hostname>asmtp.bornhack.org</hostname>
+       <port>465</port>
+       <socketType>TLS</socketType>
+       <username>%EMAILADDRESS%</username>
+       <authentication>password-cleartext</authentication>
+       <addThisServer>true</addThisServer>
+       <useGlobalPreferredServer>true</useGlobalPreferredServer>
+    </outgoingServer>
+  </emailProvider>
+  <clientConfigUpdate url="https://autoconfig.bornhack.org/mail/config-v1.1.xml" />
+</clientConfig>';
+      }
+
 
 certgrinder_hostname_sets:
   - "webproxy3.servers.bornhack.org"
@@ -126,6 +160,7 @@ certgrinder_hostname_sets:
   - "grafana.bornhack.org"
   - "media.bornhack.dk"
   - "mediastaging.bornhack.org"
+  - "autoconfig.bornhack.org"
 
 goaccess_exclude_ips:
   - "2a09:94c4:55d1:76A0::11"
