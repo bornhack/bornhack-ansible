@@ -137,7 +137,7 @@ vhosts:
                         <outgoingServer type="smtp">
                            <hostname>asmtp.bornhack.org</hostname>
                            <port>465</port>
-                           <socketType>TLS</socketType>
+                           <socketType>SSL</socketType>
                            <username>%EMAILADDRESS%</username>
                            <authentication>password-cleartext</authentication>
                            <addThisServer>true</addThisServer>
