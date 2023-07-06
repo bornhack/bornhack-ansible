@@ -145,8 +145,8 @@ vhosts:
                         </outgoingServer>
                       </emailProvider>
                       <clientConfigUpdate url="https://autoconfig.bornhack.org/mail/config-v1.1.xml" />
-                    </clientConfig>'
-      };
+                    </clientConfig>';
+      }
 
 
 certgrinder_hostname_sets:
