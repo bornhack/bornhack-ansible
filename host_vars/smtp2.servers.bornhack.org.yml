@@ -58,6 +58,7 @@ lists:
   youtube: "vidir@bornhack.org"
   villages-team: "sarah@radicalpet.net"
   game-team: "tykling@bornhack.org"
+  wellness-team: "tykling@bornhack.org"
 
 vhosts:
   mail_bornhack_org:
