@@ -23,6 +23,7 @@ django_extra_os_dependencies:
   - "libxslt"
   - "rust"
   - "coin-or-cbc"
+  - "cmake"
 
 django_admins: |
   (
