@@ -15,8 +15,6 @@ tykbackup_client: False
 dns_resolver_ips:
   - "2a09:94c4:55d1:76a0::2"
   - "10.1.0.2"
-  - "91.239.100.100"
-  - "89.233.43.71"
 
 ########## network config ########
 network_interfaces:
