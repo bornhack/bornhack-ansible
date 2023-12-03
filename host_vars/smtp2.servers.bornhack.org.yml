@@ -68,6 +68,21 @@ vhosts:
       - "mail.bornhack.org"
     default_vhost: True
     locationslash: |
+        location = /stub_status {
+          stub_status;
+          allow 127.0.0.1;
+          allow ::1;
+{% for ip in ansible_facts.all_ipv4_addresses %}
+          allow {{ ip }};
+{% endfor %}
+{% for ip in ansible_facts.all_ipv6_addresses %}
+{% if not ip.startswith('fe80') %}
+          allow {{ ip }};
+{% endif %}
+{% endfor %}
+          deny all;
+        }
+
         location = / {
                 rewrite ^ /mailman/listinfo permanent;
         }
