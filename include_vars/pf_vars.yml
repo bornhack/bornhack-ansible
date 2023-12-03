@@ -39,9 +39,10 @@ pf_common_address_macros: |
     nuc1v6="2a09:94c4:55d1:7680::82"
     table <nuc1> { $nuc1v4 $nuc1v6 }
     nuc1v4net1="85.209.118.160/29"
+    nuc1v4net2="10.1.0.0/24"
     nuc1v6net1="2a09:94c4:55d1:7682::/64"
     nuc1v6net2="2a09:94c4:55d1:76A0::/64"
-    table <nuc1net> { $nuc1v4net1 $nuc1v6net1 $nuc1v6net2 }
+    table <nuc1net> { $nuc1v4net1 $nuc1v4net2 $nuc1v6net1 $nuc1v6net2 }
 
     dns1v4="10.1.0.2"
     dns1v6="2a09:94c4:55d1:76a0::2"
