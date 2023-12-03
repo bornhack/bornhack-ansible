@@ -69,7 +69,7 @@ blackbox2_relabel: &blackbox2_relabel
       - '__param_target'
     target_label: 'instance'
   - target_label: '__address__'
-    replacement: 'blackbox2.servers.bornhack.org:9115'
+    replacement: 'blackbox2.servers.bornhack.org:9999'
 
 prometheus_scrape_configs:
   - name: 'bornhack-http-services'
