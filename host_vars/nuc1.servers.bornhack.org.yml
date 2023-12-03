@@ -290,6 +290,19 @@ pf_filter_rules:
     ports:
       - "22"
 
+  - comment: "nuc1: allow exporter_exporter from prometheus2"
+    direction: "in"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<prometheus2>"
+    destinations:
+      - "<nuc1>"
+    ports:
+      - "9999"
+
   - comment: "nuc1 jails: allow ssh to rfc1918 jails"
     direction: "out"
     interfaces:
@@ -449,7 +462,6 @@ pf_filter_rules:
       - "<dns1>"
       - "<grafana2>"
       - "<imap3>"
-      - "<nuc1>"
       - "<people3>"
       - "<postgres1>"
       - "<syslog1>"
