@@ -72,14 +72,14 @@ vhosts:
           stub_status;
           allow 127.0.0.1;
           allow ::1;
-{% for ip in ansible_facts.all_ipv4_addresses %}
+        {% for ip in ansible_facts.all_ipv4_addresses %}
           allow {{ ip }};
-{% endfor %}
-{% for ip in ansible_facts.all_ipv6_addresses %}
-{% if not ip.startswith('fe80') %}
+        {% endfor %}
+        {% for ip in ansible_facts.all_ipv6_addresses %}
+        {% if not ip.startswith('fe80') %}
           allow {{ ip }};
-{% endif %}
-{% endfor %}
+        {% endif %}
+        {% endfor %}
           deny all;
         }
 
