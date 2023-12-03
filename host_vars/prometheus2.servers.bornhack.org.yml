@@ -73,9 +73,9 @@ blackbox2_relabel: &blackbox2_relabel
 
 prometheus_scrape_configs:
   - name: 'bornhack-http-services'
-    scheme: 'http'
+    scheme: 'https'
     scrape_interval: '10s'
-    metrics_path: "/probe"
+    metrics_path: "/proxy"
     params:
       module:
         - "blackbox_exporter"
@@ -88,9 +88,9 @@ prometheus_scrape_configs:
     relabel_configs: *blackbox2_relabel
 
   - name: 'bornhack-imap-service'
-    scheme: 'http'
+    scheme: 'https'
     scrape_interval: '10s'
-    metrics_path: "/probe"
+    metrics_path: "/proxy"
     params:
       module:
         - "blackbox_exporter"
@@ -100,9 +100,9 @@ prometheus_scrape_configs:
     relabel_configs: *blackbox2_relabel
 
   - name: 'bornhack-smtp-service'
-    scheme: 'http'
+    scheme: 'https'
     scrape_interval: '10s'
-    metrics_path: "/probe"
+    metrics_path: "/proxy"
     params:
       module:
         - "blackbox_exporter"
