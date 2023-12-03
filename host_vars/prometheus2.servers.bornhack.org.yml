@@ -61,6 +61,16 @@ prometheus_recording_rules:
       - record: "mobile_modem_atcsq_dbm"
         expr: "(mobile_modem_atcsq_rssi * 2) - 113"
 
+blackbox2_relabel: &blackbox2_relabel
+  - source_labels:
+      - '__address__'
+    target_label: '__param_target'
+  - source_labels:
+      - '__param_target'
+    target_label: 'instance'
+  - target_label: '__address__'
+    replacement: 'blackbox2.servers.bornhack.org:9115'
+
 prometheus_scrape_configs:
   - name: 'bornhack-http-services'
     scheme: 'http'
@@ -68,21 +78,14 @@ prometheus_scrape_configs:
     metrics_path: "/probe"
     params:
       module:
+        - "blackbox_exporter"
         - "http_2xx"
     targets:
       - "bornhack.dk"
       - "wwwstaging.bornhack.org"
       - "mail.bornhack.org"
       - "people.bornhack.org/tyk"
-    relabel_configs:
-      - source_labels:
-          - '__address__'
-        target_label: '__param_target'
-      - source_labels:
-          - '__param_target'
-        target_label: 'instance'
-      - target_label: '__address__'
-        replacement: 'blackbox2.servers.bornhack.org:9115'
+    relabel_configs: *blackbox2_relabel
 
   - name: 'bornhack-imap-service'
     scheme: 'http'
@@ -90,18 +93,11 @@ prometheus_scrape_configs:
     metrics_path: "/probe"
     params:
       module:
+        - "blackbox_exporter"
         - "dovecot_tls"
     targets:
       - "imap.bornhack.org:993"
-    relabel_configs:
-      - source_labels:
-          - '__address__'
-        target_label: '__param_target'
-      - source_labels:
-          - '__param_target'
-        target_label: 'instance'
-      - target_label: '__address__'
-        replacement: 'blackbox2.servers.bornhack.org:9115'
+    relabel_configs: *blackbox2_relabel
 
   - name: 'bornhack-smtp-service'
     scheme: 'http'
@@ -109,18 +105,12 @@ prometheus_scrape_configs:
     metrics_path: "/probe"
     params:
       module:
+        - "blackbox_exporter"
         - "smtp_starttls"
     targets:
+      - "mail.bornhack.org:25"
       - "mail.bornhack.org:587"
-    relabel_configs:
-      - source_labels:
-          - '__address__'
-        target_label: '__param_target'
-      - source_labels:
-          - '__param_target'
-        target_label: 'instance'
-      - target_label: '__address__'
-        replacement: 'blackbox2.servers.bornhack.org:9115'
+    relabel_configs: *blackbox2_relabel
 
   - name: "expexp"
     scheme: "https"
