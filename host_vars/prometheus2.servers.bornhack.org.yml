@@ -120,7 +120,7 @@ prometheus_scrape_configs:
       - "ansible3.servers.bornhack.org:9999"
       - "blackbox2.servers.bornhack.org:9999"
       - "container1.servers.bornhack.org:19999"
-      - "dns1.servers.bornhack.org:19999"
+      - "dns1.servers.bornhack.org:9999"
       - "grafana2.servers.bornhack.org:9999"
       - "imap3.servers.bornhack.org:9999"
       - "people3.servers.bornhack.org:9999"
