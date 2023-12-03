@@ -413,7 +413,7 @@ pf_filter_rules:
       - "12"
       - "24"
 
-  - comment: "smtp2: allow (a)smtp from the world"
+  - comment: "smtp2: allow (a)smtp, http(s), and managesieve from the world"
     direction: "out"
     interfaces:
       - "$bridge_routed_if"
@@ -427,6 +427,7 @@ pf_filter_rules:
       - "443"
       - "465"
       - "587"
+      - "4190"
 
   - comment: "allow exporter_exporter from prometheus2"
     direction: "out"
