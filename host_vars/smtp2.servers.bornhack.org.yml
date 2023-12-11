@@ -3,6 +3,9 @@ nginx_proxy: True
 nginx_v4_proxy_ip: "85.209.118.164"
 nginx_v6_proxy_ip: "2a09:94c4:55d1:7682::164"
 
+postfix_always_encrypt_incoming: True
+postfix_always_encrypt_outgoing: True
+
 dkimdns:
   smtp2.servers.bornhack.org: "v=DKIM1; k=rsa; s=email; p=MIIBJjANBgkqhkiG9w0BAQEFAAOCARMAMIIBDgKCAQUKhX6Zr3jtdWVqk68asWjI9IscCOBBd3LtAr1fxE5MJwSSFjXoPTlDKXRAY/W/AiPXeNkrtcyN/SDgA/1B/UEapKyeoSrTQuk0HY+74+YZrMdMqVV1Ma+9fWvxrt9fF3EGoahB6c5WiNKIUc5cdzbFGbzdt2q0zXduR9AqngBc8m1hDKajJ6nUzBXOxRvkrVtZiy/KHtfjxHY/7FHgb9hrLfZoIrhIROiN8f35WgiRskCP9JoWwqOWegkxC0CYVm7+V+kL/W8WXyJ35UcQZDWNpps3P+rhRBpngVMMqicN2SsrlmyO2pBKRtbyBtRggdhBFmKalDXMRoGwcQCFCtUMz0M4VJ8CAwEAAQ=="
   bornhack.dk: "v=DKIM1; k=rsa; s=email; p=MIIBJjANBgkqhkiG9w0BAQEFAAOCARMAMIIBDgKCAQULNgFStxTHhlZxfI+JwpovDl0JQ2pi/YILkxyyPj0t3F8o0LS4IkzrPwukA7RBhjbU8A74JJ0jUrSVt1p0YkwTWHMv3FTh8VTIOAauDX11mTN5/rGyVpkRLBP2N3upgjVwguUjk9tfHDgIt4W5ysn5739Qa6YN700zcin1T1F6GVE1lg2FFZe6iKh0PSS13n/EGDk4d7zdslxWfGOKs8FlFsgnAyYhZN5njEj20eQ4yOU0p3HuakTj7HWG6tLbZJoGdce6QVCnRBVQ0AZrDnv+MPYOORjhtxbgcWZCX1Fss7I+ZSMEQElGchxCgIGIG+HWePngbW3oBmLQprLPXAAEcNSeOBsCAwEAAQ=="
