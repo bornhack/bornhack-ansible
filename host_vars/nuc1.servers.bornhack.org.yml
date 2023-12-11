@@ -555,6 +555,19 @@ pf_filter_rules:
     ports:
       - "80"
 
+  - comment: "grafana2: allow http from webproxy3"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<webproxy3>"
+    destinations:
+      - "<grafana2>"
+    ports:
+      - "80"
+
 
 ########## jails ############
 
