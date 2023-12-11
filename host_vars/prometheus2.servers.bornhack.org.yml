@@ -144,6 +144,7 @@ prometheus_scrape_configs:
       module:
         - "node_exporter"
     targets:
+      - "nuc1.servers.bornhack.org:9999"
       - "alertmanager2.servers.bornhack.org:9999"
       - "ansible3.servers.bornhack.org:9999"
       - "blackbox2.servers.bornhack.org:9999"
