@@ -288,6 +288,17 @@ prometheus_scrape_configs:
       - "django6.servers.bornhack.org:9999"
       - "django7.servers.bornhack.org:9999"
 
+  - name: "pfctl-exporter"
+    scheme: "https"
+    scrape_interval: "10s"
+    metrics_path: "/proxy"
+    params:
+      module:
+        - "pfctl-exporter"
+    targets:
+      - "nuc1.servers.bornhack.org:9999"
+      - "container1.servers.bornhack.org:19999"
+
 supervisord_extra_programs:
   - name: "socat_for_container1_prometheus"
     comment: "run socat to tunnel to container1 prometheus exporter_exporter"
