@@ -290,7 +290,7 @@ prometheus_scrape_configs:
 
   - name: "pfctl-exporter"
     scheme: "https"
-    scrape_interval: "60s"
+    scrape_interval: "10s"
     metrics_path: "/proxy"
     params:
       module:
