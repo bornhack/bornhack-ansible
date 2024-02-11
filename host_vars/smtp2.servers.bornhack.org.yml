@@ -35,6 +35,7 @@ postgres_dbname: "smtp2_servers_bornhack_org_db"
 postgres_user: "smtp2_servers_bornhack_org"
 
 lists:
+  art: "ahf@bornhack.org"
   badge: "tykling@bornhack.org"
   bar-team: "sarah@radicalpet.net"
   ccc2019: "tykling@bornhack.org"
