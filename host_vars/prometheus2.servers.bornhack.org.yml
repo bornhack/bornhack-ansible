@@ -299,6 +299,16 @@ prometheus_scrape_configs:
       - "nuc1.servers.bornhack.org:9999"
       - "container1.servers.bornhack.org:19999"
 
+  - name: "dmarc_metrics_exporter"
+    scheme: "https"
+    scrape_interval: "10s"
+    metrics_path: "/proxy"
+    params:
+      module:
+        - "dmarc-metrics-exporter"
+    targets:
+      - "imap3.servers.bornhack.org:9999"
+
 supervisord_extra_programs:
   - name: "socat_for_container1_prometheus"
     comment: "run socat to tunnel to container1 prometheus exporter_exporter"
