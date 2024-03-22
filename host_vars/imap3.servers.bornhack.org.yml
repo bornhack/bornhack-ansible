@@ -9,3 +9,8 @@ dovecot_vmail_gid: 10000
 
 certgrinder_hostname_sets:
  - "imap3.servers.bornhack.org,imap.bornhack.org"
+
+dmarc_exporter_folders_inbox: "INBOX.postmaster.dmarc"
+dmarc_exporter_folders_done: "INBOX.postmaster.dmarc.done"
+dmarc_exporter_folders_invalid: "INBOX.postmaster.dmarc.error"
+dmarc_exporter_imap_host: "imap.bornhack.org"

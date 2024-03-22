@@ -59,6 +59,10 @@ all:
         django6.servers.bornhack.org: # staging
         django7.servers.bornhack.org: # prod
 
+    dmarc_exporter_servers:
+      hosts:
+        imap3.servers.bornhack.org:
+
     dovecot_servers:
       hosts:
         imap3.servers.bornhack.org:
