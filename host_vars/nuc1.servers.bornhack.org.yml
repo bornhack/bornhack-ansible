@@ -404,7 +404,7 @@ pf_filter_rules:
       - "80"
       - "443"
 
-  - comment: "imap3: allow imaps from the world"
+  - comment: "imap3: allow imaps and managesieve from the world"
     direction: "out"
     interfaces:
       - "$bridge_routed_if"
@@ -414,6 +414,7 @@ pf_filter_rules:
       - "<imap3>"
     ports:
       - "993"
+      - "4190"
 
   - comment: "imap3: allow SASL & LMTP from smtp2"
     direction: "out"
