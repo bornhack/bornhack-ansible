@@ -148,6 +148,15 @@ vhosts:
                     </clientConfig>';
       }
 
+  grist_bornhack_org:
+    vhost_v6ip: "2a09:94c4:55d1:7682:162::c"
+    hostnames:
+      - "grist.bornhack.org"
+    locationslash: |
+      location / {
+          proxy_pass http://grist1.servers.bornhack.org:80;
+      }
+
 
 certgrinder_hostname_sets:
   - "webproxy3.servers.bornhack.org"
