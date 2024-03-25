@@ -71,6 +71,10 @@ all:
       hosts:
         grafana2.servers.bornhack.org:
 
+    grist_servers:
+      hosts:
+        grist1.servers.bornhack.org:
+
     motion_servers:
       hosts:
         container1.servers.bornhack.org:

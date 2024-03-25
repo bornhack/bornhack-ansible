@@ -113,6 +113,10 @@ pf_common_address_macros: |
     prometheus2v6="2a09:94c4:55d1:76a0::11"
     table <prometheus2> { $prometheus2v4 $prometheus2v6 }
 
+    grist1v4="10.1.0.14"
+    grist1v6="2a09:94c4:55d1:76a0::14"
+    table <grist1> { $grist1v4 $grist1v6 }
+
     ############################################
     ### TABLES
     ############################################
