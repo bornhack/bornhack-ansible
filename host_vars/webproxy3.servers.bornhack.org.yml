@@ -170,6 +170,7 @@ certgrinder_hostname_sets:
   - "media.bornhack.dk"
   - "mediastaging.bornhack.org"
   - "autoconfig.bornhack.org"
+  - "grist.bornhack.org"
 
 goaccess_exclude_ips:
   - "2a09:94c4:55d1:76A0::11"
