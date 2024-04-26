@@ -46,7 +46,7 @@ lists:
   food-team: "tykling@bornhack.org"
   gis-team: "ahf@bornhack.org"
   info: "tykling@bornhack.org"
-  info-team: "graffen@gmail.com"
+  info-team: "tykling@bornhack.org"
   logistics-team: "tykling@bornhack.org"
   metrics: "tykling@bornhack.org"
   noc-team: "hlk@kramse.org"
@@ -63,6 +63,7 @@ lists:
   villages-team: "sarah@radicalpet.net"
   game-team: "tykling@bornhack.org"
   wellness-team: "tykling@bornhack.org"
+  jeopardy: "tykling@bornhack.org"
 
 vhosts:
   mail_bornhack_org:
