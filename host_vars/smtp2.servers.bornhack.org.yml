@@ -25,6 +25,7 @@ opendkim_internalhosts:
 mailman_fake_domain: "mailman.bornhack.org"
 mailman_list_owner: "thomas@gibfest.dk"
 mailman_primary_domain: "bornhack.org"
+mailman_url_domain: "mail.bornhack.org"
 
 lmtp_server_ip: "imap3.servers.bornhack.org"
 lmtp_server_port: "24"
