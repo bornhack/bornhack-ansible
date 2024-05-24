@@ -7,3 +7,4 @@ django_postgres_dbname: "django6_servers_bornhack_org_db"
 django_python_path: "/usr/local/bin/python3.11"
 django_extra_os_dependencies:
   - "lang/python311"
+django_pyproject_toml_path: "/usr/local/www/django/pyproject.toml"
