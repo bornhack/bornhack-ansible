@@ -7,10 +7,13 @@ django_bma_log_level: "DEBUG"
 django_nginx_static_root: "{{ django_root }}/static/"
 django_github_repo_url: "https://github.com/bornhack/bma"
 django_github_branch: "develop"
-django_pip_requirements_path: "{{ django_root }}/requirements/production.txt"
+django_package: "/usr/local/www/django/"
 django_media_root: "/storage/django_media_root"
 django_media_root_subdirs:
   - "photos"
+django_python_path: "/usr/local/bin/python3.11"
+django_extra_os_dependencies:
+  - "lang/python311"
 
 django_admins: |
   (
