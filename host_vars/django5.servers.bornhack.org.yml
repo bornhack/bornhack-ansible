@@ -38,3 +38,5 @@ backoffice_proxy_urls: |
       "webstats-2020": ("Webproxy stats 2021", "https://webproxy2.servers.bornhack.org/goaccess/2021.html"),
       "webstats-2020": ("Webproxy stats 2022", "https://webproxy2.servers.bornhack.org/goaccess/2022.html"),
   }
+
+bma_baseurl: "https://media.bornhack.dk"
