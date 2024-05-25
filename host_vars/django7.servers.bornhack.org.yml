@@ -4,3 +4,4 @@ django_allowed_hostnames:
   - "media.bornhack.dk"
 django_postgres_user: "django7_servers_bornhack_org"
 django_postgres_dbname: "django7_servers_bornhack_org_db"
+django_cors_allowed_origins: "https://www.bornhack.dk"
