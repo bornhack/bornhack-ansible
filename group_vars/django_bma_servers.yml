@@ -14,16 +14,15 @@ django_media_root_subdirs:
 django_python_path: "/usr/local/bin/python3.11"
 django_extra_os_dependencies:
   - "lang/python311"
+  - "jpeg-turbo"
+  - "webp"
+  - "sqlite3"
+
 
 django_admins: |
   (
       ('bornhack sysadm', 'sysadm@bornhack.org'),
   )
 django_timezone: 'Europe/Copenhagen'
-
-django_extra_os_dependencies:
-  - "jpeg-turbo"
-  - "webp"
-  - "sqlite3"
 
 django_nginx_proxy: true
