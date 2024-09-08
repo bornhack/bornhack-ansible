@@ -819,7 +819,6 @@ jails:
       - "-inet default 10.1.0.1"
       - "-inet6 default 2a09:94c4:55d1:76a0::1"
     devfs_ruleset: 5
-    devfs_ruleset: 5
     enforce_statfs: 1
     allow_mount_zfs: 1
     zfs_datasets:
