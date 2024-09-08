@@ -5,7 +5,7 @@ ansible_authorized_keys_file: |
   ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOTZodzRK0AEd1fq4BX6kjfNyicp/SS4hnwYVOnB7uwv user@bornhack-ansible-tykling
   ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIwgQSQfXEi2A08zVJzeNQ8AwzrzDXuFIUY58ggBNAlI ansible-generated on ansible3.servers.bornhack.org
 
-poudriere_package_set: 'freebsd_13_2_amd64-default'
+poudriere_package_set: 'freebsd_13_3_amd64-default'
 
 users:
   tykling:

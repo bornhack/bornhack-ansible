@@ -1,6 +1,6 @@
 ---
 #ansible_ssh_common_args: '-o ProxyJump=nuc1.servers.bornhack.org'
-poudriere_package_set: 'freebsd_13_2_amd64-default'
+poudriere_package_set: 'freebsd_13_3_amd64-default'
 nginx_v4_proxy_ip: "85.209.118.162"
 nginx_v6_proxy_ip: "2a09:94c4:55d1:7682::162"
 ntp_pool_server: "dk.pool.ntp.org"
