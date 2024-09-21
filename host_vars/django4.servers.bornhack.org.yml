@@ -12,8 +12,6 @@ django_email_from: "info@bornhack.dk"
 
 django_archive_email: "stagingemailarchive@bornhack.org"
 
-pdf_letterhead_filename: "bornhack_test_letterhead.pdf"
-
 django_ircbot_nickname: "BornHackStaging"
 django_ircbot_server: "irc.baconsvin.org"
 django_ircbot_public_channel: "#bhstagingpublic"

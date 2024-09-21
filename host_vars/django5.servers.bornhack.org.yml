@@ -13,7 +13,7 @@ django_email_from: "info@bornhack.dk"
 django_archive_email: "mailarchive@bornhack.org"
 
 
-pdf_letterhead_filename: "bornhack_letterhead.pdf"
+pdf_test_mode: 'False'
 
 django_ircbot_nickname: "BornHack"
 django_ircbot_server: "irc.baconsvin.org"

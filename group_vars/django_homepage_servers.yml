@@ -57,6 +57,8 @@ supervisord_extra_programs:
     priority: "4"
 
 pdf_archive_path: '/storage/pdf_archive/'
+pdf_test_mode: 'True'
+
 iban: "DK0398600000747866"
 swiftbic: "MISPDK21"
 regno: 1684
