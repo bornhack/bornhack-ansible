@@ -16,7 +16,6 @@ django_media_root_subdirs:
 
 django_extra_os_dependencies:
   - "jpeg-turbo"
-  - "wkhtmltopdf"
   - "webfonts"
   - "gdal"
   - "geos"
