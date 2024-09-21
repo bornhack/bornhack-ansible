@@ -24,6 +24,8 @@ django_extra_os_dependencies:
   - "coin-or-cbc"
   - "cmake"
   - "ninja"
+  - "pango"
+  - "gobject-introspection"
 
 django_admins: |
   (
