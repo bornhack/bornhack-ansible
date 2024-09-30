@@ -21,6 +21,8 @@ django_ircbot_nickserv_mask: "NickServ@services.baconsvin.org"
 django_ircbot_chanserv_mask: "ChanServ@services.baconsvin.org"
 django_ircbot_nickserv_email: "stagingbot@bornhack.org"
 
+django_debug_toolbar_enabled: "True"
+
 django_accountingsystem_email: "economic@example.com"
 django_economyteam_email: "economyteam@example.com"
 

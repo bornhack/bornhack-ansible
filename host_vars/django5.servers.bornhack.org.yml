@@ -23,6 +23,8 @@ django_ircbot_nickserv_mask: "NickServ@services.baconsvin.org"
 django_ircbot_chanserv_mask: "ChanServ@services.baconsvin.org"
 django_ircbot_nickserv_email: "ircbot@bornhack.org"
 
+django_debug_toolbar_enabled: "False"
+
 coinify_callback_hostname: "coinifycallback.bornhack.org"
 
 django_accountingsystem_email: "866bilag1182644@e-conomic.dk"
