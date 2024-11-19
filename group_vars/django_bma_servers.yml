@@ -9,13 +9,9 @@ django_github_repo_url: "https://github.com/bornhack/bma"
 django_github_branch: "develop"
 django_package: "/usr/local/www/django/"
 django_media_root: "/storage/django_media_root"
-django_media_root_subdirs:
-  - "photos"
 django_python_path: "/usr/local/bin/python3.11"
 django_extra_os_dependencies:
   - "lang/python311"
-  - "jpeg-turbo"
-  - "webp"
   - "sqlite3"
 
 
