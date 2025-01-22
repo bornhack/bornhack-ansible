@@ -1,5 +1,4 @@
 ---
-poudriere_package_set: 'freebsd_13_3_amd64-default'
 host_type: "hardware"
 
 ########## snapshots & tykbackup ###############
