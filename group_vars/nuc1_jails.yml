@@ -9,4 +9,4 @@ syslog_server_ip: "syslog1.servers.bornhack.org"
 dns_resolver_ips:
   - "2a09:94c4:55d1:76a0::2"
   - "10.1.0.2"
-postgresql_version: "14"
+postgresql_version: "16"
