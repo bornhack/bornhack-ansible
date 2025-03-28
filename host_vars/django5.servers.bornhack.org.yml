@@ -25,7 +25,7 @@ django_ircbot_nickserv_email: "ircbot@bornhack.org"
 
 django_debug_toolbar_enabled: "False"
 
-coinify_callback_hostname: "coinifycallback.bornhack.org"
+coinify_api_url: "https://api.payment.coinify.com/v1/"
 
 django_accountingsystem_email: "866bilag1182644@e-conomic.dk"
 django_economyteam_email: "economy-team@bornhack.org"
