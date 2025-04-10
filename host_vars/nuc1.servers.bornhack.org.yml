@@ -338,6 +338,7 @@ pf_filter_rules:
       - "<prometheus2>"
       - "<django6>"
       - "<django7>"
+      - "<kiwi1>"
     ports:
       - "22"
 
@@ -590,6 +591,19 @@ pf_filter_rules:
       - "<webproxy3>"
     destinations:
       - "<alertmanager2>"
+    ports:
+      - "80"
+
+  - comment: "kiwi1: allow http from webproxy3"
+    direction: "out"
+    interfaces:
+      - "$bridge_rfc1918_if"
+    protocols:
+      - "tcp"
+    sources:
+      - "<webproxy3>"
+    destinations:
+      - "<kiwi1>"
     ports:
       - "80"
 

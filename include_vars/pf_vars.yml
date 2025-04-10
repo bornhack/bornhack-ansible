@@ -113,6 +113,10 @@ pf_common_address_macros: |
     prometheus2v6="2a09:94c4:55d1:76a0::11"
     table <prometheus2> { $prometheus2v4 $prometheus2v6 }
 
+    kiwi1v4="10.1.0.14"
+    kiwi1v6="2a09:94c4:55d1:76a0::14"
+    table <kiwi1> { $kiwi1v4 $kiwi1v6 }
+
     ############################################
     ### TABLES
     ############################################
