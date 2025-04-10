@@ -21,6 +21,7 @@ all:
         dns1.servers.bornhack.org:
         grafana2.servers.bornhack.org:
         imap3.servers.bornhack.org:
+        kiwi1.servers.bornhack.org:
         people3.servers.bornhack.org:
         postgres1.servers.bornhack.org:
         prometheus2.servers.bornhack.org:

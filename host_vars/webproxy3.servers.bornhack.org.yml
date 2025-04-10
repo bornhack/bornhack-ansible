@@ -39,19 +39,6 @@ vhosts:
           more_set_headers        "Onion-Location: http://nclpuewtqbrtgnugfquprohygp2ni2idinfrbmiptxrp6d6uvtctpyid.onion$request_uri";
       }
 
-  coinifycallback_bornhack_org:
-    vhost_v6ip: "2a09:94c4:55d1:7682:162::2"
-    hostnames:
-      - "coinifycallback.bornhack.org"
-    locationslash: |
-      location ~ /shop/orders/(?<orderid>[0-9]+)/pay/blockchain/callback/ {
-          proxy_set_header        Host bornhack.dk;
-          proxy_pass http://django5.servers.bornhack.org:80;
-      }
-      location / {
-        return 301 https://bornhack.dk/;
-      }
-
   wwwstaging_bornhack_org:
     vhost_v6ip: "2a09:94c4:55d1:7682:162::3"
     hostnames:
@@ -149,13 +136,13 @@ vhosts:
                     </clientConfig>';
       }
 
-  grist_bornhack_org:
+  webirc_bornhack_dk:
     vhost_v6ip: "2a09:94c4:55d1:7682:162::c"
     hostnames:
-      - "grist.bornhack.org"
+      - "webirc.bornhack.dk"
     locationslash: |
       location / {
-          proxy_pass http://grist1.servers.bornhack.org:80;
+          proxy_pass http://kiwi1.servers.bornhack.org:80;
       }
 
 
@@ -171,7 +158,7 @@ certgrinder_hostname_sets:
   - "media.bornhack.dk"
   - "mediastaging.bornhack.org"
   - "autoconfig.bornhack.org"
-  - "grist.bornhack.org"
+  - "webirc.bornhack.dk"
 
 goaccess_exclude_ips:
   - "2a09:94c4:55d1:76A0::11"

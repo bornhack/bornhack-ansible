@@ -262,6 +262,17 @@ network_interfaces:
     pf_upstream: False
     pf_routing: True
 
+  - name: "epair18a"
+    description: "vnet interface for kiwi1.servers.bornhack.org"
+    configure: False
+    interface: "epair18a"
+    pf_macro: "kiwi1_if"
+    pf_scrub: True
+    pf_sync: False
+    pf_carp: False
+    pf_upstream: False
+    pf_routing: True
+
 
 static_routes:
   - name: "dgw_ipv4"
@@ -826,3 +837,14 @@ jails:
     allow_mount_zfs: 1
     zfs_datasets:
       - "tank0/jailstorage/django7.servers.bornhack.org"
+
+  - hostname: "kiwi1.servers.bornhack.org"
+    interfaces:
+      - epair: 18
+        bridge: "bridge1" # rfc1918 v4 & routed v6
+        ifconfig_inet: "10.1.0.14/24"
+        ifconfig_inet6: "2a09:94c4:55d1:76a0::14/64"
+    routes:
+      - "-inet default 10.1.0.1"
+      - "-inet6 default 2a09:94c4:55d1:76a0::1"
+    devfs_ruleset: 5
