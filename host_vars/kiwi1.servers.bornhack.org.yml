@@ -1,5 +1,5 @@
 ---
-webircgateway_server: "https://webirc.bornhack.dk/webircgateway"
+webircgateway_server: "https://webirc.bornhack.dk/webircgateway/webirc/kiwiirc"
 
 webircgateway_upstreams:
   - hostname: "ircd.tyknet.dk"
