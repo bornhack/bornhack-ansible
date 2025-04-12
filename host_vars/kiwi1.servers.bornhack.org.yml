@@ -1,4 +1,7 @@
 ---
+nginx_cors_origins:
+  - "http://127.0.0.1:8080"
+
 webircgateway_upstreams:
   - hostname: "ircd.tyknet.dk"
     port: 6697
