@@ -5,5 +5,5 @@ django_postgres_user: "django6_servers_bornhack_org"
 django_postgres_dbname: "django6_servers_bornhack_org_db"
 django_cors_allowed_origins:
   - "https://wwwstaging.bornhack.org"
-  - "http://127.0.0.1:8001"
+  - "http://127.0.0.1:8000"
 django_bma_initial_groups: '["creators", "moderators", "curators"]'
