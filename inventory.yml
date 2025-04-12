@@ -72,6 +72,10 @@ all:
       hosts:
         grafana2.servers.bornhack.org:
 
+    kiwiirc_servers:
+      hosts:
+        kiwi1.servers.bornhack.org:
+
     motion_servers:
       hosts:
         container1.servers.bornhack.org:

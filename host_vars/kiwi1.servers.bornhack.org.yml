@@ -1,0 +1,5 @@
+---
+webircgateway_upstreams:
+  - hostname: "ircd.tyknet.dk"
+    port: 6697
+...
