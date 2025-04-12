@@ -1,6 +1,5 @@
 ---
-webircgateway_allowed_origins:
-  - "https://webirc.bornhack.dk"
+webircgateway_server: "https://webirc.bornhack.dk/webircgateway"
 
 webircgateway_upstreams:
   - hostname: "ircd.tyknet.dk"
