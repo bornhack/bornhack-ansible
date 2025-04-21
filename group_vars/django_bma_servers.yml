@@ -25,3 +25,6 @@ django_nginx_proxy: true
 
 django_bma_initial_groups:
   - "curators"
+
+# cors for /static/
+nginx_cors_origins: "{{ django_cors_allowed_origins }}"
