@@ -37,6 +37,7 @@ vhosts:
           proxy_pass http://django5.servers.bornhack.org:80;
           more_set_headers        "X-Secret-Token: comingsoonish";
           more_set_headers        "Onion-Location: http://nclpuewtqbrtgnugfquprohygp2ni2idinfrbmiptxrp6d6uvtctpyid.onion$request_uri";
+          more_set_headers        "X-Clacks-Overhead: GNU Jesper 'graffen' Hess OZ9DLP";
       }
 
   wwwstaging_bornhack_org:
