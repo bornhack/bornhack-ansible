@@ -92,6 +92,7 @@ vhosts:
     locationslash: |
       location / {
           proxy_pass http://django6.servers.bornhack.org:80;
+          client_max_body_size 10000m;
       }
 
   media_bornhack_dk:
@@ -101,6 +102,7 @@ vhosts:
     locationslash: |
       location / {
           proxy_pass http://django7.servers.bornhack.org:80;
+          client_max_body_size 10000m;
       }
 
   autoconfig_bornhack_org:

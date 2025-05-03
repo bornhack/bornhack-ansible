@@ -7,3 +7,5 @@ django_cors_allowed_origins:
   - "https://wwwstaging.bornhack.org"
   - "http://127.0.0.1:8000"
 django_bma_initial_groups: '["creators", "moderators", "curators"]'
+nginx_client_max_body_size: "10000m"
+...

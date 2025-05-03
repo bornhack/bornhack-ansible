@@ -6,3 +6,5 @@ django_postgres_dbname: "django7_servers_bornhack_org_db"
 django_cors_allowed_origins:
   - "https://www.bornhack.dk"
 django_bma_initial_groups: '["curators"]'
+nginx_client_max_body_size: "10000m"
+...
