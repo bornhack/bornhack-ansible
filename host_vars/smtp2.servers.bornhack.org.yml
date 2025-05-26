@@ -103,6 +103,7 @@ vhosts:
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 allow 80.208.31.13; # tyk
+                allow 90.224.18.60;
                 deny all;
         }
         location /cgi-bin {
