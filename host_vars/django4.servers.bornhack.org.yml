@@ -9,7 +9,7 @@ django_email_user: "noreply@bornhack.org"
 django_email_port: "587"
 django_email_host: "asmtp.bornhack.org"
 django_email_from: "info@bornhack.dk"
-django_github_branch: "master"
+django_github_branch: "main"
 
 django_archive_email: "stagingemailarchive@bornhack.org"
 
