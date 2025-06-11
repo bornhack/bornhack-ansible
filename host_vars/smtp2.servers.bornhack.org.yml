@@ -104,6 +104,8 @@ vhosts:
                 proxy_set_header X-Real-IP $remote_addr;
                 allow 80.208.31.13; # tyk
                 allow 90.224.18.60;
+                allow 5.186.68.134;
+                allow 2001:2043:ba2b:bd00::/64;
                 deny all;
         }
         location /cgi-bin {
