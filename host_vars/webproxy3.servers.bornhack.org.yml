@@ -148,6 +148,15 @@ vhosts:
           proxy_pass http://kiwi1.servers.bornhack.org:80;
       }
 
+  ctf_bornhack_dk:
+    vhost_v6ip: "2a09:94c4:55d1:7682:162::d"
+    hostnames:
+      - "ctf.bornhack.dk"
+    locationslash: |
+      location / {
+        return 302 https://ctf.pwnies.dk;
+      }
+
 
 certgrinder_hostname_sets:
   - "webproxy3.servers.bornhack.org"
@@ -162,6 +171,7 @@ certgrinder_hostname_sets:
   - "mediastaging.bornhack.org"
   - "autoconfig.bornhack.org"
   - "webirc.bornhack.dk"
+  - "ctf.bornhack.dk"
 
 goaccess_exclude_ips:
   - "2a09:94c4:55d1:76A0::11"
