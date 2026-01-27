@@ -34,6 +34,7 @@ sasl_server_port: "12"
 
 postgres_dbname: "smtp2_servers_bornhack_org_db"
 postgres_user: "smtp2_servers_bornhack_org"
+postgres_port: 5432
 
 lists:
   art: "ahf@bornhack.org"
