@@ -1,5 +1,6 @@
 ---
 dovecot_postgres_host: "postgres1.servers.bornhack.org"
+postgres_port: 5432
 dovecot_postgres_dbname: "smtp2_servers_bornhack_org_db"
 dovecot_postgres_user: "smtp2_servers_bornhack_org"
 dovecot_vmail_username: "vmail"
