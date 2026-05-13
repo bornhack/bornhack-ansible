@@ -323,10 +323,10 @@ etchosts: |
 
 tor_instances:
   main:
+    metricsport: 9035
     onion_client_auths:
       - name: "container1"
         onion: "ezbbgv3dcm6hydlcedsc4funxzfbxr2alivizghtvmboouq4tym2hcyd"
-        metricsport: 9035
         privkey: !vault |
           $ANSIBLE_VAULT;1.1;AES256
           38616161376264313062623937373832343539633066616666383339626464306365356633346234

@@ -1,6 +1,7 @@
 ---
 tor_instances:
   main:
+    metricsport: 9035
     onion_services:
       - name: "websiteprodv3"
         comment: "The v3 onion service for the prod website"
@@ -8,4 +9,3 @@ tor_instances:
         hidden_service_ports:
           - "80 10.1.0.6:80"
         auth_clients: []
-        metricsport: 9035
