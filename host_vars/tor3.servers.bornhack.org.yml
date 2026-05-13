@@ -8,3 +8,4 @@ tor_instances:
         hidden_service_ports:
           - "80 10.1.0.6:80"
         auth_clients: []
+        metricsport: 9035
